@@ -1,0 +1,6 @@
+framework module Pods_A_x__Master {
+  umbrella header "Pods-A(x) Master-umbrella.h"
+
+  export *
+  module * { export * }
+}
