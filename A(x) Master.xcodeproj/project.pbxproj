@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56092B2924A9557A0054778C /* updateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56092B2824A9557A0054778C /* updateInfo.swift */; };
-		56234C9B24A4474F007E2729 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56234C9A24A4474F007E2729 /* GenericViewController.swift */; };
+		4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */; };
+		43474DD024BFC6110035F405 /* VtCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43474DCF24BFC6110035F405 /* VtCellData.swift */; };
+		43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */; };
+		435885B924B965B70049836D /* DashobarodsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435885B824B965B70049836D /* DashobarodsTabViewController.swift */; };
+		436FA89D24AD71B1002672EE /* VolumeTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */; };
+		436FA8A124AD7754002672EE /* VolumeTrackerCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */; };
+		43882ABD24B7BC2A00C931F9 /* VideoListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */; };
+		43882ABF24B7BC3D00C931F9 /* ChestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */; };
+		43882AC224B7BC6C00C931F9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC124B7BC6C00C931F9 /* Video.swift */; };
+		43882AC424B7BC7600C931F9 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC324B7BC7600C931F9 /* Exercises.swift */; };
+		43882AC724B7BCA000C931F9 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC624B7BCA000C931F9 /* VideoCell.swift */; };
+		43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */; };
+		43A8927824B90815002BFED5 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8927724B90815002BFED5 /* DashBoardViewController.swift */; };
 		5654CBBE248C65E400C44BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5654CBBD248C65E400C44BB7 /* Constants.swift */; };
-		565A6F602495CFE000917513 /* MaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A6F5F2495CFE000917513 /* MaleButton.swift */; };
-		565A6F622495DDA700917513 /* FemaleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565A6F612495DDA700917513 /* FemaleButton.swift */; };
 		565C1A9F248B1DC30054CC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1A9E248B1DC30054CC11 /* AppDelegate.swift */; };
 		565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */; };
 		565C1AA3248B1DC30054CC11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA2248B1DC30054CC11 /* ViewController.swift */; };
@@ -21,12 +30,8 @@
 		565C1AB6248B1DC50054CC11 /* A_x__MasterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AB5248B1DC50054CC11 /* A_x__MasterTests.swift */; };
 		565C1AC1248B1DC50054CC11 /* A_x__MasterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AC0248B1DC50054CC11 /* A_x__MasterUITests.swift */; };
 		56DF909824A1865D0027181D /* BodyFatChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF909724A1865D0027181D /* BodyFatChartViewController.swift */; };
-		56DF909924A192970027181D /* BodyFatChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF909724A1865D0027181D /* BodyFatChartViewController.swift */; };
-		56DF909A24A192980027181D /* BodyFatChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DF909724A1865D0027181D /* BodyFatChartViewController.swift */; };
 		56E0EBDF24A31DFC009CB20F /* MagicFormula.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */; };
-		56E68F6724A708CF004EE4C8 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E68F6624A708CF004EE4C8 /* Dashboard.swift */; };
 		56F023F024A0204300449252 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 56F023EF24A0204300449252 /* IQKeyboardManagerSwift */; };
-		56F934E9249D972F00CF1867 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F934E8249D972F00CF1867 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +55,20 @@
 		04FB6D034F00F813E25AEC2F /* Pods-A(x) MasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) MasterTests.release.xcconfig"; path = "Target Support Files/Pods-A(x) MasterTests/Pods-A(x) MasterTests.release.xcconfig"; sourceTree = "<group>"; };
 		250786DA61D87DEFF32A0001 /* Pods-A(x) Master-A(x) MasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master-A(x) MasterUITests/Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35B3FCFF0E3C67E95AD2A841 /* Pods-A(x) Master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master/Pods-A(x) Master.release.xcconfig"; sourceTree = "<group>"; };
-		56092B2824A9557A0054778C /* updateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateInfo.swift; sourceTree = "<group>"; };
-		56234C9A24A4474F007E2729 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicepsVTViewController.swift; sourceTree = "<group>"; };
+		43474DCF24BFC6110035F405 /* VtCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VtCellData.swift; sourceTree = "<group>"; };
+		43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerTableViewViewController.swift; sourceTree = "<group>"; };
+		435885B824B965B70049836D /* DashobarodsTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashobarodsTabViewController.swift; sourceTree = "<group>"; };
+		436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerTableViewCell.swift; sourceTree = "<group>"; };
+		436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerCellObject.swift; sourceTree = "<group>"; };
+		43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListScreen.swift; sourceTree = "<group>"; };
+		43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestListViewController.swift; sourceTree = "<group>"; };
+		43882AC124B7BC6C00C931F9 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		43882AC324B7BC7600C931F9 /* Exercises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
+		43882AC624B7BCA000C931F9 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewCell.swift; sourceTree = "<group>"; };
+		43A8927724B90815002BFED5 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
 		5654CBBD248C65E400C44BB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		565A6F5F2495CFE000917513 /* MaleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaleButton.swift; sourceTree = "<group>"; };
-		565A6F612495DDA700917513 /* FemaleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FemaleButton.swift; sourceTree = "<group>"; };
 		565C1A9B248B1DC30054CC11 /* A(x) Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A(x) Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565C1A9E248B1DC30054CC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,8 +85,6 @@
 		565C1AC2248B1DC50054CC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56DF909724A1865D0027181D /* BodyFatChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyFatChartViewController.swift; sourceTree = "<group>"; };
 		56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicFormula.swift; sourceTree = "<group>"; };
-		56E68F6624A708CF004EE4C8 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
-		56F934E8249D972F00CF1867 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		781ED06654A22D5484B7E09A /* Pods-A(x) Master.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master.debug.xcconfig"; path = "Target Support Files/Pods-A(x) Master/Pods-A(x) Master.debug.xcconfig"; sourceTree = "<group>"; };
 		DF959739E815618981CE1537 /* Pods-A(x) MasterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) MasterTests.debug.xcconfig"; path = "Target Support Files/Pods-A(x) MasterTests/Pods-A(x) MasterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96544975C24E446CED1181E /* Pods-A(x) Master-A(x) MasterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master-A(x) MasterUITests.debug.xcconfig"; path = "Target Support Files/Pods-A(x) Master-A(x) MasterUITests/Pods-A(x) Master-A(x) MasterUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,14 +116,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4344BB4224BFE571007284A9 /* Vt Muscle Group View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */,
+			);
+			path = "Vt Muscle Group View Controller";
+			sourceTree = "<group>";
+		};
+		436FA89B24AD7124002672EE /* Dashboards VCs and Classes */ = {
+			isa = PBXGroup;
+			children = (
+				43882AC024B7BC5900C931F9 /* TableViewObjects */,
+				436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */,
+				436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */,
+				43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */,
+			);
+			path = "Dashboards VCs and Classes";
+			sourceTree = "<group>";
+		};
+		436FA89E24AD7639002672EE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4344BB4224BFE571007284A9 /* Vt Muscle Group View Controller */,
+				43882AC524B7BC9300C931F9 /* TableViewCells */,
+				43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */,
+				43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */,
+				56DF909724A1865D0027181D /* BodyFatChartViewController.swift */,
+				56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */,
+				565C1AA2248B1DC30054CC11 /* ViewController.swift */,
+				43A8927724B90815002BFED5 /* DashBoardViewController.swift */,
+				435885B824B965B70049836D /* DashobarodsTabViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		43882AC024B7BC5900C931F9 /* TableViewObjects */ = {
+			isa = PBXGroup;
+			children = (
+				43882AC124B7BC6C00C931F9 /* Video.swift */,
+				43882AC324B7BC7600C931F9 /* Exercises.swift */,
+				43474DCF24BFC6110035F405 /* VtCellData.swift */,
+			);
+			path = TableViewObjects;
+			sourceTree = "<group>";
+		};
+		43882AC524B7BC9300C931F9 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				43882AC624B7BCA000C931F9 /* VideoCell.swift */,
+				43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		561FB199248B20A7002B394A /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				56F934E8249D972F00CF1867 /* Button.swift */,
-				565A6F5F2495CFE000917513 /* MaleButton.swift */,
-				565A6F612495DDA700917513 /* FemaleButton.swift */,
-				56DF909724A1865D0027181D /* BodyFatChartViewController.swift */,
-				56092B2824A9557A0054778C /* updateInfo.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -120,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				5654CBBD248C65E400C44BB7 /* Constants.swift */,
-				56E68F6624A708CF004EE4C8 /* Dashboard.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -149,17 +209,16 @@
 		565C1A9D248B1DC30054CC11 /* A(x) Master */ = {
 			isa = PBXGroup;
 			children = (
+				565C1AAC248B1DC50054CC11 /* Info.plist */,
+				565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */,
+				565C1A9E248B1DC30054CC11 /* AppDelegate.swift */,
+				436FA89E24AD7639002672EE /* ViewControllers */,
+				436FA89B24AD7124002672EE /* Dashboards VCs and Classes */,
 				5654CBBC248C65CA00C44BB7 /* Utilities */,
 				561FB199248B20A7002B394A /* CustomViews */,
-				565C1A9E248B1DC30054CC11 /* AppDelegate.swift */,
-				565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */,
-				565C1AA2248B1DC30054CC11 /* ViewController.swift */,
 				565C1AA4248B1DC30054CC11 /* Main.storyboard */,
 				565C1AA7248B1DC50054CC11 /* Assets.xcassets */,
 				565C1AA9248B1DC50054CC11 /* LaunchScreen.storyboard */,
-				565C1AAC248B1DC50054CC11 /* Info.plist */,
-				56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */,
-				56234C9A24A4474F007E2729 /* GenericViewController.swift */,
 			);
 			path = "A(x) Master";
 			sourceTree = "<group>";
@@ -422,18 +481,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				565A6F622495DDA700917513 /* FemaleButton.swift in Sources */,
+				436FA89D24AD71B1002672EE /* VolumeTrackerTableViewCell.swift in Sources */,
 				5654CBBE248C65E400C44BB7 /* Constants.swift in Sources */,
-				56E68F6724A708CF004EE4C8 /* Dashboard.swift in Sources */,
-				56234C9B24A4474F007E2729 /* GenericViewController.swift in Sources */,
 				56DF909824A1865D0027181D /* BodyFatChartViewController.swift in Sources */,
+				43882AC224B7BC6C00C931F9 /* Video.swift in Sources */,
+				43A8927824B90815002BFED5 /* DashBoardViewController.swift in Sources */,
+				43882AC424B7BC7600C931F9 /* Exercises.swift in Sources */,
 				565C1AA3248B1DC30054CC11 /* ViewController.swift in Sources */,
 				56E0EBDF24A31DFC009CB20F /* MagicFormula.swift in Sources */,
+				435885B924B965B70049836D /* DashobarodsTabViewController.swift in Sources */,
+				43882AC724B7BCA000C931F9 /* VideoCell.swift in Sources */,
 				565C1A9F248B1DC30054CC11 /* AppDelegate.swift in Sources */,
-				565A6F602495CFE000917513 /* MaleButton.swift in Sources */,
-				56F934E9249D972F00CF1867 /* Button.swift in Sources */,
-				56092B2924A9557A0054778C /* updateInfo.swift in Sources */,
+				43882ABD24B7BC2A00C931F9 /* VideoListScreen.swift in Sources */,
+				43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */,
+				4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */,
+				43474DD024BFC6110035F405 /* VtCellData.swift in Sources */,
+				436FA8A124AD7754002672EE /* VolumeTrackerCellObject.swift in Sources */,
 				565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */,
+				43882ABF24B7BC3D00C931F9 /* ChestListViewController.swift in Sources */,
+				43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +507,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DF909924A192970027181D /* BodyFatChartViewController.swift in Sources */,
 				565C1AB6248B1DC50054CC11 /* A_x__MasterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,7 +515,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DF909A24A192980027181D /* BodyFatChartViewController.swift in Sources */,
 				565C1AC1248B1DC50054CC11 /* A_x__MasterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

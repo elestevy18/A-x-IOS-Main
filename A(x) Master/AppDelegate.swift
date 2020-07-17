@@ -18,10 +18,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Make app DARKS
         UITextField.appearance().keyboardAppearance = UIKeyboardAppearance.dark
-        IQKeyboardManager.shared.enable = true
-        UITabBar.appearance().barTintColor = .black
-        UITabBar.appearance().tintColor = Colors.aXGreen
+               IQKeyboardManager.shared.enable = true
+               UITabBar.appearance().barTintColor = .black
+               UITabBar.appearance().tintColor = Colors.aXGreen
+        
+        //Manage wich view is dipplayed at boot
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: UIViewController
+        
+//        var isFirstBoot = true
+//       // UserDefaults.standard.value(forKey:"bodyweight")as? String == nil
+//        if (isFirstBoot) {
+        vc = storyBoard.instantiateViewController(identifier: "infoCollection")
+//        } else {
+//            vc = storyBoard.instantiateInitialViewController()!
+//        }
+        
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+             
+       
         return true
     }
 

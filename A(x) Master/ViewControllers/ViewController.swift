@@ -56,7 +56,7 @@ class ViewController: UIViewController{
     
     // JUSTINO 6/28/19 12:49:59 PM 
     
-    @IBOutlet weak var femaleButton: FemaleButton!
+
     
     // test buttons
     
@@ -70,15 +70,15 @@ class ViewController: UIViewController{
     var unitsBool = Bool(false)
     
     struct Keys {
-            static let bodyWeight = "bodyweight"
-            static let heightBig = "heightbig"
-            static let heightSmall = "heightsmall"
-            static let experience = "experience"
-            static let composition = "composition"
-            static let age = "age"
+            static let bodyWeight    = "bodyweight"
+            static let heightBig     = "heightbig"
+            static let heightSmall   = "heightsmall"
+            static let experience    = "experience"
+            static let composition   = "composition"
+            static let age           = "age"
             static let activityLevel = "activitylevel"
-            static let thereAreTwoGenders = "therearetwogenders"
-            static let unitsBool = "unitsBool"
+            static let sex           = "sex"
+            static let unitsBool     = "unitsBool"
     }
     
     //Array for actiovity level picker
@@ -93,7 +93,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
        
         //declaration of MALECHART IMAGE existence JUSTINO 6/30/20 9:47 PM
-        maleChartImage.image = UIImage(named: "Male Bf Chart")
+     //   maleChartImage.image = UIImage(named: "Male Bf Chart")
         
         
         // checkForSavedtextField()
@@ -120,21 +120,7 @@ class ViewController: UIViewController{
         textField6.keyboardType = UIKeyboardType.numberPad
         
         // BUTTON COLORS AND NUMBERS 12:50:59 AM PST JUSTINO
-        testFemaleButton.layer.borderWidth = 2.0
-        testFemaleButton.layer.cornerRadius = testFemaleButton.frame.height / 2
-        testFemaleButton.layer.borderColor = Colors.aXGreen.cgColor
-        testFemaleButton.setTitleColor(Colors.aXGreen, for: .normal)
-        
-        testMaleButton.layer.borderWidth = 2.0
-        testMaleButton.layer.cornerRadius = testMaleButton.frame.height / 2
-        testMaleButton.layer.borderColor = Colors.aXGreen.cgColor
-        testMaleButton.setTitleColor(Colors.aXGreen, for: .normal)
-        
-        NextButton.layer.borderWidth = 2.0
-        NextButton.layer.cornerRadius = NextButton.frame.height / 2
-        NextButton.layer.borderColor = Colors.aXGreen.cgColor
-        NextButton.setTitleColor(Colors.aXGreen, for: .normal)
-       
+    
         
         createALPicker()
         createToolbar()
@@ -175,24 +161,33 @@ class ViewController: UIViewController{
             let activityLevel = String(activityLevelTextField.text!)
             defaults.set(activityLevel, forKey: Keys.activityLevel)
             let thereAreTwoGenders = Bool(maleBool)
-            defaults.set(thereAreTwoGenders, forKey: Keys.thereAreTwoGenders)
+            defaults.set(thereAreTwoGenders, forKey: Keys.sex)
             let units = Bool(unitsBool)
             defaults.set(units, forKey: Keys.unitsBool)
+     
             
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let calculatingPerfection = storyboard.instantiateViewController(identifier: "calculatingPerfection")
+            //self.present(calculatingPerfection, animated: true, completion: nil)
+               self.show(calculatingPerfection, sender: self)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+
+                //self.show(calculatingPerfection, sender: self)
+
+            self.dismiss(animated: true, completion: nil)
+            }
                  //  checkForDat)
               } else {
                  //SHOW ERROR MESSAGE
+            let alert = UIAlertController(title: "Missing Information", message: "Please input all information. Notice \"activity level\" is a picker", preferredStyle: UIAlertController.Style.alert)
+                          alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                          self.present(alert, animated: true, completion: nil)
               }
         
     }
     
-    @IBAction func maleClicked(_ sender: Any) {
-        maleBool = Bool(true)
-        if(femaleButton.isSelected){
-            femaleButton.sendActions(for: .touchUpInside)
-            femaleButton.isSelected = false
-        }
-    }
+
     
     //test male button tapped
     
@@ -363,38 +358,7 @@ extension ViewController : UITextFieldDelegate {
 extension UITextField {
     func shouldChangeCustomOtp(textField:UITextField, string: String) ->Bool {
 
-        //Check if textField has two chacraters
-        if ((textField.text?.count)! == 1  && string.count > 0) {
-            let nextTag = textField.tag + 1;
-            // get next responder
-            var nextResponder = textField.superview?.viewWithTag(nextTag);
-            if (nextResponder == nil) {
-                nextResponder = textField.superview?.viewWithTag(1);
-            }
-
-            textField.text = textField.text! + string;
-            //write here your last textfield tag
-            if textField.tag == 2 {
-                //Dissmiss keyboard on last entry
-                textField.resignFirstResponder()
-            }
-            else {
-                ///Appear keyboard
-                nextResponder?.becomeFirstResponder();
-            }
-            return false;
-        } else if ((textField.text?.count)! == 1  && string.count == 0) {// on deleteing value from Textfield
-
-            let previousTag = textField.tag - 1;
-            // get prev responder
-            var previousResponder = textField.superview?.viewWithTag(previousTag);
-            if (previousResponder == nil) {
-                previousResponder = textField.superview?.viewWithTag(1);
-            }
-            textField.text = "";
-            previousResponder?.becomeFirstResponder();
-            return false
-        }
+//      
         return true
 
     }
