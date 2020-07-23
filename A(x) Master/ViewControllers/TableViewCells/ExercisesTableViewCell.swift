@@ -21,6 +21,7 @@ class ExercisesTableViewCell: UITableViewCell {
  
     @IBOutlet weak var exerciseTitleLabel: UILabel!
     @IBOutlet weak var musclesWorkText: UILabel!
+    @IBOutlet weak var addSetButton: UIButton!
     
     
     var exercisesItem: Exercises!
@@ -31,6 +32,10 @@ class ExercisesTableViewCell: UITableViewCell {
         exercisesItem = exercise
         exerciseTitleLabel.text = exercise.title
         musclesWorkText.text    = exercise.musclesWorked
+        addSetButton.backgroundColor = .clear
+        addSetButton.layer.borderWidth = 1
+        addSetButton.layer.borderColor = Colors.aXGreen.cgColor
+        addSetButton.layer.cornerRadius = 8
     }
     
     @IBAction func addSetTapped(_ sender: Any) {

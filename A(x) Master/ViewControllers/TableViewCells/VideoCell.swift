@@ -22,6 +22,7 @@ class VideoCell: UITableViewCell {
     @IBOutlet weak var progressText: UILabel!
     @IBOutlet weak var mavText: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var addSetButton: UIButton!
     
     var videoItem: Video!
     var delegate: VideoCellDelegate?
@@ -34,6 +35,11 @@ class VideoCell: UITableViewCell {
         progressText.text    = video.progressText
         mavText.text         = video.mavText
         progressBar.progress = video.progress
+        
+        addSetButton.backgroundColor = .clear
+        addSetButton.layer.borderWidth = 1
+        addSetButton.layer.borderColor = Colors.aXGreen.cgColor
+        addSetButton.layer.cornerRadius = 8
         
     }
     

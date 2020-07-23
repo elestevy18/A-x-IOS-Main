@@ -15,6 +15,7 @@ import UIKit
 class VideoListScreen: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addSetButton: UIButton!
     
     var videos: [Video] = []
     var VtData: [Float]        = []
@@ -148,6 +149,7 @@ class VideoListScreen: UIViewController {
         static let lowerTrapsMax               = "lowertrapsmax"
         static let lowerTrapsProgressInt       = "lowerTrapsProgressInt"
         static let lowerTraps                  = "lowertraps"
+        static let muscleString                 = "musclestring"
      }
      
     override func viewDidLoad() {
@@ -171,7 +173,9 @@ class VideoListScreen: UIViewController {
         chestTally = (1.0 / chestMax) * chestTally
         chestProgress = chestProgress + chestTally
         defaults.set(chestProgress, forKey: Keys.chestProgress)
+        defaults.set(chestMax, forKey: Keys.chestMax)
         defaults.removeObject(forKey: Keys.chestTally)
+        print(chestMax)
         
         //BICEPS
         
@@ -185,6 +189,7 @@ class VideoListScreen: UIViewController {
         bicepsTally = (1.0 / bicepsMax) * bicepsTally
         bicepsProgress = bicepsProgress + bicepsTally
         defaults.set(bicepsProgress, forKey: Keys.bicepsProgress)
+        defaults.set(bicepsMax, forKey: Keys.bicepsMax)
         defaults.removeObject(forKey: Keys.bicepsTally)
         
         //LATS
@@ -199,6 +204,7 @@ class VideoListScreen: UIViewController {
         latsTally = (1.0 / latsMax) * latsTally
         latsProgress = latsProgress + latsTally
         defaults.set(latsProgress, forKey: Keys.latsProgress)
+        defaults.set(latsMax, forKey: Keys.latsMax)
         defaults.removeObject(forKey: Keys.latsTally)
         
         //GLUTES
@@ -213,6 +219,7 @@ class VideoListScreen: UIViewController {
         glutesTally = (1.0 / glutesMax) * glutesTally
         glutesProgress = glutesProgress + glutesTally
         defaults.set(glutesProgress, forKey: Keys.glutesProgress)
+        defaults.set(glutesMax, forKey: Keys.glutesMax)
         defaults.removeObject(forKey: Keys.glutesTally)
         
         //GLUTE MEDIUS
@@ -227,6 +234,7 @@ class VideoListScreen: UIViewController {
         gluteMediusTally = (1.0 / gluteMediusMax) * gluteMediusTally
         gluteMediusProgress = gluteMediusProgress + gluteMediusTally
         defaults.set(gluteMediusProgress, forKey: Keys.gluteMediusProgress)
+        defaults.set(gluteMediusMax, forKey: Keys.gluteMediusMax)
         defaults.removeObject(forKey: Keys.gluteMediusTally)
         
         //HAMSTRINGS
@@ -241,6 +249,7 @@ class VideoListScreen: UIViewController {
         hamstringsTally = (1.0 / hamstringsMax) * hamstringsTally
         hamstringsProgress = hamstringsProgress + hamstringsTally
         defaults.set(hamstringsProgress, forKey: Keys.hamstringsProgress)
+        defaults.set(hamstringsMax, forKey: Keys.hamstringsMax)
         defaults.removeObject(forKey: Keys.hamstringsTally)
         
         //FRONTSHOULDER
@@ -255,6 +264,7 @@ class VideoListScreen: UIViewController {
         frontShoulderTally = (1.0 / frontShoulderMax) * frontShoulderTally
         frontShoulderProgress = frontShoulderProgress + frontShoulderTally
         defaults.set(frontShoulderProgress, forKey: Keys.frontShoulderProgress)
+        defaults.set(frontShoulderMax, forKey: Keys.frontShoulderMax)
         defaults.removeObject(forKey: Keys.frontShoulderTally)
         
         //LATERALSHOULDER
@@ -269,6 +279,7 @@ class VideoListScreen: UIViewController {
         lateralShoulderTally = (1.0 / lateralShoulderMax) * lateralShoulderTally
         lateralShoulderProgress = lateralShoulderProgress + lateralShoulderTally
         defaults.set(lateralShoulderProgress, forKey: Keys.lateralShoulderProgress)
+        defaults.set(lateralShoulderMax, forKey: Keys.lateralShoulderMax)
         defaults.removeObject(forKey: Keys.lateralShoulderTally)
         
         //BACKSHOULDER
@@ -283,6 +294,7 @@ class VideoListScreen: UIViewController {
         backShoulderTally = (1.0 / backShoulderMax) * backShoulderTally
         backShoulderProgress = backShoulderProgress + backShoulderTally
         defaults.set(backShoulderProgress, forKey: Keys.backShoulderProgress)
+        defaults.set(backShoulderMax, forKey: Keys.backShoulderMax)
         defaults.removeObject(forKey: Keys.backShoulderTally)
         
         //ROTATORCUFF
@@ -297,6 +309,7 @@ class VideoListScreen: UIViewController {
         rotatorCuffTally = (1.0 / rotatorCuffMax) * rotatorCuffTally
         rotatorCuffProgress = rotatorCuffProgress + rotatorCuffTally
         defaults.set(rotatorCuffProgress, forKey: Keys.rotatorCuffProgress)
+        defaults.set(rotatorCuffMax, forKey: Keys.rotatorCuffMax)
         defaults.removeObject(forKey: Keys.rotatorCuffTally)
         
         //TRICEPS
@@ -311,6 +324,7 @@ class VideoListScreen: UIViewController {
         tricepsTally = (1.0 / tricepsMax) * tricepsTally
         tricepsProgress = tricepsProgress + tricepsTally
         defaults.set(tricepsProgress, forKey: Keys.tricepsProgress)
+        defaults.set(tricepsMax, forKey: Keys.tricepsMax)
         defaults.removeObject(forKey: Keys.tricepsTally)
         
         //QUADS
@@ -325,6 +339,7 @@ class VideoListScreen: UIViewController {
         quadsTally = (1.0 / quadsMax) * quadsTally
         quadsProgress = quadsProgress + quadsTally
         defaults.set(quadsProgress, forKey: Keys.quadsProgress)
+        defaults.set(quadsMax, forKey: Keys.quadsMax)
         defaults.removeObject(forKey: Keys.quadsTally)
         
         //ABS
@@ -339,6 +354,7 @@ class VideoListScreen: UIViewController {
         absTally = (1.0 / absMax) * absTally
         absProgress = absProgress + absTally
         defaults.set(absProgress, forKey: Keys.absProgress)
+        defaults.set(absMax, forKey: Keys.absMax)
         defaults.removeObject(forKey: Keys.absTally)
         
         //OBLIQUES
@@ -353,6 +369,7 @@ class VideoListScreen: UIViewController {
         obliquesTally = (1.0 / obliquesMax) * obliquesTally
         obliquesProgress = obliquesProgress + obliquesTally
         defaults.set(obliquesProgress, forKey: Keys.obliquesProgress)
+        defaults.set(obliquesMax, forKey: Keys.obliquesMax)
         defaults.removeObject(forKey: Keys.obliquesTally)
         
         //SERRATUS
@@ -367,6 +384,7 @@ class VideoListScreen: UIViewController {
         serratusTally = (1.0 / serratusMax) * serratusTally
         serratusProgress = serratusProgress + serratusTally
         defaults.set(serratusProgress, forKey: Keys.serratusProgress)
+        defaults.set(serratusMax, forKey: Keys.serratusMax)
         defaults.removeObject(forKey: Keys.serratusTally)
         
         //TRANSVERSE ABS
@@ -381,6 +399,7 @@ class VideoListScreen: UIViewController {
         transverseAbTally = (1.0 / transverseAbMax) * transverseAbTally
         transverseAbProgress = transverseAbProgress + transverseAbTally
         defaults.set(transverseAbProgress, forKey: Keys.transverseAbProgress)
+        defaults.set(transverseAbMax, forKey: Keys.transverseAbMax)
         defaults.removeObject(forKey: Keys.transverseAbTally)
         
         //CALVES
@@ -395,6 +414,7 @@ class VideoListScreen: UIViewController {
         calvesTally = (1.0 / calvesMax) * calvesTally
         calvesProgress = calvesProgress + calvesTally
         defaults.set(calvesProgress, forKey: Keys.calvesProgress)
+        defaults.set(calvesMax, forKey: Keys.calvesMax)
         defaults.removeObject(forKey: Keys.calvesTally)
         
         //NECK
@@ -409,6 +429,7 @@ class VideoListScreen: UIViewController {
         neckTally = (1.0 / neckMax) * neckTally
         neckProgress = neckProgress + neckTally
         defaults.set(neckProgress, forKey: Keys.neckProgress)
+        defaults.set(neckMax, forKey: Keys.neckMax)
         defaults.removeObject(forKey: Keys.neckTally)
         
         //FOREARM EXTENSORS
@@ -423,6 +444,7 @@ class VideoListScreen: UIViewController {
         forearmExtensorsTally = (1.0 / forearmExtensorsMax) * forearmExtensorsTally
         forearmExtensorsProgress = forearmExtensorsProgress + forearmExtensorsTally
         defaults.set(forearmExtensorsProgress, forKey: Keys.forearmExtensorsProgress)
+        defaults.set(forearmExtensorsMax, forKey: Keys.forearmExtensorsMax)
         defaults.removeObject(forKey: Keys.forearmExtensorsTally)
         
         //ULNAR FOREARM
@@ -437,6 +459,7 @@ class VideoListScreen: UIViewController {
         ulnarForearmTally = (1.0 / ulnarForearmMax) * ulnarForearmTally
         ulnarForearmProgress = ulnarForearmProgress + ulnarForearmTally
         defaults.set(ulnarForearmProgress, forKey: Keys.ulnarForearmProgress)
+        defaults.set(ulnarForearmMax, forKey: Keys.ulnarForearmMax)
         defaults.removeObject(forKey: Keys.ulnarForearmTally)
         
         
@@ -452,6 +475,7 @@ class VideoListScreen: UIViewController {
         forearmFlexorsTally = (1.0 / forearmFlexorsMax) * forearmFlexorsTally
         forearmFlexorsProgress = forearmFlexorsProgress + forearmFlexorsTally
         defaults.set(forearmFlexorsProgress, forKey: Keys.forearmFlexorsProgress)
+        defaults.set(forearmFlexorsMax, forKey: Keys.forearmFlexorsMax)
         defaults.removeObject(forKey: Keys.forearmFlexorsTally)
         
         
@@ -467,6 +491,7 @@ class VideoListScreen: UIViewController {
         radialForearmTally = (1.0 / radialForearmMax) * radialForearmTally
         radialForearmProgress = radialForearmProgress + radialForearmTally
         defaults.set(radialForearmProgress, forKey: Keys.radialForearmProgress)
+        defaults.set(radialForearmMax, forKey: Keys.radialForearmMax)
         defaults.removeObject(forKey: Keys.radialForearmTally)
         
         //SPINAL ERECTORS
@@ -481,6 +506,7 @@ class VideoListScreen: UIViewController {
         spinalErectorsTally = (1.0 / spinalErectorsMax) * spinalErectorsTally
         spinalErectorsProgress = spinalErectorsProgress + spinalErectorsTally
         defaults.set(spinalErectorsProgress, forKey: Keys.spinalErectorsProgress)
+        defaults.set(spinalErectorsMax, forKey: Keys.spinalErectorsMax)
         defaults.removeObject(forKey: Keys.spinalErectorsTally)
         
         //UPPER TRAPS
@@ -495,6 +521,7 @@ class VideoListScreen: UIViewController {
         upperTrapsTally = (1.0 / upperTrapsMax) * upperTrapsTally
         upperTrapsProgress = upperTrapsProgress + upperTrapsTally
         defaults.set(upperTrapsProgress, forKey: Keys.upperTrapsProgress)
+        defaults.set(upperTrapsMax, forKey: Keys.upperTrapsMax)
         defaults.removeObject(forKey: Keys.upperTrapsTally)
        
 
@@ -511,13 +538,15 @@ class VideoListScreen: UIViewController {
         lowerTrapsTally = (1.0 / lowerTrapsMax) * lowerTrapsTally
         lowerTrapsProgress = lowerTrapsProgress + lowerTrapsTally
         defaults.set(lowerTrapsProgress, forKey: Keys.lowerTrapsProgress)
+        defaults.set(lowerTrapsMax, forKey: Keys.lowerTrapsMax)
         defaults.removeObject(forKey: Keys.lowerTrapsTally)
 
     
         VtData = [chestProgressForText, chestMax, chestProgress, bicepsProgressForText, bicepsMax, bicepsProgress, latsProgressForText, latsMax, latsProgress, glutesProgressForText, glutesMax, glutesProgress, gluteMediusProgressForText, gluteMediusMax, gluteMediusProgress, hamstringsProgressForText, hamstringsMax, hamstringsProgress, frontShoulderProgressForText, frontShoulderMax, frontShoulderProgress, lateralShoulderProgressForText, lateralShoulderMax, lateralShoulderProgress, backShoulderProgressForText, backShoulderMax, backShoulderProgress, rotatorCuffProgressForText, rotatorCuffMax, rotatorCuffProgress, tricepsProgressForText, tricepsMax, tricepsProgress, quadsProgressForText, quadsMax, quadsProgress, absProgressForText, absMax, absProgress, obliquesProgressForText, obliquesMax, obliquesProgress, serratusProgressForText, serratusMax, serratusProgress, transverseAbProgressForText, transverseAbMax, transverseAbProgress, calvesProgressForText, calvesMax, calvesProgress, neckProgressForText, neckMax, neckProgress, forearmExtensorsProgressForText, forearmExtensorsMax, forearmExtensorsProgress, ulnarForearmProgressForText, ulnarForearmMax, ulnarForearmProgress, forearmFlexorsProgressForText, forearmFlexorsMax, forearmFlexorsProgress, radialForearmProgressForText, radialForearmMax, radialForearmProgress, spinalErectorsProgressForText, spinalErectorsMax, spinalErectorsProgress, upperTrapsProgressForText, upperTrapsMax, upperTrapsProgress, lowerTrapsProgressForText, lowerTrapsMax, lowerTrapsProgress]
+        
+        
         videos =  createArray(vtData: VtData)
-       
-    }
+        }
     
     
     func createArray(vtData: [Float]) -> [Video] {
@@ -548,6 +577,8 @@ class VideoListScreen: UIViewController {
         let exercise24 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Upper Traps",      progressText: String(String(VtData[69]) + "/" + String(VtData[70])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[71])
         let exercise25 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lower Traps",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: "MAV: 12-20 FREQ: 2-6",  progressFloat: vtData[74])
         let exercise26 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title:"Reset All",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: " ",  progressFloat: vtData[74])
+        
+        
         //Premium
 //        let exercise26 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Brachialis", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
 //        let exercise27 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Extension", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
@@ -560,10 +591,14 @@ class VideoListScreen: UIViewController {
                 exercise9, exercise10, exercise11, exercise12, exercise13, exercise14, exercise15, exercise16,
                 exercise17, exercise18, exercise19, exercise20, exercise21, exercise22, exercise23, exercise24, exercise25, exercise26]
     }
-}
     
-  
-
+    func styleButton(button: UIButton){
+        button.backgroundColor = .clear
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.lightGray.cgColor
+    }
+    
+}
 
 extension VideoListScreen: VideoCellDelegate {
     
@@ -571,7 +606,9 @@ extension VideoListScreen: VideoCellDelegate {
         if (title == "Reset All"){
            
             defaults.removeObject(forKey: Keys.chestProgress)
+            defaults.removeObject(forKey: Keys.chestProgressInt)
             defaults.removeObject(forKey: Keys.bicepsProgress)
+            defaults.removeObject(forKey: Keys.bicepsProgressInt)
             defaults.removeObject(forKey: Keys.latsProgress)
             defaults.removeObject(forKey: Keys.glutesProgress)
             defaults.removeObject(forKey: Keys.gluteMediusProgress)
@@ -598,7 +635,7 @@ extension VideoListScreen: VideoCellDelegate {
             defaults.removeObject(forKey: Keys.lowerTrapsProgress)
 
             reloadInputViews()
-           // viewDidLoad()
+
         } else {
             
        let muscleGroup = String(title)
@@ -630,7 +667,84 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      
+        let index = [indexPath.row]
+        
+        if (index == [0]){
+            let muscleString = "Chest"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [1]){
+            let muscleString = "Biceps"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [2]){
+            let muscleString = "Lats"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [3]){
+            let muscleString = "Glutes"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [4]){
+            let muscleString = "Glute Medius"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [5]){
+            let muscleString = "Hamstrings"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [6]){
+            let muscleString = "Front Shoulder"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [7]){
+            let muscleString = "Lateral Shoulder"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [8]){
+            let muscleString = "Back Shoulder"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [9]){
+            let muscleString = "Rotator Cuff"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [10]){
+            let muscleString = "Triceps"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [11]){
+            let muscleString = "Quads"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [12]){
+            let muscleString = "Abs"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [13]){
+            let muscleString = "Obliques"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [14]){
+            let muscleString = "Serratus"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [15]){
+            let muscleString = "Transverse Ab"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [16]){
+            let muscleString = "Calves"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [17]){
+            let muscleString = "Neck"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [18]){
+            let muscleString = "Forearm Extensors"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [19]){
+            let muscleString = "Ulnar Forearm"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [20]){
+            let muscleString = "Forearm Flexors"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [21]){
+            let muscleString = "Radial Forearm"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [22]){
+            let muscleString = "Spinal Erectors"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [23]){
+            let muscleString = "Upper Traps"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        } else if (index == [24]){
+            let muscleString = "Lower Traps"
+            defaults.set(muscleString, forKey: Keys.muscleString)
+        }
        }
 }
 

@@ -15,23 +15,7 @@ class ViewController: UIViewController{
    // change body fat image with button programmatically jUSTINO 6/30/20 9:02 PM
     
     @IBOutlet weak var  maleChartImage: UIImageView!
-    
-    //handle selection for  navigating drop menu 6/29/20 JUstino 10:23 pm
 
-//    @IBOutlet var collectionTest1: [UIButton]!
-//    
-//    
-//    @IBAction func handleCollection(_ sender: UIButton) {
-//        collectionTest1.forEach {( buttons) in
-//            collectionTest1.isHidden = !collectionTest1.isHidden
-//            sender.isHidden = !sender.isHidden
-//        }
-//        
-//    }
-//
-//    @IBAction func handleTapped(_ sender: UIButton) {
-//    }
-    
     
     
     
@@ -92,9 +76,10 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //declaration of MALECHART IMAGE existence JUSTINO 6/30/20 9:47 PM
-     //   maleChartImage.image = UIImage(named: "Male Bf Chart")
-        
+        //STYLE buttons
+    
+        styleButton(button: NextButton)
+        NextButton.layer.cornerRadius = 15
         
         // checkForSavedtextField()
         textField1.delegate = self
@@ -147,7 +132,7 @@ class ViewController: UIViewController{
         if(checkTextfield()){
                   //SAVE DAT AND NAVIGATE TO NEXT VIEW
             let bodyWeight = Double(textField1.text!)
-                   defaults.set(bodyWeight, forKey: Keys.bodyWeight)
+            defaults.set(bodyWeight, forKey: Keys.bodyWeight)
             let heightBig = Double(textField2.text!)
             defaults.set(heightBig, forKey: Keys.heightBig)
             let heightSmall = Double(textField3.text!)
@@ -172,12 +157,8 @@ class ViewController: UIViewController{
                self.show(calculatingPerfection, sender: self)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-
-                //self.show(calculatingPerfection, sender: self)
-
             self.dismiss(animated: true, completion: nil)
             }
-                 //  checkForDat)
               } else {
                  //SHOW ERROR MESSAGE
             let alert = UIAlertController(title: "Missing Information", message: "Please input all information. Notice \"activity level\" is a picker", preferredStyle: UIAlertController.Style.alert)
@@ -196,7 +177,6 @@ class ViewController: UIViewController{
         testMaleButton.isSelected = !testMaleButton.isSelected;
         if(testFemaleButton.isSelected){
             testFemaleButton.sendActions(for: .touchUpInside)
-            //testFemaleButton.isSelected = false
         }
     
     }
@@ -205,7 +185,6 @@ class ViewController: UIViewController{
         testFemaleButton.isSelected = !testFemaleButton.isSelected;
         if(testMaleButton.isSelected){
             testMaleButton.sendActions(for: .touchUpInside)
-            //testFemaleButton.isSelected = false
         }
     }
  
@@ -215,25 +194,25 @@ class ViewController: UIViewController{
             unitsBool = false
             
 
-               textField1.attributedPlaceholder = NSAttributedString(string: "Pounds",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField1.attributedPlaceholder = NSAttributedString(string: "Pounds",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
                 
-                 textField2.attributedPlaceholder = NSAttributedString(string: "Feet",
+            textField2.attributedPlaceholder = NSAttributedString(string: "Feet",
                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
                 
-                 textField3.attributedPlaceholder = NSAttributedString(string: "Inches",
+            textField3.attributedPlaceholder = NSAttributedString(string: "Inches",
                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
             break
         case 1:
             unitsBool = true
             textField1.attributedPlaceholder = NSAttributedString(string: "Kilos",
-                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
                            
-                            textField2.attributedPlaceholder = NSAttributedString(string: "Meters",
-                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField2.attributedPlaceholder = NSAttributedString(string: "Meters",
+                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
                            
-                            textField3.attributedPlaceholder = NSAttributedString(string: "Centimeters",
-                              attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField3.attributedPlaceholder = NSAttributedString(string: "Centimeters",
+                        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         default:
             unitsBool = false
         }
@@ -273,23 +252,23 @@ class ViewController: UIViewController{
         }
     }
      
-  
+  func styleButton(button: UIButton){
+         button.backgroundColor = .clear
+         button.layer.borderWidth = 1
+         button.layer.borderColor = Colors.aXGreen.cgColor
+     }
     
     func createToolbar(){
         
         //KEVIN JIMENEZ 06/19/2020 MAKE THE TOOLBAR FOR THE PICKER VIEW
         let activityPickerToolBar = UIToolbar()
         activityPickerToolBar.sizeToFit()
-        
         //Toolbar Color
         activityPickerToolBar.barTintColor = .black
         activityPickerToolBar.tintColor = Colors.aXGreen
-        
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,
                                          action: #selector(ViewController.dismissKeyboard))
-        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-
         activityPickerToolBar.setItems([flexibleSpace, doneButton], animated: false)
         activityPickerToolBar.isUserInteractionEnabled =  true
         
@@ -351,16 +330,12 @@ class ViewController: UIViewController{
 extension ViewController : UITextFieldDelegate {
  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return textField.shouldChangeCustomOtp(textField: textField, string: string)
-
     }
 }
 
 extension UITextField {
     func shouldChangeCustomOtp(textField:UITextField, string: String) ->Bool {
-
-//      
         return true
-
     }
 
 }

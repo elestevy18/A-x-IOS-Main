@@ -6,6 +6,7 @@ target 'A(x) Master' do
   use_frameworks!
 
   # Pods for A(x) Master
+	pod 'Charts'
 
   target 'A(x) MasterTests' do
     inherit! :search_paths

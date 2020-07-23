@@ -12,6 +12,7 @@ class BodyFatChartViewController: UIViewController {
     //variable declarations
     
     
+    
     @IBOutlet weak var swipeImageView: UIImageView!
     // Type in the names of your images below
     let imageNames = ["Female Chart.png","Male Chart.jpg"]

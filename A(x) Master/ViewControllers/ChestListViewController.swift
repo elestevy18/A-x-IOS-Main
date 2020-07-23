@@ -302,7 +302,7 @@ class ChestListViewController: UIViewController {
     
     func createLatsArray() -> [Exercises] {
         let exercise0 = Exercises(title: "Lats", musclesWorked: "One set towards Lats")
-         //Netral Position
+         //Neutral Position
         let exercise1 = Exercises(title: "Bench Press",             musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid")
         let exercise2 = Exercises(title: "Dumbell Bench Press",     musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid")
         let exercise3 = Exercises(title: "Machine Chest Press",     musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid")
