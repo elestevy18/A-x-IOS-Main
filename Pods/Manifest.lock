@@ -2,21 +2,33 @@ PODS:
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
+  - Floaty (4.2.0)
   - IQKeyboardManagerSwift (6.5.5)
+  - youtube-ios-player-helper (1.0.2)
+  - YoutubePlayer-in-WKWebView (0.2.5)
 
 DEPENDENCIES:
   - Charts
+  - Floaty (~> 4.2.0)
   - IQKeyboardManagerSwift
+  - youtube-ios-player-helper (~> 1.0.2)
+  - YoutubePlayer-in-WKWebView (~> 0.2.0)
 
 SPEC REPOS:
   trunk:
     - Charts
+    - Floaty
     - IQKeyboardManagerSwift
+    - youtube-ios-player-helper
+    - YoutubePlayer-in-WKWebView
 
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  youtube-ios-player-helper: 40b96e52c22445f0fdc43731cefa32c67075ff81
+  YoutubePlayer-in-WKWebView: 4dad12b3ece938a6456fa4374df78942f88b485a
 
-PODFILE CHECKSUM: a9a8c14358c4d460e9b2dd621ece2ae6ce44169e
+PODFILE CHECKSUM: 8b48abe5af4447aa3b75150bb2d046a9b3d72bc6
 
 COCOAPODS: 1.9.3

@@ -11,14 +11,7 @@ import IQKeyboardManagerSwift
 
 
 class ViewController: UIViewController{
-    
-   // change body fat image with button programmatically jUSTINO 6/30/20 9:02 PM
-    
-    @IBOutlet weak var  maleChartImage: UIImageView!
 
-    
-    
-    
     //Outlet for picker textfields
     
     @IBOutlet weak var activityLevelTextField: UITextField!
@@ -31,7 +24,8 @@ class ViewController: UIViewController{
     @IBOutlet var textField4: UITextField! // Experience
     @IBOutlet var textField5: UITextField! // Composition
     @IBOutlet var textField6: UITextField! // Age
-  
+    @IBOutlet weak var textField7: UITextField!
+    
     // KEVIN JIMENEZ 06/21/2020 METRIC OR IMPOERIAL OUTLET
     
     @IBOutlet var impOrMetric: UISegmentedControl!
@@ -75,7 +69,72 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //KEVIN JIMENEZ 06/21/2020 Set textfield to imperial by default
+               
+               textField1.attributedPlaceholder = NSAttributedString(string: "Pounds",
+               attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+               
+               textField2.attributedPlaceholder = NSAttributedString(string: "Feet",
+               attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+               
+               textField3.attributedPlaceholder = NSAttributedString(string: "Inches",
+               attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
        
+        //Set metric sgmented control selection based on memory
+        //And download info if previosly filled
+        let bodyWeight  = defaults.double(forKey: Keys.bodyWeight)
+        let heightBig   = defaults.double(forKey: Keys.heightBig)
+        let heightSmall = defaults.double(forKey: Keys.heightSmall)
+        let experience  = defaults.double(forKey: Keys.experience)
+        let composition = defaults.double(forKey: Keys.composition)
+        let age         = defaults.double(forKey: Keys.age)
+        let sex         = defaults.bool(forKey: Keys.sex)
+        let units       = defaults.bool(forKey: Keys.unitsBool)
+        var activityMultiplier = defaults.string(forKey: Keys.activityLevel)
+        
+        if (!(bodyWeight == 0.00)){
+            textField1.attributedPlaceholder = NSAttributedString(string: String(bodyWeight),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        if (!(heightBig == 0.00)){
+            textField2.attributedPlaceholder = NSAttributedString(string: String(heightBig),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        if (!(heightSmall == 0.00)){
+            textField3.attributedPlaceholder = NSAttributedString(string: String(heightSmall),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        if (!(experience == 0.00)){
+            textField4.attributedPlaceholder = NSAttributedString(string: String(experience),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        if (!(composition == 0.00)){
+            textField5.attributedPlaceholder = NSAttributedString(string: String(composition),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        if (!(age == 0.00)){
+            print(age)
+            textField6.attributedPlaceholder = NSAttributedString(string: String(age),
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        }
+        
+        if (!(activityMultiplier == "")){
+            textField7.text = activityMultiplier
+        }
+        
+        if (sex){
+            testMaleButton.isSelected = true
+        } else if(!(sex)){
+            testFemaleButton.isSelected = true
+        }
+ 
+        
+        
+        
+        if(units){
+            impOrMetric.selectedSegmentIndex = 1
+        }
         //STYLE buttons
     
         styleButton(button: NextButton)
@@ -110,21 +169,7 @@ class ViewController: UIViewController{
         createALPicker()
         createToolbar()
         
-        //KEVIN JIMENEZ 06/21/2020 Set textfield to imperial by default
-        
-       textField1.attributedPlaceholder = NSAttributedString(string: "Pounds",
-    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
-         textField2.attributedPlaceholder = NSAttributedString(string: "Feet",
-           attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        
-         textField3.attributedPlaceholder = NSAttributedString(string: "Inches",
-           attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-
-        
-        
-        // For textfield bool
-        
+       
       
     }
     
@@ -153,8 +198,8 @@ class ViewController: UIViewController{
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let calculatingPerfection = storyboard.instantiateViewController(identifier: "calculatingPerfection")
-            //self.present(calculatingPerfection, animated: true, completion: nil)
-               self.show(calculatingPerfection, sender: self)
+            
+            self.show(calculatingPerfection, sender: self)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.dismiss(animated: true, completion: nil)
@@ -165,10 +210,7 @@ class ViewController: UIViewController{
                           alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                           self.present(alert, animated: true, completion: nil)
               }
-        
     }
-    
-
     
     //test male button tapped
     
@@ -192,8 +234,6 @@ class ViewController: UIViewController{
         switch sender.selectedSegmentIndex{
         case 0:
             unitsBool = false
-            
-
             textField1.attributedPlaceholder = NSAttributedString(string: "Pounds",
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
                 
@@ -216,20 +256,7 @@ class ViewController: UIViewController{
         default:
             unitsBool = false
         }
-        
     }
-    
-    
-    
-    // KEVIN JIMENEZ 06/19/2020 Place functions below here.
-    
-    
-    //CONDITIONAL TO TEST IF TEXTFIELD INPUT IS VALID
-  //   func isBvalidBW (test:String) ->Bool{
-   //        // your email validation here...
-    //       return true
-    //   }
-    
     
     func createALPicker(){
         let ALPicker = UIPickerView()
@@ -259,7 +286,6 @@ class ViewController: UIViewController{
      }
     
     func createToolbar(){
-        
         //KEVIN JIMENEZ 06/19/2020 MAKE THE TOOLBAR FOR THE PICKER VIEW
         let activityPickerToolBar = UIToolbar()
         activityPickerToolBar.sizeToFit()
@@ -271,9 +297,6 @@ class ViewController: UIViewController{
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         activityPickerToolBar.setItems([flexibleSpace, doneButton], animated: false)
         activityPickerToolBar.isUserInteractionEnabled =  true
-        
-        
-        
     }
     
     @objc func dismissKeyboard(){
@@ -290,23 +313,16 @@ class ViewController: UIViewController{
         }
         
         func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-           
             return activityLevel.count
-          
         }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
                        return activityLevel[row]
-                       
-           
         }
         
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            
-   
                                  selectedActivityLevel =  activityLevel[row]
                                  activityLevelTextField.text = selectedActivityLevel
-                               
         }
         
         func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -316,15 +332,11 @@ class ViewController: UIViewController{
             } else {
                 label = UILabel()
             }
-            
             label.textColor = .white
             label.textAlignment = .center
             label.text = activityLevel[row]
-            
             return label
         }
-        
-     
     }
 
 extension ViewController : UITextFieldDelegate {
@@ -337,6 +349,5 @@ extension UITextField {
     func shouldChangeCustomOtp(textField:UITextField, string: String) ->Bool {
         return true
     }
-
 }
 

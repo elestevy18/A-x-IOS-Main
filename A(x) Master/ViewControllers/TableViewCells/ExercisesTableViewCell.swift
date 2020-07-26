@@ -42,7 +42,6 @@ class ExercisesTableViewCell: UITableViewCell {
         delegate?.didTapAddSet(title: exercisesItem.title)
     }
 
-    
- 
+
     
 }

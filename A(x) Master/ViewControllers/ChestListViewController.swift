@@ -1215,8 +1215,75 @@ func didTapAddSet(title: String) {
     
     //ADD CODE TO OPEN ADD SET WINDOW FOR PROPER EXERCISE
     //Each else bracket identifies the exercise that was click and stores its corersponding volume into variable in the format musclegroupTally. I tried abstracting a function but failed sorry future self/ coders
-
-     if (title == "Chest"){
+    // TODO Pullover and dips
+    let chestPressList = ["Bench Press", "Dumbell Bench Press", "Machine Chest Press", "Neutral Cable Press", "Push-Ups"]
+    let inclineChestPressList = ["Incline Bench Press", "Incline Dumbell Bench Press", "Incline Machine Chest Press", "Incline Cable Press"]
+    let declineChestPressList = ["Decline Bench Press", "Decline Dumbell Bench Press",  "Decline Cable Press"]
+    let chestIsolation = ["Neutral Crossover Flyes", "Incline Crossover Flyes", "Decline Crossover Flyes", "Chest"]
+    //Upper Traps missing Inverted Y
+    let upperTrapList = [ "Dumbell Shrugs", "Trap Bar Shrugs", "Farmer Walk", "Trap Pushaway"]
+    //Lower Traps  TODO Angel of Death
+    let lowerTrapIsolation = ["Y Raise, Floor/Dip Bar Scapular Depression", "Hanging/Cable Scapular Retraction", "Lower Trap"]
+    let facePullList = ["Facepulls", "Ring Facepulls", "W's"]
+    //Post Delt
+    let postDeltIsolation = ["Posterior Deltoid", "Floor T's", "Dumbbell High Pull"]
+    let postDeltlowerTrapList = ["Reverse Pec Dec", "Barbell/Dumbbell High Rows", "Banded Pull Aparts"]
+    //Lateral Delt
+    let medialDeltisolation = [ "Medial Deltoid", "Cable Lateral Raise", "Machine Lateral Riase", "Cheat Lateral Raise", "Lateral Raise", "Delt Rotating Plank", "Banded Lateral Raise"]
+    //Ant Delt
+    let anteriorDeltIsolation = ["Anterior Deltoid", "Cable Front Raise"]
+    let oHPList = ["Arnolds", "Barbell Overhead Press", "Dumbbell OHP", "Cable Stretch to OHP", "Landmine Press", "Machine Shoulder Press", "Push Press", "Pike Pushup", "Handstand Pushup"]
+    //Rotator Cuff TODO just rotator cuff
+    let rotatorCuffExtensorList = ["Cable External Rotation, Bench Dumbbell External Rotation", "Banded External Rotation"]
+    //Triceps TODO Narrow Dip
+    let triceps = ["Triceps", "Incline Skullcrushers", "Cable Rope Pushdowns", "V Bar Pushdowns", "Rope Overhead Triceps Extensions", "Long Head Triceps Push Downs", "Triceps Kickbacks", "Triceps Extension", "Ring Overhead Extension", "Bench Dip"]
+    let tricepHalfChestDeltList = ["California Press", "Close Grip Dumbbell Press", "Narrow Pushup"]
+    //Ulnar Forearm
+    let ulnarForearmList = ["Ulnar Forearm", "Rope Ulnar Deviation", "Banded Ulnar Deviation"]
+    //Forearm Extensors
+    let forearmExtensors = ["Forearm Extensors", "Standing Barbell Wrist Extension", "Barbell Extension Rolls", "Reverse Curls", "Banded Wrist Extension"]
+    //Forearm Flexors
+    let forearmFlexors = ["Forearm Flexors", "Prone Wrist Curls", "Wrist Flexed Curls", "Banded Wrist Curls"]
+    //Radial Forearm
+    let radialForearm = ["Radial Forearm", "Rope Radial Deviation", "Hammer/Crossbody Curls", "Banded Radial Deviation", "Re-racking your plates"]
+    //Lats TODO Chin Ups
+    let latsIsolation = ["Lats", "Pull Ins"]
+    let latTricepsList = ["Lat Pull Over", "Lat Pushdowns", "Front Levers"]
+    //wathc out this one is super compound
+    let latLowerTrapList = ["Cable Pulldown", "High Pulley Row", "Chest Suppported Rows", "Pull Ups", "Ring Rows", "Australian Pull Ups"]
+    let latLowerTrapErectorList = ["Barbell Rows, Cable Rows"]
+    //Erectors  TODO deadlift, squats, frog pumps, angels of death, marching bridge
+    let erectors = ["Erectors", "Hyperextension", "Machine Erector Extension"]
+    //Glutes TODO Glutes Hip thrust, reverse hyperextension, banded rdl, BW hip thrust
+    let gluteGlutemediusSHamstringsList = ["Isolateral Hip Thrust", "Sprinter Lunge"]
+    let glutesSHamstringsGlutemediusList = ["Cable Pull Through", "Glute Hyperextension", "Kettlebell/Dumbbell Swing", "Cable Kick Backs"]
+    //GluteMedius TODO Glute side plank
+    let gluteMediusList = ["Glute Medius", "Machine Abduction", "Banded Lateral Walkout", "Banded Abduction"]
+    //Hamstrings TODO hamstrings
+    let hamstringsSGlutesErectorsList = ["Romanian Deadlift", "Deficit Deadlift", "Hamstring Hyperextension", "Glute Ham Raise", "Physioball Hamstring Curls"]
+    let isoHamstringsSGlutesErectorsList = ["Isolateral Hamstring Curls", "Single Leg Romanian Deadlift"]
+    //CAlves
+    let calvesList = ["Calves", "Machine Standing Calf Raise", "Straight Leg Machine Calf Raise", "Seated Calf Raise", "Donkey Calf Raise", "Dumbell/Plated Calf Raise", "Bodyweight Calf Raise"]
+    //Bicep  TODO hammer Curls
+    let curlsList = ["Dumbbell Curls", "Narrow Dumbbell Curls", "Wide Dumbbell Curls", "Barbell Curls", "Narrow Barbell Curls", "Wide Barbell Curls", "Narrow EZ Bar Curls", "Wide EZ Bar Curls", "Preacher Curls", "Cable/Dumbbell Spider Curls", "Banded Curls"]
+    let bicepIsolation = ["Biceps", "Bicep Isometric", "Limp Wrist Curls"]
+    //Serratus
+    let serratusIsolationList = ["Serratus Anterior", "Plank Protraction", "Banded/Cable Punches"]
+    let serratusAbsSTransverseList = ["Protracted Roll Out", "Protracted Cable Crunch"]
+    //Abs  Ab Circles
+    let absTrnasverse = ["Abs", "Leg Raises", "Reverse Crunches", "Pulse Up", "Cable Crunch", "Band Crunch", "V-Up", "Ab Rollout"]
+    //Obliques  leg raise scissors obliques
+    let obliquesTransAbList = ["Neutral Wood Choppers", "Low to High Wood Choppers", "High to Low Wood Choppers", "Banded/Cable Step Out", "Banded/Cable/Resisted Rotation"]
+    let obliquesTransAbsSAb = ["Twisting Leg Raise", "Elbow to Knee Tuck", "Rotating Plank", "Elbow to Knee Plank", "Twisting Pulse Up", "X-Crunch"]
+    //Transverse Ab
+    let transverseAbList = ["Transverse Ab", "Vacuums"]
+    //Quads pistol squat BW Squats lunges
+    let quadsList = ["Quads", "Cable Walkaways", "Leg Press", "Wall Sit", "Banded Lunge"]
+    let quadsGlutemedius = ["Banded Leg Press", "Side Lunge"]
+    let quadsSGlutemedius = ["Explosive Bulgarian Split Squats", "Traditional Lunge", "Bulgarian Split Squat"]
+    
+    
+     if (chestIsolation.contains(title)){
                           //  1. Create the alert controller.
                           let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
                           //2. Add the text field. You can configure it however you need.
@@ -1236,7 +1303,7 @@ func didTapAddSet(title: String) {
                           }))
                           // 4. Present the alert.
                           self.present(alert, animated: true, completion: nil)
-     } else if (title == "Bench Press"){
+     } else if (chestPressList.contains(title)){
 
                                  //  1. Create the alert controller.
                                  let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1256,11 +1323,15 @@ func didTapAddSet(title: String) {
                                  var tricepTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
                                  tricepTallyFloat = (chestTallyFloat ?? 0) / 2
                                  self.defaults.set(tricepTallyFloat, forKey: Keys.tricepsTally)
+                                 var frontShoulderTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 frontShoulderTallyFloat = (chestTallyFloat ?? 0) / 2
+                                 self.defaults.set(frontShoulderTallyFloat, forKey: Keys.frontShoulderTally)
+                                    
                                  self.goToVolumeTracker()
                                  }))
                                  // 4. Present the alert.
                                  self.present(alert, animated: true, completion: nil)
-    } else if (title == "Biceps"){
+     } else if (inclineChestPressList.contains(title)){
 
                                  //  1. Create the alert controller.
                                  let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1273,16 +1344,21 @@ func didTapAddSet(title: String) {
                                  // 3. Grab the value from the text field, and print it when the user clicks OK.
                                  alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                    //CAST STRING INPUT TO FLOAT
-                                 let bicepsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                 var bicepsTallyFloat:Float? = Float(bicepsTallyString?.text ?? "0")
-                                 bicepsTallyFloat = (bicepsTallyFloat ?? 0)
-                                 self.defaults.set(bicepsTallyFloat, forKey: Keys.bicepsTally)
+                                let chestTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                 var chestTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 chestTallyFloat = (chestTallyFloat ?? 0)
+                                 self.defaults.set(chestTallyFloat, forKey: Keys.chestTally)
+                                 var tricepTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 tricepTallyFloat = (chestTallyFloat ?? 0) / 2
+                                 self.defaults.set(tricepTallyFloat, forKey: Keys.tricepsTally)
+                                 var frontShoulderTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 self.defaults.set(frontShoulderTallyFloat, forKey: Keys.frontShoulderTally)
                                
                                  self.goToVolumeTracker()
                                  }))
                                  // 4. Present the alert.
                                  self.present(alert, animated: true, completion: nil)
-    } else if (title == "Lats"){
+     } else if (declineChestPressList.contains(title)){
 
                                  //  1. Create the alert controller.
                                  let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1295,16 +1371,19 @@ func didTapAddSet(title: String) {
                                  // 3. Grab the value from the text field, and print it when the user clicks OK.
                                  alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                    //CAST STRING INPUT TO FLOAT
-                                 let latsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                 var latsTallyFloat:Float? = Float(latsTallyString?.text ?? "0")
-                                 latsTallyFloat = (latsTallyFloat ?? 0)
-                                 self.defaults.set(latsTallyFloat, forKey: Keys.latsTally)
+                               let chestTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                 var chestTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 chestTallyFloat = (chestTallyFloat ?? 0)
+                                 self.defaults.set(chestTallyFloat, forKey: Keys.chestTally)
+                                 var tricepTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                                 tricepTallyFloat = (chestTallyFloat ?? 0) / 2
+                                 self.defaults.set(tricepTallyFloat, forKey: Keys.tricepsTally)
                                
                                  self.goToVolumeTracker()
                                  }))
                                  // 4. Present the alert.
                                  self.present(alert, animated: true, completion: nil)
-    } else if (title == "Glutes"){
+     } else if (upperTrapList.contains(title)){
 
                                 //  1. Create the alert controller.
                                 let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1317,16 +1396,16 @@ func didTapAddSet(title: String) {
                                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                 //CAST STRING INPUT TO FLOAT
-                                let glutesTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                var glutesTallyFloat:Float? = Float(glutesTallyString?.text ?? "0")
-                                glutesTallyFloat = (glutesTallyFloat ?? 0)
-                                self.defaults.set(glutesTallyFloat, forKey: Keys.glutesTally)
+                                let upperTrapsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var upperTrapsTallyFloat:Float? = Float(upperTrapsTallyString?.text ?? "0")
+                                upperTrapsTallyFloat = (upperTrapsTallyFloat ?? 0)
+                                self.defaults.set(upperTrapsTallyFloat, forKey: Keys.upperTrapsTally)
                             
                                 self.goToVolumeTracker()
                                 }))
                             // 4. Present the alert.
                                 self.present(alert, animated: true, completion: nil)
-    } else if (title == "Glute Medius"){
+     } else if (lowerTrapIsolation.contains(title)){
 
                                 //  1. Create the alert controller.
                                 let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1339,16 +1418,16 @@ func didTapAddSet(title: String) {
                                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                 //CAST STRING INPUT TO FLOAT
-                                let gluteMediusTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                var gluteMediusTallyFloat:Float? = Float(gluteMediusTallyString?.text ?? "0")
-                                gluteMediusTallyFloat = (gluteMediusTallyFloat ?? 0)
-                                self.defaults.set(gluteMediusTallyFloat, forKey: Keys.gluteMediusTally)
+                                let lowerTrapsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var lowerTrapsTallyFloat:Float? = Float(lowerTrapsTallyString?.text ?? "0")
+                                lowerTrapsTallyFloat = (lowerTrapsTallyFloat ?? 0)
+                                self.defaults.set(lowerTrapsTallyFloat, forKey: Keys.lowerTrapsTally)
                                 
                                 self.goToVolumeTracker()
                                 }))
                                 // 4. Present the alert.
                                 self.present(alert, animated: true, completion: nil)
-    } else if (title == "Hamstrings"){
+     } else if (facePullList.contains(title)){
 
                                 //  1. Create the alert controller.
                                 let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1361,17 +1440,28 @@ func didTapAddSet(title: String) {
                                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                 //CAST STRING INPUT TO FLOAT
-                                let hamstringsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                var hamstringsTallyFloat:Float? = Float(hamstringsTallyString?.text ?? "0")
-                                hamstringsTallyFloat = (hamstringsTallyFloat ?? 0)
-                                self.defaults.set(hamstringsTallyFloat, forKey: Keys.hamstringsTally)
+                                let rotatorCuffTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var rotatorCuffTallyFloat:Float? = Float(rotatorCuffTallyString?.text ?? "0")
+                                rotatorCuffTallyFloat = (rotatorCuffTallyFloat ?? 0)
+                                self.defaults.set(rotatorCuffTallyFloat, forKey:
+                                    Keys.rotatorCuffTally)
+                                let backShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var backShoulderTallyFloat:Float? = Float(backShoulderTallyString?.text ?? "0")
+                                backShoulderTallyFloat = (backShoulderTallyFloat ?? 0)
+                                self.defaults.set(backShoulderTallyFloat, forKey:
+                                    Keys.backShoulderTally)
+                                let lowerTrapsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var lowerTrapsTallyFloat:Float? = Float(lowerTrapsTallyString?.text ?? "0")
+                                lowerTrapsTallyFloat = (lowerTrapsTallyFloat ?? 0)
+                                self.defaults.set(lowerTrapsTallyFloat, forKey:
+                                    Keys.lowerTrapsTally)
                                             
                                 self.goToVolumeTracker()
                                 }))
                                 // 4. Present the alert.
                                 self.present(alert, animated: true, completion: nil)
         
-     }  else if (title == "Front Shoulder"){
+     }  else if (postDeltIsolation.contains(title)){
 
                                 //  1. Create the alert controller.
                                 let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1384,10 +1474,10 @@ func didTapAddSet(title: String) {
                                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                 //CAST STRING INPUT TO FLOAT
-                                let frontShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                var frontShoulderTallyFloat:Float? = Float(frontShoulderTallyString?.text ?? "0")
-                                frontShoulderTallyFloat = (frontShoulderTallyFloat ?? 0)
-                                self.defaults.set(frontShoulderTallyFloat, forKey: Keys.frontShoulderTally)
+                                let backShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var backShoulderTallyFloat:Float? = Float(backShoulderTallyString?.text ?? "0")
+                                backShoulderTallyFloat = (backShoulderTallyFloat ?? 0)
+                                self.defaults.set(backShoulderTallyFloat, forKey: Keys.backShoulderTally)
                                                                             
                                 self.goToVolumeTracker()
                                 }))
@@ -1395,7 +1485,7 @@ func didTapAddSet(title: String) {
                                 self.present(alert, animated: true, completion: nil)
                                 } else if (title == "Front Shoulder"){
         
-    } else if (title == "Lateral Shoulder"){
+     } else if (postDeltlowerTrapList.contains(title)){
 
                                 //  1. Create the alert controller.
                                 let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1408,16 +1498,21 @@ func didTapAddSet(title: String) {
                                 // 3. Grab the value from the text field, and print it when the user clicks OK.
                                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                 //CAST STRING INPUT TO FLOAT
-                                let lateralShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                var lateralShoulderTallyFloat:Float? = Float(lateralShoulderTallyString?.text ?? "0")
-                                lateralShoulderTallyFloat = (lateralShoulderTallyFloat ?? 0)
-                                self.defaults.set(lateralShoulderTallyFloat, forKey: Keys.lateralShoulderTally)
+                                let backShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var backShoulderTallyFloat:Float? = Float(backShoulderTallyString?.text ?? "0")
+                                backShoulderTallyFloat = (backShoulderTallyFloat ?? 0)
+                                self.defaults.set(backShoulderTallyFloat, forKey: Keys.backShoulderTally)
+                                let lowerTrapTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                var lowerTrapTallyFloat:Float? = Float(lowerTrapTallyString?.text ?? "0")
+                                lowerTrapTallyFloat = (lowerTrapTallyFloat ?? 0)
+                                self.defaults.set(lowerTrapTallyFloat, forKey: Keys.lowerTrapsTally)
+                                
                                                                                
                                 self.goToVolumeTracker()
                                 }))
                                 // 4. Present the alert.
                                 self.present(alert, animated: true, completion: nil)
-     } else if (title == "Back Shoulder"){
+     } else if (medialDeltisolation.contains(title)){
 
                                  //  1. Create the alert controller.
                                  let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1430,10 +1525,10 @@ func didTapAddSet(title: String) {
                                  // 3. Grab the value from the text field, and print it when the user clicks OK.
                                  alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                  //CAST STRING INPUT TO FLOAT
-                                 let backShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                 var backShoulderTallyFloat:Float? = Float(backShoulderTallyString?.text ?? "0")
-                                 backShoulderTallyFloat = (backShoulderTallyFloat ?? 0)
-                                 self.defaults.set(backShoulderTallyFloat, forKey: Keys.backShoulderTally)
+                                 let lateralShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                 var lateralShoulderTallyFloat:Float? = Float(lateralShoulderTallyString?.text ?? "0")
+                                 lateralShoulderTallyFloat = (lateralShoulderTallyFloat ?? 0)
+                                 self.defaults.set(lateralShoulderTallyFloat, forKey: Keys.lateralShoulderTally)
                                                                                 
                                  self.goToVolumeTracker()
                                  }))
@@ -1441,7 +1536,7 @@ func didTapAddSet(title: String) {
                                  self.present(alert, animated: true, completion: nil)
         
            
-       }  else if (title == "Rotator Cuff"){
+     }  else if (anteriorDeltIsolation.contains(title)){
 
                                        //  1. Create the alert controller.
                                        let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1454,18 +1549,78 @@ func didTapAddSet(title: String) {
                                        // 3. Grab the value from the text field, and print it when the user clicks OK.
                                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                                        //CAST STRING INPUT TO FLOAT
-                                       let rotatorCuffTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                                       var rotatorCuffTallyFloat:Float? = Float(rotatorCuffTallyString?.text ?? "0")
-                                       rotatorCuffTallyFloat = (rotatorCuffTallyFloat ?? 0)
-                                       self.defaults.set(rotatorCuffTallyFloat, forKey: Keys.rotatorCuffTally)
+                                       let frontShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                                       var frontShoulderTallyFloat:Float? = Float(frontShoulderTallyString?.text ?? "0")
+                                       frontShoulderTallyFloat = (frontShoulderTallyFloat ?? 0)
+                                       self.defaults.set(frontShoulderTallyFloat, forKey: Keys.frontShoulderTally)
                                                                                       
                                        self.goToVolumeTracker()
                                        }))
                                        // 4. Present the alert.
                                        self.present(alert, animated: true, completion: nil)
         
-        } else if (title == "Triceps"){
+     } else if (oHPList.contains(title)){
 
+                            //  1. Create the alert controller.
+                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
+                            //2. Add the text field. You can configure it however you need.
+                            alert.addTextField { (textField) in
+                            textField.text = "Input amount of sets"
+                            textField.keyboardType = .numberPad
+                            textField.clearsOnBeginEditing = true
+                            }
+                            // 3. Grab the value from the text field, and print it when the user clicks OK.
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                            //CAST STRING INPUT TO FLOAT
+                            let frontShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var frontShoulderTallyFloat:Float? = Float(frontShoulderTallyString?.text ?? "0")
+                            frontShoulderTallyFloat = (frontShoulderTallyFloat ?? 0)
+                            self.defaults.set(frontShoulderTallyFloat, forKey:
+                                Keys.frontShoulderTally)
+                            let tricepsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var tricepsTallyFloat:Float? = Float(tricepsTallyString?.text ?? "0")
+                            tricepsTallyFloat = (tricepsTallyFloat ?? 0)
+                            self.defaults.set(tricepsTallyFloat, forKey:
+                                Keys.tricepsTally)
+                            let lateralShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var lateralShoulderTallyFloat:Float? = Float(lateralShoulderTallyString?.text ?? "0")
+                            lateralShoulderTallyFloat = (lateralShoulderTallyFloat ?? 0)
+                            self.defaults.set(lateralShoulderTallyFloat, forKey:
+                                Keys.lateralShoulderTally)
+                                                                           
+                            self.goToVolumeTracker()
+                            }))
+                            // 4. Present the alert.
+                            self.present(alert, animated: true, completion: nil)
+        
+     } else if (rotatorCuffExtensorList.contains(title)){
+
+                            //  1. Create the alert controller.
+                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
+                            //2. Add the text field. You can configure it however you need.
+                            alert.addTextField { (textField) in
+                            textField.text = "Input amount of sets"
+                            textField.keyboardType = .numberPad
+                            textField.clearsOnBeginEditing = true
+                            }
+                            // 3. Grab the value from the text field, and print it when the user clicks OK.
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                            //CAST STRING INPUT TO FLOAT
+                            let rotatorCuffTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var rotatorCuffTallyFloat:Float? = Float(rotatorCuffTallyString?.text ?? "0")
+                            rotatorCuffTallyFloat = (rotatorCuffTallyFloat ?? 0)
+                            self.defaults.set(rotatorCuffTallyFloat, forKey: Keys.rotatorCuffTally)
+                            let forearmExtensorsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var forearmExtensorsTallyFloat:Float? = Float(forearmExtensorsTallyString?.text ?? "0")
+                            forearmExtensorsTallyFloat = (forearmExtensorsTallyFloat ?? 0)
+                            self.defaults.set(forearmExtensorsTallyFloat, forKey: Keys.forearmExtensorsTally)
+                                
+                            self.goToVolumeTracker()
+                            }))
+                            // 4. Present the alert.
+                            self.present(alert, animated: true, completion: nil)
+     } else if (triceps.contains(title)){
+                            
                             //  1. Create the alert controller.
                             let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
                             //2. Add the text field. You can configure it however you need.
@@ -1486,53 +1641,8 @@ func didTapAddSet(title: String) {
                             }))
                             // 4. Present the alert.
                             self.present(alert, animated: true, completion: nil)
-        
-     } else if (title == "Quads"){
-
-                            //  1. Create the alert controller.
-                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
-                            //2. Add the text field. You can configure it however you need.
-                            alert.addTextField { (textField) in
-                            textField.text = "Input amount of sets"
-                            textField.keyboardType = .numberPad
-                            textField.clearsOnBeginEditing = true
-                            }
-                            // 3. Grab the value from the text field, and print it when the user clicks OK.
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                            //CAST STRING INPUT TO FLOAT
-                            let quadsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var quadsTallyFloat:Float? = Float(quadsTallyString?.text ?? "0")
-                            quadsTallyFloat = (quadsTallyFloat ?? 0)
-                            self.defaults.set(quadsTallyFloat, forKey: Keys.quadsTally)
-                                                                           
-                            self.goToVolumeTracker()
-                            }))
-                            // 4. Present the alert.
-                            self.present(alert, animated: true, completion: nil)
-     } else if (title == "Abs"){
                             
-                            //  1. Create the alert controller.
-                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
-                            //2. Add the text field. You can configure it however you need.
-                            alert.addTextField { (textField) in
-                            textField.text = "Input amount of sets"
-                            textField.keyboardType = .numberPad
-                            textField.clearsOnBeginEditing = true
-                            }
-                            // 3. Grab the value from the text field, and print it when the user clicks OK.
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                            //CAST STRING INPUT TO FLOAT
-                            let absTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var absTallyFloat:Float? = Float(absTallyString?.text ?? "0")
-                            absTallyFloat = (absTallyFloat ?? 0)
-                            self.defaults.set(absTallyFloat, forKey: Keys.absTally)
-                                                                           
-                            self.goToVolumeTracker()
-                            }))
-                            // 4. Present the alert.
-                            self.present(alert, animated: true, completion: nil)
-                            
-    } else if (title == "Obliques"){
+     } else if (tricepHalfChestDeltList.contains(title)){
         
                             //  1. Create the alert controller.
                             let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1545,39 +1655,29 @@ func didTapAddSet(title: String) {
                             // 3. Grab the value from the text field, and print it when the user clicks OK.
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                             //CAST STRING INPUT TO FLOAT
-                            let obliquesTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var obliquesTallyFloat:Float? = Float(obliquesTallyString?.text ?? "0")
-                            obliquesTallyFloat = (obliquesTallyFloat ?? 0)
-                            self.defaults.set(obliquesTallyFloat, forKey: Keys.obliquesTally)
+                            let tricepsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var tricepsTallyFloat:Float? = Float(tricepsTallyString?.text ?? "0")
+                            tricepsTallyFloat = (tricepsTallyFloat ?? 0)
+                            self.defaults.set(tricepsTallyFloat, forKey: Keys.tricepsTally)
+                                
+                            let chestTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var chestTallyFloat:Float? = Float(chestTallyString?.text ?? "0")
+                            chestTallyFloat = (chestTallyFloat ?? 0)
+                            chestTallyFloat = (chestTallyFloat ?? 0) / 2
+                            self.defaults.set(chestTallyFloat, forKey: Keys.chestTally)
+                                
+                            let frontShoulderTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var frontShoulderTallyFloat:Float? = Float(frontShoulderTallyString?.text ?? "0")
+                            frontShoulderTallyFloat = (frontShoulderTallyFloat ?? 0)
+                                frontShoulderTallyFloat = (frontShoulderTallyFloat ?? 0) / 2
+                            self.defaults.set(frontShoulderTallyFloat, forKey: Keys.frontShoulderTally)
                                                                            
                             self.goToVolumeTracker()
                             }))
                             // 4. Present the alert.
                             self.present(alert, animated: true, completion: nil)
         
-    } else if (title == "Serratus"){
-        
-                            //  1. Create the alert controller.
-                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
-                            //2. Add the text field. You can configure it however you need.
-                            alert.addTextField { (textField) in
-                            textField.text = "Input amount of sets"
-                            textField.keyboardType = .numberPad
-                            textField.clearsOnBeginEditing = true
-                            }
-                            // 3. Grab the value from the text field, and print it when the user clicks OK.
-                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-                            //CAST STRING INPUT TO FLOAT
-                            let serratusTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var serratusTallyFloat:Float? = Float(serratusTallyString?.text ?? "0")
-                            serratusTallyFloat = (serratusTallyFloat ?? 0)
-                            self.defaults.set(serratusTallyFloat, forKey: Keys.serratusTally)
-                                                                           
-                            self.goToVolumeTracker()
-                            }))
-                            // 4. Present the alert.
-                            self.present(alert, animated: true, completion: nil)
-    } else if (title == "Transverse Ab"){
+     } else if (ulnarForearmList.contains(title)){
         
                             //  1. Create the alert controller.
                             let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1590,16 +1690,17 @@ func didTapAddSet(title: String) {
                             // 3. Grab the value from the text field, and print it when the user clicks OK.
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                             //CAST STRING INPUT TO FLOAT
-                            let transverseAbTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var transverseAbTallyFloat:Float? = Float(transverseAbTallyString?.text ?? "0")
-                            transverseAbTallyFloat = (transverseAbTallyFloat ?? 0)
-                            self.defaults.set(transverseAbTallyFloat, forKey: Keys.transverseAbTally)
+                                
+                            let ulnarForearmTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var ulnarForearmTallyFloat:Float? = Float(ulnarForearmTallyString?.text ?? "0")
+                            ulnarForearmTallyFloat = (ulnarForearmTallyFloat ?? 0)
+                            self.defaults.set(ulnarForearmTallyFloat, forKey: Keys.ulnarForearmTally)
                                                                            
                             self.goToVolumeTracker()
                             }))
                             // 4. Present the alert.
                             self.present(alert, animated: true, completion: nil)
-    } else if (title == "Calves"){
+     } else if (forearmExtensors.contains(title)){
         
                             //  1. Create the alert controller.
                             let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1612,16 +1713,39 @@ func didTapAddSet(title: String) {
                             // 3. Grab the value from the text field, and print it when the user clicks OK.
                             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
                             //CAST STRING INPUT TO FLOAT
-                            let calvesTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                            var calvesTallyFloat:Float? = Float(calvesTallyString?.text ?? "0")
-                            calvesTallyFloat = (calvesTallyFloat ?? 0)
-                            self.defaults.set(calvesTallyFloat, forKey: Keys.calvesTally)
+                            let forearmExtensorsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var forearmExtensorsTallyFloat:Float? = Float(forearmExtensorsTallyString?.text ?? "0")
+                            forearmExtensorsTallyFloat = (forearmExtensorsTallyFloat ?? 0)
+                            self.defaults.set(forearmExtensorsTallyFloat, forKey: Keys.forearmExtensorsTally)
                                                                            
                             self.goToVolumeTracker()
                             }))
                             // 4. Present the alert.
                             self.present(alert, animated: true, completion: nil)
-    } else if (title == "Neck"){
+     } else if (forearmFlexors.contains(title)){
+        
+                            //  1. Create the alert controller.
+                            let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
+                            //2. Add the text field. You can configure it however you need.
+                            alert.addTextField { (textField) in
+                            textField.text = "Input amount of sets"
+                            textField.keyboardType = .numberPad
+                            textField.clearsOnBeginEditing = true
+                            }
+                            // 3. Grab the value from the text field, and print it when the user clicks OK.
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                                
+                            //CAST STRING INPUT TO FLOAT
+                            let forearmFlexorsTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                            var forearmFlexorsTallyFloat:Float? = Float(forearmFlexorsTallyString?.text ?? "0")
+                            forearmFlexorsTallyFloat = (forearmFlexorsTallyFloat ?? 0)
+                            self.defaults.set(forearmFlexorsTallyFloat, forKey: Keys.forearmFlexorsTally)
+                                                                           
+                            self.goToVolumeTracker()
+                            }))
+                            // 4. Present the alert.
+                            self.present(alert, animated: true, completion: nil)
+     } else if (radialForearm.contains(title)){
         
                         //  1. Create the alert controller.
                         let alert = UIAlertController(title: "Add Volume", message: "Volume accounts for all muscle groups in the exercise. 1 set for primary movers, 1/2 for secondary movers. Input amount of sets performed.", preferredStyle: .alert)
@@ -1633,11 +1757,12 @@ func didTapAddSet(title: String) {
                         }
                         // 3. Grab the value from the text field, and print it when the user clicks OK.
                         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                            
                         //CAST STRING INPUT TO FLOAT
-                        let neckTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
-                        var neckTallyFloat:Float? = Float(neckTallyString?.text ?? "0")
-                        neckTallyFloat = (neckTallyFloat ?? 0)
-                        self.defaults.set(neckTallyFloat, forKey: Keys.neckTally)
+                        let radialForearmTallyString = alert?.textFields![0] // Force unwrapping because we know it exists.
+                        var radialForearmTallyFloat:Float? = Float(radialForearmTallyString?.text ?? "0")
+                        radialForearmTallyFloat = (radialForearmTallyFloat ?? 0)
+                            self.defaults.set(radialForearmTallyFloat, forKey: Keys.radialForearmTally)
                                                                        
                         self.goToVolumeTracker()
                         }))
@@ -1885,9 +2010,6 @@ extension ChestListViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
     
-    func TableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         
-}
 
 
 

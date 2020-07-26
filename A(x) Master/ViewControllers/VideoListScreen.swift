@@ -16,6 +16,8 @@ class VideoListScreen: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addSetButton: UIButton!
+    @IBOutlet weak var bWFAB: UIButton!
+    @IBOutlet weak var exercisesFAB: UIButton!
     
     var videos: [Video] = []
     var VtData: [Float]        = []
@@ -149,18 +151,34 @@ class VideoListScreen: UIViewController {
         static let lowerTrapsMax               = "lowertrapsmax"
         static let lowerTrapsProgressInt       = "lowerTrapsProgressInt"
         static let lowerTraps                  = "lowertraps"
-        static let muscleString                 = "musclestring"
+        static let muscleString                = "musclestring"
+        static let showFab                     = "showFab"
+        static let run                         = "run"
      }
      
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true);
         
-        //Decalre variable for tallies to be added to progress bar
-        //muscleTally  is the sets to be addes
-        //muuscleProgress is the currentweek'ss progress.
-        //muscleMax is the default or user defined MAximum recoverable volume
-        //muslceprogressForText is muscle progress multiplied by ten and rounded because regular muscle progress is accounting for the fixed 1.0 max value of apples stupid ass progres bars >>>:((( angry developer
+        //Style FABS
+        
+        styleButton(button: bWFAB)
+        bWFAB.layer.cornerRadius = bWFAB.frame.height/2
+        bWFAB.contentHorizontalAlignment = .center
+        bWFAB.contentEdgeInsets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 7)
+        
+        styleButton(button: exercisesFAB)
+        exercisesFAB.layer.cornerRadius = exercisesFAB.frame.height/2
+        exercisesFAB.contentHorizontalAlignment = .center
+        exercisesFAB.contentEdgeInsets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 7)
+        
+        /*Decalre variable for tallies to be added to progress bar
+        muscleTally  is the sets to be addes
+        muscleProgress is the currentweek'ss progress.
+        muscleMax is the default or user defined MAximum recoverable volume
+        muslceprogressForText is muscle progress multiplied by ten and rounded because regular muscle progress is accounting for the fixed 1.0 max value of apples stupid ass progres bars >>>:((( angry developer
+        
+        */
         //CHEST
         
         var chestTally = defaults.float(forKey: Keys.chestTally)
@@ -546,37 +564,40 @@ class VideoListScreen: UIViewController {
         
         
         videos =  createArray(vtData: VtData)
+        
+       
         }
     
     
     func createArray(vtData: [Float]) -> [Video] {
         
-        let exercise1  = Video(image: #imageLiteral(resourceName: "Dumbell Icon.jpg"), title: "Chest",            progressText: String(String(VtData[0]) + "/" + String(VtData[1])), mavText: "MAV: 12-20 FREQ: 2-3", progressFloat: vtData[2])
-        let exercise2  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Biceps",           progressText: String(String(VtData[3]) + "/" + String(VtData[4])), mavText: "MAV: 14-20 FREQ: 2-6",  progressFloat: vtData[5] )
-        let exercise3  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lats",             progressText: String(String(VtData[6]) + "/" + String(VtData[7])), mavText: "MAV: 12-22 FREQ: 2-4",  progressFloat: vtData[8])
-        let exercise4  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Glutes",           progressText: String(String(VtData[9]) + "/" + String(VtData[10])), mavText: "MAV: 4-12 FREQ: 2-4",  progressFloat: vtData[11])
-        let exercise5  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Glute Medius",     progressText: String(String(VtData[12]) + "/" + String(VtData[13])), mavText: "MAV: 12-15 FREQ: 2-4",  progressFloat: vtData[14])
-        let exercise6  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Hamstrings",       progressText: String(String(VtData[15]) + "/" + String(VtData[16])), mavText: "MAV: 10-16 FREQ: 2-3",  progressFloat: vtData[17])
-        let exercise7  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Front Shoulder",   progressText: String(String(VtData[18]) + "/" + String(VtData[19])), mavText: "MAV: 16-22 FREQ: 1-2",  progressFloat: vtData[20])
-        let exercise8  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lateral Shoulder", progressText: String(String(VtData[21]) + "/" + String(VtData[22])), mavText: "MAV: 16-22 FREQ: 2-6",  progressFloat: vtData[23])
-        let exercise9  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Back Shoulder",    progressText: String(String(VtData[24]) + "/" + String(VtData[25])), mavText: "MAV: 16-22 FREQ: 2-6",  progressFloat: vtData[26])
-        let exercise10 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Rotator Cuff",     progressText: String(String(VtData[27]) + "/" + String(VtData[28])), mavText: "MAV: 12-20 FREQ: 3-6",  progressFloat: vtData[29])
-        let exercise11 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Triceps",          progressText: String(String(VtData[30]) + "/" + String(VtData[31])), mavText: "MAV: 10-14 FREQ: 2-4",  progressFloat: vtData[32])
-        let exercise12 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Quads",            progressText: String(String(VtData[33]) + "/" + String(VtData[34])), mavText: "MAV: 12-18 FREQ: 1.5-3",  progressFloat: vtData[35] )
-        let exercise13 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Abs",              progressText: String(String(VtData[36]) + "/" + String(VtData[37])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[38])
-        let exercise14 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Obliques",         progressText: String(String(VtData[39]) + "/" + String(VtData[40])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[41])
-        let exercise15 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Serratus",         progressText: String(String(VtData[42]) + "/" + String(VtData[43])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[44])
-        let exercise16 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Transverse Ab",    progressText: String(String(VtData[45]) + "/" + String(VtData[46])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[47])
-        let exercise17 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Calves",           progressText: String(String(VtData[48]) + "/" + String(VtData[49])), mavText: "MAV: 12-16 FREQ: 2-4",  progressFloat: vtData[50])
-        let exercise18 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck",             progressText: String(String(VtData[51]) + "/" + String(VtData[52])), mavText: "MAV: 10-16 FREQ: 2-3",  progressFloat: vtData[53])
-        let exercise19 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Forearm Extensors",progressText: String(String(VtData[54]) + "/" + String(VtData[55])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[56])
-        let exercise20 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Ulnar Forearm",    progressText: String(String(VtData[57]) + "/" + String(VtData[58])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[59])
-        let exercise21 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Forearm Flexors",  progressText: String(String(VtData[60]) + "/" + String(VtData[61])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[62])
-        let exercise22 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Radial Forearm",   progressText: String(String(VtData[63]) + "/" + String(VtData[64])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[65])
-        let exercise23 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Spinal Erectors",  progressText: String(String(VtData[66]) + "/" + String(VtData[67])), mavText: "MAV: 10-15 FREQ: 2-4",  progressFloat: vtData[68])
-        let exercise24 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Upper Traps",      progressText: String(String(VtData[69]) + "/" + String(VtData[70])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[71])
-        let exercise25 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lower Traps",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: "MAV: 12-20 FREQ: 2-6",  progressFloat: vtData[74])
-        let exercise26 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title:"Reset All",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: " ",  progressFloat: vtData[74])
+        let exercise1  = Video(image: #imageLiteral(resourceName: "Dumbell Icon.jpg"), title: "Chest",            progressText: String(String(VtData[0]) + "/" + String(VtData[1])), mavText: "MAV: 12-20 FREQ: 2-3", progressFloat: vtData[2], hideButton: false)
+        let exercise2  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Biceps",           progressText: String(String(VtData[3]) + "/" + String(VtData[4])), mavText: "MAV: 14-20 FREQ: 2-6",  progressFloat: vtData[5], hideButton: false )
+        let exercise3  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lats",             progressText: String(String(VtData[6]) + "/" + String(VtData[7])), mavText: "MAV: 12-22 FREQ: 2-4",  progressFloat: vtData[8], hideButton: false)
+        let exercise4  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Glutes",           progressText: String(String(VtData[9]) + "/" + String(VtData[10])), mavText: "MAV: 4-12 FREQ: 2-4",  progressFloat: vtData[11], hideButton: false)
+        let exercise5  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Glute Medius",     progressText: String(String(VtData[12]) + "/" + String(VtData[13])), mavText: "MAV: 12-15 FREQ: 2-4",  progressFloat: vtData[14], hideButton: false)
+        let exercise6  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Hamstrings",       progressText: String(String(VtData[15]) + "/" + String(VtData[16])), mavText: "MAV: 10-16 FREQ: 2-3",  progressFloat: vtData[17], hideButton: false)
+        let exercise7  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Front Shoulder",   progressText: String(String(VtData[18]) + "/" + String(VtData[19])), mavText: "MAV: 16-22 FREQ: 1-2",  progressFloat: vtData[20], hideButton: false)
+        let exercise8  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lateral Shoulder", progressText: String(String(VtData[21]) + "/" + String(VtData[22])), mavText: "MAV: 16-22 FREQ: 2-6",  progressFloat: vtData[23], hideButton: false)
+        let exercise9  = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Back Shoulder",    progressText: String(String(VtData[24]) + "/" + String(VtData[25])), mavText: "MAV: 16-22 FREQ: 2-6",  progressFloat: vtData[26], hideButton: false)
+        let exercise10 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Rotator Cuff",     progressText: String(String(VtData[27]) + "/" + String(VtData[28])), mavText: "MAV: 12-20 FREQ: 3-6",  progressFloat: vtData[29], hideButton: false)
+        let exercise11 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Triceps",          progressText: String(String(VtData[30]) + "/" + String(VtData[31])), mavText: "MAV: 10-14 FREQ: 2-4",  progressFloat: vtData[32], hideButton: false)
+        let exercise12 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Quads",            progressText: String(String(VtData[33]) + "/" + String(VtData[34])), mavText: "MAV: 12-18 FREQ: 1.5-3",  progressFloat: vtData[35] , hideButton: false)
+        let exercise13 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Abs",              progressText: String(String(VtData[36]) + "/" + String(VtData[37])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[38], hideButton: false)
+        let exercise14 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Obliques",         progressText: String(String(VtData[39]) + "/" + String(VtData[40])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[41], hideButton: false)
+        let exercise15 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Serratus",         progressText: String(String(VtData[42]) + "/" + String(VtData[43])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[44], hideButton: false)
+        let exercise16 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Transverse Ab",    progressText: String(String(VtData[45]) + "/" + String(VtData[46])), mavText: "MAV: 16-20 FREQ: 3-5",  progressFloat: vtData[47], hideButton: false)
+        let exercise17 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Calves",           progressText: String(String(VtData[48]) + "/" + String(VtData[49])), mavText: "MAV: 12-16 FREQ: 2-4",  progressFloat: vtData[50], hideButton: false)
+        let exercise18 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck",             progressText: String(String(VtData[51]) + "/" + String(VtData[52])), mavText: "MAV: 10-16 FREQ: 2-3",  progressFloat: vtData[53], hideButton: false)
+        let exercise19 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Forearm Extensors",progressText: String(String(VtData[54]) + "/" + String(VtData[55])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[56], hideButton: false)
+        let exercise20 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Ulnar Forearm",    progressText: String(String(VtData[57]) + "/" + String(VtData[58])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[59], hideButton: false)
+        let exercise21 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Forearm Flexors",  progressText: String(String(VtData[60]) + "/" + String(VtData[61])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[62], hideButton: false)
+        let exercise22 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Radial Forearm",   progressText: String(String(VtData[63]) + "/" + String(VtData[64])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[65], hideButton: false)
+        let exercise23 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Spinal Erectors",  progressText: String(String(VtData[66]) + "/" + String(VtData[67])), mavText: "MAV: 10-15 FREQ: 2-4",  progressFloat: vtData[68], hideButton: false)
+        let exercise24 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Upper Traps",      progressText: String(String(VtData[69]) + "/" + String(VtData[70])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[71], hideButton: false)
+        let exercise25 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lower Traps",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: "MAV: 12-20 FREQ: 2-6",  progressFloat: vtData[74], hideButton: false)
+        let exercise26 = Video(image:#imageLiteral(resourceName: "Dumbell Icon"), title:" ",      progressText:" ", mavText: " ",  progressFloat: 0.0, hideButton: true)
+        let exercise27 = Video(image:#imageLiteral(resourceName: "Dumbell Icon"), title:" ",      progressText:" ", mavText: " ",  progressFloat: 0.0, hideButton: true)
         
         
         //Premium
@@ -589,15 +610,28 @@ class VideoListScreen: UIViewController {
            
         return [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8,
                 exercise9, exercise10, exercise11, exercise12, exercise13, exercise14, exercise15, exercise16,
-                exercise17, exercise18, exercise19, exercise20, exercise21, exercise22, exercise23, exercise24, exercise25, exercise26]
+                exercise17, exercise18, exercise19, exercise20, exercise21, exercise22, exercise23, exercise24, exercise25, exercise26, exercise27]
     }
     
     func styleButton(button: UIButton){
-        button.backgroundColor = .clear
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.lightGray.cgColor
+       
     }
     
+    @IBAction func allExercisesClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let Exercises = storyboard.instantiateViewController(identifier: "allExercises")
+        self.show(Exercises, sender: self)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func bodyWeightExercisesClicked(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+              let Exercises = storyboard.instantiateViewController(identifier: "bodyweightExercises")
+              self.show(Exercises, sender: self)
+              self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension VideoListScreen: VideoCellDelegate {
@@ -658,11 +692,11 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let video = videos[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCell
         cell.setVideo(video: video)
         cell.delegate = self
-        
         return cell
     }
     
@@ -746,6 +780,7 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
             defaults.set(muscleString, forKey: Keys.muscleString)
         }
        }
+
 }
 
 

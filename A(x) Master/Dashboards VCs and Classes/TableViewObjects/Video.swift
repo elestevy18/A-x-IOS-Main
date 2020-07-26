@@ -11,14 +11,15 @@ class Video {
     var progressText: String
     var mavText: String
     var progress: Float
+    var hideButton: Bool
     
     //INITIALIZE THE CLASS BY ASIGNING INIT PARAMATERS TO VARIABLES DECLARED ABOVE
-    init(image: UIImage, title: String, progressText: String, mavText: String, progressFloat: Float) {
+    init(image: UIImage, title: String, progressText: String, mavText: String, progressFloat: Float, hideButton: Bool) {
         self.image = image
         self.title = title
         self.progressText = progressText
         self.mavText = mavText
         self.progress = progressFloat
+        self.hideButton = hideButton
     }
-
 }

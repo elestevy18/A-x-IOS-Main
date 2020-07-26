@@ -146,11 +146,11 @@ class DashBoardViewController: UIViewController {
                 let percentage =  ((currentMuscleGrowth * 100) / totalMuscleGrowth) * 0.01
         
         if(percentage <= 0.33){
-            shapeLayer.strokeColor = Colors.aXOrange.cgColor
+                shapeLayer.strokeColor = Colors.aXOrange.cgColor
         } else if (percentage > 0.33 && percentage <= 0.66) {
-            shapeLayer.strokeColor = UIColor.yellow.cgColor
+                shapeLayer.strokeColor = UIColor.yellow.cgColor
         } else {
-            shapeLayer.strokeColor = Colors.aXPink.cgColor
+                shapeLayer.strokeColor = Colors.aXPink.cgColor
         }
                 shapeLayer.lineWidth = 5
                 shapeLayer.fillColor = UIColor.clear.cgColor
@@ -159,15 +159,15 @@ class DashBoardViewController: UIViewController {
                 view.layer.addSublayer(shapeLayer)
                 handleTap()
         
-       FAQButton.backgroundColor = .clear
-       FAQButton.layer.borderWidth = 1
-        FAQButton.layer.borderColor = UIColor.systemRed.cgColor
-       FAQButton.layer.cornerRadius = 15
+                FAQButton.backgroundColor = .clear
+                FAQButton.layer.borderWidth = 1
+                FAQButton.layer.borderColor = UIColor.systemRed.cgColor
+                FAQButton.layer.cornerRadius = 15
         
-        ToInfobutton.backgroundColor = .clear
-        ToInfobutton.layer.borderWidth = 1
-        ToInfobutton.layer.borderColor = UIColor.systemRed.cgColor
-        ToInfobutton.layer.cornerRadius = 15
+                ToInfobutton.backgroundColor = .clear
+                ToInfobutton.layer.borderWidth = 1
+                ToInfobutton.layer.borderColor = UIColor.systemRed.cgColor
+                ToInfobutton.layer.cornerRadius = 15
     }
     
     

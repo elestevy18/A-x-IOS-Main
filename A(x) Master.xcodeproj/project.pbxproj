@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		34105C5255FB46AD285B3157 /* Pods_A_x__MasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90AF553E60A8BF96B14DDDE /* Pods_A_x__MasterTests.framework */; };
 		3FC94A66355D81E48D2066CA /* Pods_A_x__Master_A_x__MasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BE0717E5D4AD4E1AA6B52 /* Pods_A_x__Master_A_x__MasterUITests.framework */; };
+		4340423B24CA06640037D512 /* allExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4340423A24CA06640037D512 /* allExercisesViewController.swift */; };
 		4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */; };
+		4346AC1124C94FA10069A009 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = 4346AC1024C94FA10069A009 /* Floaty */; };
 		43470EC824C69373002FC0E8 /* MuscleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */; };
 		43474DD024BFC6110035F405 /* VtCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43474DCF24BFC6110035F405 /* VtCellData.swift */; };
 		43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */; };
@@ -23,6 +25,8 @@
 		43882AC724B7BCA000C931F9 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC624B7BCA000C931F9 /* VideoCell.swift */; };
 		43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */; };
 		43A8927824B90815002BFED5 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8927724B90815002BFED5 /* DashBoardViewController.swift */; };
+		43EAAFA724CB6779004B41BE /* FormVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */; };
+		43FE69F424CA2B2C006E963A /* bodyWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */; };
 		5654CBBE248C65E400C44BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5654CBBD248C65E400C44BB7 /* Constants.swift */; };
 		565C1A9F248B1DC30054CC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1A9E248B1DC30054CC11 /* AppDelegate.swift */; };
 		565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */; };
@@ -60,6 +64,7 @@
 		04FB6D034F00F813E25AEC2F /* Pods-A(x) MasterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) MasterTests.release.xcconfig"; path = "Target Support Files/Pods-A(x) MasterTests/Pods-A(x) MasterTests.release.xcconfig"; sourceTree = "<group>"; };
 		250786DA61D87DEFF32A0001 /* Pods-A(x) Master-A(x) MasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master-A(x) MasterUITests/Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35B3FCFF0E3C67E95AD2A841 /* Pods-A(x) Master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master/Pods-A(x) Master.release.xcconfig"; sourceTree = "<group>"; };
+		4340423A24CA06640037D512 /* allExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allExercisesViewController.swift; sourceTree = "<group>"; };
 		4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicepsVTViewController.swift; sourceTree = "<group>"; };
 		43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleInfoViewController.swift; sourceTree = "<group>"; };
 		43474DCF24BFC6110035F405 /* VtCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VtCellData.swift; sourceTree = "<group>"; };
@@ -74,6 +79,8 @@
 		43882AC624B7BCA000C931F9 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		43A8927724B90815002BFED5 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVideosViewController.swift; sourceTree = "<group>"; };
+		43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodyWeightViewController.swift; sourceTree = "<group>"; };
 		5654CBBD248C65E400C44BB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		565C1A9B248B1DC30054CC11 /* A(x) Master.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "A(x) Master.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		565C1A9E248B1DC30054CC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56F023F024A0204300449252 /* IQKeyboardManagerSwift in Frameworks */,
+				4346AC1124C94FA10069A009 /* Floaty in Frameworks */,
 				DA203F4F1427A6FA00B518CD /* Pods_A_x__Master.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +167,9 @@
 				43A8927724B90815002BFED5 /* DashBoardViewController.swift */,
 				43575B0924C25BFF0027E97B /* MealPlanViewController.swift */,
 				43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */,
+				4340423A24CA06640037D512 /* allExercisesViewController.swift */,
+				43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */,
+				43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,6 +308,7 @@
 			name = "A(x) Master";
 			packageProductDependencies = (
 				56F023EF24A0204300449252 /* IQKeyboardManagerSwift */,
+				4346AC1024C94FA10069A009 /* Floaty */,
 			);
 			productName = "A(x) Master";
 			productReference = 565C1A9B248B1DC30054CC11 /* A(x) Master.app */;
@@ -375,6 +387,7 @@
 			mainGroup = 565C1A92248B1DC30054CC11;
 			packageReferences = (
 				56F023EE24A0204300449252 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */,
 			);
 			productRefGroup = 565C1A9C248B1DC30054CC11 /* Products */;
 			projectDirPath = "";
@@ -538,10 +551,13 @@
 				43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */,
 				4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */,
 				43474DD024BFC6110035F405 /* VtCellData.swift in Sources */,
+				43EAAFA724CB6779004B41BE /* FormVideosViewController.swift in Sources */,
 				436FA8A124AD7754002672EE /* VolumeTrackerCellObject.swift in Sources */,
 				565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */,
+				43FE69F424CA2B2C006E963A /* bodyWeightViewController.swift in Sources */,
 				43882ABF24B7BC3D00C931F9 /* ChestListViewController.swift in Sources */,
 				43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */,
+				4340423B24CA06640037D512 /* allExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +896,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kciter/Floaty";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		56F023EE24A0204300449252 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -891,6 +915,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4346AC1024C94FA10069A009 /* Floaty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */;
+			productName = Floaty;
+		};
 		56F023EF24A0204300449252 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 56F023EE24A0204300449252 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;

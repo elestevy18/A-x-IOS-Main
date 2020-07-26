@@ -66,16 +66,20 @@ class MagicFormula: UIViewController {
                    let sex         = defaults.bool(forKey: Keys.sex)
                    let units       = defaults.bool(forKey: Keys.unitsBool)
         
-        //Turn kilos to pounds first (formula uses pupunds)
+        //Turn kilos to pounds first (formula uses pounds)
         
         if (units) {
-            bodyWeight = bodyWeight * 0.453592
+            print("heightBig", heightBig, "heightSmall", heightSmall)
+            bodyWeight = bodyWeight * 2.20462
             heightBigInCm = heightBig * 100.00
-            totalHeightInCm = heightBig + heightSmall
+            totalHeightInCm = heightBigInCm + heightSmall
+            print("totalheoghtcm", totalHeightInCm)
             totalHeightInInches = totalHeightInCm * 0.393701
+            print("totalheoghtinches", totalHeightInInches)
             //heightBig is in feet on following line
             heightBig = floor(totalHeightInInches/12)
             heightSmall = totalHeightInInches.truncatingRemainder(dividingBy: 12)
+            print ("bodyweight", bodyWeight, "heightBig", heightBig, "heightSmall", heightSmall)
         }
         
 
@@ -84,7 +88,8 @@ class MagicFormula: UIViewController {
             
             
             heightSmall = heightSmall + (heightBig * 12.00)
-                        let height = (heightSmall * 2.54)
+                        var height = (heightSmall * 2.54)
+          
             let baseLeanMass = (1930121 + (44.90097 - 1930121) / (1.00 + (pow(height / 4275.865, 3.168493)))) * 0.93
             muscleGrowthRate = (((3.00 * (37037.00.squareRoot)()) / (200.00 * (experience + 1.00.squareRoot()))))
             totalMuscleGrowth =  45.00
@@ -155,14 +160,15 @@ class MagicFormula: UIViewController {
         // 0625/2020 Unit conversion for  metric
         
         if(units){
-            bodyWeight            = bodyWeight * 2.20462
-            totalMuscleGrowth     = totalMuscleGrowth * 2.20462
-            idealBodyWeight       = idealBodyWeight * 2.20462
-            fatLoss               = fatLoss * 2.20462
-            currentMuscleGrowth   = currentMuscleGrowth * 2.20462
-            potentialMuscleGrowth = potentialMuscleGrowth * 2.20462
-            muscleGrowthRate      = muscleGrowthRate * 2.20462
-            idealBodyWeight       = idealBodyWeight * 2.20462
+           // bodyWeight            = bodyWeight * 2.20462
+             //bodyWeight           = bodyWeight * 2.20462
+            totalMuscleGrowth     = totalMuscleGrowth * 0.454
+            idealBodyWeight       = idealBodyWeight * 0.454
+            fatLoss               = fatLoss * 0.4542
+            currentMuscleGrowth   = currentMuscleGrowth * 0.454
+            potentialMuscleGrowth = potentialMuscleGrowth * 0.454
+            muscleGrowthRate      = muscleGrowthRate * 0.454
+            //idealBodyWeight       = idealBodyWeight * 2.20462
         }
         
                    defaults.set(totalMuscleGrowth, forKey: Keys.totalMuscleGrowth)
@@ -172,7 +178,7 @@ class MagicFormula: UIViewController {
                    defaults.set(potentialMuscleGrowth, forKey: Keys.potentialMuscleGrowth)
                    defaults.set(muscleGrowthRate, forKey: Keys.muscleGrowthRate )
                    defaults.set(dailyCaloricDeviance, forKey: Keys.dailyCaloricDeviance)
-                   defaults.set(idealBodyWeight, forKey: Keys.idealBodyWeight)
+                   //defaults.set(idealBodyWeight, forKey: Keys.idealBodyWeight)
                    defaults.set(age, forKey: Keys.age)
         
         // @second delay for the normies

@@ -35,12 +35,20 @@ class VideoCell: UITableViewCell {
         progressText.text    = video.progressText
         mavText.text         = video.mavText
         progressBar.progress = video.progress
+
         
         addSetButton.backgroundColor = .clear
         addSetButton.layer.borderWidth = 1
         addSetButton.layer.borderColor = Colors.aXGreen.cgColor
         addSetButton.layer.cornerRadius = 8
         
+        var hideButton = video.hideButton
+        if(hideButton){
+            addSetButton.isHidden = true
+            progressBar.isHidden = true
+            videoImageView.isHidden = true
+            var hideButton = false
+        }
     }
     
 
