@@ -1,6 +1,6 @@
 //
 //  VtCellData.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by Kevin Jimenez on 7/15/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.

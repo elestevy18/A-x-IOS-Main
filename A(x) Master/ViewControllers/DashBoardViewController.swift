@@ -1,12 +1,13 @@
 //
 //  DashBoardViewController.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by Kevin Jimenez on 7/10/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
 //
 
 import UIKit
+import GoogleMobileAds
 
 class DashBoardViewController: UIViewController {
     
@@ -45,9 +46,20 @@ class DashBoardViewController: UIViewController {
                static let muscleGrowthRate      = "musclegrowthrate"
                static let dailyCaloricDeviance  = "dailycaloricdeviance"
                static let unitsBool             = "unitsBool"
+               static let infoTapped            = "infotapped"
+        static let annualPurchased             = "annual"
+        static let monthlyPurchased            = "monthly"
+        static let biannualPurchased           = "biannual"
+        static let  premium                     = "premium"
        }
     
       let shapeLayer = CAShapeLayer()
+    
+    private var interstitialAd: GADInterstitial?
+       
+       struct Constants{
+           static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
+       }
 
     @IBOutlet weak var goToInfoCollection: UIButton!
     
@@ -56,21 +68,37 @@ class DashBoardViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: true);
         
+        //ADS
+        self.interstitialAd = createAd()
+        print("line below creating ad")
+
+        
+        //Set logo in navigation bar and make it clickable
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "aesthetx30times100")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(DashBoardViewController.titleWasTapped))
+        navigationItem.titleView?.isUserInteractionEnabled = true
+        navigationItem.titleView?.addGestureRecognizer(recognizer)
+        
         
         //RETRIEVE DATA TO DISPLAY
-        let totalMuscleGrowth           = defaults.double(forKey: Keys.totalMuscleGrowth)
+        let totalMuscleGrowth           = defaults.double(forKey: Save.totalMuscleGrowth)
         let totalMuscleGrowthString     = String(format: "%.2f", totalMuscleGrowth)
-        let idealBodyWeight             = defaults.double(forKey: Keys.idealBodyWeight)
+        let idealBodyWeight             = defaults.double(forKey: Save.idealBodyWeight)
         let idealBodyWeightString       = String(format: "%.2f", idealBodyWeight)
-        let fatLoss                     = round(defaults.double(forKey: Keys.fatLoss))
+        let fatLoss                     = round(defaults.double(forKey: Save.fatLoss))
         let fatLossString               = String(format: "%.2f", fatLoss)
-        let currentMuscleGrowth         = defaults.double(forKey: Keys.currentMuscleGrowth)
+        let currentMuscleGrowth         = defaults.double(forKey: Save.currentMuscleGrowth)
         let currentMuscleGrowthString   = String(format: "%.2f", currentMuscleGrowth)
-        _                               = defaults.double(forKey: Keys.potentialMuscleGrowth)
-        let muscleGrowthRate            = defaults.double(forKey: Keys.muscleGrowthRate)
+        _                               = defaults.double(forKey: Save.potentialMuscleGrowth)
+        let muscleGrowthRate            = defaults.double(forKey: Save.muscleGrowthRate)
         let muscleGrowthRateString      = String(format: "%.2f", muscleGrowthRate)
-        _                               = defaults.data(forKey: Keys.dailyCaloricDeviance)
-        _                               = defaults.bool(forKey: Keys.unitsBool)
+        _                               = defaults.data(forKey: Save.dailyCaloricDeviance)
+        _                               = defaults.bool(forKey: Save.unitsBool)
         
         
         if (!(idealBodyWeight == 0.00)){
@@ -115,12 +143,19 @@ class DashBoardViewController: UIViewController {
         RookiePlacement(label: RookieLabel)
         
         //LABELS
+        //style
         setIBWNumberLabel(label: IBWLabel)
         setGrowthRateLabel(label: MonthlyPotentialMuscleGrowthLabel)
         setFatLossLabel(label: FatlossLabel)
-        IBWLabel.text = idealBodyWeightString
-        MonthlyPotentialMuscleGrowthLabel.text = muscleGrowthRateString
-        FatlossLabel.text = fatLossString
+        
+        //set text
+        let unitsBool = defaults.bool(forKey: Save.unitsBool)
+        var units = " lbs"
+        if (unitsBool){ units = " Kg"}
+        
+        IBWLabel.text = idealBodyWeightString + units
+        MonthlyPotentialMuscleGrowthLabel.text = muscleGrowthRateString + units
+        FatlossLabel.text = fatLossString + units
         
         //CODE FOR CIRCULAR PROGRESS BAR
         
@@ -168,6 +203,9 @@ class DashBoardViewController: UIViewController {
                 ToInfobutton.layer.borderWidth = 1
                 ToInfobutton.layer.borderColor = UIColor.systemRed.cgColor
                 ToInfobutton.layer.cornerRadius = 15
+        
+        
+        
     }
     
     
@@ -206,19 +244,19 @@ class DashBoardViewController: UIViewController {
     func updateInfoButton(button: UIButton) {
         let screenHeight = UIScreen.main.bounds.size.height
         let screenWidth = UIScreen.main.bounds.size.width
-        button.frame = CGRect(x: screenWidth/1.4, y: screenHeight/1.21, width: 90, height: 50)
+        button.frame = CGRect(x: (screenWidth/1.35)-12, y: screenHeight/1.21, width: 100, height: 50)
     }
     
     func FAQButtonPlacement(button: UIButton) {
          let screenHeight = UIScreen.main.bounds.size.height
-        button.frame = CGRect(x: 20, y: screenHeight/1.21, width: 80, height: 50)
+        button.frame = CGRect(x: 8, y: screenHeight/1.21, width: 80, height: 50)
     }
     //Functions to place Labels
     
       func setIBWNumberLabel(label: UILabel) {
             
         let screenHeight = UIScreen.main.bounds.size.height
-        label.frame = CGRect(x: 265, y: screenHeight/5.55, width: 80, height: 30)
+        label.frame = CGRect(x: 220, y: screenHeight/5.55, width: 120, height: 30)
             
         }
     
@@ -226,7 +264,7 @@ class DashBoardViewController: UIViewController {
                
         let screenHeight = UIScreen.main.bounds.size.height
         let screenWidth = UIScreen.main.bounds.size.width
-        label.frame = CGRect(x: (screenWidth/2)-23, y: screenHeight/2.8, width: 47, height: 30)
+        label.frame = CGRect(x: (screenWidth/2)-32, y: screenHeight/2.7, width: 87, height: 30)
                
            }
     
@@ -234,14 +272,14 @@ class DashBoardViewController: UIViewController {
                         
             let screenHeight = UIScreen.main.bounds.size.height
             let screenWidth = UIScreen.main.bounds.size.width
-            label.frame = CGRect(x: (screenWidth/2)-23, y: screenHeight/1.92, width: 60, height: 30)
+            label.frame = CGRect(x: (screenWidth/2)-32, y: screenHeight/1.92, width: 80, height: 30)
                         
                     }
     
     func RookiePlacement(label: UILabel) {
             let screenHeight = UIScreen.main.bounds.size.height
             let screenWidth = UIScreen.main.bounds.size.width
-            label.frame = CGRect(x: (screenWidth/2) - 98, y: screenHeight/1.23, width: 193, height: 70)
+            label.frame = CGRect(x: (screenWidth/2) - 107, y: screenHeight/1.23, width: 193, height: 70)
        }
     
     func CircleTextPlacement(label: UILabel) {
@@ -251,14 +289,49 @@ class DashBoardViewController: UIViewController {
           }
     
     @IBAction func ToInfoTapped(_ sender: Any) {
+        
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
                    let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection")
                    self.show(infoCollection, sender: self)
+        
+        
+        //Retrieve info for premium And SHOWADS
+        let premiumstore = defaults.bool(forKey: Save.premium)
+              let premium = premiumstore
+               if interstitialAd?.isReady ==  true && !premium {
+                   interstitialAd?.present(fromRootViewController: self)
+               }
     }
     @IBAction func didTapFAQ(sender: AnyObject) {
-        UIApplication.shared.openURL(NSURL(string: "http://aesthet-x.com/faqs/")! as URL)
-    }
+      //  UIApplication.shared.openURL(NSURL(string: "")! as URL)
+        guard let url = URL(string: "http://aesthet-x.com/faqs/") else {
+          return //be safe
+        }
 
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    @IBAction func IBWTapped(_ sender: Any) {
+        let infoString = "ibw"
+        defaults.set(infoString, forKey: Save.infoTapped)
+    }
+    @IBAction func growthRateTapped(_ sender: Any) {
+        let infoString = "growthrate"
+        defaults.set(infoString, forKey: Save.infoTapped)
+    }
+    @IBAction func fatlossTapped(_ sender: Any) {
+        let infoString = "fatloss"
+        defaults.set(infoString, forKey: Save.infoTapped)
+    }
+    @IBAction func currentGrowthTapped(_ sender: Any) {
+        let infoString = "currentgrowth"
+        defaults.set(infoString, forKey: Save.infoTapped)
+    }
+    
     @objc private func handleTap() {
            print("Attempting to animate stroke")
            let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
@@ -268,4 +341,30 @@ class DashBoardViewController: UIViewController {
            basicAnimation.isRemovedOnCompletion = false
            shapeLayer.add(basicAnimation, forKey: "urSoBasic")
        }
-}
+    
+    @objc private func titleWasTapped() {
+    guard let url = URL(string: "http://aesthet-x.com/about/") else {
+        return //be safe
+      }
+
+      if #available(iOS 10.0, *) {
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      } else {
+          UIApplication.shared.openURL(url)
+      }
+    }
+    private func createAd() -> GADInterstitial{
+             print("Creating interstitial")
+            let ad = GADInterstitial(adUnitID: Constants.volumeAD)
+            ad.delegate = self
+            ad.load(GADRequest())
+            return ad
+        }
+    }
+
+    extension DashBoardViewController: GADInterstitialDelegate{
+        func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+            interstitialAd = createAd()
+        }
+    }
+

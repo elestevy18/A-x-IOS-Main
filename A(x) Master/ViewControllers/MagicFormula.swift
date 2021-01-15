@@ -1,13 +1,13 @@
 //
 //  MagicFormula.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by El Kevin on 6/23/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
 //
 //
 //  GenericViewController.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by El Kevin on 6/24/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
@@ -57,14 +57,14 @@ class MagicFormula: UIViewController {
         
         //DOWLOAD DATA FROM INTRO PAGE
         
-                   var bodyWeight  = defaults.double(forKey: Keys.bodyWeight)
-                   var heightBig   = defaults.double(forKey: Keys.heightBig)
-                   var heightSmall = defaults.double(forKey: Keys.heightSmall)
-                   let experience  = defaults.double(forKey: Keys.experience)
-                   let composition = defaults.double(forKey: Keys.composition)
-                   let age         = defaults.double(forKey: Keys.age)
-                   let sex         = defaults.bool(forKey: Keys.sex)
-                   let units       = defaults.bool(forKey: Keys.unitsBool)
+                   var bodyWeight  = defaults.double(forKey: Save.bodyWeight)
+                   var heightBig   = defaults.double(forKey: Save.heightBig)
+                   var heightSmall = defaults.double(forKey: Save.heightSmall)
+                   let experience  = defaults.double(forKey: Save.experience)
+                   let composition = defaults.double(forKey: Save.composition)
+                   let age         = defaults.double(forKey: Save.age)
+                   let sex         = defaults.bool(forKey: Save.sex)
+                   let units       = defaults.bool(forKey: Save.unitsBool)
         
         //Turn kilos to pounds first (formula uses pounds)
         
@@ -92,7 +92,7 @@ class MagicFormula: UIViewController {
           
             let baseLeanMass = (1930121 + (44.90097 - 1930121) / (1.00 + (pow(height / 4275.865, 3.168493)))) * 0.93
             muscleGrowthRate = (((3.00 * (37037.00.squareRoot)()) / (200.00 * (experience + 1.00.squareRoot()))))
-            totalMuscleGrowth =  45.00
+            totalMuscleGrowth =  40.00
             let developedLeanMass = baseLeanMass + totalMuscleGrowth
             idealBodyWeight = developedLeanMass * 1.12
             fatLoss = ((bodyWeight * (composition * 0.01)) - (bodyWeight * 0.12))
@@ -126,7 +126,7 @@ class MagicFormula: UIViewController {
                             let height = (heightSmall * 2.54)
                 let baseLeanMass = (1930121 + (44.90097 - 1930121) / (1.00 + (pow(height / 4275.865, 3.168493)))) * 0.93
                 muscleGrowthRate = (((3.00 * (37037.00.squareRoot)()) / (200.00 * (experience + 1.00.squareRoot())))/2)
-                let totalMuscleGrowth =  22.50
+                let totalMuscleGrowth =  20.00
                 let developedLeanMass = baseLeanMass + totalMuscleGrowth
                 idealBodyWeight = developedLeanMass * 1.2
                 fatLoss = ((bodyWeight * (composition * 0.01)) - (bodyWeight * 0.20))
@@ -171,15 +171,15 @@ class MagicFormula: UIViewController {
             //idealBodyWeight       = idealBodyWeight * 2.20462
         }
         
-                   defaults.set(totalMuscleGrowth, forKey: Keys.totalMuscleGrowth)
-                   defaults.set(idealBodyWeight, forKey: Keys.idealBodyWeight)
-                   defaults.set(fatLoss, forKey: Keys.fatLoss)
-                   defaults.set(currentMuscleGrowth, forKey: Keys.currentMuscleGrowth)
-                   defaults.set(potentialMuscleGrowth, forKey: Keys.potentialMuscleGrowth)
-                   defaults.set(muscleGrowthRate, forKey: Keys.muscleGrowthRate )
-                   defaults.set(dailyCaloricDeviance, forKey: Keys.dailyCaloricDeviance)
-                   //defaults.set(idealBodyWeight, forKey: Keys.idealBodyWeight)
-                   defaults.set(age, forKey: Keys.age)
+                   defaults.set(totalMuscleGrowth, forKey: Save.totalMuscleGrowth)
+                   defaults.set(idealBodyWeight, forKey: Save.idealBodyWeight)
+                   defaults.set(fatLoss, forKey: Save.fatLoss)
+                   defaults.set(currentMuscleGrowth, forKey: Save.currentMuscleGrowth)
+                   defaults.set(potentialMuscleGrowth, forKey: Save.potentialMuscleGrowth)
+                   defaults.set(muscleGrowthRate, forKey: Save.muscleGrowthRate )
+                   defaults.set(dailyCaloricDeviance, forKey: Save.dailyCaloricDeviance)
+                   //defaults.set(idealBodyWeight, forKey: Save.idealBodyWeight)
+                   defaults.set(age, forKey: Save.age)
         
         // @second delay for the normies
         

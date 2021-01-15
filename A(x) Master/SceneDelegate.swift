@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by El Kevin on 6/5/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.

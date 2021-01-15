@@ -6,10 +6,12 @@ target 'A(x) Master' do
   use_frameworks!
 
   # Pods for A(x) Master
-	pod "YoutubePlayer-in-WKWebView", "~> 0.2.0" 
 	pod 'Floaty', '~> 4.2.0'
 	pod 'Charts'
 	pod "youtube-ios-player-helper", "~> 1.0.2"
+	pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
+	pod "IQKeyboardManagerSwift"
+        pod 'Google-Mobile-Ads-SDK'
 
   target 'A(x) MasterTests' do
     inherit! :search_paths

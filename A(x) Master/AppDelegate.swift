@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by El Kevin on 6/5/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import GoogleMobileAds
 
 
 @UIApplicationMain
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        //ADMOB
+        GADMobileAds.sharedInstance().start(completionHandler: nil )
+        
         // Override point for customization after application launch.
         
         //Make app DARKS
@@ -58,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
 
 
 }

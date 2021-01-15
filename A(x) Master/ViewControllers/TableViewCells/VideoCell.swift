@@ -42,13 +42,13 @@ class VideoCell: UITableViewCell {
         addSetButton.layer.borderColor = Colors.aXGreen.cgColor
         addSetButton.layer.cornerRadius = 8
         
-        var hideButton = video.hideButton
-        if(hideButton){
-            addSetButton.isHidden = true
-            progressBar.isHidden = true
-            videoImageView.isHidden = true
-            var hideButton = false
-        }
+//        var hideButton = video.hideButton
+//        if(hideButton){
+//            addSetButton.isHidden = true
+//            progressBar.isHidden = true
+//            videoImageView.isHidden = true
+//            var hideButton = false
+//        }
     }
     
 

@@ -34,7 +34,8 @@ class ViewController: UIViewController{
     
     // JUSTINO 6/28/19 12:49:59 PM 
     
-
+    @IBOutlet weak var AdFreeButton: UIButton!
+    
     
     // test buttons
     
@@ -57,6 +58,11 @@ class ViewController: UIViewController{
             static let activityLevel = "activitylevel"
             static let sex           = "sex"
             static let unitsBool     = "unitsBool"
+            static let annualPurchased             = "annual"
+            static let monthlyPurchased            = "monthly"
+            static let biannualPurchased           = "biannual"
+            static let HSPromo                      = "hspromo"
+
     }
     
     //Array for actiovity level picker
@@ -69,6 +75,24 @@ class ViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+        AdFreeButton.layer.borderColor = Colors.aXOrange.cgColor
+        AdFreeButton.layer.borderWidth = 1
+        AdFreeButton.layer.cornerRadius = 15
+        
+
+        
+        //Segmented control text color
+        UISegmentedControl.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
+        
+        //Set logo in navigation bar and make it clickable
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "aesthetx30times100")
+        imageView.image = image
+        navigationItem.titleView = imageView
         
         //KEVIN JIMENEZ 06/21/2020 Set textfield to imperial by default
                
@@ -80,43 +104,50 @@ class ViewController: UIViewController{
                
                textField3.attributedPlaceholder = NSAttributedString(string: "Inches",
                attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        textField4.attributedPlaceholder = NSAttributedString(string: "Months",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        textField5.attributedPlaceholder = NSAttributedString(string: "Fat %",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        textField6.attributedPlaceholder = NSAttributedString(string: "Years",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        
+        textField7.attributedPlaceholder = NSAttributedString(string: "Activity Level",
+        attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
        
         //Set metric sgmented control selection based on memory
         //And download info if previosly filled
-        let bodyWeight  = defaults.double(forKey: Keys.bodyWeight)
-        let heightBig   = defaults.double(forKey: Keys.heightBig)
-        let heightSmall = defaults.double(forKey: Keys.heightSmall)
-        let experience  = defaults.double(forKey: Keys.experience)
-        let composition = defaults.double(forKey: Keys.composition)
-        let age         = defaults.double(forKey: Keys.age)
-        let sex         = defaults.bool(forKey: Keys.sex)
-        let units       = defaults.bool(forKey: Keys.unitsBool)
-        var activityMultiplier = defaults.string(forKey: Keys.activityLevel)
+        let bodyWeight  = defaults.double(forKey: Save.bodyWeight)
+        let heightBig   = defaults.double(forKey: Save.heightBig)
+        let heightSmall = defaults.double(forKey: Save.heightSmall)
+        let experience  = defaults.double(forKey: Save.experience)
+        let composition = defaults.double(forKey: Save.composition)
+        let age         = defaults.double(forKey: Save.age)
+        let sex         = defaults.bool(forKey: Save.sex)
+        let units       = defaults.bool(forKey: Save.unitsBool)
+        var activityMultiplier = defaults.string(forKey: Save.activityLevel)
         
         if (!(bodyWeight == 0.00)){
-            textField1.attributedPlaceholder = NSAttributedString(string: String(bodyWeight),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField1.text = String(bodyWeight)
+            //attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         }
         if (!(heightBig == 0.00)){
-            textField2.attributedPlaceholder = NSAttributedString(string: String(heightBig),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField2.text = String(heightBig)
         }
         if (!(heightSmall == 0.00)){
-            textField3.attributedPlaceholder = NSAttributedString(string: String(heightSmall),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField3.text = String(heightSmall)
         }
         if (!(experience == 0.00)){
-            textField4.attributedPlaceholder = NSAttributedString(string: String(experience),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField4.text = String(experience)
         }
         if (!(composition == 0.00)){
-            textField5.attributedPlaceholder = NSAttributedString(string: String(composition),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+            textField5.text = String(composition)
         }
         if (!(age == 0.00)){
-            print(age)
-            textField6.attributedPlaceholder = NSAttributedString(string: String(age),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    
+            textField6.text = String(age)
         }
         
         if (!(activityMultiplier == "")){
@@ -169,6 +200,19 @@ class ViewController: UIViewController{
         createALPicker()
         createToolbar()
         
+        //Retrieve info for premium And SHOWADS
+            let annual = defaults.bool(forKey: Save.annualPurchased)
+                   let biannual = defaults.bool(forKey: Save.biannualPurchased)
+                   let monthly = defaults.bool(forKey: Save.monthlyPurchased)
+        let hsPromo = defaults.bool(forKey: Save.HSPromo)
+                  // print("annual", annual, "\nbiannual", biannual, "\nmonthly", monthly)
+        
+           let premium = annual || biannual || monthly || hsPromo
+        
+        if (premium){
+            AdFreeButton.isHidden = true
+        }
+        
        
       
     }
@@ -177,23 +221,23 @@ class ViewController: UIViewController{
         if(checkTextfield()){
                   //SAVE DAT AND NAVIGATE TO NEXT VIEW
             let bodyWeight = Double(textField1.text!)
-            defaults.set(bodyWeight, forKey: Keys.bodyWeight)
+            defaults.set(bodyWeight, forKey: Save.bodyWeight)
             let heightBig = Double(textField2.text!)
-            defaults.set(heightBig, forKey: Keys.heightBig)
+            defaults.set(heightBig, forKey: Save.heightBig)
             let heightSmall = Double(textField3.text!)
-            defaults.set(heightSmall, forKey: Keys.heightSmall)
+            defaults.set(heightSmall, forKey: Save.heightSmall)
             let experience = Double(textField4.text!)
-            defaults.set(experience, forKey: Keys.experience)
+            defaults.set(experience, forKey: Save.experience)
             let composition = Double(textField5.text!)
-            defaults.set(composition, forKey: Keys.composition)
+            defaults.set(composition, forKey: Save.composition)
             let age = Double(textField6.text!)
-            defaults.set(age, forKey: Keys.age)
+            defaults.set(age, forKey: Save.age)
             let activityLevel = String(activityLevelTextField.text!)
-            defaults.set(activityLevel, forKey: Keys.activityLevel)
+            defaults.set(activityLevel, forKey: Save.activityLevel)
             let thereAreTwoGenders = Bool(maleBool)
-            defaults.set(thereAreTwoGenders, forKey: Keys.sex)
+            defaults.set(thereAreTwoGenders, forKey: Save.sex)
             let units = Bool(unitsBool)
-            defaults.set(units, forKey: Keys.unitsBool)
+            defaults.set(units, forKey: Save.unitsBool)
      
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -289,7 +333,7 @@ class ViewController: UIViewController{
         //KEVIN JIMENEZ 06/19/2020 MAKE THE TOOLBAR FOR THE PICKER VIEW
         let activityPickerToolBar = UIToolbar()
         activityPickerToolBar.sizeToFit()
-        //Toolbar Color
+        //Toolbar Col   or
         activityPickerToolBar.barTintColor = .black
         activityPickerToolBar.tintColor = Colors.aXGreen
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,

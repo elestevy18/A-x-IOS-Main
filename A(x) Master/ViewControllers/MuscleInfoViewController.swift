@@ -1,6 +1,6 @@
 //
 //  MuscleInfoViewController.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by Kevin Jimenez on 7/20/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
@@ -148,7 +148,7 @@ class MuscleInfoViewController: UIViewController {
     @IBOutlet weak var currentVolumeLabel: UILabel!
     @IBOutlet weak var MRVTextField: UITextField!
     
-    var imageList:[String] = [] //= ["bicepsthreedee", "biceps", "brachioradialis"]
+    var imageList:[String] = []
     var maxImages: Int = 0
     static var imageIndex: NSInteger = 0
     
@@ -162,41 +162,41 @@ class MuscleInfoViewController: UIViewController {
         
         var maxString = "Vanilla"
         var currentVolumeString = "Vanilla"
-        let muscleString = defaults.string(forKey: Keys.muscleString)
+        let muscleString = defaults.string(forKey: Save.muscleString)
         
         if(muscleString == "Chest"){
             anatomyImage.image = UIImage(named:"pecs")
             currentMaxLabel.text = maxString
             currentVolumeLabel.text = currentVolumeString
             //Assign volume and max text
-            let chestMax = defaults.integer(forKey: Keys.chestMax)
+            let chestMax = defaults.integer(forKey: Save.chestMax)
             maxString = "Current Max: " + String(chestMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.chestProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.chestProgressInt))
         } else if(muscleString == "Biceps"){
             setGestures()
            anatomyImage.image = UIImage(named:"bicepsthreedee")
             maxImages = 1
             imageList = ["bicepsthreedee", "biceps"]
             
-            let bicepsMax = defaults.integer(forKey: Keys.bicepsMax)
+            let bicepsMax = defaults.integer(forKey: Save.bicepsMax)
             maxString = "Current Max: " + String(bicepsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.bicepsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.bicepsProgressInt))
         } else if(muscleString == "Lats"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"latissimusdorsi")
             
-            let latsMax = defaults.integer(forKey: Keys.latsMax)
+            let latsMax = defaults.integer(forKey: Save.latsMax)
             maxString = "Current Max: " + String(latsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.latsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.latsProgressInt))
         } else if(muscleString == "Glutes"){
             setGestures()
             anatomyImage.image = UIImage(named:"glutemax")
             maxImages = 1
             imageList = ["glutemax", "glutescutmajor"]
             
-            let glutesMax = defaults.integer(forKey: Keys.glutesMax)
+            let glutesMax = defaults.integer(forKey: Save.glutesMax)
             maxString = "Current Max: " + String(glutesMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.glutesProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.glutesProgressInt))
         } else if(muscleString == "Glute Medius"){
             print(muscleString!)
             setGestures()
@@ -204,41 +204,41 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["glutemedius", "glutescutmajor"]
             
-            let gluteMediusMax = defaults.integer(forKey: Keys.gluteMediusMax)
+            let gluteMediusMax = defaults.integer(forKey: Save.gluteMediusMax)
             maxString = "Current Max: " + String(gluteMediusMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.gluteMediusProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.gluteMediusProgressInt))
         } else if(muscleString == "Hamstrings"){
             setGestures()
             anatomyImage.image = UIImage(named:"hamstringbicepfemoris")
             maxImages = 2
             imageList = ["hamstringbicepfemoris", "hamstringsemimembranosus", "hamstringsemitendinosus"]
             
-            let hamstringsMax = defaults.integer(forKey: Keys.hamstringsMax)
+            let hamstringsMax = defaults.integer(forKey: Save.hamstringsMax)
             maxString = "Current Max: " + String(hamstringsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.hamstringsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.hamstringsProgressInt))
         } else if(muscleString == "Front Shoulder"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"anteriordeltoid")
             
-            let frontShoulderMax = defaults.integer(forKey: Keys.frontShoulderMax)
+            let frontShoulderMax = defaults.integer(forKey: Save.frontShoulderMax)
             maxString = "Current Max: " + String(frontShoulderMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.frontShoulderProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.frontShoulderProgressInt))
         }  else if(muscleString == "Lateral Shoulder"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"medialdeltoidlateralview")
             
-            let lateralShoulderMax = defaults.integer(forKey: Keys.lateralShoulderMax)
+            let lateralShoulderMax = defaults.integer(forKey: Save.lateralShoulderMax)
             maxString = "Current Max: " + String(lateralShoulderMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.lateralShoulderProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.lateralShoulderProgressInt))
         } else if(muscleString == "Back Shoulder"){
             setGestures()
            anatomyImage.image = UIImage(named:"posteriordeltoidsuperior")
             maxImages = 1
             imageList = ["posteriordeltoidsuperior", "posteriordeltoidposteriorview"]
             
-            let backShoulderMax = defaults.integer(forKey: Keys.backShoulderMax)
+            let backShoulderMax = defaults.integer(forKey: Save.backShoulderMax)
             maxString = "Current Max: " + String(backShoulderMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.backShoulderProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.backShoulderProgressInt))
         } else if(muscleString == "Rotator Cuff"){
             setGestures()
             print(muscleString!)
@@ -246,9 +246,9 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["rotatorcuff", "infraspinatusthreedee"]
             
-            let rotatorCuffMax = defaults.integer(forKey: Keys.rotatorCuffMax)
+            let rotatorCuffMax = defaults.integer(forKey: Save.rotatorCuffMax)
             maxString = "Current Max: " + String(rotatorCuffMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.rotatorCuffProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.rotatorCuffProgressInt))
         } else if(muscleString == "Triceps"){
             setGestures()
             print(muscleString!)
@@ -256,41 +256,41 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["triceps", "tricepswhole"]
             
-            let tricepsMax = defaults.integer(forKey: Keys.tricepsMax)
+            let tricepsMax = defaults.integer(forKey: Save.tricepsMax)
             maxString = "Current Max: " + String(tricepsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.tricepsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.tricepsProgressInt))
         } else if(muscleString == "Quads"){
             anatomyImage.image = UIImage(named:"quadriceps")
             
-            let quadsMax = defaults.integer(forKey: Keys.quadsMax)
+            let quadsMax = defaults.integer(forKey: Save.quadsMax)
             maxString = "Current Max: " + String(quadsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.quadsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.quadsProgressInt))
         } else if(muscleString == "Abs"){
             anatomyImage.image = UIImage(named:"rectusabdominis")
             
-            let absMax = defaults.integer(forKey: Keys.absMax)
+            let absMax = defaults.integer(forKey: Save.absMax)
             maxString = "Current Max: " + String(absMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.absProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.absProgressInt))
         } else if(muscleString == "Obliques"){
             anatomyImage.image = UIImage(named:"obliques")
             
-            let obliquesMax = defaults.integer(forKey: Keys.obliquesMax)
+            let obliquesMax = defaults.integer(forKey: Save.obliquesMax)
             maxString = "Current Max: " + String(obliquesMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.obliquesProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.obliquesProgressInt))
         } else if(muscleString == "Serratus"){
             anatomyImage.image = UIImage(named:"serratus")
             maxImages = 1
             imageList = ["serratus", "serratusanterior"]
             
-            let serratusMax = defaults.integer(forKey: Keys.serratusMax)
+            let serratusMax = defaults.integer(forKey: Save.serratusMax)
             maxString = "Current Max: " + String(serratusMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.serratusProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.serratusProgressInt))
         } else if(muscleString == "Transverse Ab"){
             anatomyImage.image = UIImage(named:"transversusabdominis")
             
-            let transverseAbMax = defaults.integer(forKey: Keys.transverseAbMax)
+            let transverseAbMax = defaults.integer(forKey: Save.transverseAbMax)
             maxString = "Current Max: " + String(transverseAbMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.transverseAbProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.transverseAbProgressInt))
         } else if(muscleString == "Calves"){
             setGestures()
             print(muscleString!)
@@ -298,18 +298,18 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["calfgastroc", "calfsoleus"]
             
-            let calvesMax = defaults.integer(forKey: Keys.calvesMax)
+            let calvesMax = defaults.integer(forKey: Save.calvesMax)
             maxString = "Current Max: " + String(calvesMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.calvesProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.calvesProgressInt))
         } else if(muscleString == "Neck"){
             setGestures()
             anatomyImage.image = UIImage(named:"neckanteriorview")
             maxImages = 2
             imageList = ["neckanteriorview", "necklateralview", "neckposteriorview"]
             
-            let neckMax = defaults.integer(forKey: Keys.neckMax)
+            let neckMax = defaults.integer(forKey: Save.neckMax)
             maxString = "Current Max: " + String(neckMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.neckProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.neckProgressInt))
         } else if(muscleString == "Forearm Extensors"){
             setGestures()
             print(muscleString!)
@@ -317,9 +317,9 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["extensors", "forearmcorsssection"]
             
-            let forearmExtensorsMax = defaults.integer(forKey: Keys.forearmExtensorsMax)
+            let forearmExtensorsMax = defaults.integer(forKey: Save.forearmExtensorsMax)
             maxString = "Current Max: " + String(forearmExtensorsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.forearmExtensorsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.forearmExtensorsProgressInt))
         } else if(muscleString == "Ulnar Forearm"){
             setGestures()
             print(muscleString!)
@@ -327,27 +327,27 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["ulnarforearm", "forearmcorsssection"]
             
-            let ulnarForearmMax = defaults.integer(forKey: Keys.ulnarForearmMax)
+            let ulnarForearmMax = defaults.integer(forKey: Save.ulnarForearmMax)
             maxString = "Current Max: " + String(ulnarForearmMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.ulnarForearmProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.ulnarForearmProgressInt))
         } else if(muscleString == "Forearm Flexors"){
             setGestures()
             anatomyImage.image = UIImage(named:"superficialforearmflexor")
             maxImages = 2
             imageList = ["superficialforearmflexor", "deepforearmflexors", "forearmcorsssection"]
             
-            let forearmFlexorsMax = defaults.integer(forKey: Keys.forearmFlexorsMax)
+            let forearmFlexorsMax = defaults.integer(forKey: Save.forearmFlexorsMax)
             maxString = "Current Max: " + String(forearmFlexorsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.forearmFlexorsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.forearmFlexorsProgressInt))
         } else if(muscleString == "Forearm Flexors"){
             setGestures()
             anatomyImage.image = UIImage(named:"superficialforearmflexor")
             maxImages = 2
             imageList = ["superficialforearmflexor", "deepforearmflexors", "forearmcorsssection"]
             
-            let forearmFlexorsMax = defaults.integer(forKey: Keys.forearmFlexorsMax)
+            let forearmFlexorsMax = defaults.integer(forKey: Save.forearmFlexorsMax)
             maxString = "Current Max: " + String(forearmFlexorsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.forearmFlexorsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.forearmFlexorsProgressInt))
         } else if(muscleString == "Radial Forearm"){
             setGestures()
             print(muscleString!)
@@ -355,30 +355,30 @@ class MuscleInfoViewController: UIViewController {
             maxImages = 1
             imageList = ["brachioradialis", "forearmcorsssection"]
             
-            let radialForearmMax = defaults.integer(forKey: Keys.radialForearmMax)
+            let radialForearmMax = defaults.integer(forKey: Save.radialForearmMax)
             maxString = "Current Max: " + String(radialForearmMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.radialForearmProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.radialForearmProgressInt))
         } else if(muscleString == "Spinal Erectors"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"erectors")
             
-            let spinalErectorsMax = defaults.integer(forKey: Keys.spinalErectorsMax)
+            let spinalErectorsMax = defaults.integer(forKey: Save.spinalErectorsMax)
             maxString = "Current Max: " + String(spinalErectorsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.spinalErectorsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.spinalErectorsProgressInt))
         } else if(muscleString == "Upper Traps"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"uppertrapszoom")
             
-            let upperTrapsMax = defaults.integer(forKey: Keys.upperTrapsMax)
+            let upperTrapsMax = defaults.integer(forKey: Save.upperTrapsMax)
             maxString = "Current Max: " + String(upperTrapsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.upperTrapsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.upperTrapsProgressInt))
         } else if(muscleString == "Lower Traps"){
             print(muscleString!)
             anatomyImage.image = UIImage(named:"lowertraps")
             
-            let lowerTrapsMax = defaults.integer(forKey: Keys.lowerTrapsMax)
+            let lowerTrapsMax = defaults.integer(forKey: Save.lowerTrapsMax)
             maxString = "Current Max: " + String(lowerTrapsMax)
-            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Keys.lowerTrapsProgressInt))
+            currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.lowerTrapsProgressInt))
         }
         
         currentMaxLabel.text = maxString
@@ -573,250 +573,250 @@ class MuscleInfoViewController: UIViewController {
     }
 
     @IBAction func resetVolumePressed(_ sender: Any) {
-         let muscleString = defaults.string(forKey: Keys.muscleString)
+         let muscleString = defaults.string(forKey: Save.muscleString)
        if(muscleString == "Chest"){
         print("chest printed")
-                defaults.removeObject(forKey: Keys.chestProgress)
-                defaults.removeObject(forKey: Keys.chestProgressInt)
+                defaults.removeObject(forKey: Save.chestProgress)
+                defaults.removeObject(forKey: Save.chestProgressInt)
             } else if(muscleString == "Biceps"){
-                defaults.removeObject(forKey: Keys.bicepsProgress)
-                defaults.removeObject(forKey: Keys.bicepsProgressInt)
+                defaults.removeObject(forKey: Save.bicepsProgress)
+                defaults.removeObject(forKey: Save.bicepsProgressInt)
             } else if(muscleString == "Lats"){
-                defaults.removeObject(forKey: Keys.latsProgress)
-                defaults.removeObject(forKey: Keys.latsProgressInt)
+                defaults.removeObject(forKey: Save.latsProgress)
+                defaults.removeObject(forKey: Save.latsProgressInt)
             } else if(muscleString == "Glutes"){
-                defaults.removeObject(forKey: Keys.glutesProgress)
-                defaults.removeObject(forKey: Keys.glutesProgressInt)
+                defaults.removeObject(forKey: Save.glutesProgress)
+                defaults.removeObject(forKey: Save.glutesProgressInt)
             } else if(muscleString == "Glute Medius"){
                 print(muscleString!)
-                defaults.removeObject(forKey: Keys.gluteMediusProgress)
-                defaults.removeObject(forKey: Keys.gluteMediusProgressInt)
+                defaults.removeObject(forKey: Save.gluteMediusProgress)
+                defaults.removeObject(forKey: Save.gluteMediusProgressInt)
             } else if(muscleString == "Hamstrings"){
-                defaults.removeObject(forKey: Keys.hamstringsProgress)
-                defaults.removeObject(forKey: Keys.hamstringsProgressInt)
+                defaults.removeObject(forKey: Save.hamstringsProgress)
+                defaults.removeObject(forKey: Save.hamstringsProgressInt)
             } else if(muscleString == "Front Shoulder"){
-                defaults.removeObject(forKey: Keys.frontShoulderProgress)
-                defaults.removeObject(forKey: Keys.frontShoulderProgressInt)
+                defaults.removeObject(forKey: Save.frontShoulderProgress)
+                defaults.removeObject(forKey: Save.frontShoulderProgressInt)
             }  else if(muscleString == "Lateral Shoulder"){
-                defaults.removeObject(forKey: Keys.lateralShoulderProgress)
-                defaults.removeObject(forKey: Keys.lateralShoulderProgressInt)
+                defaults.removeObject(forKey: Save.lateralShoulderProgress)
+                defaults.removeObject(forKey: Save.lateralShoulderProgressInt)
             } else if(muscleString == "Back Shoulder"){
-                defaults.removeObject(forKey: Keys.backShoulderProgress)
-                defaults.removeObject(forKey: Keys.backShoulderProgressInt)
+                defaults.removeObject(forKey: Save.backShoulderProgress)
+                defaults.removeObject(forKey: Save.backShoulderProgressInt)
             } else if(muscleString == "Rotator Cuff"){
-                defaults.removeObject(forKey: Keys.rotatorCuffProgress)
-                defaults.removeObject(forKey: Keys.rotatorCuffProgressInt)
+                defaults.removeObject(forKey: Save.rotatorCuffProgress)
+                defaults.removeObject(forKey: Save.rotatorCuffProgressInt)
             } else if(muscleString == "Triceps"){
-                defaults.removeObject(forKey: Keys.tricepsProgress)
-                defaults.removeObject(forKey: Keys.tricepsProgressInt)
+                defaults.removeObject(forKey: Save.tricepsProgress)
+                defaults.removeObject(forKey: Save.tricepsProgressInt)
             } else if(muscleString == "Quads"){
-                defaults.removeObject(forKey: Keys.quadsProgress)
-                defaults.removeObject(forKey: Keys.quadsProgressInt)
+                defaults.removeObject(forKey: Save.quadsProgress)
+                defaults.removeObject(forKey: Save.quadsProgressInt)
             } else if(muscleString == "Abs"){
-                defaults.removeObject(forKey: Keys.absProgress)
-                defaults.removeObject(forKey: Keys.absProgressInt)
+                defaults.removeObject(forKey: Save.absProgress)
+                defaults.removeObject(forKey: Save.absProgressInt)
             } else if(muscleString == "Obliques"){
-                defaults.removeObject(forKey: Keys.obliquesProgress)
-                defaults.removeObject(forKey: Keys.obliquesProgressInt)
+                defaults.removeObject(forKey: Save.obliquesProgress)
+                defaults.removeObject(forKey: Save.obliquesProgressInt)
             } else if(muscleString == "Serratus"){
-                defaults.removeObject(forKey: Keys.serratusProgress)
-                defaults.removeObject(forKey: Keys.serratusProgressInt)
+                defaults.removeObject(forKey: Save.serratusProgress)
+                defaults.removeObject(forKey: Save.serratusProgressInt)
             } else if(muscleString == "Transverse Ab"){
-                defaults.removeObject(forKey: Keys.transverseAbProgress)
-                defaults.removeObject(forKey: Keys.transverseAbProgressInt)
+                defaults.removeObject(forKey: Save.transverseAbProgress)
+                defaults.removeObject(forKey: Save.transverseAbProgressInt)
             } else if(muscleString == "Calves"){
-                defaults.removeObject(forKey: Keys.calvesProgress)
-                defaults.removeObject(forKey: Keys.calvesProgressInt)
+                defaults.removeObject(forKey: Save.calvesProgress)
+                defaults.removeObject(forKey: Save.calvesProgressInt)
             } else if(muscleString == "Neck"){
-                defaults.removeObject(forKey: Keys.neckProgress)
-                defaults.removeObject(forKey: Keys.neckProgressInt)
+                defaults.removeObject(forKey: Save.neckProgress)
+                defaults.removeObject(forKey: Save.neckProgressInt)
             } else if(muscleString == "Forearm Extensors"){
-                defaults.removeObject(forKey: Keys.forearmExtensorsProgress)
-                defaults.removeObject(forKey: Keys.forearmExtensorsProgressInt)
+                defaults.removeObject(forKey: Save.forearmExtensorsProgress)
+                defaults.removeObject(forKey: Save.forearmExtensorsProgressInt)
             } else if(muscleString == "Ulnar Forearm"){
-                defaults.removeObject(forKey: Keys.ulnarForearmProgress)
-                defaults.removeObject(forKey: Keys.ulnarForearmProgressInt)
+                defaults.removeObject(forKey: Save.ulnarForearmProgress)
+                defaults.removeObject(forKey: Save.ulnarForearmProgressInt)
             } else if(muscleString == "Forearm Flexors"){
-                defaults.removeObject(forKey: Keys.forearmFlexorsProgress)
-                defaults.removeObject(forKey: Keys.forearmFlexorsProgressInt)
+                defaults.removeObject(forKey: Save.forearmFlexorsProgress)
+                defaults.removeObject(forKey: Save.forearmFlexorsProgressInt)
             } else if(muscleString == "Radial Forearm"){
-                defaults.removeObject(forKey: Keys.radialForearmProgress)
-                defaults.removeObject(forKey: Keys.radialForearmProgressInt)
+                defaults.removeObject(forKey: Save.radialForearmProgress)
+                defaults.removeObject(forKey: Save.radialForearmProgressInt)
             } else if(muscleString == "Spinal Erectors"){
-                defaults.removeObject(forKey: Keys.spinalErectorsProgress)
-                defaults.removeObject(forKey: Keys.spinalErectorsProgressInt)
+                defaults.removeObject(forKey: Save.spinalErectorsProgress)
+                defaults.removeObject(forKey: Save.spinalErectorsProgressInt)
             } else if(muscleString == "Upper Traps"){
-                defaults.removeObject(forKey: Keys.upperTrapsProgress)
-                defaults.removeObject(forKey: Keys.upperTrapsProgressInt)
+                defaults.removeObject(forKey: Save.upperTrapsProgress)
+                defaults.removeObject(forKey: Save.upperTrapsProgressInt)
             } else if(muscleString == "Lower Traps"){
-                defaults.removeObject(forKey: Keys.lowerTrapsProgress)
-                defaults.removeObject(forKey: Keys.lowerTrapsProgressInt)
+                defaults.removeObject(forKey: Save.lowerTrapsProgress)
+                defaults.removeObject(forKey: Save.lowerTrapsProgressInt)
             }
         
         
     }
     @IBAction func resetMaxPressed(_ sender: Any) {
         
-        let muscleString = defaults.string(forKey: Keys.muscleString)
+        let muscleString = defaults.string(forKey: Save.muscleString)
         if(muscleString == "Chest"){
             //Reset Max
             let chestMax = 12
-            defaults.set(chestMax, forKey: Keys.chestMax)
+            defaults.set(chestMax, forKey: Save.chestMax)
             } else if(muscleString == "Biceps"){
             //Reset Max
             let bicepsMax = 14
-            defaults.set(bicepsMax, forKey: Keys.bicepsMax)
+            defaults.set(bicepsMax, forKey: Save.bicepsMax)
             } else if(muscleString == "Lats"){
             let latsMax = 12
-            defaults.set(latsMax, forKey: Keys.latsMax)
+            defaults.set(latsMax, forKey: Save.latsMax)
             } else if(muscleString == "Glutes"){
             let glutesMax = 4
-            defaults.set(glutesMax, forKey: Keys.glutesMax)
+            defaults.set(glutesMax, forKey: Save.glutesMax)
             } else if(muscleString == "Glute Medius"){
             let gluteMediusMax = 12
-            defaults.set(gluteMediusMax, forKey: Keys.gluteMediusMax)
+            defaults.set(gluteMediusMax, forKey: Save.gluteMediusMax)
             } else if(muscleString == "Hamstrings"){
             let hamstringsMax = 10
-            defaults.set(hamstringsMax, forKey: Keys.hamstringsMax)
+            defaults.set(hamstringsMax, forKey: Save.hamstringsMax)
             } else if(muscleString == "Front Shoulder"){
             let frontShoulderMax = 16
-            defaults.set(frontShoulderMax, forKey: Keys.frontShoulderMax)
+            defaults.set(frontShoulderMax, forKey: Save.frontShoulderMax)
             }  else if(muscleString == "Lateral Shoulder"){
             let lateralShoulderMax = 16
-            defaults.set(lateralShoulderMax, forKey: Keys.lateralShoulderMax)
+            defaults.set(lateralShoulderMax, forKey: Save.lateralShoulderMax)
             } else if(muscleString == "Back Shoulder"){
             let backShoulderMax = 16
-            defaults.set(backShoulderMax, forKey: Keys.backShoulderMax)
+            defaults.set(backShoulderMax, forKey: Save.backShoulderMax)
             } else if(muscleString == "Rotator Cuff"){
              let rotatorCuffMax = 12
-            defaults.set(rotatorCuffMax, forKey: Keys.rotatorCuffMax)
+            defaults.set(rotatorCuffMax, forKey: Save.rotatorCuffMax)
             } else if(muscleString == "Triceps"){
             let tricepsMax = 10
-            defaults.set(tricepsMax, forKey: Keys.tricepsMax)
+            defaults.set(tricepsMax, forKey: Save.tricepsMax)
             } else if(muscleString == "Quads"){
              let quadsMax = 12
-            defaults.set(quadsMax, forKey: Keys.quadsMax)
+            defaults.set(quadsMax, forKey: Save.quadsMax)
             } else if(muscleString == "Abs"){
              let absMax = 16
-            defaults.set(absMax, forKey: Keys.absMax)
+            defaults.set(absMax, forKey: Save.absMax)
             } else if(muscleString == "Obliques"){
             let chestMax = 12
-            defaults.set(chestMax, forKey: Keys.chestMax)
+            defaults.set(chestMax, forKey: Save.chestMax)
             } else if(muscleString == "Serratus"){
             let serratusMax = 16
-            defaults.set(serratusMax, forKey: Keys.serratusMax)
+            defaults.set(serratusMax, forKey: Save.serratusMax)
             } else if(muscleString == "Transverse Ab"){
             let transverseAbMax = 16
-            defaults.set(transverseAbMax, forKey: Keys.transverseAbMax)
+            defaults.set(transverseAbMax, forKey: Save.transverseAbMax)
             } else if(muscleString == "Calves"){
             let calvesMax = 12
-            defaults.set(calvesMax, forKey: Keys.calvesMax)
+            defaults.set(calvesMax, forKey: Save.calvesMax)
             } else if(muscleString == "Neck"){
             let neckMax = 10
-            defaults.set(neckMax, forKey: Keys.neckMax)
+            defaults.set(neckMax, forKey: Save.neckMax)
             } else if(muscleString == "Forearm Extensors"){
             let neckMax = 10
-            defaults.set(neckMax, forKey: Keys.neckMax)
+            defaults.set(neckMax, forKey: Save.neckMax)
             } else if(muscleString == "Ulnar Forearm"){
             let ulnarForearmMax = 10
-            defaults.set(ulnarForearmMax, forKey: Keys.ulnarForearmMax)
+            defaults.set(ulnarForearmMax, forKey: Save.ulnarForearmMax)
             } else if(muscleString == "Forearm Flexors"){
             let forearmFlexorsMax = 10
-            defaults.set(forearmFlexorsMax, forKey: Keys.forearmFlexorsMax)
+            defaults.set(forearmFlexorsMax, forKey: Save.forearmFlexorsMax)
             } else if(muscleString == "Radial Forearm"){
             let radialForearmMax = 12
-            defaults.set(radialForearmMax, forKey: Keys.radialForearmMax)
+            defaults.set(radialForearmMax, forKey: Save.radialForearmMax)
             } else if(muscleString == "Spinal Erectors"){
             let spinalErectorsMax = 10
-            defaults.set(spinalErectorsMax, forKey: Keys.spinalErectorsMax)
+            defaults.set(spinalErectorsMax, forKey: Save.spinalErectorsMax)
             } else if(muscleString == "Upper Traps"){
             let upperTrapsMax = 10
-            defaults.set(upperTrapsMax, forKey: Keys.upperTrapsMax)
+            defaults.set(upperTrapsMax, forKey: Save.upperTrapsMax)
             } else if(muscleString == "Lower Traps"){
             let lowerTrapsMax = 12
-            defaults.set(lowerTrapsMax, forKey: Keys.lowerTrapsMax)
+            defaults.set(lowerTrapsMax, forKey: Save.lowerTrapsMax)
             }
     }
     
     @IBAction func setMRVPressed(_ sender: Any) {
     
-    let muscleString = defaults.string(forKey: Keys.muscleString)
+    let muscleString = defaults.string(forKey: Save.muscleString)
            if(muscleString == "Chest"){
             //Set MRV
             let chestMax = Double(MRVTextField.text!)
-            defaults.set(chestMax, forKey: Keys.chestMax)
+            defaults.set(chestMax, forKey: Save.chestMax)
                } else if(muscleString == "Biceps"){
                    let bicepsMax = Double(MRVTextField.text!)
-                   defaults.set(bicepsMax, forKey: Keys.bicepsMax)
+                   defaults.set(bicepsMax, forKey: Save.bicepsMax)
                } else if(muscleString == "Lats"){
                    let latsMax = Double(MRVTextField.text!)
-                   defaults.set(latsMax, forKey: Keys.latsMax)
+                   defaults.set(latsMax, forKey: Save.latsMax)
                } else if(muscleString == "Glutes"){
                    let glutesMax = Double(MRVTextField.text!)
-                   defaults.set(glutesMax, forKey: Keys.glutesMax)
+                   defaults.set(glutesMax, forKey: Save.glutesMax)
                } else if(muscleString == "Glute Medius"){
                    let gluteMediusMax = Double(MRVTextField.text!)
-                   defaults.set(gluteMediusMax, forKey: Keys.gluteMediusMax)
+                   defaults.set(gluteMediusMax, forKey: Save.gluteMediusMax)
                } else if(muscleString == "Hamstrings"){
                    let hamstringsMax = Double(MRVTextField.text!)
-                   defaults.set(hamstringsMax, forKey: Keys.hamstringsMax)
+                   defaults.set(hamstringsMax, forKey: Save.hamstringsMax)
                } else if(muscleString == "Front Shoulder"){
                    let frontShoulderMax = Double(MRVTextField.text!)
-                   defaults.set(frontShoulderMax, forKey: Keys.frontShoulderMax)
+                   defaults.set(frontShoulderMax, forKey: Save.frontShoulderMax)
                }  else if(muscleString == "Lateral Shoulder"){
                    let lateralShoulderMax = Double(MRVTextField.text!)
-                   defaults.set(lateralShoulderMax, forKey: Keys.lateralShoulderMax)
+                   defaults.set(lateralShoulderMax, forKey: Save.lateralShoulderMax)
                } else if(muscleString == "Back Shoulder"){
                    let backShoulderMax = Double(MRVTextField.text!)
-                   defaults.set(backShoulderMax, forKey: Keys.backShoulderMax)
+                   defaults.set(backShoulderMax, forKey: Save.backShoulderMax)
                } else if(muscleString == "Rotator Cuff"){
                    let rotatorCuffMax = Double(MRVTextField.text!)
-                   defaults.set(rotatorCuffMax, forKey: Keys.rotatorCuffMax)
+                   defaults.set(rotatorCuffMax, forKey: Save.rotatorCuffMax)
                } else if(muscleString == "Triceps"){
                    let tricepsMax = Double(MRVTextField.text!)
-                   defaults.set(tricepsMax, forKey: Keys.tricepsMax)
+                   defaults.set(tricepsMax, forKey: Save.tricepsMax)
                } else if(muscleString == "Quads"){
                    let quadsMax = Double(MRVTextField.text!)
-                   defaults.set(quadsMax, forKey: Keys.quadsMax)
+                   defaults.set(quadsMax, forKey: Save.quadsMax)
                } else if(muscleString == "Abs"){
                    let absMax = Double(MRVTextField.text!)
-                   defaults.set(absMax, forKey: Keys.absMax)
+                   defaults.set(absMax, forKey: Save.absMax)
                } else if(muscleString == "Obliques"){
                    let obliquesMax = Double(MRVTextField.text!)
-                   defaults.set(obliquesMax, forKey: Keys.obliquesMax)
+                   defaults.set(obliquesMax, forKey: Save.obliquesMax)
                } else if(muscleString == "Serratus"){
                    let serratusMax = Double(MRVTextField.text!)
-                   defaults.set(serratusMax, forKey: Keys.serratusMax)
+                   defaults.set(serratusMax, forKey: Save.serratusMax)
                } else if(muscleString == "Transverse Ab"){
                    let transverseAbMax = Double(MRVTextField.text!)
-                   defaults.set(transverseAbMax, forKey: Keys.transverseAbMax)
+                   defaults.set(transverseAbMax, forKey: Save.transverseAbMax)
                } else if(muscleString == "Calves"){
                    let calvesMax = Double(MRVTextField.text!)
-                   defaults.set(calvesMax, forKey: Keys.calvesMax)
+                   defaults.set(calvesMax, forKey: Save.calvesMax)
                } else if(muscleString == "Neck"){
                    let neckMax = Double(MRVTextField.text!)
-                   defaults.set(neckMax, forKey: Keys.neckMax)
+                   defaults.set(neckMax, forKey: Save.neckMax)
                } else if(muscleString == "Forearm Extensors"){
                    let forearmExtensorsMax = Double(MRVTextField.text!)
-                   defaults.set(forearmExtensorsMax, forKey: Keys.forearmExtensorsMax)
+                   defaults.set(forearmExtensorsMax, forKey: Save.forearmExtensorsMax)
                } else if(muscleString == "Ulnar Forearm"){
                    let ulnarForearmMax = Double(MRVTextField.text!)
-                   defaults.set(ulnarForearmMax, forKey: Keys.ulnarForearmMax)
+                   defaults.set(ulnarForearmMax, forKey: Save.ulnarForearmMax)
                } else if(muscleString == "Forearm Flexors"){
                    let forearmFlexorsMax = Double(MRVTextField.text!)
-                   defaults.set(forearmFlexorsMax, forKey: Keys.forearmFlexorsMax)
+                   defaults.set(forearmFlexorsMax, forKey: Save.forearmFlexorsMax)
                } else if(muscleString == "Radial Forearm"){
                    let radialForearmMax = Double(MRVTextField.text!)
-                   defaults.set(radialForearmMax, forKey: Keys.radialForearmMax)
+                   defaults.set(radialForearmMax, forKey: Save.radialForearmMax)
                } else if(muscleString == "Spinal Erectors"){
                    let spinalErectorsMax = Double(MRVTextField.text!)
-                   defaults.set(spinalErectorsMax, forKey: Keys.spinalErectorsMax)
+                   defaults.set(spinalErectorsMax, forKey: Save.spinalErectorsMax)
                } else if(muscleString == "Upper Traps"){
                    let upperTrapsMax = Double(MRVTextField.text!)
-                   defaults.set(upperTrapsMax, forKey: Keys.upperTrapsMax)
+                   defaults.set(upperTrapsMax, forKey: Save.upperTrapsMax)
                } else if(muscleString == "Lower Traps"){
                    let lowerTrapsMax = Double(MRVTextField.text!)
-                   defaults.set(lowerTrapsMax, forKey: Keys.lowerTrapsMax)
+                   defaults.set(lowerTrapsMax, forKey: Save.lowerTrapsMax)
                }
     
     }

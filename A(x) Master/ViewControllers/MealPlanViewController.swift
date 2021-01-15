@@ -1,6 +1,6 @@
 //
 //  MealPlanViewController.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by Kevin Jimenez on 7/17/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import GoogleMobileAds
 
 
 class MealPlanViewController: UIViewController {
@@ -43,12 +44,18 @@ class MealPlanViewController: UIViewController {
         static let fatSBPosition         = "fatSBPosition"
         static let energySeekBarPosition = "energySeekBarPosition"
         static let proteinSeekBarPosition = "proteinSeekBarPosition"
-        
-        
-     
-        
+         static let  premium                     = "premium"
+        static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
+    }
+    
+    private var interstitialAd: GADInterstitial?
+    
+    struct Constants{
+       
     }
 
+
+    @IBOutlet weak var inputInfoutton: UIButton!
     @IBOutlet weak var pieView: PieChartView!
     @IBOutlet weak var boltImage: UIImageView!
     @IBOutlet weak var calorieNumber: UILabel!
@@ -73,39 +80,60 @@ class MealPlanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Add borders and round button
+        inputInfoutton.layer.borderWidth = 1
+        inputInfoutton.layer.borderColor = UIColor.red.cgColor
+        inputInfoutton.layer.cornerRadius = 10
+        
+        
+        //Set logo in navigation bar and make it clickable
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "aesthetx30times100")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(MealPlanViewController.titleWasTapped))
+        navigationItem.titleView?.isUserInteractionEnabled = true
+        navigationItem.titleView?.addGestureRecognizer(recognizer)
         
         //Place views dynamically
         let screenHeight = UIScreen.main.bounds.size.height
         let screenWidth = UIScreen.main.bounds.size.width
         boltImage.frame = CGRect(x: 12, y: screenHeight/5, width: screenWidth * 0.3, height: screenWidth * 0.3)
         calorieNumber.frame = CGRect(x: screenWidth/13 , y: screenHeight/2.7, width: 85, height: 21)
-        dCILAbel.frame = CGRect(x: screenWidth/13 , y: screenHeight/8, width: 95, height: 42)
+        dCILAbel.frame = CGRect(x: 8 , y: screenHeight/8, width: 135, height: 62)
         caloricIntakeLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ), width: screenWidth, height: 21)
         weightLossSpeedLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 25, width: screenWidth, height: 21)
-         slowLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 33, height: 18)
-        fastLabel.frame = CGRect(x: screenWidth - 54, y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 29, height: 18)
+         slowLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 43, height: 18)
+        fastLabel.frame = CGRect(x: screenWidth - 54, y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 39, height: 18)
         weightLossSpeedSeekBar.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 58, width: screenWidth - 40, height: 30)
-        carbsLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 109, width: 41, height: 18)
-        fatLabel.frame = CGRect(x: screenWidth - 47, y: ((screenHeight/10) + 0.7 * screenWidth ) + 109, width: 22, height: 18)
+        carbsLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 109, width: 51, height: 18)
+        fatLabel.frame = CGRect(x: screenWidth - 47, y: ((screenHeight/10) + 0.7 * screenWidth ) + 109, width: 32, height: 18)
         energySourceSeekBar.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 125, width: screenWidth - 40, height: 30)
         energySourceLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 92, width: screenWidth, height: 21)
         proteinLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 159, width: screenWidth, height: 21)
         lowLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 176, width: 41, height: 18)
-        highLabel.frame = CGRect(x: screenWidth - 47, y: ((screenHeight/10) + 0.7 * screenWidth ) + 176, width: 32, height: 18)
+        highLabel.frame = CGRect(x: screenWidth - 57, y: ((screenHeight/10) + 0.7 * screenWidth ) + 176, width: 42, height: 20)
         proteinSeekBar.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 198, width: screenWidth - 40, height: 30)
         
-        trackWith.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 230, width: 147, height: 18)
+        trackWith.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 230, width: 200, height: 18)
         
         cronometerImage.frame = CGRect(x: 5 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 244, width: 204, height: 40)
         
-        learnNutritionButton.frame = CGRect(x: screenWidth - 128 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 235, width: 108, height: 40)
+        learnNutritionButton.frame = CGRect(x: screenWidth - 143 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 235, width: 138, height: 40)
+        
+        
+        learnNutritionButton.layer.borderWidth = 1
+        learnNutritionButton.layer.borderColor = Colors.aXGreen.cgColor
+        learnNutritionButton.layer.cornerRadius = 10
         
         //Set seekBar Position
-        let calPosition = defaults.double(forKey: Keys.calPosition)
+        let calPosition = defaults.double(forKey: Save.calPosition)
         weightLossSpeedSeekBar.setValue(Float(calPosition), animated: true)
-        let energyPosition = defaults.double(forKey: Keys.energySeekBarPosition)
+        let energyPosition = defaults.double(forKey: Save.energySeekBarPosition)
         energySourceSeekBar.setValue(Float(energyPosition), animated: true)
-        let proteinPosition = defaults.double(forKey: Keys.proteinSeekBarPosition)
+        let proteinPosition = defaults.double(forKey: Save.proteinSeekBarPosition)
         proteinSeekBar.setValue(Float(proteinPosition), animated: true)
         
         //cronometer link
@@ -117,9 +145,9 @@ class MealPlanViewController: UIViewController {
         // make sure imageView can be interacted with by user
         cronometerImage.isUserInteractionEnabled = true
 
-        let composition = defaults.double(forKey: Keys.composition)
-        var activityMultiplier = defaults.string(forKey: Keys.activityLevel)
-        let bodyWeight  = defaults.double(forKey: Keys.bodyWeight)
+        let composition = defaults.double(forKey: Save.composition)
+        let activityMultiplier = defaults.string(forKey: Save.activityLevel)
+        let bodyWeight  = defaults.double(forKey: Save.bodyWeight)
         var activityMultiplierNum = 1.20
         if (activityMultiplier == "Sedentary"){
             activityMultiplierNum =  1.20
@@ -134,7 +162,7 @@ class MealPlanViewController: UIViewController {
         }
         
         
-        var protein = defaults.double(forKey: Keys.protein)
+        var protein = defaults.double(forKey: Save.protein)
         if (protein == 0.00){
              protein = bodyWeight;
         }
@@ -143,44 +171,40 @@ class MealPlanViewController: UIViewController {
         
         let lbm = mass - (((composition * mass) / 100));
         let bmr = (370 + (21.6 * lbm));
-        defaults.set(lbm, forKey: Keys.lbm)
+        defaults.set(lbm, forKey: Save.lbm)
         let tdee = bmr * activityMultiplierNum;
         print("tdee", tdee, "bmr", bmr, "activity multiplier", activityMultiplierNum, lbm, "lbm")
        
-        var minRateLossCals = defaults.double(forKey: Keys.minlossrate)
+        var minRateLossCals = defaults.double(forKey: Save.minlossrate)
     
         if (minRateLossCals > 10000000 || minRateLossCals < -10000000) {
             minRateLossCals = 0;
         }
-        defaults.set(minRateLossCals, forKey: Keys.minlossrate)
+        defaults.set(minRateLossCals, forKey: Save.minlossrate)
         
-        var intake = tdee + minRateLossCals;
+        let intake = tdee + minRateLossCals;
         
-        //intake = defaults.set(forKey: Keys.intake)
-        defaults.set(intake, forKey: Keys.intake)
-        
-        
-        //TODO final TextView intaketxt = v.findViewById(R.id.calorieintake);
-        //TODO intaketxt.setText(Float.toString(intake));
+        //intake = defaults.set(forKey: Save.intake)
+        defaults.set(intake, forKey: Save.intake)
         
         
         
-        var fat = defaults.double(forKey: Keys.fat)
+        var fat = defaults.double(forKey: Save.fat)
         
         if (fat == 0.00){
             fat = (lbm * 2.20462) * 0.33
         }
         
-        var carbs = defaults.double(forKey: Keys.carbs)
+        var carbs = defaults.double(forKey: Save.carbs)
         if (carbs == 0.00){
             carbs = (tdee - ((protein * 4) + (fat * 9))) / 4
         }
-        var maxFatIntake = (tdee - 200 - (protein * 4)) / 9;
-        defaults.set(maxFatIntake, forKey: Keys.maxFatIntake)
-        var fatDistance = maxFatIntake - fat;
-        defaults.set(fatDistance, forKey: Keys.fatDistance)
-        defaults.set(fat, forKey: Keys.fat)
-        defaults.set(tdee, forKey: Keys.tdee)
+        let maxFatIntake = (tdee - 200 - (protein * 4)) / 9;
+        defaults.set(maxFatIntake, forKey: Save.maxFatIntake)
+        let fatDistance = maxFatIntake - fat;
+        defaults.set(fatDistance, forKey: Save.fatDistance)
+        defaults.set(fat, forKey: Save.fat)
+        defaults.set(tdee, forKey: Save.tdee)
         
         
         setupPieChart(protein: protein, carbs: carbs, fat: fat)
@@ -188,6 +212,17 @@ class MealPlanViewController: UIViewController {
         caloricIntakeLabel.text = "Estimate Daily Caloric Expenditure: " + String(format: "%.2f", tdee)
 
         print("bodyWeight", bodyWeight, "protein", protein, "carbs", carbs, "fat",  fat, "tdee", tdee, "intake", intake)
+        
+        //Click cronometer to affiliate link
+        
+        cronometerImage.isUserInteractionEnabled = true
+        cronometerImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.imageTap)))
+        
+        //Hide pie chart
+        let bodyweight = defaults.double(forKey: Save.bodyWeight)
+        if (bodyweight == 0.00){
+            pieView.isHidden = true
+        } else { inputInfoutton.isHidden = true}
     }
     
     
@@ -243,15 +278,41 @@ class MealPlanViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func imageTap() {
+       guard let url = URL(string: "https://cronometer.com/") else {
+                 return //be safe
+               }
+
+               if #available(iOS 10.0, *) {
+                   UIApplication.shared.open(url, options: [:], completionHandler: nil)
+               } else {
+                   UIApplication.shared.openURL(url)
+               }
+    }
 
     
+    @IBAction func toInfoTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection")
+        self.show(infoCollection, sender: self)
+        
+        
+        //Retrieve info for premium And SHOWADS
+        
+        let premiumstore = defaults.bool(forKey: Save.premium)
+        let premium = premiumstore
+        if interstitialAd?.isReady ==  true && !premium {
+            interstitialAd?.present(fromRootViewController: self)
+        }
+    }
     @IBAction func calSeekBar(_ sender: UISlider) {
         
        
         let currentPosition = weightLossSpeedSeekBar.value
-        defaults.set(currentPosition, forKey: Keys.calPosition)
-        let sex = defaults.bool(forKey: Keys.sex)
-        let composition = defaults.double(forKey: Keys.composition)
+        defaults.set(currentPosition, forKey: Save.calPosition)
+        let sex = defaults.bool(forKey: Save.sex)
+        let composition = defaults.double(forKey: Save.composition)
         
         if (sex && composition <= 12.00 || !(sex) && composition <= 20.00) {
             weightLossSpeedSeekBar.isHidden = true
@@ -260,32 +321,32 @@ class MealPlanViewController: UIViewController {
             weightLossSpeedLabel.textColor  = UIColor.white
             weightLossSpeedLabel.text       = "You don't need to lose weight. Happy bulking."
         } else{
-            let bodyweight = defaults.double(forKey: Keys.bodyWeight)
+            let bodyweight = defaults.double(forKey: Save.bodyWeight)
             let maxLossRateCals = ((bodyweight * 0.01) * 3500) / 7
-            let minRateLossCals = defaults.double(forKey: Keys.minlossrate)
-            defaults.set(maxLossRateCals, forKey: Keys.maxlossrate)
+            let minRateLossCals = defaults.double(forKey: Save.minlossrate)
+            defaults.set(maxLossRateCals, forKey: Save.maxlossrate)
             //defaults.set(minRateLossCals)
             let deficitRange = maxLossRateCals - minRateLossCals
             let deficitScale = deficitRange / 1 //OG100
             let deficit = (Double(currentPosition) * deficitScale)
             let deficit7 = deficit / 7
-            var protein = defaults.double(forKey: Keys.protein)
+            var protein = defaults.double(forKey: Save.protein)
             if (protein == 0.00){
                 protein = bodyweight
             }
-            let fat = defaults.double(forKey: Keys.fat)
-            defaults.set(deficit7, forKey: Keys.deficit)
-            let tdee = defaults.double(forKey: Keys.tdee)
+            let fat = defaults.double(forKey: Save.fat)
+            defaults.set(deficit7, forKey: Save.deficit)
+            let tdee = defaults.double(forKey: Save.tdee)
             let intake = tdee - deficit
             let maxFatIntake = (intake - 200 - (protein * 4)) / 9
             let fatDistance = maxFatIntake - fat
             let fatscale = fatDistance / 10;
             let carbs = (intake - (fat * 9)) / 4;
             let proSeekBarPosition = currentPosition
-            defaults.set(proSeekBarPosition, forKey: Keys.calsbprogress)
-            defaults.set(fat, forKey: Keys.fat)
-            defaults.set(carbs, forKey: Keys.carbs)
-            defaults.set(intake, forKey: Keys.intake)
+            defaults.set(proSeekBarPosition, forKey: Save.calsbprogress)
+            defaults.set(fat, forKey: Save.fat)
+            defaults.set(carbs, forKey: Save.carbs)
+            defaults.set(intake, forKey: Save.intake)
             setupPieChart(protein: protein, carbs: carbs, fat: fat)
             
             calorieNumber.text = String(format: "%.2f", intake)
@@ -302,12 +363,12 @@ class MealPlanViewController: UIViewController {
     @IBAction func energySeekBar(sender: UISlider) {
         
         let currentPosition = energySourceSeekBar.value
-        defaults.set(currentPosition, forKey: Keys.energySeekBarPosition)
-        let intake = defaults.double(forKey: Keys.intake)
-        let tdee = defaults.double(forKey: Keys.tdee)
-        let protein = defaults.double(forKey: Keys.protein)
-        var fat = defaults.double(forKey: Keys.fat)
-        let lbm = defaults.double(forKey: Keys.lbm)
+        defaults.set(currentPosition, forKey: Save.energySeekBarPosition)
+        let intake = defaults.double(forKey: Save.intake)
+        let tdee = defaults.double(forKey: Save.tdee)
+        let protein = defaults.double(forKey: Save.protein)
+        var fat = defaults.double(forKey: Save.fat)
+        let lbm = defaults.double(forKey: Save.lbm)
         var seekBarPosition = energySourceSeekBar.value * 100
         let minfat =  (lbm * 2.20462) * 0.33
         let maxFatIntake = (intake - 200 - (protein * 4)) / 9;
@@ -316,9 +377,9 @@ class MealPlanViewController: UIViewController {
         fat = minfat + (Double(seekBarPosition) * fatscale);
         let carbs = (intake - (fat * 9) - (protein * 4)) / 4;
         seekBarPosition =  energySourceSeekBar.value;
-        defaults.set(seekBarPosition, forKey: Keys.fatSBPosition)
-        defaults.set(fat, forKey: Keys.fat)
-        defaults.set(carbs, forKey: Keys.carbs)
+        defaults.set(seekBarPosition, forKey: Save.fatSBPosition)
+        defaults.set(fat, forKey: Save.fat)
+        defaults.set(carbs, forKey: Save.carbs)
         setupPieChart(protein: protein, carbs: carbs, fat: fat)
         print("protein", protein, "carbs", carbs, "fat",  fat, "intake",
                    intake, "fat distance", fatDistance )
@@ -330,25 +391,47 @@ class MealPlanViewController: UIViewController {
     @IBAction func proteinSeekBar(_sender:UISlider){
        
         let currentPosition = proteinSeekBar.value
-        defaults.set(currentPosition, forKey: Keys.proteinSeekBarPosition)
-        let bodyWeight = defaults.double(forKey: Keys.bodyWeight)
+        defaults.set(currentPosition, forKey: Save.proteinSeekBarPosition)
+        let bodyWeight = defaults.double(forKey: Save.bodyWeight)
         let minProtein = bodyWeight
         let maxProtein = bodyWeight * 1.15
         let proetinDistance = maxProtein - minProtein
         let proteinScale = proetinDistance / 100
         let seekBarPosition = proteinSeekBar.value * 100
         let protein = (proteinScale * Double(seekBarPosition)) + bodyWeight
-        let intake = defaults.double(forKey: Keys.intake)
-        let fat = defaults.double(forKey: Keys.fat)
+        let intake = defaults.double(forKey: Save.intake)
+        let fat = defaults.double(forKey: Save.fat)
         let carbs = (intake - (fat * 9) - (protein * 4)) / 4;
         let proSeekBarPosition = Double(seekBarPosition)
-        defaults.set(proSeekBarPosition, forKey: Keys.proSeekBarPostion)
-        defaults.set(fat, forKey: Keys.fat)
-        defaults.set(carbs, forKey: Keys.carbs)
-        defaults.set(protein, forKey: Keys.protein)
+        defaults.set(proSeekBarPosition, forKey: Save.proSeekBarPostion)
+        defaults.set(fat, forKey: Save.fat)
+        defaults.set(carbs, forKey: Save.carbs)
+        defaults.set(protein, forKey: Save.protein)
         setupPieChart(protein: protein, carbs: carbs, fat: fat)
         
     }
     
-    
+    @IBAction func nutritionPlaylist(_ sender: Any) {
+        
+        guard let url = URL(string: "https://www.youtube.com/watch?v=wxzc_2c6GMg&list=PLdsCUIkYpuc6mPZwCQv-AaNjEg3YXCxL7") else {
+                  return //be safe
+                }
+
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+    }
+    @objc private func titleWasTapped() {
+            guard let url = URL(string: "http://aesthet-x.com/about/") else {
+                return //be safe
+              }
+
+              if #available(iOS 10.0, *) {
+                  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+              } else {
+                  UIApplication.shared.openURL(url)
+              }
+    }
 }

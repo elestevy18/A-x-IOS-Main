@@ -1,6 +1,6 @@
 //
 //  VolumeTrackerTableViewCell.swift
-//  A(x) Master
+//  AofX
 //
 //  Created by Kevin Jimenez on 7/1/20.
 //  Copyright © 2020 Aesthet(X). All rights reserved.
