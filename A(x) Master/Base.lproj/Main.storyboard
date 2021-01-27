@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Promo View Controller-->
         <scene sceneID="nnS-PK-Z6S">
             <objects>
-                <viewController storyboardIdentifier="promoCode" id="kTl-zH-YmM" customClass="HSViewController" customModule="A_x__Master" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="promoCode" id="kTl-zH-YmM" customClass="HSPromoViewController" customModule="A_x__Master" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="promoCode" id="uH4-Cd-zgl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1261,7 +1261,7 @@ Volume:</string>
         <!--Info View Controller-->
         <scene sceneID="1On-X4-byg">
             <objects>
-                <viewController id="WFg-GP-fU4" customClass="InfoViewController" customModule="A_x__Master" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="notes" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WFg-GP-fU4" customClass="InfoViewController" customModule="A_x__Master" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GBo-Ms-lsZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1993,6 +1993,21 @@ Volume:</string>
             </objects>
             <point key="canvasLocation" x="7099" y="161"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="RWk-IY-rfc">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="3o3-6B-5Nd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Wc-N7-9NR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="iX9-z3-Hr8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwC-uf-P6A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6388" y="-767"/>
+        </scene>
         <!--specificExerciseHistory-->
         <scene sceneID="IuS-P0-PXA">
             <objects>
@@ -2001,7 +2016,7 @@ Volume:</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KeB-57-axT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tableView" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="109" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KeB-57-axT">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2146,8 +2161,8 @@ Volume:</string>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="Xrg-0C-esz" id="Bp2-HN-Tz6"/>
-                                    <outlet property="delegate" destination="Xrg-0C-esz" id="GZl-zP-Kbd"/>
+                                    <outlet property="dataSource" destination="Xrg-0C-esz" id="1dB-Tr-e1M"/>
+                                    <outlet property="delegate" destination="Xrg-0C-esz" id="fiz-py-OlC"/>
                                 </connections>
                             </tableView>
                         </subviews>

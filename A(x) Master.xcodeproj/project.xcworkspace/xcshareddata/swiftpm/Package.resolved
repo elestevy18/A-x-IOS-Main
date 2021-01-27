@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "Charts",
+        "repositoryURL": "https://github.com/danielgindi/Charts",
+        "state": {
+          "branch": null,
+          "revision": "9b24868b61a75666355d824eeb97290e7f0dca42",
+          "version": "4.0.0"
+        }
+      },
+      {
+        "package": "Floaty",
+        "repositoryURL": "https://github.com/kciter/Floaty",
+        "state": {
+          "branch": "master",
+          "revision": "6fab04721056957d6a402f5bb28191640c3bc6d6",
+          "version": null
+        }
+      },
+      {
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
         "state": {

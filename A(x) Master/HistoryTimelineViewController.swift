@@ -68,11 +68,22 @@ class HistoryTimelineViewController: UIViewController  {
         let notesTxts = defaults.object(forKey: Save.noteTxts) as? [String]
         //set count at 50 to display 50 at a time and prevent unnecesarry processing. If less than 50 exercises are registered then we start at the size of the array to account for this.
         //TODO CHECK IF THE ARRAY IS EMPTY AND DIPLAY TEXT THAT THERE ISNO HISTORY IF SO\
-        var count = exTitleHist!.count - 1
+        let titleSize = exTitleHist?.count  ?? 0
+        var count = titleSize - 1
         var floor = 0
         if exTitleHist != nil{
             if exTitleHist!.count > 100 {
                 floor = exTitleHist!.count - 100
+            }
+            
+            //  COMBINE REPEATING ENTRIES
+            
+            if (exTitleHist?[count] == exTitleHist?[count-1]){
+                print("repeating entries")
+            } else {
+//                guard let a = exTitleHist?[count] else { return "nil last" }
+//                let b = exTitleHist?[count-1]
+//                print("last entry:" + a + "second to last entry: " + b)
             }
             
             //Testing
@@ -80,6 +91,9 @@ class HistoryTimelineViewController: UIViewController  {
             //                print("Exercise title: " + String)
             //            }
             //            print("Titles array size: " + String(exTitleHist!.count)  +  "   | Count: " + String(count))
+            
+            
+            //  ATTACHES DATA TO TABLE VIEW FOR EVERY ELEMENT IN HISTORY ARRAYS
             while (count >= floor && exTitleHist != nil){
                 //Print statements for testing only
                 //                print("got to loop")
@@ -96,8 +110,6 @@ class HistoryTimelineViewController: UIViewController  {
         } else {
             tableView.isHidden = true
         }
-
-        
     }
     
     
@@ -115,10 +127,8 @@ class HistoryTimelineViewController: UIViewController  {
         activityPickerToolBar.isUserInteractionEnabled =  true
     }
 
- 
     func styleButton(button: UIButton){
         button.layer.borderWidth = 1
-       
     }
 
     @IBAction func sortByExerciseClicked(_ sender: Any) {
@@ -146,11 +156,18 @@ extension HistoryTimelineViewController: UITableViewDataSource, UITableViewDeleg
         return cell
 
     }
-    //Uncomment for any code to run when user clicks on a cell
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let index = [indexPath.row]
-//  NAVIGATE TO VIEW NOTES
-//       }
+    
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   
+        defaults.set(indexPath.row, forKey: Save.notePosition)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashBoard = storyboard.instantiateViewController(identifier: "notes")
+        self.show(dashBoard, sender: self)
+        self.dismiss(animated: true, completion: nil)
+  
+       }
 
     
 

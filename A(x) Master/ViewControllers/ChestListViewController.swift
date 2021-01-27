@@ -752,7 +752,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -880,7 +879,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -898,16 +897,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -951,7 +950,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -1079,7 +1077,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -1097,16 +1095,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -1151,7 +1149,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -1288,7 +1285,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -1306,16 +1303,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -1354,7 +1351,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -1490,7 +1486,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -1508,16 +1504,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -1556,7 +1552,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -1690,7 +1685,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -1708,16 +1703,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -1756,7 +1751,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -1884,7 +1878,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -1902,16 +1896,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -1950,7 +1944,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -2078,7 +2071,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -2096,16 +2089,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -2144,7 +2137,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -2283,7 +2275,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -2301,16 +2293,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -2350,7 +2342,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -2478,7 +2469,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -2496,16 +2487,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -2546,7 +2537,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -2678,7 +2668,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -2696,16 +2686,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -2744,7 +2734,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -2872,7 +2861,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -2890,16 +2879,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -2940,7 +2929,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -3068,7 +3056,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -3086,16 +3074,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -3135,7 +3123,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -3272,7 +3259,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -3290,16 +3277,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -3339,7 +3326,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -3470,7 +3456,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -3488,16 +3474,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -3536,7 +3522,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -3664,7 +3649,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -3682,16 +3667,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -3731,7 +3716,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -3869,7 +3853,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -3887,16 +3871,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -3936,7 +3920,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -4064,7 +4047,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -4082,16 +4065,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -4131,7 +4114,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -4260,7 +4242,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -4278,16 +4260,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -4326,7 +4308,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -4454,7 +4435,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -4472,16 +4453,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -4520,7 +4501,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -4649,7 +4629,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -4667,16 +4647,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -4715,7 +4695,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -4844,7 +4823,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -4862,16 +4841,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -4911,7 +4890,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -5039,7 +5017,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -5057,16 +5035,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -5105,7 +5083,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -5238,7 +5215,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -5256,16 +5233,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -5307,7 +5284,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             
@@ -5430,7 +5406,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -5448,16 +5424,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -5497,7 +5473,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -5645,7 +5620,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -5663,16 +5638,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -5712,7 +5687,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -5840,7 +5814,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -5858,16 +5832,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -5906,7 +5880,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -6044,7 +6017,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -6062,16 +6035,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -6111,7 +6084,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -6247,7 +6219,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -6265,16 +6237,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -6312,7 +6284,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -6440,7 +6411,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -6458,16 +6429,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -6507,7 +6478,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -6636,7 +6606,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -6654,16 +6624,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -6703,7 +6673,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -6841,7 +6810,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -6859,16 +6828,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -6908,7 +6877,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -7049,7 +7017,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -7067,16 +7035,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -7116,7 +7084,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -7249,7 +7216,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -7267,16 +7234,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -7316,7 +7283,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -7445,7 +7411,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -7463,16 +7429,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -7512,7 +7478,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -7641,7 +7606,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -7659,16 +7624,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -7708,7 +7673,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -7845,7 +7809,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -7863,16 +7827,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -7912,7 +7876,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -8045,7 +8008,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -8063,16 +8026,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -8112,7 +8075,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -8248,7 +8210,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -8266,16 +8228,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -8315,7 +8277,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -8448,7 +8409,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -8466,16 +8427,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -8515,7 +8476,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -8644,7 +8604,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -8662,16 +8622,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -8711,7 +8671,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -8840,7 +8799,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -8858,16 +8817,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -8907,7 +8866,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -9040,7 +8998,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -9058,16 +9016,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -9107,7 +9065,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -9240,7 +9197,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -9258,16 +9215,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -9307,7 +9264,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -9444,7 +9400,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -9462,16 +9418,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -9511,7 +9467,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -9648,7 +9603,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -9666,16 +9621,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -9715,7 +9670,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -9844,7 +9798,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -9862,16 +9816,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -9911,7 +9865,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -10044,7 +9997,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -10062,16 +10015,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -10111,7 +10064,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -10248,7 +10200,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -10266,16 +10218,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -10315,7 +10267,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -10445,7 +10396,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -10463,16 +10414,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -10512,7 +10463,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -10646,7 +10596,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -10664,16 +10614,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -10713,7 +10663,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -10867,7 +10816,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -10885,16 +10834,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -10934,7 +10883,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -11076,7 +11024,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -11094,16 +11042,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -11143,7 +11091,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -11277,7 +11224,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -11295,16 +11242,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -11343,7 +11290,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -11477,7 +11423,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -11495,16 +11441,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -11543,7 +11489,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -11687,7 +11632,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -11705,16 +11650,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -11753,7 +11698,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -11893,7 +11837,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -11911,16 +11855,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -11961,7 +11905,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -12101,7 +12044,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -12119,16 +12062,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -12168,7 +12111,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -12303,7 +12245,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -12321,16 +12263,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -12369,7 +12311,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -12499,7 +12440,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -12517,16 +12458,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -12565,7 +12506,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -12703,7 +12643,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -12721,16 +12661,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -12768,7 +12708,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -12913,7 +12852,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -12931,16 +12870,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -12979,7 +12918,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -13117,7 +13055,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -13135,16 +13073,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -13184,7 +13122,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -13316,7 +13253,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -13334,16 +13271,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -13383,7 +13320,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -13523,7 +13459,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -13541,16 +13477,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -13590,7 +13526,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -13727,7 +13662,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -13745,16 +13680,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -13794,7 +13729,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -13936,7 +13870,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -13954,16 +13888,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -14003,7 +13937,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -14138,7 +14071,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -14156,16 +14089,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -14206,7 +14139,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -14341,7 +14273,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -14359,16 +14291,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -14408,7 +14340,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -14548,7 +14479,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -14566,16 +14497,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -14614,7 +14545,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -14753,7 +14683,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -14771,16 +14701,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -14819,7 +14749,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
             }
             alert.addTextField { (textField) in
                 textField.placeholder = "Notes *"
-                textField.keyboardType = .numberPad
                 textField.clearsOnBeginEditing = true
             }
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -14934,7 +14863,7 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let rpe = alert?.textFields![3] // Force unwrapping because we know it exists.
                 var rpeString:String? = String(rpe?.text ?? "0.00")
                 if rpeString == ""{
-                    rpeString = "--"
+                    rpeString = "0.0"
                 }
                 
                 if var RPETxts = self.defaults.object(forKey:Save.RPETxts) as? [String] {
@@ -14952,16 +14881,16 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 let note = alert?.textFields![4]
                 var noteString:String? = String(note?.text ?? "0.00")
                 if noteString == ""{
-                    noteString = "None"
+                    noteString = "No notes."
                 }
                 
                 if var noteTxts = self.defaults.object(forKey:Save.noteTxts) as? [String] {
                     
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 } else {
                     var noteTxts: [String] = []
-                    noteTxts.append(noteString ?? "None")
+                    noteTxts.append(noteString ?? "No notes.")
                     self.defaults.set(noteTxts, forKey: Save.noteTxts)
                 }
             
@@ -15075,11 +15004,9 @@ extension ChestListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("clicked")
         let indexPath = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRow(at: indexPath!)! as! ExercisesTableViewCell
         let title = currentCell.exerciseTitleLabel.text
-        print(currentCell.exerciseTitleLabel.text!)
         defaults.set(title, forKey: Save.formExercise)
         goToFormVideo()
         

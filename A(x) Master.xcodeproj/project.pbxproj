@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34105C5255FB46AD285B3157 /* Pods_A_x__MasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90AF553E60A8BF96B14DDDE /* Pods_A_x__MasterTests.framework */; };
 		3FC94A66355D81E48D2066CA /* Pods_A_x__Master_A_x__MasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BE0717E5D4AD4E1AA6B52 /* Pods_A_x__Master_A_x__MasterUITests.framework */; };
+		432C31B725C0FEE900FA230A /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 432C31B625C0FEE900FA230A /* Charts */; };
 		4340423B24CA06640037D512 /* allExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4340423A24CA06640037D512 /* allExercisesViewController.swift */; };
 		4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */; };
 		4345E157259E5DEE00DDD76E /* HSPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E14F259E5DED00DDD76E /* HSPromoViewController.swift */; };
@@ -156,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4345E16E259E600B00DDD76E /* AuthenticationServices.framework in Frameworks */,
+				432C31B725C0FEE900FA230A /* Charts in Frameworks */,
 				56F023F024A0204300449252 /* IQKeyboardManagerSwift in Frameworks */,
 				4345E173259E602600DDD76E /* StoreKit.framework in Frameworks */,
 				4346AC1124C94FA10069A009 /* Floaty in Frameworks */,
@@ -379,6 +381,7 @@
 			packageProductDependencies = (
 				56F023EF24A0204300449252 /* IQKeyboardManagerSwift */,
 				4346AC1024C94FA10069A009 /* Floaty */,
+				432C31B625C0FEE900FA230A /* Charts */,
 			);
 			productName = "A(x) Master";
 			productReference = 565C1A9B248B1DC30054CC11 /* A(x) Master.app */;
@@ -458,6 +461,7 @@
 			packageReferences = (
 				56F023EE24A0204300449252 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */,
+				4333226325B7248D005E6344 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 565C1A9C248B1DC30054CC11 /* Products */;
 			projectDirPath = "";
@@ -755,7 +759,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -988,6 +992,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4333226325B7248D005E6344 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty";
@@ -1007,6 +1019,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		432C31B625C0FEE900FA230A /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4333226325B7248D005E6344 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		4346AC1024C94FA10069A009 /* Floaty */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4346AC0F24C94FA10069A009 /* XCRemoteSwiftPackageReference "Floaty" */;

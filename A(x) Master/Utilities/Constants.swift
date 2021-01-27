@@ -222,6 +222,7 @@ struct Save {
 
     static let muscleHistoryString             = "musclehistorystring"
     static let exerciseTitle          = "exercisetitle"
+    static let notePosition         = "noteposition"
        // .rpeTxts
   
     
