@@ -16,7 +16,7 @@ struct Colors {
 
 struct Save {
     
-//Volume Tracker vars
+    //Volume Tracker vars
     static let firstBoot = "firstBoot"
     static let muscle                      = "muscle"
     static let chestTally                  = "chesttally"
@@ -160,6 +160,15 @@ struct Save {
     static let upperTrapsProgressInt       = "upperTrapsProgressInt"
     static let lowerTrapsProgressInt       = "lowerTrapsProgressInt"
     static let muscleString                = "musclestring"
+    static let firstTimeShowcase                = "firsttimeshowcase"
+    static let firstTimeShowcaseHistory                = "firsttimeshowcasehistory"
+    static let firstTimeShowcaseMealPlan                = "firstimeshowcasemealplan"
+    static let CameFromMealPlan                =            "camefrommealplan"
+    static let FirstTimeShowCaseSliders                =            "firsttimeshowcasesliders"
+    static let showCaseInputAsUpdate                =            "showcaseinputasupdate"
+    static let showcaseDashboard                =            "showcasedashboard"
+    static let firstTimeShowcaseAnatomy                =            "firsttimeshowcaseanatomy"
+    static let firstTimeShowcaseExercises                =            "firsttimeshowcasexercises"
     
     //Payment options
     static let showFab                     = "showFab"
@@ -191,7 +200,7 @@ struct Save {
     static let infoTapped            = "infotapped"
     
     //Meal Plan Vars
- 
+    
     static let fat                   = "fat"
     static let carbs                 = "carbs"
     static let protein               = "protein"
@@ -219,11 +228,11 @@ struct Save {
     static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
     
     //History Vars
-
+    
     static let muscleHistoryString             = "musclehistorystring"
     static let exerciseTitle          = "exercisetitle"
     static let notePosition         = "noteposition"
-       // .rpeTxts
-  
+    // .rpeTxts
+    
     
 }

@@ -14,8 +14,9 @@ import UIKit
 import Floaty
 import GoogleMobileAds
 import StoreKit
+import MaterialShowcase
 
-class VideoListScreen: UIViewController {
+class VideoListScreen: UIViewController, MaterialShowcaseDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addSetButton: UIButton!
@@ -29,66 +30,39 @@ class VideoListScreen: UIViewController {
     var installDate = Date()
     var expired = Bool()
     
-     
- 
     
- 
+    
+    
+    
     private var interstitialAd: GADInterstitial?
     
     struct Constants{
         static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
     }
-     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstTime = defaults.bool(forKey: Save.firstTime)
-        
-        if (!firstTime) {
-            let FAQAction = UIAlertAction(title: "Go to FAQ", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                NSLog("FAq pressed")
-                //  UIApplication.shared.openURL(NSURL(string: "")! as URL)
-                guard let url = URL(string: "http://aesthet-x.com/faqs/") else {
-                  return //be safe
-                }
 
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
-                self.defaults.set(true, forKey: Save.firstTime)
-            }
-            
-            let OKAction = UIAlertAction(title: "I'm OK", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                NSLog("I'm OK Pressed")
-                self.defaults.set(true, forKey: Save.firstTime)
-            }
-            let alert = UIAlertController(title: "Welcome", message: "Check out the FAQ page to get you up to speed on how to train properly and how to use the app. If you are new to fitness we know there's a lot to learn. We got you covered.If you want to check it out in the future you can click on the red 'FAQ' button under 'Dashboard'.", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(OKAction)
-            alert.addAction(FAQAction)
-            self.present(alert, animated: true, completion: nil)
-        }
-        
-        self.navigationItem.setHidesBackButton(true, animated: true);
+    self.navigationItem.title = ""
        
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        
         
         //ADS
         self.interstitialAd = createAd()
-        print("line below creating ad")
+        //  print("line below creating ad")
         
         //Set logo in navigation bar and make it clickable
-          
-          let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-          imageView.contentMode = .scaleAspectFit
-          let image = UIImage(named: "aesthetx30times100")
-          imageView.image = image
-          navigationItem.titleView = imageView
-          let recognizer = UITapGestureRecognizer(target: self, action: #selector(VideoListScreen.titleWasTapped))
-          navigationItem.titleView?.isUserInteractionEnabled = true
-          navigationItem.titleView?.addGestureRecognizer(recognizer)
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        imageView.contentMode = .scaleAspectFit
+        let image = UIImage(named: "aesthetx30times100")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(VideoListScreen.titleWasTapped))
+        navigationItem.titleView?.isUserInteractionEnabled = true
+        navigationItem.titleView?.addGestureRecognizer(recognizer)
         //GIVE TABLE VIEW EXTRA SPACE FOR THE FABS
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         self.tableView.contentInset = insets
@@ -106,12 +80,12 @@ class VideoListScreen: UIViewController {
         exercisesFAB.contentEdgeInsets = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 7)
         
         /*Decalre variable for tallies to be added to progress bar
-        muscleTally  is the sets to be addes
-        muscleProgress is the currentweek'ss progress.
-        muscleMax is the default or user defined MAximum recoverable volume
-        muslceprogressForText is muscle progress multiplied by ten and rounded because regular muscle progress is accounting for the fixed 1.0 max value of apples stupid ass progres bars >>>:((( angry developer
-        
-        */
+         muscleTally  is the sets to be addes
+         muscleProgress is the currentweek'ss progress.
+         muscleMax is the default or user defined MAximum recoverable volume
+         muslceprogressForText is muscle progress multiplied by ten and rounded because regular muscle progress is accounting for the fixed 1.0 max value of apples stupid ass progres bars >>>:((( angry developer
+         
+         */
         //CHEST
         
         var chestTally = defaults.float(forKey: Save.chestTally)
@@ -126,7 +100,7 @@ class VideoListScreen: UIViewController {
         defaults.set(chestProgress, forKey: Save.chestProgress)
         defaults.set(chestMax, forKey: Save.chestMax)
         defaults.removeObject(forKey: Save.chestTally)
-        print(chestMax)
+        //print(chestMax)
         
         //BICEPS
         
@@ -474,8 +448,8 @@ class VideoListScreen: UIViewController {
         defaults.set(upperTrapsProgress, forKey: Save.upperTrapsProgress)
         defaults.set(upperTrapsMax, forKey: Save.upperTrapsMax)
         defaults.removeObject(forKey: Save.upperTrapsTally)
-       
-
+        
+        
         
         //LOWER TRAPS
         
@@ -491,19 +465,19 @@ class VideoListScreen: UIViewController {
         defaults.set(lowerTrapsProgress, forKey: Save.lowerTrapsProgress)
         defaults.set(lowerTrapsMax, forKey: Save.lowerTrapsMax)
         defaults.removeObject(forKey: Save.lowerTrapsTally)
-
-    
+        
+        
         VtData = [chestProgressForText, chestMax, chestProgress, bicepsProgressForText, bicepsMax, bicepsProgress, latsProgressForText, latsMax, latsProgress, glutesProgressForText, glutesMax, glutesProgress, gluteMediusProgressForText, gluteMediusMax, gluteMediusProgress, hamstringsProgressForText, hamstringsMax, hamstringsProgress, frontShoulderProgressForText, frontShoulderMax, frontShoulderProgress, lateralShoulderProgressForText, lateralShoulderMax, lateralShoulderProgress, backShoulderProgressForText, backShoulderMax, backShoulderProgress, rotatorCuffProgressForText, rotatorCuffMax, rotatorCuffProgress, tricepsProgressForText, tricepsMax, tricepsProgress, quadsProgressForText, quadsMax, quadsProgress, absProgressForText, absMax, absProgress, obliquesProgressForText, obliquesMax, obliquesProgress, serratusProgressForText, serratusMax, serratusProgress, transverseAbProgressForText, transverseAbMax, transverseAbProgress, calvesProgressForText, calvesMax, calvesProgress, neckProgressForText, neckMax, neckProgress, forearmExtensorsProgressForText, forearmExtensorsMax, forearmExtensorsProgress, ulnarForearmProgressForText, ulnarForearmMax, ulnarForearmProgress, forearmFlexorsProgressForText, forearmFlexorsMax, forearmFlexorsProgress, radialForearmProgressForText, radialForearmMax, radialForearmProgress, spinalErectorsProgressForText, spinalErectorsMax, spinalErectorsProgress, upperTrapsProgressForText, upperTrapsMax, upperTrapsProgress, lowerTrapsProgressForText, lowerTrapsMax, lowerTrapsProgress]
         
         
         videos =  createArray(vtData: VtData)
         
-//       ADS
+        //       ADS
         
-       // if interstitialAd?.isReady ==  true {
-   // interstitialAd?.present(fromRootViewController: self)
-       // }
-        }
+        // if interstitialAd?.isReady ==  true {
+        // interstitialAd?.present(fromRootViewController: self)
+        // }
+    }
     
     
     func createArray(vtData: [Float]) -> [Video] {
@@ -533,26 +507,93 @@ class VideoListScreen: UIViewController {
         let exercise23 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Spinal Erectors",  progressText: String(String(VtData[66]) + "/" + String(VtData[67])), mavText: "MAV: 10-15 FREQ: 2-4",  progressFloat: vtData[68], hideButton: false)
         let exercise24 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Upper Traps",      progressText: String(String(VtData[69]) + "/" + String(VtData[70])), mavText: "MAV: 10-20 FREQ: 2-6",  progressFloat: vtData[71], hideButton: false)
         let exercise25 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Lower Traps",      progressText: String(String(VtData[72]) + "/" + String(VtData[73])), mavText: "MAV: 12-20 FREQ: 2-6",  progressFloat: vtData[74], hideButton: false)
-      let exercise26 = Video(image:#imageLiteral(resourceName: "Dumbell Icon"), title:"Reset All",      progressText:" ", mavText: " ",  progressFloat: 0.0, hideButton: true)
-      
+        let exercise26 = Video(image:#imageLiteral(resourceName: "Dumbell Icon"), title:"Reset All",      progressText:" ", mavText: " ",  progressFloat: 0.0, hideButton: true)
+        
         
         
         //Premium
-//        let exercise26 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Brachialis", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
-//        let exercise27 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Extension", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
-//        let exercise28 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Felxion", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
-//        let exercise29 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Lateral Felxion", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
-//        let exercise30 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Anterior Tibialis", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
-//
-           
+        //        let exercise26 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Brachialis", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
+        //        let exercise27 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Extension", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
+        //        let exercise28 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Felxion", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
+        //        let exercise29 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Neck Lateral Felxion", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
+        //        let exercise30 = Video(image: #imageLiteral(resourceName: "Dumbell Icon"), title: "Anterior Tibialis", progressText: "00.0/00", mavText: "MAV: 16-22 FREQ: 2-6", progressFloat: progressFloat: vtData[0])
+        //
+        
         return [exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8,
                 exercise9, exercise10, exercise11, exercise12, exercise13, exercise14, exercise15, exercise16,
                 exercise17, exercise18, exercise19, exercise20, exercise21, exercise22, exercise23, exercise24, exercise25, exercise26]//, exercise27]
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let showCase = defaults.bool(forKey: Save.firstTimeShowcase)
+        
+        if showCase == false {
+            if let cell = tableView.visibleCells.first as? VideoCell{
+                
+                let showcase0 = MaterialShowcase()
+                showcase0.setTargetView(view: bWFAB)
+                showcase0.primaryText = "View Your Exercises History"
+                showcase0.secondaryText = "\n     Click here to view your last 100 exercises in cronological order. \n\n*Don't get stuck in the past that's all you need ;)  "
+                showcase0.primaryTextColor = UIColor.black
+                showcase0.secondaryTextColor = UIColor.black
+                showcase0.backgroundViewType = .full
+                showcase0.backgroundPromptColor = Colors.aXGreen
+                showcase0.targetHolderColor = UIColor.black
+                showcase0.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.firstTimeShowcase)
+                })
+                
+                let showcase = MaterialShowcase()
+                showcase.setTargetView(view: cell.videoImageView)
+                showcase.primaryText = "Customize Your Weekly Sets and Learn Anatomy"
+                showcase.secondaryText = "\nClick on any row to view an anatomical representation of a muscle. You can also set a custom weekly volume and reset an inidvidual muscle's volume here.\n \nVolume = Weekly Sets * Weight Moved"
+                showcase.primaryTextColor = UIColor.black
+                showcase.secondaryTextColor = UIColor.black
+                showcase.backgroundViewType = .full
+                showcase.targetHolderColor = UIColor.black
+                showcase.backgroundPromptColor = Colors.aXGreen
+                showcase.show(completion: {
+                    // You can save showcase state here
+                    // Later you can check and do not show it again
+                })
+                
+                let showcase2 = MaterialShowcase()
+                showcase2.setTargetView(view: cell.addSetButton)
+                showcase2.primaryText = "View Exercises"
+                showcase2.secondaryText = "\nClick here to view a list of exercises by muscle group."
+                showcase2.primaryTextColor = UIColor.black
+                showcase2.secondaryTextColor = UIColor.black
+                showcase2.backgroundViewType = .full
+                showcase2.targetHolderColor = UIColor.black
+                showcase2.backgroundPromptColor = Colors.aXGreen
+                showcase2.show(completion: {
+                    // You can save showcase state here
+                    // Later you can check and do not show it again
+                })
+                
+                let showcase3 = MaterialShowcase()
+                showcase3.setTargetView(view: cell.progressBar)
+                showcase3.primaryText = "    Fill This Bar Every Week"
+                showcase3.secondaryText = "\nPerform your maximum adaptive volume (MAV) in 2-3 weekly sessions. This bar will fill as you progress in your week.\n \nVolume = Weekly Sets * Weight Moved"
+                showcase3.primaryTextColor = UIColor.black
+                showcase3.secondaryTextColor = UIColor.black
+                showcase3.backgroundViewType = .full
+                showcase3.targetHolderColor = UIColor.black
+                showcase3.backgroundPromptColor = Colors.aXGreen
+                showcase3.show(completion: {
+                })
+        }
+        
+      
+        }
+     
+        
+    }
+    
     func styleButton(button: UIButton){
         button.layer.borderWidth = 1
-       
+        
     }
     
     @IBAction func allExercisesClicked(_ sender: Any) {
@@ -565,9 +606,9 @@ class VideoListScreen: UIViewController {
     
     @IBAction func bodyWeightExercisesClicked(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-              let Exercises = storyboard.instantiateViewController(identifier: "specificExerciseHistory")
-              self.show(Exercises, sender: self)
-              self.dismiss(animated: true, completion: nil)
+        let Exercises = storyboard.instantiateViewController(identifier: "specificExerciseHistory")
+        self.show(Exercises, sender: self)
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -575,7 +616,7 @@ extension VideoListScreen: VideoCellDelegate {
     
     func didTapAddSet(title: String) {
         if (title == "Reset All"){
-
+            
             defaults.removeObject(forKey: Save.chestProgress)
             defaults.removeObject(forKey: Save.chestProgressInt)
             defaults.removeObject(forKey: Save.bicepsProgress)
@@ -626,64 +667,74 @@ extension VideoListScreen: VideoCellDelegate {
             defaults.removeObject(forKey: Save.upperTrapsProgressInt)
             defaults.removeObject(forKey: Save.lowerTrapsProgress)
             defaults.removeObject(forKey: Save.lowerTrapsProgressInt)
-
+            
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let dashBoard = storyboard.instantiateViewController(identifier: "volumeTracker")
             self.show(dashBoard, sender: self)
             self.dismiss(animated: true, completion: nil)
-//            self.viewDidLoad()
-//            self.viewWillAppear(true)
-      //      self.tableView.reloadData()
-            print("reset all clicked")
-            //Alert
-//            let alertController = UIAlertController(title: "Volume Removed", message:
-//                "Your volume will be reset for next time.", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
-//            self.present(alertController, animated: true, completion: nil)
-
+            
+          
+            
         } else {
-        
-        let muscleGroup = String(title)
-              defaults.set(muscleGroup, forKey: Save.muscle)
-              let storyboard = UIStoryboard(name: "Main", bundle: nil)
-              let Exercises = storyboard.instantiateViewController(identifier: "Exercises")
-              self.show(Exercises, sender: self)
-              self.dismiss(animated: true, completion: nil)
-               
-               
-               //Retrieve info for premium And SHOWADS
-               let annual = defaults.bool(forKey: Save.annualPurchased)
-                      let biannual = defaults.bool(forKey: Save.biannualPurchased)
-                      let monthly = defaults.bool(forKey: Save.monthlyPurchased)
+              
+            let muscleGroup = String(title)
+            defaults.set(muscleGroup, forKey: Save.muscle)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let Exercises = storyboard.instantiateViewController(identifier: "Exercises")
+            self.show(Exercises, sender: self)
+            self.dismiss(animated: true, completion: nil)
+            
+            //Retrieve info for premium And SHOWADS
+            let annual = defaults.bool(forKey: Save.annualPurchased)
+            let biannual = defaults.bool(forKey: Save.biannualPurchased)
+            let monthly = defaults.bool(forKey: Save.monthlyPurchased)
             let hsPromo = defaults.bool(forKey: Save.HSPromo)
-            
-            
-                     // print("annual", annual, "\nbiannual", biannual, "\nmonthly", monthly)
-            
-            //TODO logic to see if promo is expired
-            
-            if (hsPromo){
+            let premium = annual || biannual || monthly || hsPromo
+ 
+            if (hsPromo && !(premium)){
                 var promoLength = defaults.double(forKey: Save.promoLength)
+                // print("CALCULATING HS PROMO LENGTH" + String(promoLength))
                 promoLength = promoLength * 31536000
-                
                 installDate = defaults.object(forKey: Save.installDate) as! Date
                 let expDate = installDate.addingTimeInterval(promoLength)
-                if( Date() < expDate){
+                if( Date() > expDate){
+                    //print("hspromo is flase now due to expiration. Date is:" )
                     defaults.set(false, forKey: Save.HSPromo)
                 }
-                  
             }
             
-            
-            let premium = annual || biannual || monthly || hsPromo
-            let x = Int.random(in: 0..<10)
-            
-               
-               if interstitialAd?.isReady ==  true && !premium && (x % 2 == 0 ){
-                   interstitialAd?.present(fromRootViewController: self)
-               }
-                   }
+            let x = Int.random(in: 1..<12)
+            print(x)
+            //print(" ADS CALCULATED VALUES: " + String(annual) + String(biannual) + String(monthly) + String(hsPromo))
+            if interstitialAd?.isReady ==  true && !premium && (x % 3 == 0 ){
+                interstitialAd?.present(fromRootViewController: self)
+            } else if !premium && (x == 2 ){
+                //display alert
+                let alert = UIAlertController(title: "Tired of Ads?", message: "Help support truthful scientific resistance training education by subscribing to premium (try saying that 5 times fast).", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "View Pricing", style: .default, handler: { [weak alert] (_) in
+                    self.goToVolumeTracker()
+                }))
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {
+                    action in
+                    // Called when user taps outside
+                }))
+                
+                // 4. Present the alert.
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func goToVolumeTracker(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashBoard = storyboard.instantiateViewController(identifier: "SubscriptionsViewController")
+        self.show(dashBoard, sender: self)
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
 }
 
@@ -697,13 +748,13 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-
-            let video = videos[indexPath.row]
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCell
-                    cell.setVideo(video: video)
-                    cell.delegate = self
-                    return cell
-
+        
+        let video = videos[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VideoCell") as! VideoCell
+        cell.setVideo(video: video)
+        cell.delegate = self
+        return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -785,22 +836,22 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
             let muscleString = "Lower Traps"
             defaults.set(muscleString, forKey: Save.muscleString)
         }
-       }
+    }
     
- @objc private func titleWasTapped() {
+    @objc private func titleWasTapped() {
         guard let url = URL(string: "http://aesthet-x.com/about/") else {
             return //be safe
-          }
-
-          if #available(iOS 10.0, *) {
-              UIApplication.shared.open(url, options: [:], completionHandler: nil)
-          } else {
-              UIApplication.shared.openURL(url)
-          }
- }
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
     
     private func createAd() -> GADInterstitial{
-         print("Creating interstitial")
+        // print("Creating interstitial")
         let ad = GADInterstitial(adUnitID: Constants.volumeAD)
         ad.delegate = self
         ad.load(GADRequest())

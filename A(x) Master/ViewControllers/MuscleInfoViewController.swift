@@ -7,138 +7,11 @@
 //
 
 import UIKit
+import MaterialShowcase
 
 class MuscleInfoViewController: UIViewController {
     
-    struct Keys {
-       static let muscle                      = "muscle"
-       static let chestTally                  = "chesttally"
-       static let chestProgress               = "chestprogress"
-       static let chestMax                    = "chestmax"
-       static let chestProgressInt            = "chestProgressInt"
-       static let chest                       = "chest"
-       static let bicepsTally                 = "bicepstally"
-       static let bicepsProgress              = "bicepsprogress"
-       static let bicepsMax                   = "bicepsmax"
-       static let bicepsProgressInt           = "bicepsProgressInt"
-       static let biceps                      = "biceps"
-       static let latsTally                   = "latstally"
-       static let latsProgress                = "latsprogress"
-       static let latsMax                     = "latsmax"
-       static let latsProgressInt             = "latsProgressInt"
-       static let lats                        = "lats"
-       static let glutesTally                 = "glutestally"
-       static let glutesProgress              = "glutesprogress"
-       static let glutesMax                   = "glutesmax"
-       static let glutesProgressInt           = "glutesProgressInt"
-       static let glutes                      = "glutes"
-       static let gluteMediusTally            = "glutemediustally"
-       static let gluteMediusProgress         = "glutemediusprogress"
-       static let gluteMediusMax              = "glutemediusmax"
-       static let gluteMediusProgressInt      = "gluteMediusProgressInt"
-       static let gluteMedius                 = "glutemedius"
-       static let hamstringsTally             = "hamstringstally"
-       static let hamstringsProgress          = "hamstringsprogress"
-       static let hamstringsMax               = "hamstringsmax"
-       static let hamstringsProgressInt       = "hamstringsProgressInt"
-       static let hamstrings                  = "hamstrings"
-       static let frontShoulderTally          = "frontshouldertally"
-       static let frontShoulderProgress       = "frontshoulderprogress"
-       static let frontShoulderMax            = "frontshouldermax"
-       static let frontShoulderProgressInt    = "frontShoulderProgressInt"
-       static let frontShoulder               = "frontshoulder"
-       static let lateralShoulderTally        = "lateralshouldertally"
-       static let lateralShoulderProgress     = "lateralshoulderprogress"
-       static let lateralShoulderMax          = "lateralshouldermax"
-       static let lateralShoulderProgressInt  = "lateralShoulderProgressInt"
-       static let lateralShoulder             = "lateralshoulder"
-       static let backShoulderTally           = "backshouldertally"
-       static let backShoulderProgress        = "backshoulderprogress"
-       static let backShoulderMax             = "backshouldermax"
-       static let backShoulderProgressInt     = "backShoulderProgressInt"
-       static let backShoulder                = "backshoulder"
-       static let rotatorCuffTally            = "rotatorCufftally"
-       static let rotatorCuffProgress         = "rotatorCuffprogress"
-       static let rotatorCuffMax              = "rotatorCuffmax"
-       static let rotatorCuffProgressInt     = "roatatorCuffProgressInt"
-       static let rotatorCuff                 = "rotatorCuff"
-       static let quadsTally                  = "quadstally"
-       static let quadsProgress               = "quadsprogress"
-       static let quadsMax                    = "quadsmax"
-       static let quadsProgressInt            = "quadsProgressInt"
-       static let quads                       = "quads"
-       static let absTally                    = "abstally"
-       static let absProgress                 = "absprogress"
-       static let absMax                      = "absmax"
-       static let absProgressInt              = "absProgressInt"
-       static let abs                         = "abs"
-       static let obliquesTally               = "obliquestally"
-       static let obliquesProgress            = "obliquesprogress"
-       static let obliquesMax                 = "obliquesmax"
-       static let obliquesProgressInt         = "obliquesProgressInt"
-       static let obliques                    = "obliques"
-       static let serratusTally               = "serratustally"
-       static let serratusProgress            = "serratusprogress"
-       static let serratusMax                 = "serratusmax"
-       static let serratusProgressInt         = "serratusProgressInt"
-       static let serratus                    = "serratus"
-       static let transverseAbTally           = "transverseabtally"
-       static let transverseAbProgress        = "transverseabprogress"
-       static let transverseAbMax             = "transverseabmax"
-       static let transverseAbProgressInt     = "transverseAbProgressInt"
-       static let transverseAb                = "transverseab"
-       static let tricepsTally                = "tricepstally"
-       static let tricepsProgress             = "tricepsprogress"
-       static let tricepsMax                  = "tricepsmax"
-       static let tricepsProgressInt          = "tricepsProgressInt"
-       static let triceps                     = "triceps"
-       static let calvesTally                 = "calvestally"
-       static let calvesProgress              = "calvesprogress"
-       static let calvesMax                   = "calvesmax"
-       static let calvesProgressInt           = "calvesProgressInt"
-       static let calves                      = "calves"
-       static let neckTally                   = "necktally"
-       static let neckProgress                = "neckprogress"
-       static let neckMax                     = "neckmax"
-       static let neckProgressInt             = "neckProgressInt"
-       static let neck                        = "neck"
-       static let forearmExtensorsTally       = "forearmextensorstally"
-       static let forearmExtensorsProgress    = "forearmextensorsprogress"
-       static let forearmExtensorsMax         = "forearmextensorsmax"
-       static let forearmExtensorsProgressInt  = "forearmExtensorProgressInt"
-       static let forearmExtensor             = "forearmextensor"
-       static let ulnarForearmTally           = "ulnarforearmtally"
-       static let ulnarForearmProgress        = "ulnarforearmprogress"
-       static let ulnarForearmMax             = "ulnarforearmmax"
-       static let ulnarForearmProgressInt     = "ulnarForearmProgressInt"
-       static let ulnarForearm                = "ulnarforearm"
-       static let forearmFlexorsTally         = "forearmflexorstally"
-       static let forearmFlexorsProgress      = "forearmflexorsprogress"
-       static let forearmFlexorsMax           = "forearmflexorsmax"
-       static let forearmFlexorsProgressInt    = "forearmFlexorProgressInt"
-       static let forearmFlexors              = "forearmflexors"
-       static let radialForearmTally          = "radialforearmtally"
-       static let radialForearmProgress       = "radialforearmprogress"
-       static let radialForearmMax            = "radialforearmmax"
-       static let radialForearmProgressInt    = "radialForearmProgressInt"
-       static let radialForearm               = "radialForearm"
-       static let spinalErectorsTally         = "spinalerectorstally"
-       static let spinalErectorsProgress      = "spinalerectorsprogress"
-       static let spinalErectorsMax           = "spinalerectorsmax"
-       static let spinalErectorsProgressInt    = "spinalErectorProgressInt"
-       static let spinalErector               = "spinalerector"
-       static let upperTrapsTally             = "uppertrapstally"
-       static let upperTrapsProgress          = "uppertrapsprogress"
-       static let upperTrapsMax               = "uppertrapsmax"
-       static let upperTrapsProgressInt       = "upperTrapsProgressInt"
-       static let upperTrap                   = "uppertraps"
-       static let lowerTrapsTally             = "lowertrapstally"
-       static let lowerTrapsProgress          = "lowertrapsprogress"
-       static let lowerTrapsMax               = "lowertrapsmax"
-       static let lowerTrapsProgressInt       = "lowerTrapsProgressInt"
-       static let lowerTraps                  = "lowertraps"
-       static let muscleString                 = "musclestring"
-    }
+    
 
     @IBOutlet weak var anatomyImage: UIImageView!
     @IBOutlet weak var resetMaxButton: UIButton!
@@ -182,7 +55,7 @@ class MuscleInfoViewController: UIViewController {
             maxString = "Current Max: " + String(bicepsMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.bicepsProgressInt))
         } else if(muscleString == "Lats"){
-            print(muscleString!)
+            
             anatomyImage.image = UIImage(named:"latissimusdorsi")
             
             let latsMax = defaults.integer(forKey: Save.latsMax)
@@ -191,18 +64,16 @@ class MuscleInfoViewController: UIViewController {
         } else if(muscleString == "Glutes"){
             setGestures()
             anatomyImage.image = UIImage(named:"glutemax")
-            maxImages = 1
-            imageList = ["glutemax", "glutescutmajor"]
+         
             
             let glutesMax = defaults.integer(forKey: Save.glutesMax)
             maxString = "Current Max: " + String(glutesMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.glutesProgressInt))
         } else if(muscleString == "Glute Medius"){
-            print(muscleString!)
+         
             setGestures()
             anatomyImage.image = UIImage(named:"glutemedius")
-            maxImages = 1
-            imageList = ["glutemedius", "glutescutmajor"]
+           
             
             let gluteMediusMax = defaults.integer(forKey: Save.gluteMediusMax)
             maxString = "Current Max: " + String(gluteMediusMax)
@@ -217,14 +88,12 @@ class MuscleInfoViewController: UIViewController {
             maxString = "Current Max: " + String(hamstringsMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.hamstringsProgressInt))
         } else if(muscleString == "Front Shoulder"){
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"anteriordeltoid")
             
             let frontShoulderMax = defaults.integer(forKey: Save.frontShoulderMax)
             maxString = "Current Max: " + String(frontShoulderMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.frontShoulderProgressInt))
         }  else if(muscleString == "Lateral Shoulder"){
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"medialdeltoidlateralview")
             
             let lateralShoulderMax = defaults.integer(forKey: Save.lateralShoulderMax)
@@ -241,7 +110,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.backShoulderProgressInt))
         } else if(muscleString == "Rotator Cuff"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"rotatorcuff")
             maxImages = 1
             imageList = ["rotatorcuff", "infraspinatusthreedee"]
@@ -251,7 +119,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.rotatorCuffProgressInt))
         } else if(muscleString == "Triceps"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"triceps")
             maxImages = 1
             imageList = ["triceps", "tricepswhole"]
@@ -293,7 +160,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.transverseAbProgressInt))
         } else if(muscleString == "Calves"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"calfgastroc")
             maxImages = 1
             imageList = ["calfgastroc", "calfsoleus"]
@@ -312,7 +178,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.neckProgressInt))
         } else if(muscleString == "Forearm Extensors"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"extensors")
             maxImages = 1
             imageList = ["extensors", "forearmcorsssection"]
@@ -322,7 +187,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.forearmExtensorsProgressInt))
         } else if(muscleString == "Ulnar Forearm"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"ulnarforearm")
             maxImages = 1
             imageList = ["ulnarforearm", "forearmcorsssection"]
@@ -350,7 +214,6 @@ class MuscleInfoViewController: UIViewController {
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.forearmFlexorsProgressInt))
         } else if(muscleString == "Radial Forearm"){
             setGestures()
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"brachioradialis")
             maxImages = 1
             imageList = ["brachioradialis", "forearmcorsssection"]
@@ -359,21 +222,18 @@ class MuscleInfoViewController: UIViewController {
             maxString = "Current Max: " + String(radialForearmMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.radialForearmProgressInt))
         } else if(muscleString == "Spinal Erectors"){
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"erectors")
             
             let spinalErectorsMax = defaults.integer(forKey: Save.spinalErectorsMax)
             maxString = "Current Max: " + String(spinalErectorsMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.spinalErectorsProgressInt))
         } else if(muscleString == "Upper Traps"){
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"uppertrapszoom")
             
             let upperTrapsMax = defaults.integer(forKey: Save.upperTrapsMax)
             maxString = "Current Max: " + String(upperTrapsMax)
             currentVolumeString = "Current Volume: " + String(defaults.double(forKey: Save.upperTrapsProgressInt))
         } else if(muscleString == "Lower Traps"){
-            print(muscleString!)
             anatomyImage.image = UIImage(named:"lowertraps")
             
             let lowerTrapsMax = defaults.integer(forKey: Save.lowerTrapsMax)
@@ -384,9 +244,6 @@ class MuscleInfoViewController: UIViewController {
         currentMaxLabel.text = maxString
         currentVolumeLabel.text = currentVolumeString
         
-        //Set text for current max and current volume
-//        var maxString = "Vanilla"
-//        var currentVolumeString = "Vanilla"
         if(muscleString == "Chest"){
       
               } else if(muscleString == "Biceps"){
@@ -395,7 +252,7 @@ class MuscleInfoViewController: UIViewController {
                   maxImages = 1
                   imageList = ["bicepsthreedee", "biceps"]
               } else if(muscleString == "Lats"){
-                  print(muscleString!)
+
                   anatomyImage.image = UIImage(named:"latissimusdorsi")
               } else if(muscleString == "Glutes"){
                   setGestures()
@@ -403,7 +260,6 @@ class MuscleInfoViewController: UIViewController {
                   maxImages = 1
                   imageList = ["glutemax", "glutescutmajor"]
               } else if(muscleString == "Glute Medius"){
-                  print(muscleString!)
                   setGestures()
                   anatomyImage.image = UIImage(named:"glutemedius")
                   maxImages = 1
@@ -414,10 +270,8 @@ class MuscleInfoViewController: UIViewController {
                   maxImages = 2
                   imageList = ["hamstringbicepfemoris", "hamstringsemimembranosus", "hamstringsemitendinosus"]
               } else if(muscleString == "Front Shoulder"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"anteriordeltoid")
               }  else if(muscleString == "Lateral Shoulder"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"medialdeltoidlateralview")
               } else if(muscleString == "Back Shoulder"){
                   setGestures()
@@ -426,40 +280,28 @@ class MuscleInfoViewController: UIViewController {
                   imageList = ["posteriordeltoidsuperior", "posteriordeltoidposteriorview"]
               } else if(muscleString == "Rotator Cuff"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"rotatorcuff")
                   maxImages = 1
                   imageList = ["rotatorcuff", "infraspinatusthreedee"]
               } else if(muscleString == "Triceps"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"triceps")
                   maxImages = 1
                   imageList = ["triceps", "tricepswhole"]
               } else if(muscleString == "Quads"){
-              
-                   print(muscleString!)
                   anatomyImage.image = UIImage(named:"quadriceps")
               } else if(muscleString == "Abs"){
-          
-                   print(muscleString!)
                   anatomyImage.image = UIImage(named:"rectusabdominis")
               } else if(muscleString == "Obliques"){
-
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"obliques")
               } else if(muscleString == "Serratus"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"serratus")
                   maxImages = 1
                   imageList = ["serratus", "serratusanterior"]
               } else if(muscleString == "Transverse Ab"){
-
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"transversusabdominis")
               } else if(muscleString == "Calves"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"calfgastroc")
                   maxImages = 1
                   imageList = ["calfgastroc", "calfsoleus"]
@@ -470,13 +312,11 @@ class MuscleInfoViewController: UIViewController {
                   imageList = ["neckanteriorview", "necklateralview", "neckposteriorview"]
               } else if(muscleString == "Forearm Extensors"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"extensors")
                   maxImages = 1
                   imageList = ["extensors", "forearmcorsssection"]
               } else if(muscleString == "Ulnar Forearm"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"ulnarforearm")
                   maxImages = 1
                   imageList = ["ulnarforearm", "forearmcorsssection"]
@@ -492,18 +332,14 @@ class MuscleInfoViewController: UIViewController {
                   imageList = ["superficialforearmflexor", "deepforearmflexors", "forearmcorsssection"]
               } else if(muscleString == "Radial Forearm"){
                   setGestures()
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"brachioradialis")
                   maxImages = 1
                   imageList = ["brachioradialis", "forearmcorsssection"]
               } else if(muscleString == "Spinal Erectors"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"erectors")
               } else if(muscleString == "Upper Traps"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"uppertrapszoom")
               } else if(muscleString == "Lower Traps"){
-                  print(muscleString!)
                   anatomyImage.image = UIImage(named:"lowertraps")
               }
         
@@ -517,6 +353,76 @@ class MuscleInfoViewController: UIViewController {
         styleButton(button: setMRVButton)
         setMRVButton.layer.cornerRadius = 15
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let showCase = defaults.bool(forKey: Save.firstTimeShowcaseAnatomy)
+        
+        
+        if showCase == false {
+            
+            
+            let showcase1 = MaterialShowcase()
+            showcase1.setTargetView(view: resetMaxButton)
+            showcase1.primaryText = "Reset MAV"
+            showcase1.secondaryText = "This will reset the weekly volume to the default below."
+            showcase1.primaryTextColor = UIColor.black
+            showcase1.secondaryTextColor = UIColor.black
+            showcase1.backgroundViewType = .full
+            showcase1.backgroundPromptColor = Colors.aXGreen
+            showcase1.targetHolderColor = UIColor.black
+            showcase1.targetHolderRadius = 70
+            
+            showcase1.show(completion: {
+                self.defaults.setValue(true, forKey: Save.firstTimeShowcaseAnatomy)
+            })
+            
+            let showcase2 = MaterialShowcase()
+            showcase2.setTargetView(view: resetVolumeButton)
+            showcase2.primaryText = "Reset Weekly Sets"
+            showcase2.secondaryText = "This resets your weekly sets to 0 for the selected muscle."
+            showcase2.primaryTextColor = UIColor.black
+            showcase2.secondaryTextColor = UIColor.black
+            showcase2.backgroundViewType = .full
+            showcase2.backgroundPromptColor = Colors.aXGreen
+            showcase2.targetHolderColor = UIColor.black
+            showcase2.targetHolderRadius = 70
+            
+            showcase2.show(completion: {
+                self.defaults.setValue(true, forKey: Save.firstTimeShowcaseAnatomy)
+            })
+            
+            let showcase3 = MaterialShowcase()
+            showcase3.setTargetView(view: setMRVButton)
+            showcase3.primaryText = "Custom Volume"
+            showcase3.secondaryText = "Customize your weekly volume by inputing your desired volume on the left."
+            showcase3.primaryTextColor = UIColor.black
+            showcase3.secondaryTextColor = UIColor.black
+            showcase3.backgroundViewType = .full
+            showcase3.backgroundPromptColor = Colors.aXGreen
+            showcase3.targetHolderColor = UIColor.black
+            showcase3.targetHolderRadius = 70
+            showcase3.show(completion: {
+                self.defaults.setValue(true, forKey: Save.firstTimeShowcaseAnatomy)
+            })
+            
+            let showcase0 = MaterialShowcase()
+            showcase0.setTargetView(view: anatomyImage)
+            showcase0.primaryText = "Swipe to View More"
+            showcase0.secondaryText = "Not all muscle support multiple views."
+            showcase0.primaryTextColor = UIColor.black
+            showcase0.secondaryTextColor = UIColor.black
+            showcase0.backgroundViewType = .full
+            showcase0.backgroundPromptColor = Colors.aXGreen
+            showcase0.targetHolderColor = UIColor.black
+            showcase0.targetHolderRadius = 100
+            
+            showcase0.show(completion: {
+                self.defaults.setValue(true, forKey: Save.firstTimeShowcaseAnatomy)
+            })
+             
+        }
     }
    
     func styleButton(button: UIButton){
@@ -542,7 +448,6 @@ class MuscleInfoViewController: UIViewController {
     if let swipeGesture = gesture as? UISwipeGestureRecognizer {
         switch swipeGesture.direction {
         case UISwipeGestureRecognizer.Direction.right :
-            print("User swiped right")
             // decrease index first
             MuscleInfoViewController.imageIndex-=1
             // check if index is in range
@@ -552,7 +457,6 @@ class MuscleInfoViewController: UIViewController {
             anatomyImage.image = UIImage(named: imageList[MuscleInfoViewController.imageIndex])
 
         case UISwipeGestureRecognizer.Direction.left:
-            print("User swiped Left")
             // increase index first
             MuscleInfoViewController.imageIndex += 1
             // check if index is in range
@@ -575,7 +479,6 @@ class MuscleInfoViewController: UIViewController {
     @IBAction func resetVolumePressed(_ sender: Any) {
          let muscleString = defaults.string(forKey: Save.muscleString)
        if(muscleString == "Chest"){
-        print("chest printed")
                 defaults.removeObject(forKey: Save.chestProgress)
                 defaults.removeObject(forKey: Save.chestProgressInt)
             } else if(muscleString == "Biceps"){
@@ -588,7 +491,6 @@ class MuscleInfoViewController: UIViewController {
                 defaults.removeObject(forKey: Save.glutesProgress)
                 defaults.removeObject(forKey: Save.glutesProgressInt)
             } else if(muscleString == "Glute Medius"){
-                print(muscleString!)
                 defaults.removeObject(forKey: Save.gluteMediusProgress)
                 defaults.removeObject(forKey: Save.gluteMediusProgressInt)
             } else if(muscleString == "Hamstrings"){

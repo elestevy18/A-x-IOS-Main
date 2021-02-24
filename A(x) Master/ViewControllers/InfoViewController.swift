@@ -43,8 +43,12 @@ class InfoViewController: UIViewController {
     explainText?.text = " Your current growth is calculated based on the premise that a male builds 20, 10 ,5, and 2.5 pounds of muscle in their first, second, third, and fourth year respectively.About half that growth is expected for females. \n\n     The total growth described here is assumed to be 45 pounds in 4 years for males and 22.5 pounds for females."
     
     }  else{
-       let notePosition = notesTxts!.count - tablePosition-1
-      explainText?.text = notesTxts?[notePosition]
+        if let noteArray = notesTxts{
+            explainText?.text = notesTxts?[noteArray.count - tablePosition-1]
+        } else {
+            explainText?.text = "Try adding some sets with notes first."
+        }
+      
       
     }
     

@@ -183,21 +183,30 @@ class MagicFormula: UIViewController {
         
         // @second delay for the normies
         
+        let cameFromMealPlan = defaults.bool(forKey: Save.CameFromMealPlan)
         
-
+        if cameFromMealPlan == true {
+            defaults.setValue(false, forKey: Save.CameFromMealPlan)
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                          let dashBoard = storyboard.instantiateViewController(identifier: "dashBoard")
-                          //self.present(calculatingPerfection, animated: true, completion: nil)
-            self.show(dashBoard, sender: self)
-             self.dismiss(animated: true, completion: nil)
-
-
-
+                let dashBoard = storyboard.instantiateViewController(identifier: "MealPlanViewController")
+                //self.present(calculatingPerfection, animated: true, completion: nil)
+                self.show(dashBoard, sender: self)
+                self.dismiss(animated: true, completion: nil)
+            }
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let dashBoard = storyboard.instantiateViewController(identifier: "dashBoard")
+                    //self.present(calculatingPerfection, animated: true, completion: nil)
+                    self.show(dashBoard, sender: self)
+                    self.dismiss(animated: true, completion: nil)
+                
+                }
+            }
         }
-        
-    
 }
     
-}
+

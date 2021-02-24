@@ -238,13 +238,13 @@ class ViewController: UIViewController{
             defaults.set(thereAreTwoGenders, forKey: Save.sex)
             let units = Bool(unitsBool)
             defaults.set(units, forKey: Save.unitsBool)
+            
+            self.defaults.setValue(true, forKey: Save.firstTimeShowcaseMealPlan)
      
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let calculatingPerfection = storyboard.instantiateViewController(identifier: "calculatingPerfection")
-            
             self.show(calculatingPerfection, sender: self)
-
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             self.dismiss(animated: true, completion: nil)
             }

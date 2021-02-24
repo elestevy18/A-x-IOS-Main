@@ -10,8 +10,9 @@
 import UIKit
 //TODO make repeating inputs add to only one, double check ypu can in;ut more than 50 entries, add notes and rpe feature
 import GoogleMobileAds
+import MaterialShowcase
 
-class ChestListViewController: UIViewController {
+class ChestListViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var chestTableView: UITableView!
     
@@ -24,8 +25,7 @@ class ChestListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        self.navigationController?.navigationBar.backItem?.title = ""
         
         let muscleGroup = defaults.string(forKey:Save.muscle)
         if (muscleGroup == "Chest"){
@@ -105,6 +105,45 @@ class ChestListViewController: UIViewController {
             bodyWeightExercises = createBWLowerTrapsArray()
         }
         
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let showCase = defaults.bool(forKey: Save.firstTimeShowcaseExercises)
+        
+        if showCase == false {
+            if let cell = chestTableView.visibleCells.first as? ExercisesTableViewCell{
+                
+                let showcase0 = MaterialShowcase()
+                showcase0.setTargetView(view: cell.exerciseTitleLabel)
+                showcase0.primaryText = "Click any exercise to view a form video"
+                showcase0.secondaryText = "Stop half repping and swinging your sets. Maximize growth.\n\nThese exercises were selected to maximize gains and keep you safe. Perform any others at your discretion. You can track them by adding individual volume with the muscle name option at the top."
+                showcase0.primaryTextColor = UIColor.black
+                showcase0.secondaryTextColor = UIColor.black
+                showcase0.backgroundViewType = .full
+                showcase0.backgroundPromptColor = Colors.aXGreen
+                showcase0.targetHolderColor = UIColor.black
+                showcase0.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.firstTimeShowcaseExercises)
+                })
+                
+                let showcase1 = MaterialShowcase()
+                showcase1.setTargetView(view: cell.addSetButton)
+                showcase1.primaryText = "Click to Fill Your Weekly Progress"
+                showcase1.secondaryText = "This will add the exercise's volume to the volume tracker's progress bars.\nPrimary movers add one set to your weekly volume and secondary movers add 1/2 a set.\nEach exercise's description provides a list of all the muscles worked."
+                showcase1.primaryTextColor = UIColor.black
+                showcase1.secondaryTextColor = UIColor.black
+                showcase1.backgroundViewType = .full
+                showcase1.backgroundPromptColor = Colors.aXGreen
+                showcase1.targetHolderColor = UIColor.black
+                showcase1.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.firstTimeShowcaseExercises)
+                })
+            }
+            
+           
+        }
     }
     
     
@@ -611,6 +650,7 @@ class ChestListViewController: UIViewController {
     
     
     func goToVolumeTracker(){
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let dashBoard = storyboard.instantiateViewController(identifier: "volumeTracker")
         self.show(dashBoard, sender: self)
@@ -14756,9 +14796,6 @@ extension ChestListViewController: ExercisesTableViewCellDelegate {
                 
                 //CAST STRING INPUT TO FLOAT
                 
-                
-                
-                
                 //REPS
                 let reps = alert?.textFields![1] // Force unwrapping because we know it exists.
                 var repsString:String? = String(reps?.text ?? "0.00")
@@ -14950,8 +14987,9 @@ extension UITextField {
             self.text = "-" + currentText
         }
     }
-    
 }
+
+
 extension ChestListViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         
@@ -15007,9 +15045,9 @@ extension ChestListViewController: UITableViewDataSource, UITableViewDelegate {
         let indexPath = tableView.indexPathForSelectedRow
         let currentCell = tableView.cellForRow(at: indexPath!)! as! ExercisesTableViewCell
         let title = currentCell.exerciseTitleLabel.text
+        print(currentCell.exerciseTitleLabel.text!)
         defaults.set(title, forKey: Save.formExercise)
         goToFormVideo()
-        
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import MaterialShowcase
 
 class DashBoardViewController: UIViewController {
     
@@ -25,35 +26,11 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var ToInfobutton: UIButton!
     @IBOutlet weak var RookieLabel: UILabel!
     @IBOutlet weak var CircleText: UILabel!
-    
+    var installDate = Date()
+    var expired = Bool()
     
     let defaults = UserDefaults.standard
-       
-       struct Keys {
-               static let bodyWeight            = "bodyweight"
-               static let heightBig             = "heightbig"
-               static let heightSmall           = "heightsmall"
-               static let experience            = "experience"
-               static let composition           = "composition"
-               static let age                   = "age"
-               static let sex                   = "sex"
-               static let activityLevel         = "activitylevel"
-               static let totalMuscleGrowth     = "totalmusclegrowth"
-               static let idealBodyWeight       = "idealbodyweight"
-               static let fatLoss               = "fatloss"
-               static let currentMuscleGrowth   = "currentmusclegrowth"
-               static let potentialMuscleGrowth = "potentialmusclegrowth"
-               static let muscleGrowthRate      = "musclegrowthrate"
-               static let dailyCaloricDeviance  = "dailycaloricdeviance"
-               static let unitsBool             = "unitsBool"
-               static let infoTapped            = "infotapped"
-        static let annualPurchased             = "annual"
-        static let monthlyPurchased            = "monthly"
-        static let biannualPurchased           = "biannual"
-        static let  premium                     = "premium"
-       }
-    
-      let shapeLayer = CAShapeLayer()
+    let shapeLayer = CAShapeLayer()
     
     private var interstitialAd: GADInterstitial?
        
@@ -62,11 +39,14 @@ class DashBoardViewController: UIViewController {
        }
 
     @IBOutlet weak var goToInfoCollection: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.setHidesBackButton(true, animated: true);
+        
+  
         
         //ADS
         self.interstitialAd = createAd()
@@ -112,28 +92,29 @@ class DashBoardViewController: UIViewController {
         
         //Ideal Bodyweight Display
         styleButton(button: IBWButton)
-        IBWButton.contentHorizontalAlignment = .left
-        IBWButton.layer.cornerRadius = 50
         setIBWPosition(button: IBWButton)
+        IBWButton.contentHorizontalAlignment = .left
+        IBWButton.layer.cornerRadius = IBWButton.frame.height / 6
+        
         
     
         
         //Growth rate dispaly button
           styleButton(button: GrowthRateButton)
           setGrowthRatePosition(button: GrowthRateButton)
-          GrowthRateButton.layer.cornerRadius = 30
+          GrowthRateButton.layer.cornerRadius = GrowthRateButton.frame.height / 6
         
         
         // POTENTIAL FATLOSS BUTTON
         styleButton(button: PotentialFatloss)
-        PotentialFatloss.layer.cornerRadius = 30
+        PotentialFatloss.layer.cornerRadius = PotentialFatloss.frame.height / 6
         setFatLossPosition(button: PotentialFatloss)
        
         
         // CURRENT MUSCLE GROWTH
         styleButton(button: CurrentMuscleGrowth)
         setCurrentGrowthPosition(button: CurrentMuscleGrowth)
-        CurrentMuscleGrowth.layer.cornerRadius = 50
+        CurrentMuscleGrowth.layer.cornerRadius = CurrentMuscleGrowth.frame.height / 6
         CurrentMuscleGrowth.contentHorizontalAlignment = .left
         
         //INPUT INFORMATION BUTTON
@@ -204,8 +185,126 @@ class DashBoardViewController: UIViewController {
                 ToInfobutton.layer.borderColor = UIColor.systemRed.cgColor
                 ToInfobutton.layer.cornerRadius = 15
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+      
+        let showCase = defaults.bool(forKey: Save.showcaseDashboard)
+        let showCaseMP = defaults.bool(forKey: Save.firstTimeShowcaseMealPlan)
+        let showCaseInputAsUpdate = defaults.bool(forKey: Save.showCaseInputAsUpdate)
         
-        
+        if showCase == false && showCaseMP == false {
+            let showcase0 = MaterialShowcase()
+            showcase0.setTargetView(button: ToInfobutton, tapThrough: true)
+            //  showcase0.setTargetView(view: )
+            showcase0.primaryText = "Input and Update Your Info!"
+            showcase0.secondaryText = "Get your custom meal plan and goals. \nYou can also update your info as you progress. Remember that your meal plan and muscle growth rate will change over time."
+            showcase0.primaryTextColor = UIColor.black
+            showcase0.secondaryTextColor = UIColor.black
+            showcase0.backgroundViewType = .full
+            showcase0.backgroundPromptColor = Colors.aXGreen
+            showcase0.targetHolderColor = UIColor.black
+            showcase0.targetHolderRadius = 60
+            showcase0.aniComeInDuration = 1 // unit: second
+            showcase0.show(completion: {
+                self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+              
+            })
+            
+            let showcase2 = MaterialShowcase()
+            showcase2.setTargetView(button: FAQButton, tapThrough: false)
+            //  showcase0.setTargetView(view: )
+            showcase2.primaryText = "Frequently Asked Questions"
+            showcase2.secondaryText = "Get up to speed on how to train properly.There's a lot to learn, especially if you're new to weight training."
+            showcase2.primaryTextColor = UIColor.black
+            showcase2.secondaryTextColor = UIColor.black
+            showcase2.backgroundViewType = .full
+            showcase2.backgroundPromptColor = Colors.aXGreen
+            showcase2.targetHolderColor = UIColor.black
+            showcase2.targetHolderRadius = 60
+            showcase2.aniComeInDuration = 1 // unit: second
+            showcase2.show(completion: {
+                self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+                self.defaults.setValue(true, forKey: Save.showcaseDashboard)
+              
+            })
+            
+            let showcase1 = MaterialShowcase()
+            showcase1.setTargetView(button: IBWButton, tapThrough: false)
+            //  showcase0.setTargetView(view: )
+            showcase1.primaryText = "Learn More"
+            showcase1.secondaryText = "Click on any title to learn more about it."
+            showcase1.primaryTextColor = UIColor.black
+            showcase1.secondaryTextColor = UIColor.black
+            showcase1.backgroundViewType = .full
+            showcase1.backgroundPromptColor = Colors.aXGreen
+            showcase1.targetHolderColor = UIColor.black
+            showcase1.targetHolderRadius = 200
+            showcase1.aniComeInDuration = 1 // unit: second
+            showcase1.show(completion: {
+                self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+              
+            })
+
+        } else {
+            
+       
+            
+            if showCaseInputAsUpdate == false {
+                let showcase0 = MaterialShowcase()
+                showcase0.setTargetView(button: ToInfobutton, tapThrough: true)
+                //  showcase0.setTargetView(view: )
+                showcase0.primaryText = "Remember to Update Your Info!"
+                showcase0.secondaryText = "Your meal plan and muscle growth rate will change over time.\n\nClick on any title to learn more."
+                showcase0.primaryTextColor = UIColor.black
+                showcase0.secondaryTextColor = UIColor.black
+                showcase0.backgroundViewType = .full
+                showcase0.backgroundPromptColor = Colors.aXGreen
+                showcase0.targetHolderColor = UIColor.black
+                showcase0.targetHolderRadius = 60
+                showcase0.aniComeInDuration = 1 // unit: second
+                showcase0.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+                    
+                })
+                
+                let showcase2 = MaterialShowcase()
+                showcase2.setTargetView(button: FAQButton, tapThrough: false)
+                //  showcase0.setTargetView(view: )
+                showcase2.primaryText = "Frequently Asked Questions"
+                showcase2.secondaryText = "Get up to speed on how to train properly.There's a lot to learn, especially if you're new to fitness."
+                showcase2.primaryTextColor = UIColor.black
+                showcase2.secondaryTextColor = UIColor.black
+                showcase2.backgroundViewType = .full
+                showcase2.backgroundPromptColor = Colors.aXGreen
+                showcase2.targetHolderColor = UIColor.black
+                showcase2.targetHolderRadius = 60
+                showcase2.aniComeInDuration = 1 // unit: second
+                showcase2.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+                    
+                })
+                
+                let showcase1 = MaterialShowcase()
+                showcase1.setTargetView(button: IBWButton, tapThrough: false)
+                //  showcase0.setTargetView(view: )
+                showcase1.primaryText = "Learn More"
+                showcase1.secondaryText = "Click on any title to learn more about it."
+                showcase1.primaryTextColor = UIColor.black
+                showcase1.secondaryTextColor = UIColor.black
+                showcase1.backgroundViewType = .full
+                showcase1.backgroundPromptColor = Colors.aXGreen
+                showcase1.targetHolderColor = UIColor.black
+                showcase1.targetHolderRadius = 200
+                showcase1.aniComeInDuration = 1 // unit: second
+                showcase1.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
+                    self.defaults.setValue(true, forKey: Save.showcaseDashboard)
+                })
+                
+               
+        }
+    }
     }
     
     
@@ -295,13 +394,31 @@ class DashBoardViewController: UIViewController {
                    let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection")
                    self.show(infoCollection, sender: self)
         
-        
-        //Retrieve info for premium And SHOWADS
-        let premiumstore = defaults.bool(forKey: Save.premium)
-              let premium = premiumstore
-               if interstitialAd?.isReady ==  true && !premium {
-                   interstitialAd?.present(fromRootViewController: self)
-               }
+                    //Retrieve info for premium And SHOWADS
+                    let annual = defaults.bool(forKey: Save.annualPurchased)
+                    let biannual = defaults.bool(forKey: Save.biannualPurchased)
+                    let monthly = defaults.bool(forKey: Save.monthlyPurchased)
+                    let hsPromo = defaults.bool(forKey: Save.HSPromo)
+                    let premium = annual || biannual || monthly || hsPromo
+                    
+                    if (hsPromo && !(premium)){
+                        var promoLength = defaults.double(forKey: Save.promoLength)
+                        // print("CALCULATING HS PROMO LENGTH" + String(promoLength))
+                        promoLength = promoLength * 31536000
+                        installDate = defaults.object(forKey: Save.installDate) as! Date
+                        let expDate = installDate.addingTimeInterval(promoLength)
+                        if( Date() > expDate){
+                            //print("hspromo is flase now due to expiration. Date is:" )
+                            defaults.set(false, forKey: Save.HSPromo)
+                        }
+                    }
+                    
+                    let x = Int.random(in: 0..<10)
+                    //print(" ADS CALCULATED VALUES: " + String(annual) + String(biannual) + String(monthly) + String(hsPromo))
+                    if interstitialAd?.isReady ==  true && !premium && (x % 3 == 0 ){
+                        interstitialAd?.present(fromRootViewController: self)
+                    }
+                   
     }
     @IBAction func didTapFAQ(sender: AnyObject) {
       //  UIApplication.shared.openURL(NSURL(string: "")! as URL)

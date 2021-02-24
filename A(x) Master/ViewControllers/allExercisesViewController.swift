@@ -501,10 +501,10 @@ class allExercisesViewController: UIViewController{
     }
     
     func goToFormVideo(){
-              let storyboard = UIStoryboard(name: "Main", bundle: nil)
-              let dashBoard = storyboard.instantiateViewController(identifier: "formVideo")
-              self.show(dashBoard, sender: self)
-              self.dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashBoard = storyboard.instantiateViewController(identifier: "formVideo")
+        self.show(dashBoard, sender: self)
+        self.dismiss(animated: true, completion: nil)
           }
     
    
@@ -2988,8 +2988,7 @@ func didTapAddSet(title: String) {
         }
     }
 }
-
-
+    
 
 extension allExercisesViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
@@ -3036,7 +3035,7 @@ extension allExercisesViewController: UITableViewDataSource, UITableViewDelegate
         }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow
+                    let indexPath = tableView.indexPathForSelectedRow
                    let currentCell = tableView.cellForRow(at: indexPath!)! as! ExercisesTableViewCell
                    let title = currentCell.exerciseTitleLabel.text
                    print(currentCell.exerciseTitleLabel.text!)

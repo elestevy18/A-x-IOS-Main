@@ -9,51 +9,18 @@
 import UIKit
 import Charts
 import GoogleMobileAds
+import MaterialShowcase
 
 
 class MealPlanViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     
-    struct Keys {
-        static let bodyWeight            = "bodyweight"
-        static let sex                   = "sex"
-        static let composition           = "composition"
-        static let activityLevel         = "activitylevel"
-        static let fat                   = "fat"
-        static let carbs                 = "carbs"
-        static let protein               = "protein"
-        static let sbprogress            = "sbprogress"
-        static let probprogress          = "probprogress"
-        static let calsbprogress         = "calsbprogress"
-        static let deficit               = "deficit"
-        static let calories              = "calories"
-        static let intake                = "intake"
-        static let tdee                  = "tdee"
-        static let maxlossrate           = "maxlossrate"
-        static let minlossrate           = "minlossrate"
-        static let maxFatIntake          = "maxfatintake"
-        static let calSeekBarPosition    = "calSeekBarPosition"
-        static let fatDistance           = "fatDistance"
-        static let lbm                   = "lbm"
-        static let cseekBarPosition      = "seekbarposition"
-        static let fatSB                 = "fatSB"
-        static let calPosition           = "calposition"
-        static let proSBProgress         = "proSBProgress"
-        static let proSeekBarPostion     = "proSeekBarPostion"
-        static let fatSBPosition         = "fatSBPosition"
-        static let energySeekBarPosition = "energySeekBarPosition"
-        static let proteinSeekBarPosition = "proteinSeekBarPosition"
-         static let  premium                     = "premium"
-        static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
-    }
+
     
     private var interstitialAd: GADInterstitial?
     
-    struct Constants{
-       
-    }
-
+  
 
     @IBOutlet weak var inputInfoutton: UIButton!
     @IBOutlet weak var pieView: PieChartView!
@@ -78,7 +45,9 @@ class MealPlanViewController: UIViewController {
     @IBOutlet weak var cronometerImage: UIImageView!
     
     
-    override func viewDidLoad() {
+    override func viewDidLoad() {}
+    
+    override func viewWillAppear(_ animated: Bool){
         super.viewDidLoad()
         //Add borders and round button
         inputInfoutton.layer.borderWidth = 1
@@ -105,7 +74,7 @@ class MealPlanViewController: UIViewController {
         dCILAbel.frame = CGRect(x: 8 , y: screenHeight/8, width: 135, height: 62)
         caloricIntakeLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ), width: screenWidth, height: 21)
         weightLossSpeedLabel.frame = CGRect(x: 0 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 25, width: screenWidth, height: 21)
-         slowLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 43, height: 18)
+        slowLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 43, height: 18)
         fastLabel.frame = CGRect(x: screenWidth - 54, y: ((screenHeight/10) + 0.7 * screenWidth ) + 42, width: 39, height: 18)
         weightLossSpeedSeekBar.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 58, width: screenWidth - 40, height: 30)
         carbsLabel.frame = CGRect(x: 20 , y: ((screenHeight/10) + 0.7 * screenWidth ) + 109, width: 51, height: 18)
@@ -139,12 +108,12 @@ class MealPlanViewController: UIViewController {
         //cronometer link
         // create tap gesture recognizer
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MealPlanViewController.imageTapped(gesture:)))
-
+        
         // add it to the image view;
         cronometerImage.addGestureRecognizer(tapGesture)
         // make sure imageView can be interacted with by user
         cronometerImage.isUserInteractionEnabled = true
-
+        
         let composition = defaults.double(forKey: Save.composition)
         let activityMultiplier = defaults.string(forKey: Save.activityLevel)
         let bodyWeight  = defaults.double(forKey: Save.bodyWeight)
@@ -164,7 +133,7 @@ class MealPlanViewController: UIViewController {
         
         var protein = defaults.double(forKey: Save.protein)
         if (protein == 0.00){
-             protein = bodyWeight;
+            protein = bodyWeight;
         }
         let mass = bodyWeight / 2.20462
         
@@ -174,9 +143,9 @@ class MealPlanViewController: UIViewController {
         defaults.set(lbm, forKey: Save.lbm)
         let tdee = bmr * activityMultiplierNum;
         print("tdee", tdee, "bmr", bmr, "activity multiplier", activityMultiplierNum, lbm, "lbm")
-       
+        
         var minRateLossCals = defaults.double(forKey: Save.minlossrate)
-    
+        
         if (minRateLossCals > 10000000 || minRateLossCals < -10000000) {
             minRateLossCals = 0;
         }
@@ -208,9 +177,9 @@ class MealPlanViewController: UIViewController {
         
         
         setupPieChart(protein: protein, carbs: carbs, fat: fat)
-         calorieNumber.text = String(format: "%.2f", intake)
+        calorieNumber.text = String(format: "%.2f", intake)
         caloricIntakeLabel.text = "Estimate Daily Caloric Expenditure: " + String(format: "%.2f", tdee)
-
+        
         print("bodyWeight", bodyWeight, "protein", protein, "carbs", carbs, "fat",  fat, "tdee", tdee, "intake", intake)
         
         //Click cronometer to affiliate link
@@ -224,6 +193,51 @@ class MealPlanViewController: UIViewController {
             pieView.isHidden = true
         } else { inputInfoutton.isHidden = true}
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let showCase = defaults.bool(forKey: Save.firstTimeShowcaseMealPlan)
+        let showcaseSliders = defaults.bool(forKey: Save.FirstTimeShowCaseSliders)
+        
+        if showCase == false {
+            
+                
+                let showcase0 = MaterialShowcase()
+                showcase0.setTargetView(button: inputInfoutton, tapThrough: true)
+              //  showcase0.setTargetView(view: )
+                showcase0.primaryText = "Start Here"
+                showcase0.secondaryText = "Get your custom meal plan and goals."
+                showcase0.primaryTextColor = UIColor.black
+                showcase0.secondaryTextColor = UIColor.black
+                showcase0.backgroundViewType = .full
+                showcase0.backgroundPromptColor = Colors.aXGreen
+               showcase0.targetHolderColor = UIColor.black
+                showcase0.targetHolderRadius = 100
+                showcase0.aniComeInDuration = 1 // unit: second
+                showcase0.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.firstTimeShowcaseMealPlan)
+                })
+        } else {
+            if (showcaseSliders == false) {
+                let showcase0 = MaterialShowcase()
+                //showcase0.setTargetView(button: inputInfoutton, tapThrough: true)
+                showcase0.setTargetView(view: weightLossSpeedSeekBar)
+                showcase0.primaryText = "Adjust to your meal plan"
+                showcase0.secondaryText = "Use these sliders to adjust your macro split to your liking.\n\n*Tap on the other sliders if the chart looks off. Sorry for the bug, we're working on it."
+                showcase0.primaryTextColor = UIColor.black
+                showcase0.secondaryTextColor = UIColor.black
+                showcase0.backgroundViewType = .full
+                showcase0.backgroundPromptColor = Colors.aXGreen
+                showcase0.targetHolderColor = UIColor.black
+                //showcase0.targetHolderRadius = 100
+                showcase0.aniComeInDuration = 1 // unit: second
+                showcase0.show(completion: {
+                    self.defaults.setValue(true, forKey: Save.FirstTimeShowCaseSliders)
+                })
+            }
+        }
+    }
+    
     
     
     
@@ -293,6 +307,7 @@ class MealPlanViewController: UIViewController {
 
     
     @IBAction func toInfoTapped(_ sender: Any) {
+        defaults.setValue(true, forKey: Save.CameFromMealPlan)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection")
         self.show(infoCollection, sender: self)
