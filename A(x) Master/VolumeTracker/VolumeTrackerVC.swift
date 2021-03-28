@@ -16,7 +16,7 @@ import GoogleMobileAds
 import StoreKit
 import MaterialShowcase
 
-class VideoListScreen: UIViewController, MaterialShowcaseDelegate {
+class VolumeTrackerVC: UIViewController, MaterialShowcaseDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addSetButton: UIButton!
@@ -60,7 +60,7 @@ class VideoListScreen: UIViewController, MaterialShowcaseDelegate {
         let image = UIImage(named: "aesthetx30times100")
         imageView.image = image
         navigationItem.titleView = imageView
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(VideoListScreen.titleWasTapped))
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(VolumeTrackerVC.titleWasTapped))
         navigationItem.titleView?.isUserInteractionEnabled = true
         navigationItem.titleView?.addGestureRecognizer(recognizer)
         //GIVE TABLE VIEW EXTRA SPACE FOR THE FABS
@@ -612,7 +612,7 @@ class VideoListScreen: UIViewController, MaterialShowcaseDelegate {
     }
 }
 
-extension VideoListScreen: VideoCellDelegate {
+extension VolumeTrackerVC: VideoCellDelegate {
     
     func didTapAddSet(title: String) {
         if (title == "Reset All"){
@@ -739,7 +739,7 @@ extension VideoListScreen: VideoCellDelegate {
 }
 
 
-extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
+extension VolumeTrackerVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
@@ -859,7 +859,7 @@ extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-extension VideoListScreen: GADInterstitialDelegate{
+extension VolumeTrackerVC: GADInterstitialDelegate{
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         interstitialAd = createAd()
     }

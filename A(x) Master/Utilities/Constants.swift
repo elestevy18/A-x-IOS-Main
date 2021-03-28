@@ -233,6 +233,4 @@ struct Save {
     static let exerciseTitle          = "exercisetitle"
     static let notePosition         = "noteposition"
     // .rpeTxts
-    
-    
 }

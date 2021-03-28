@@ -355,7 +355,7 @@ class MealPlanViewController: UIViewController {
             let intake = tdee - deficit
             let maxFatIntake = (intake - 200 - (protein * 4)) / 9
             let fatDistance = maxFatIntake - fat
-            let fatscale = fatDistance / 10;
+            //let fatscale = fatDistance / 10;
             let carbs = (intake - (fat * 9)) / 4;
             let proSeekBarPosition = currentPosition
             defaults.set(proSeekBarPosition, forKey: Save.calsbprogress)
@@ -380,7 +380,7 @@ class MealPlanViewController: UIViewController {
         let currentPosition = energySourceSeekBar.value
         defaults.set(currentPosition, forKey: Save.energySeekBarPosition)
         let intake = defaults.double(forKey: Save.intake)
-        let tdee = defaults.double(forKey: Save.tdee)
+      //  let tdee = defaults.double(forKey: Save.tdee)
         let protein = defaults.double(forKey: Save.protein)
         var fat = defaults.double(forKey: Save.fat)
         let lbm = defaults.double(forKey: Save.lbm)

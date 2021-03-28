@@ -62,7 +62,7 @@ class HistoryTimelineViewController: UIViewController  {
         var exTitleHist          = defaults.object(forKey: Save.exTitleHist) as? [String]
         var dateHist       = defaults.object(forKey: Save.dateHist) as? [String]
         var weightTxts   = defaults.object(forKey: Save.weightTxts) as? [String]
-        var repsTxts       = defaults.object(forKey: Save.repsTxts) as? [String]
+        let repsTxts       = defaults.object(forKey: Save.repsTxts) as? [String]
         var volumeTxts = defaults.object(forKey: Save.volumeTxts) as? [String]
         var setsTxts = defaults.object(forKey: Save.setsTxts) as? [String]
         var RPETxts = defaults.object(forKey: Save.RPETxts) as? [String]
@@ -86,8 +86,8 @@ class HistoryTimelineViewController: UIViewController  {
                 (RPETxts?[count] == RPETxts?[count-1])
             ){
                 //ADD ONE TO SET[VALUE] POP THE REST
-               var setSum = setsTxts?[count]
-                var setSum2 = setsTxts?[count-1]
+                let setSum = setsTxts?[count]
+                let setSum2 = setsTxts?[count-1]
                 let setSumInt =  Int(setSum ?? "0") ?? 0
                 print(setSumInt)
                 let setSumInt2 = Int(setSum2 ?? "0") ?? 0
@@ -153,7 +153,7 @@ class HistoryTimelineViewController: UIViewController  {
         activityPickerToolBar.barTintColor = .black
         activityPickerToolBar.tintColor = Colors.aXGreen
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,
-                                         action: #selector(ViewController.dismissKeyboard))
+                                         action: #selector(UpdateInformation.dismissKeyboard))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         activityPickerToolBar.setItems([flexibleSpace, doneButton], animated: false)
         activityPickerToolBar.isUserInteractionEnabled =  true
@@ -227,7 +227,7 @@ extension HistoryTimelineViewController: UITableViewDataSource, UITableViewDeleg
     
     
     @objc private func titleWasTapped() {
-        guard let url = URL(string: "http://aesthet-x.com/about/") else {
+        guard URL(string: "http://aesthet-x.com/about/") != nil else {
             return //be safe
         }
     }

@@ -52,12 +52,7 @@ class HistoryExercisesViewController: UIViewController {
         super.viewDidLoad()
         //Assigns array stored from adding sets to diffeerent array variables
         let exTitleHist          = defaults.object(forKey: Keys.exTitleHist) as? [String]
-        let dateHist       = defaults.object(forKey: Keys.dateHist) as? [String]
-        let weightTxts   = defaults.object(forKey: Keys.weightTxts) as? [String]
-        let repsTxts       = defaults.object(forKey: Keys.repsTxts) as? [String]
-        let volumeTxts = defaults.object(forKey: Keys.volumeTxts) as? [String]
-        let setsTxts = defaults.object(forKey: Keys.setsTxts) as? [String]
-          
+   
         //Code to determine and display proper units
         let units = defaults.bool(forKey: Keys.unitsBool)
         unit = " lbs"

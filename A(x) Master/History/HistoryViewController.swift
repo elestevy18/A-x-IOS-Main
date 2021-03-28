@@ -133,7 +133,7 @@ class HistoryViewController: UIViewController  {
         activityPickerToolBar.barTintColor = .black
         activityPickerToolBar.tintColor = Colors.aXGreen
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,
-                                         action: #selector(ViewController.dismissKeyboard))
+                                         action: #selector(UpdateInformation.dismissKeyboard))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         activityPickerToolBar.setItems([flexibleSpace, doneButton], animated: false)
         activityPickerToolBar.isUserInteractionEnabled =  true

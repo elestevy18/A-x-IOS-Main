@@ -10,48 +10,50 @@
 		34105C5255FB46AD285B3157 /* Pods_A_x__MasterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90AF553E60A8BF96B14DDDE /* Pods_A_x__MasterTests.framework */; };
 		3FC94A66355D81E48D2066CA /* Pods_A_x__Master_A_x__MasterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9BE0717E5D4AD4E1AA6B52 /* Pods_A_x__Master_A_x__MasterUITests.framework */; };
 		4340423B24CA06640037D512 /* allExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4340423A24CA06640037D512 /* allExercisesViewController.swift */; };
-		4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */; };
-		4345E157259E5DEE00DDD76E /* HSPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E14F259E5DED00DDD76E /* HSPromoViewController.swift */; };
-		4345E158259E5DEE00DDD76E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E150259E5DED00DDD76E /* HistoryViewController.swift */; };
-		4345E159259E5DEE00DDD76E /* WeightHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E151259E5DEE00DDD76E /* WeightHistoryViewController.swift */; };
-		4345E15A259E5DEE00DDD76E /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E152259E5DEE00DDD76E /* SubscriptionsViewController.swift */; };
-		4345E15B259E5DEE00DDD76E /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E153259E5DEE00DDD76E /* CompositionViewController.swift */; };
-		4345E15C259E5DEE00DDD76E /* HistoryExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E154259E5DEE00DDD76E /* HistoryExercisesViewController.swift */; };
-		4345E15D259E5DEE00DDD76E /* BodyfatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E155259E5DEE00DDD76E /* BodyfatViewController.swift */; };
-		4345E163259E5E4E00DDD76E /* HistExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E162259E5E4E00DDD76E /* HistExercise.swift */; };
-		4345E168259E5F7800DDD76E /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E167259E5F7800DDD76E /* History.swift */; };
 		4345E16E259E600B00DDD76E /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4345E16D259E600B00DDD76E /* AuthenticationServices.framework */; };
 		4345E173259E602600DDD76E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4345E172259E602600DDD76E /* StoreKit.framework */; };
-		4345E175259E60F800DDD76E /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E174259E60F800DDD76E /* IAPService.swift */; };
-		4345E17A259E612300DDD76E /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E179259E612300DDD76E /* Subscriptions.swift */; };
 		4345E184259E614400DDD76E /* MuscleHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E17E259E614400DDD76E /* MuscleHistoryCell.swift */; };
 		4345E185259E614400DDD76E /* BlankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E17F259E614400DDD76E /* BlankTableViewCell.swift */; };
 		4345E186259E614400DDD76E /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E180259E614400DDD76E /* VideoCell.swift */; };
 		4345E188259E614400DDD76E /* ExerciseHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E182259E614400DDD76E /* ExerciseHistoryCell.swift */; };
 		4345E189259E614400DDD76E /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E183259E614400DDD76E /* HistoryCell.swift */; };
-		4345E18E259E61A400DDD76E /* HistMusc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E18D259E61A400DDD76E /* HistMusc.swift */; };
-		4345E193259E61E400DDD76E /* HistoryTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4345E192259E61E400DDD76E /* HistoryTimelineViewController.swift */; };
 		4346AC1124C94FA10069A009 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = 4346AC1024C94FA10069A009 /* Floaty */; };
 		43470EC824C69373002FC0E8 /* MuscleInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */; };
 		43474DD024BFC6110035F405 /* VtCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43474DCF24BFC6110035F405 /* VtCellData.swift */; };
-		43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */; };
 		43575B0A24C25BFF0027E97B /* MealPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43575B0924C25BFF0027E97B /* MealPlanViewController.swift */; };
 		436FA89D24AD71B1002672EE /* VolumeTrackerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */; };
 		436FA8A124AD7754002672EE /* VolumeTrackerCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */; };
-		43882ABD24B7BC2A00C931F9 /* VideoListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */; };
+		438411DE260D2B9E005601CC /* English.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438411DD260D2B9E005601CC /* English.strings */; };
+		438411E3260D2C0A005601CC /* NOTES.strings in Resources */ = {isa = PBXBuildFile; fileRef = 438411E2260D2C0A005601CC /* NOTES.strings */; };
+		438411FB260D3C4C005601CC /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438411FA260D3C4C005601CC /* IAPService.swift */; };
+		43882ABD24B7BC2A00C931F9 /* VolumeTrackerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882ABC24B7BC2A00C931F9 /* VolumeTrackerVC.swift */; };
 		43882ABF24B7BC3D00C931F9 /* ChestListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */; };
 		43882AC224B7BC6C00C931F9 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC124B7BC6C00C931F9 /* Video.swift */; };
 		43882AC424B7BC7600C931F9 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC324B7BC7600C931F9 /* Exercises.swift */; };
 		43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */; };
 		43A8927824B90815002BFED5 /* DashBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A8927724B90815002BFED5 /* DashBoardViewController.swift */; };
 		43ABB13825D49D6700BD2948 /* MaterialShowcase in Frameworks */ = {isa = PBXBuildFile; productRef = 43ABB13725D49D6700BD2948 /* MaterialShowcase */; };
+		43B8224B260EAF9A00C89AB4 /* BodyfatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8224A260EAF9A00C89AB4 /* BodyfatViewController.swift */; };
+		43B82253260EAFD900C89AB4 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B82252260EAFD900C89AB4 /* SubscriptionsViewController.swift */; };
+		43B8225B260EAFEA00C89AB4 /* HSPromoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8225A260EAFEA00C89AB4 /* HSPromoViewController.swift */; };
+		43B82263260EAFFF00C89AB4 /* HistoryExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B82262260EAFFF00C89AB4 /* HistoryExercisesViewController.swift */; };
+		43B82268260EB02700C89AB4 /* HistoryTimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B82267260EB02700C89AB4 /* HistoryTimelineViewController.swift */; };
+		43B8226D260EB03400C89AB4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8226C260EB03400C89AB4 /* HistoryViewController.swift */; };
+		43B8227D260EB18200C89AB4 /* Subscriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8227C260EB18200C89AB4 /* Subscriptions.swift */; };
+		43B8229E260EB3CE00C89AB4 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B8229D260EB3CE00C89AB4 /* CompositionViewController.swift */; };
+		43B822B6260EB41F00C89AB4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B822B5260EB41F00C89AB4 /* Exercise.swift */; };
+		43B822BE260EB53000C89AB4 /* WorkoutGeneratorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B822BD260EB53000C89AB4 /* WorkoutGeneratorVC.swift */; };
+		43BBD35A261123E600720229 /* HistMusc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBD359261123E600720229 /* HistMusc.swift */; };
+		43BBD35F2611240000720229 /* HistExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBD35E2611240000720229 /* HistExercise.swift */; };
+		43BBD3672611249D00720229 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBD3662611249D00720229 /* History.swift */; };
+		43BBD3802611272C00720229 /* CompositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BBD37F2611272C00720229 /* CompositionViewController.swift */; };
 		43EAAFA724CB6779004B41BE /* FormVideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */; };
-		43F263C425ABBA8400176554 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F263C325ABBA8400176554 /* InfoViewController.swift */; };
+		43F263C425ABBA8400176554 /* DashboardDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F263C325ABBA8400176554 /* DashboardDetailsVC.swift */; };
 		43FE69F424CA2B2C006E963A /* bodyWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */; };
 		5654CBBE248C65E400C44BB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5654CBBD248C65E400C44BB7 /* Constants.swift */; };
 		565C1A9F248B1DC30054CC11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1A9E248B1DC30054CC11 /* AppDelegate.swift */; };
 		565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */; };
-		565C1AA3248B1DC30054CC11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA2248B1DC30054CC11 /* ViewController.swift */; };
+		565C1AA3248B1DC30054CC11 /* UpdateInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565C1AA2248B1DC30054CC11 /* UpdateInformation.swift */; };
 		565C1AA6248B1DC30054CC11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565C1AA4248B1DC30054CC11 /* Main.storyboard */; };
 		565C1AA8248B1DC50054CC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 565C1AA7248B1DC50054CC11 /* Assets.xcassets */; };
 		565C1AAB248B1DC50054CC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565C1AA9248B1DC50054CC11 /* LaunchScreen.storyboard */; };
@@ -86,50 +88,51 @@
 		250786DA61D87DEFF32A0001 /* Pods-A(x) Master-A(x) MasterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master-A(x) MasterUITests/Pods-A(x) Master-A(x) MasterUITests.release.xcconfig"; sourceTree = "<group>"; };
 		35B3FCFF0E3C67E95AD2A841 /* Pods-A(x) Master.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A(x) Master.release.xcconfig"; path = "Target Support Files/Pods-A(x) Master/Pods-A(x) Master.release.xcconfig"; sourceTree = "<group>"; };
 		4340423A24CA06640037D512 /* allExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allExercisesViewController.swift; sourceTree = "<group>"; };
-		4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicepsVTViewController.swift; sourceTree = "<group>"; };
-		4345E14F259E5DED00DDD76E /* HSPromoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSPromoViewController.swift; path = "A(x) Master/HSPromoViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E150259E5DED00DDD76E /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = "A(x) Master/HistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E151259E5DEE00DDD76E /* WeightHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WeightHistoryViewController.swift; path = "A(x) Master/WeightHistoryViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E152259E5DEE00DDD76E /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsViewController.swift; path = "A(x) Master/SubscriptionsViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E153259E5DEE00DDD76E /* CompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompositionViewController.swift; path = "A(x) Master/CompositionViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E154259E5DEE00DDD76E /* HistoryExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryExercisesViewController.swift; path = "A(x) Master/HistoryExercisesViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E155259E5DEE00DDD76E /* BodyfatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BodyfatViewController.swift; path = "A(x) Master/BodyfatViewController.swift"; sourceTree = SOURCE_ROOT; };
-		4345E162259E5E4E00DDD76E /* HistExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistExercise.swift; path = "A(x) Master/Dashboards VCs and Classes/TableViewObjects/HistExercise.swift"; sourceTree = SOURCE_ROOT; };
-		4345E167259E5F7800DDD76E /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = "A(x) Master/Dashboards VCs and Classes/TableViewObjects/History.swift"; sourceTree = SOURCE_ROOT; };
 		4345E16C259E600B00DDD76E /* A(x) Master.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "A(x) Master.entitlements"; sourceTree = "<group>"; };
 		4345E16D259E600B00DDD76E /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		4345E172259E602600DDD76E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		4345E174259E60F800DDD76E /* IAPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IAPService.swift; path = "A(x) Master/ViewControllers/IAPService.swift"; sourceTree = SOURCE_ROOT; };
-		4345E179259E612300DDD76E /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subscriptions.swift; path = "A(x) Master/ViewControllers/Subscriptions.swift"; sourceTree = SOURCE_ROOT; };
 		4345E17E259E614400DDD76E /* MuscleHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleHistoryCell.swift; sourceTree = "<group>"; };
 		4345E17F259E614400DDD76E /* BlankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankTableViewCell.swift; sourceTree = "<group>"; };
 		4345E180259E614400DDD76E /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		4345E181259E614400DDD76E /* ExercisesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		4345E182259E614400DDD76E /* ExerciseHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseHistoryCell.swift; sourceTree = "<group>"; };
 		4345E183259E614400DDD76E /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
-		4345E18D259E61A400DDD76E /* HistMusc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistMusc.swift; path = "A(x) Master/Dashboards VCs and Classes/TableViewObjects/HistMusc.swift"; sourceTree = SOURCE_ROOT; };
-		4345E192259E61E400DDD76E /* HistoryTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTimelineViewController.swift; path = "A(x) Master/HistoryTimelineViewController.swift"; sourceTree = SOURCE_ROOT; };
 		43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleInfoViewController.swift; sourceTree = "<group>"; };
 		43474DCF24BFC6110035F405 /* VtCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VtCellData.swift; sourceTree = "<group>"; };
-		43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerTableViewViewController.swift; sourceTree = "<group>"; };
 		43575B0924C25BFF0027E97B /* MealPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanViewController.swift; sourceTree = "<group>"; };
 		436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerTableViewCell.swift; sourceTree = "<group>"; };
 		436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTrackerCellObject.swift; sourceTree = "<group>"; };
-		43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoListScreen.swift; sourceTree = "<group>"; };
+		438411DD260D2B9E005601CC /* English.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = English.strings; sourceTree = "<group>"; };
+		438411E2260D2C0A005601CC /* NOTES.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = NOTES.strings; sourceTree = "<group>"; };
+		438411FA260D3C4C005601CC /* IAPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
+		43882ABC24B7BC2A00C931F9 /* VolumeTrackerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeTrackerVC.swift; sourceTree = "<group>"; };
 		43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChestListViewController.swift; sourceTree = "<group>"; };
 		43882AC124B7BC6C00C931F9 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		43882AC324B7BC7600C931F9 /* Exercises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercises.swift; sourceTree = "<group>"; };
-		43882AC624B7BCA000C931F9 /* VideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisesTableViewCell.swift; sourceTree = "<group>"; };
 		43A8927724B90815002BFED5 /* DashBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewController.swift; sourceTree = "<group>"; };
+		43B8224A260EAF9A00C89AB4 /* BodyfatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyfatViewController.swift; sourceTree = "<group>"; };
+		43B82252260EAFD900C89AB4 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		43B8225A260EAFEA00C89AB4 /* HSPromoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSPromoViewController.swift; sourceTree = "<group>"; };
+		43B82262260EAFFF00C89AB4 /* HistoryExercisesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryExercisesViewController.swift; sourceTree = "<group>"; };
+		43B82267260EB02700C89AB4 /* HistoryTimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTimelineViewController.swift; sourceTree = "<group>"; };
+		43B8226C260EB03400C89AB4 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		43B8227C260EB18200C89AB4 /* Subscriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subscriptions.swift; path = "A(x) Master/ViewControllers/Subscriptions.swift"; sourceTree = SOURCE_ROOT; };
+		43B8229D260EB3CE00C89AB4 /* CompositionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
+		43B822B5260EB41F00C89AB4 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		43B822BD260EB53000C89AB4 /* WorkoutGeneratorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutGeneratorVC.swift; sourceTree = "<group>"; };
+		43BBD359261123E600720229 /* HistMusc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistMusc.swift; path = "A(x) Master/DashboardGoalsAndWorkouts/TableViewObjects/HistMusc.swift"; sourceTree = SOURCE_ROOT; };
+		43BBD35E2611240000720229 /* HistExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistExercise.swift; path = "A(x) Master/DashboardGoalsAndWorkouts/TableViewObjects/HistExercise.swift"; sourceTree = SOURCE_ROOT; };
+		43BBD3662611249D00720229 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = "A(x) Master/DashboardGoalsAndWorkouts/TableViewObjects/History.swift"; sourceTree = SOURCE_ROOT; };
+		43BBD37F2611272C00720229 /* CompositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompositionViewController.swift; sourceTree = "<group>"; };
 		43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormVideosViewController.swift; sourceTree = "<group>"; };
-		43F263C325ABBA8400176554 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		43F263C325ABBA8400176554 /* DashboardDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDetailsVC.swift; sourceTree = "<group>"; };
 		43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bodyWeightViewController.swift; sourceTree = "<group>"; };
 		5654CBBD248C65E400C44BB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		565C1A9B248B1DC30054CC11 /* AofX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AofX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		565C1A9E248B1DC30054CC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		565C1AA2248B1DC30054CC11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		565C1AA2248B1DC30054CC11 /* UpdateInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInformation.swift; sourceTree = "<group>"; };
 		565C1AA5248B1DC30054CC11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		565C1AA7248B1DC50054CC11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		565C1AAA248B1DC50054CC11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -185,49 +188,65 @@
 		4344BB4224BFE571007284A9 /* Vt Muscle Group View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4344BB4524BFE5E7007284A9 /* BicepsVTViewController.swift */,
 			);
 			path = "Vt Muscle Group View Controller";
 			sourceTree = "<group>";
 		};
-		436FA89B24AD7124002672EE /* Dashboards VCs and Classes */ = {
+		438411E8260D389A005601CC /* VolumeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				43882AC024B7BC5900C931F9 /* TableViewObjects */,
 				436FA89C24AD71B1002672EE /* VolumeTrackerTableViewCell.swift */,
 				436FA8A024AD7754002672EE /* VolumeTrackerCellObject.swift */,
-				43486C4E24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift */,
-			);
-			path = "Dashboards VCs and Classes";
-			sourceTree = "<group>";
-		};
-		436FA89E24AD7639002672EE /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				4345E155259E5DEE00DDD76E /* BodyfatViewController.swift */,
-				4345E153259E5DEE00DDD76E /* CompositionViewController.swift */,
-				4345E154259E5DEE00DDD76E /* HistoryExercisesViewController.swift */,
-				4345E192259E61E400DDD76E /* HistoryTimelineViewController.swift */,
-				4345E150259E5DED00DDD76E /* HistoryViewController.swift */,
-				4345E14F259E5DED00DDD76E /* HSPromoViewController.swift */,
-				4345E152259E5DEE00DDD76E /* SubscriptionsViewController.swift */,
-				4345E151259E5DEE00DDD76E /* WeightHistoryViewController.swift */,
-				4344BB4224BFE571007284A9 /* Vt Muscle Group View Controller */,
-				43882AC524B7BC9300C931F9 /* TableViewCells */,
-				43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */,
-				43882ABC24B7BC2A00C931F9 /* VideoListScreen.swift */,
-				56DF909724A1865D0027181D /* BodyFatChartViewController.swift */,
-				56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */,
-				565C1AA2248B1DC30054CC11 /* ViewController.swift */,
-				43A8927724B90815002BFED5 /* DashBoardViewController.swift */,
-				43575B0924C25BFF0027E97B /* MealPlanViewController.swift */,
-				43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */,
 				4340423A24CA06640037D512 /* allExercisesViewController.swift */,
+				43470EC724C69373002FC0E8 /* MuscleInfoViewController.swift */,
+				43882ABE24B7BC3D00C931F9 /* ChestListViewController.swift */,
 				43FE69F324CA2B2C006E963A /* bodyWeightViewController.swift */,
 				43EAAFA624CB6779004B41BE /* FormVideosViewController.swift */,
-				43F263C325ABBA8400176554 /* InfoViewController.swift */,
+				43882ABC24B7BC2A00C931F9 /* VolumeTrackerVC.swift */,
+				43882AC524B7BC9300C931F9 /* TableViewCells */,
+				4344BB4224BFE571007284A9 /* Vt Muscle Group View Controller */,
 			);
-			path = ViewControllers;
+			path = VolumeTracker;
+			sourceTree = "<group>";
+		};
+		438411E9260D38A6005601CC /* DashboardGoalsAndWorkouts */ = {
+			isa = PBXGroup;
+			children = (
+				565C1AA2248B1DC30054CC11 /* UpdateInformation.swift */,
+				43B8229C260EB3C400C89AB4 /* Goals */,
+				43B82295260EB35100C89AB4 /* Dashboard */,
+				43B82294260EB2C300C89AB4 /* WorkoutGenerator */,
+				43882AC024B7BC5900C931F9 /* TableViewObjects */,
+			);
+			path = DashboardGoalsAndWorkouts;
+			sourceTree = "<group>";
+		};
+		438411EA260D391B005601CC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				43B82262260EAFFF00C89AB4 /* HistoryExercisesViewController.swift */,
+				43B82267260EB02700C89AB4 /* HistoryTimelineViewController.swift */,
+				43B8226C260EB03400C89AB4 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		438411EB260D39AC005601CC /* Meal Planner */ = {
+			isa = PBXGroup;
+			children = (
+				43575B0924C25BFF0027E97B /* MealPlanViewController.swift */,
+			);
+			path = "Meal Planner";
+			sourceTree = "<group>";
+		};
+		43841202260E18CC005601CC /* Payments */ = {
+			isa = PBXGroup;
+			children = (
+				43B82252260EAFD900C89AB4 /* SubscriptionsViewController.swift */,
+				43B8225A260EAFEA00C89AB4 /* HSPromoViewController.swift */,
+				438411FA260D3C4C005601CC /* IAPService.swift */,
+			);
+			path = Payments;
 			sourceTree = "<group>";
 		};
 		43882AC024B7BC5900C931F9 /* TableViewObjects */ = {
@@ -243,21 +262,49 @@
 		43882AC524B7BC9300C931F9 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				4345E18D259E61A400DDD76E /* HistMusc.swift */,
 				4345E17F259E614400DDD76E /* BlankTableViewCell.swift */,
+				43BBD359261123E600720229 /* HistMusc.swift */,
 				4345E182259E614400DDD76E /* ExerciseHistoryCell.swift */,
 				4345E181259E614400DDD76E /* ExercisesTableViewCell.swift */,
 				4345E183259E614400DDD76E /* HistoryCell.swift */,
+				43B8227C260EB18200C89AB4 /* Subscriptions.swift */,
 				4345E17E259E614400DDD76E /* MuscleHistoryCell.swift */,
+				43BBD35E2611240000720229 /* HistExercise.swift */,
+				43BBD3662611249D00720229 /* History.swift */,
 				4345E180259E614400DDD76E /* VideoCell.swift */,
-				4345E179259E612300DDD76E /* Subscriptions.swift */,
-				4345E174259E60F800DDD76E /* IAPService.swift */,
-				4345E167259E5F7800DDD76E /* History.swift */,
-				4345E162259E5E4E00DDD76E /* HistExercise.swift */,
-				43882AC624B7BCA000C931F9 /* VideoCell.swift */,
 				43882AC824B7BCA600C931F9 /* ExercisesTableViewCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		43B82294260EB2C300C89AB4 /* WorkoutGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				43B822B5260EB41F00C89AB4 /* Exercise.swift */,
+				43B822BD260EB53000C89AB4 /* WorkoutGeneratorVC.swift */,
+			);
+			path = WorkoutGenerator;
+			sourceTree = "<group>";
+		};
+		43B82295260EB35100C89AB4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				43A8927724B90815002BFED5 /* DashBoardViewController.swift */,
+				43F263C325ABBA8400176554 /* DashboardDetailsVC.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		43B8229C260EB3C400C89AB4 /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				56E0EBDE24A31DFC009CB20F /* MagicFormula.swift */,
+				43B8229D260EB3CE00C89AB4 /* CompositionViewController.swift */,
+				43BBD37F2611272C00720229 /* CompositionViewController.swift */,
+				43B8224A260EAF9A00C89AB4 /* BodyfatViewController.swift */,
+				56DF909724A1865D0027181D /* BodyFatChartViewController.swift */,
+			);
+			path = Goals;
 			sourceTree = "<group>";
 		};
 		54DE5E328DA769CCB3E7E330 /* Frameworks */ = {
@@ -270,13 +317,6 @@
 				F90AF553E60A8BF96B14DDDE /* Pods_A_x__MasterTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		561FB199248B20A7002B394A /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		5654CBBC248C65CA00C44BB7 /* Utilities */ = {
@@ -316,13 +356,16 @@
 				565C1AAC248B1DC50054CC11 /* Info.plist */,
 				565C1AA0248B1DC30054CC11 /* SceneDelegate.swift */,
 				565C1A9E248B1DC30054CC11 /* AppDelegate.swift */,
-				436FA89E24AD7639002672EE /* ViewControllers */,
-				436FA89B24AD7124002672EE /* Dashboards VCs and Classes */,
-				5654CBBC248C65CA00C44BB7 /* Utilities */,
-				561FB199248B20A7002B394A /* CustomViews */,
 				565C1AA4248B1DC30054CC11 /* Main.storyboard */,
 				565C1AA7248B1DC50054CC11 /* Assets.xcassets */,
 				565C1AA9248B1DC50054CC11 /* LaunchScreen.storyboard */,
+				438411DD260D2B9E005601CC /* English.strings */,
+				43841202260E18CC005601CC /* Payments */,
+				438411EB260D39AC005601CC /* Meal Planner */,
+				438411EA260D391B005601CC /* History */,
+				438411E9260D38A6005601CC /* DashboardGoalsAndWorkouts */,
+				438411E8260D389A005601CC /* VolumeTracker */,
+				5654CBBC248C65CA00C44BB7 /* Utilities */,
 			);
 			path = "A(x) Master";
 			sourceTree = "<group>";
@@ -330,6 +373,7 @@
 		565C1AB4248B1DC50054CC11 /* A(x) MasterTests */ = {
 			isa = PBXGroup;
 			children = (
+				438411E2260D2C0A005601CC /* NOTES.strings */,
 				565C1AB5248B1DC50054CC11 /* A_x__MasterTests.swift */,
 				565C1AB7248B1DC50054CC11 /* Info.plist */,
 			);
@@ -479,6 +523,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				565C1AAB248B1DC50054CC11 /* LaunchScreen.storyboard in Resources */,
+				438411E3260D2C0A005601CC /* NOTES.strings in Resources */,
+				438411DE260D2B9E005601CC /* English.strings in Resources */,
 				565C1AA8248B1DC50054CC11 /* Assets.xcassets in Resources */,
 				565C1AA6248B1DC30054CC11 /* Main.storyboard in Resources */,
 			);
@@ -610,44 +656,44 @@
 			files = (
 				436FA89D24AD71B1002672EE /* VolumeTrackerTableViewCell.swift in Sources */,
 				5654CBBE248C65E400C44BB7 /* Constants.swift in Sources */,
-				4345E15C259E5DEE00DDD76E /* HistoryExercisesViewController.swift in Sources */,
-				4345E168259E5F7800DDD76E /* History.swift in Sources */,
 				56DF909824A1865D0027181D /* BodyFatChartViewController.swift in Sources */,
+				43BBD3802611272C00720229 /* CompositionViewController.swift in Sources */,
+				43B822B6260EB41F00C89AB4 /* Exercise.swift in Sources */,
+				43B8225B260EAFEA00C89AB4 /* HSPromoViewController.swift in Sources */,
 				43882AC224B7BC6C00C931F9 /* Video.swift in Sources */,
 				4345E188259E614400DDD76E /* ExerciseHistoryCell.swift in Sources */,
-				4345E18E259E61A400DDD76E /* HistMusc.swift in Sources */,
-				4345E175259E60F800DDD76E /* IAPService.swift in Sources */,
+				43BBD35A261123E600720229 /* HistMusc.swift in Sources */,
 				43A8927824B90815002BFED5 /* DashBoardViewController.swift in Sources */,
-				4345E15D259E5DEE00DDD76E /* BodyfatViewController.swift in Sources */,
 				4345E184259E614400DDD76E /* MuscleHistoryCell.swift in Sources */,
+				43B82263260EAFFF00C89AB4 /* HistoryExercisesViewController.swift in Sources */,
 				43882AC424B7BC7600C931F9 /* Exercises.swift in Sources */,
+				43B82253260EAFD900C89AB4 /* SubscriptionsViewController.swift in Sources */,
+				43B8224B260EAF9A00C89AB4 /* BodyfatViewController.swift in Sources */,
 				43575B0A24C25BFF0027E97B /* MealPlanViewController.swift in Sources */,
-				565C1AA3248B1DC30054CC11 /* ViewController.swift in Sources */,
+				43B8227D260EB18200C89AB4 /* Subscriptions.swift in Sources */,
+				565C1AA3248B1DC30054CC11 /* UpdateInformation.swift in Sources */,
 				4345E186259E614400DDD76E /* VideoCell.swift in Sources */,
-				4345E15A259E5DEE00DDD76E /* SubscriptionsViewController.swift in Sources */,
 				56E0EBDF24A31DFC009CB20F /* MagicFormula.swift in Sources */,
 				43470EC824C69373002FC0E8 /* MuscleInfoViewController.swift in Sources */,
+				43B82268260EB02700C89AB4 /* HistoryTimelineViewController.swift in Sources */,
 				565C1A9F248B1DC30054CC11 /* AppDelegate.swift in Sources */,
-				43882ABD24B7BC2A00C931F9 /* VideoListScreen.swift in Sources */,
-				4345E158259E5DEE00DDD76E /* HistoryViewController.swift in Sources */,
-				4345E157259E5DEE00DDD76E /* HSPromoViewController.swift in Sources */,
-				4345E17A259E612300DDD76E /* Subscriptions.swift in Sources */,
+				43882ABD24B7BC2A00C931F9 /* VolumeTrackerVC.swift in Sources */,
 				4345E189259E614400DDD76E /* HistoryCell.swift in Sources */,
 				43882AC924B7BCA600C931F9 /* ExercisesTableViewCell.swift in Sources */,
-				4345E15B259E5DEE00DDD76E /* CompositionViewController.swift in Sources */,
+				43B8229E260EB3CE00C89AB4 /* CompositionViewController.swift in Sources */,
 				4345E185259E614400DDD76E /* BlankTableViewCell.swift in Sources */,
-				4344BB4624BFE5E7007284A9 /* BicepsVTViewController.swift in Sources */,
 				43474DD024BFC6110035F405 /* VtCellData.swift in Sources */,
+				43B822BE260EB53000C89AB4 /* WorkoutGeneratorVC.swift in Sources */,
 				43EAAFA724CB6779004B41BE /* FormVideosViewController.swift in Sources */,
-				4345E193259E61E400DDD76E /* HistoryTimelineViewController.swift in Sources */,
-				4345E159259E5DEE00DDD76E /* WeightHistoryViewController.swift in Sources */,
+				43BBD3672611249D00720229 /* History.swift in Sources */,
+				43B8226D260EB03400C89AB4 /* HistoryViewController.swift in Sources */,
 				436FA8A124AD7754002672EE /* VolumeTrackerCellObject.swift in Sources */,
 				565C1AA1248B1DC30054CC11 /* SceneDelegate.swift in Sources */,
 				43FE69F424CA2B2C006E963A /* bodyWeightViewController.swift in Sources */,
-				43F263C425ABBA8400176554 /* InfoViewController.swift in Sources */,
+				438411FB260D3C4C005601CC /* IAPService.swift in Sources */,
+				43F263C425ABBA8400176554 /* DashboardDetailsVC.swift in Sources */,
+				43BBD35F2611240000720229 /* HistExercise.swift in Sources */,
 				43882ABF24B7BC3D00C931F9 /* ChestListViewController.swift in Sources */,
-				4345E163259E5E4E00DDD76E /* HistExercise.swift in Sources */,
-				43486C4F24AD93E1006D652F /* VolumeTrackerTableViewViewController.swift in Sources */,
 				4340423B24CA06640037D512 /* allExercisesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -827,7 +873,7 @@
 				CODE_SIGN_ENTITLEMENTS = "A(x) Master/A(x) Master.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 52XLBWBVYR;
 				INFOPLIST_FILE = "A(x) Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -835,7 +881,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "aesthet-x-.aofx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -852,7 +898,7 @@
 				CODE_SIGN_ENTITLEMENTS = "A(x) Master/A(x) Master.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 12;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = 52XLBWBVYR;
 				INFOPLIST_FILE = "A(x) Master/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -860,7 +906,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "aesthet-x-.aofx";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

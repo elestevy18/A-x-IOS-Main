@@ -88,7 +88,7 @@ class MagicFormula: UIViewController {
             
             
             heightSmall = heightSmall + (heightBig * 12.00)
-                        var height = (heightSmall * 2.54)
+            let height = (heightSmall * 2.54)
           
             let baseLeanMass = (1930121 + (44.90097 - 1930121) / (1.00 + (pow(height / 4275.865, 3.168493)))) * 0.93
             muscleGrowthRate = (((3.00 * (37037.00.squareRoot)()) / (200.00 * (experience + 1.00.squareRoot()))))

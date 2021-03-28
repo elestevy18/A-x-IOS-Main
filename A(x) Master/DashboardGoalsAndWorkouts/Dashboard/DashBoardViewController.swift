@@ -17,7 +17,6 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var GrowthRateButton: UIButton!
     @IBOutlet weak var PotentialFatloss: UIButton!
     @IBOutlet weak var CurrentMuscleGrowth: UIButton!
-    
    //Outlets for labels
     @IBOutlet weak var IBWLabel: UILabel!
     @IBOutlet weak var MonthlyPotentialMuscleGrowthLabel: UILabel!

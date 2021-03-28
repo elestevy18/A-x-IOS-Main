@@ -10,7 +10,7 @@ import UIKit
 import IQKeyboardManagerSwift
 
 
-class ViewController: UIViewController{
+class UpdateInformation: UIViewController{
 
     //Outlet for picker textfields
     
@@ -127,7 +127,7 @@ class ViewController: UIViewController{
         let age         = defaults.double(forKey: Save.age)
         let sex         = defaults.bool(forKey: Save.sex)
         let units       = defaults.bool(forKey: Save.unitsBool)
-        var activityMultiplier = defaults.string(forKey: Save.activityLevel)
+        let activityMultiplier = defaults.string(forKey: Save.activityLevel)
         
         if (!(bodyWeight == 0.00)){
             textField1.text = String(bodyWeight)
@@ -337,7 +337,7 @@ class ViewController: UIViewController{
         activityPickerToolBar.barTintColor = .black
         activityPickerToolBar.tintColor = Colors.aXGreen
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self,
-                                         action: #selector(ViewController.dismissKeyboard))
+                                         action: #selector(UpdateInformation.dismissKeyboard))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         activityPickerToolBar.setItems([flexibleSpace, doneButton], animated: false)
         activityPickerToolBar.isUserInteractionEnabled =  true
@@ -351,7 +351,7 @@ class ViewController: UIViewController{
 
 // KEVIN JIMENEZ 06/19/2020 PickerView functions read eat fucking bum
 
-    extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    extension UpdateInformation: UIPickerViewDelegate, UIPickerViewDataSource{
         func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
         }
@@ -383,7 +383,7 @@ class ViewController: UIViewController{
         }
     }
 
-extension ViewController : UITextFieldDelegate {
+extension UpdateInformation : UITextFieldDelegate {
  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return textField.shouldChangeCustomOtp(textField: textField, string: string)
     }

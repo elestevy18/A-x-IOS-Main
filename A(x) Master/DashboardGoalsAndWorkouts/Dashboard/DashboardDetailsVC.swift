@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfoViewController: UIViewController {
+class DashboardDetailsVC: UIViewController {
     
     struct Keys{
         static let infoTapped            = "infotapped"

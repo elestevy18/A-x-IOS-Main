@@ -1,0 +1,70 @@
+/* 
+  NOTES.strings
+  AofX
+
+  Created by Kevin Jimenez on 3/25/21.
+  Copyright © 2021 Aesthet(X). All rights reserved.
+
+So I didnt know any better in builkding the MVP and typed away some smelly smelly code.
+It is redemption time and these are the notes I need to Refactor the codes.
+ 
+ 
+GOAL 1: I want to add a workout generator
+ 
+ CONSIDERATIONS
+ I want to add splits and time support in the future.// Meso cycles too
+ For now I will stick to the prescreptivist approach and recommend 1 hour at a time.
+ 
+ INFORMATION
+ 
+ Time/Set:
+ Isolateral:
+
+IMPLEMENTATION
+ 
+ Make a class that retrieves an exercises values. All computed when necessary
+ 
+ ALGORITHM
+ 
+ 
+ 1 - find the muscle furthest from it' maximum and start the workout there
+        If there are more than
+            -To track what is the missing volume by percetage we store this value in memory
+ 2- Find missing volume of neighboring muscles
+ 
+ EXERCISE PROPERTIES
+ 
+ CLASS EXERCISE {
+        title: String
+        neigbors:[muscle]
+        primaryMovers: [muscles]
+        
+ }
+ 
+ enum Muscle {
+ //TODO import all muscle groups
+ }
+ 
+ class muscle {
+    
+ }
+
+ 
+ LAYOUTS:
+            WORKOUT:
+                    Make a list view [stack]. add an big action button at the bottom
+ 
+ The top row displays the current exercise/ rest.
+ The rest time is white when the regular rest is active.
+ Glows green when you should start a set.
+ Turns red if you rested too long
+ 
+ --------------------------------------------------|
+ HAMSTringCURLS         work/timer    |
+ --------------------------------------------------|
+ 
+ Button: Start Rest -> Begin Set
+ 
+GOAL 2: Add form videos
+
+ */
