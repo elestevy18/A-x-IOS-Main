@@ -1,0 +1,351 @@
+
+/*
+ English.stcon Aross
+ AofX
+ 
+ Created by Kevin Jimenez on 3/25/21.
+ Copyright © 2021 Aesthet(X). All rights reserved.
+ */
+
+    //TODO disclose that any exercise can be done isometrically
+
+    // MARK: Workout Generator
+"generatorCell.startText" = "    Iniciar\n Entrene  ";
+
+    // MARK: Exercises
+    // MARK: Middle Chest
+    //Will combine all pressing exercises save for the bench press for marketing purposes
+    //Cualquier Variante for all chest implies dumbell, MaquinaS, bar, Polea,
+"exercises.chest1" = "Press de Banca";
+"exercises.chest2" = "Press Neutral(Cualquier Variante)";//TODO
+"exercises.chest3" = "Cruces Neutrales";//cualquier variante
+"exercises.chest4" = "Isometrico Pectoral Neutral";
+"bWExercises.chest1" = "Cruce Neutral con Banda";
+"bWExercises.chest2" = "Lagartijas (Cualquier Variante)";//TODO
+
+    // MARK: Upper Chest
+
+"exercises.upperChest1" = "Press de Banca Inclinado";
+"exercises.upperChest2" = "Press de Banca Inclinado (Cualquier Variante)";
+"exercises.upperChest3" = "Cruce Inclinado";
+"exercises.upperChest4" = "Isometrico de Pecho Inclinado";
+"exercises.upperChest5" = "Pullover de Pecho";
+"bWExercises.upperChest1" = "Cruce Inclinado con Banda";
+"bWExercises.upperChest2" = "Lagartijas Inclinadas (Cualquier Variante)";//TODO
+
+    // MARK: Lower Chest
+
+"exercises.lowerChest1" = "Press de Banca Declinado";
+"exercises.lowerChest2" = "Press Declinado (Cualquier Variante)";
+"exercises.lowerChest3" = "Cruce Declinado";
+"exercises.lowerChest4" = "Isometrico Declinado de Pecho";
+"bWExercises.lowerChest5" = "Cruce Declinado con Banda";
+"bWExercises.lowerChest6" = "Fondos Anchos";
+
+    // MARK: Biceps Long Head
+    //Cualquier Variante for biceps implies Dumbbell, barbell , EZ Bar, banded, and con Aross.
+    //TODO PHAT RIGHT HERE
+"exercises.bicepsLongHead1" = "Curls Angostos(Cualquier Variante)";
+"exercises.bicepsLongHead2" = "Curl Predicador (Cualquier Variante)";
+"bWExercises.bicepsLongHead1" = "Dominada Supinada";
+
+    // MARK: Biceps Short Head
+
+"exercises.bicepsLongHead1" = "Curl Ancho (Cualquier Variante)";
+"bWExercises.bicepsLongHead1" = "Dominada Supinada Ancho";
+
+    //TODO: integrate these into programming/tracking
+"exercises.biceps1" = "Curl Estirado";
+"exercises.biceps2" = "Curl Neutral (Cualquier Variante)";
+"exercises.biceps3" = "Curl de Mesero";
+"exercises.biceps4" = "Isometricos de Bicep";
+"bWExercises.bicepsLongHead1" = "Dominada Supinada";
+"bWExercises.bicepsLongHead2" = "Curl con Aros";
+"bWExercises.bicepsLongHead3" = "Curl de Pelícano";
+
+
+    // MARK: Brachialis
+
+"exercises.brachialis1" = "Martillos con Cruce";
+"bWExercises.brachialis1" = "Dominada con Empuñada Neutral";
+
+    // MARK: Lats Rowing
+
+"exercises.1atsRowing1" = "Remo Alto con Polea";
+"exercises.1atsRowing2" = "Remo con Soporte";
+"exercises.1atsRowing3" = "Remo con Barra";//TODO convert to unsupported row
+"exercises.1atsRowing4" = "Remo con Polea";
+"bWExercises.1atsRowing1" = "Remo con Aros";
+"bWExercises.1atsRowing2" = "Dominada Australiana";
+
+    // MARK: Lats Pull-In
+
+"exercises.1atsPull-In1" = "Polea al Pecho";
+"exercises.1atsPull-In2" = "Tiron Dorsal (Cualquier Variante)";
+"bWExercises.1atsPull-In1" = "Dominada";//TODO universalize spelling
+"bWExercises.1atsPull-In2" = "Dominada Supinada";
+
+    // MARK: Lats Pushdown
+
+"exercises.1atsPushdown1" = "Pullover de Dorsal";
+"exercises.1atsPushdown2" = "Pullover con Polea";
+"bWExercises.1atsPushdown1" = "Palanca Frontal";
+
+    // MARK: Glutes Max
+
+"exercises.gluteMax1" = "Empuje de Cadera";
+"exercises.gluteMax2" = "Empuje con Polea";
+"exercises.gluteMax3" = "Columpios";
+"exercises.gluteMax4" = "Patada con Polea";
+"bWExercises.gluteMax1" = "Empuje de Cadera (Cualquier Variante)";//TODO
+"bWExercises.gluteMax2" = "Empuje de Cadera Isolateral";
+"bWExercises.gluteMax3" = "Estocada de Velocista";
+"bWExercises.gluteMax4" = "Peso Muerto Romaniano con Banda";
+"bWExercises.gluteMax5" = "Puente Marchando";
+"bWExercises.gluteMax6" = "Hiperextensión de Glùteo";
+
+    // MARK: Glute Medius
+
+"exercises.gluteMedius1" = "Abducción con Maquina";
+"exercises.gluteMedius2" = "Abducción con Maquina Rotado";
+"exercises.gluteMedius3" = "Abducción con Polea";
+"bWExercises.gluteMedius1" = "Marcha Lateral con Banda";
+"bWExercises.gluteMedius2" = "Abducción con Banda";
+"bWExercises.gluteMedius3" = "Plancha Lateral";
+
+    // MARK: Hamstcon Aross Hinge
+
+"exercises.hamstcon ArossHinge1" = "Peso Muerto";
+"exercises.hamstcon ArossHinge2" = "Peso Muerto Romaniano";
+"exercises.hamstcon ArossHinge3" = "Peso Muerto en Deficit";
+"exercises.hamstcon ArossHinges4" = "Peso Muerto Romaniano Isolateral";
+"bWExercises.hamstcon ArossHinge1" = "Hiperextension Isquiotibiales";
+
+    // MARK: Hamstcon Aross Curl
+"exercises.hamstcon ArossCurl1" = "Curl Femoral";
+"bWexercises.hamstcon ArossCurl1" = "Curl Nórdico";
+"bWexercises.hamstcon ArossCurl2" = "Curl Femoral con Pelota";
+"bWexercises.hamstcon ArossCurl3" = "Curl Femoral con Pelota Isometrico";
+
+
+    // MARK: Anterior Deltoid
+
+"exercises.anteriorDeltoid1" = "Arnolds";
+"exercises.anteriorDeltoid2" = "Press Militar";
+"exercises.anteriorDeltoid3" = "Press de Hombro con Mancuerna";
+"exercises.anteriorDeltoid3" = "Press de Hombro con Estiro en Polea";
+"exercises.anteriorDeltoid4" = "Press de Mina";
+"exercises.anteriorDeltoid5" = "Press de Hombro con Maquina";
+"exercises.anteriorDeltoid6" = "Press Muerto";
+"exercises.anteriorDeltoid7" = "Elevacion Frontal con Polea";
+"bWExercises.anteriorDeltoid1" = "Lagartija en Pico";
+"bWExercises.anteriorDeltoid1" = "Lagartija Parado en Manos";
+
+    // MARK: Lateral Deltoid
+
+"exercises.lateralDeltoid1" = "Alce Lateral con Polea";
+"exercises.lateralDeltoid2" = "Alce Lateral con Maquina";
+"exercises.lateralDeltoid3" = "Alce Lateral con Trampa";
+"exercises.lateralDeltoid4" = "Alce Lateral";
+"bWExercises.lateralDeltoid1" = "Plancha Girando";
+
+    // MARK: Posterior Deltoid
+
+"exercises.posteriorDeltoid1" = "Remo Alto";
+"exercises.posteriorDeltoid2" = "Jale al Rostro";
+"exercises.posteriorDeltoid3" = "W's";
+"exercises.posteriorDeltoid4" = "Apertura Reversa";
+"bWExercises.posteriorDeltoid1" = "Separaciones con Banda";
+"bWExercises.posteriorDeltoid2" = "Jale al Rostrocon Aros";
+"bWExercises.posteriorDeltoid3" = "Angeles de la Muerte";
+
+    // MARK: Posterior Deltoid
+
+"exercises.rotatorCuff1" = "Rotacion Externa con Polea";
+"exercises.rotatorCuff2" = "Rotacion Externa en Banco";
+"exercises.rotatorCuff3" = "W's";
+"exercises.rotatorCuff4" = "Remo Alto";
+"exercises.rotatorCuff5" = "Jale al Rostro";
+"bWExercises.rotatorCuff1" = "Jale al Rostro con Aros";
+"bWExercises.rotatorCuff2" = "Rotacion Externa con Banda";
+
+    // MARK: Tricep Long Head
+
+"exercises.tricepsLongHead1" = "Skullcrusher Inclinado ";
+"exercises.tricepsLongHead2" = "Press California";
+"exercises.tricepsLongHead3" = "Extension de Tricep en Alto";
+"exercises.tricepsLongHead4" = "Extension de Tricep Largo con Polea";
+"bWExercises.tricepsLongHead1" = "Extension en Alto con Aros";
+
+    // MARK: Tricep Lateral and short Head
+
+"exercises.tricepsLateralAndShort1" = "Extension de Tricep Corto con Polea";
+"exercises.tricepsLateralAndShort2" = "Extension de Tricep Corto con Barra 'V'";
+"exercises.tricepsLateralAndShort3" = "Press Angosto en Banca";
+"exercises.tricepsLateralAndShort4" = "Patada de Tricp";
+"bWExercises.tricepsLateralAndShort1" = "Fondo Angosto";
+"bWExercises.tricepsLateralAndShort2" = "Fondo en Banco";
+"bWExercises.tricepsLateralAndShort3" = "Lagartijas Angostas";
+"bWExercises.tricepsLateralAndShort4" = "Extension de Tricep";
+
+    // MARK: Quads
+
+"exercises.quads1" = "Sentadillas";
+"exercises.quads2" = "Reversas en Polea";
+"exercises.quads3" = "Prensa de PIerna con Banda";
+"exercises.quads4" = "Prensa de Pierna";
+"exercises.quads5" = "Estocada Tradicional";
+"exercises.quads6" = "Sentadilla Búlgara";
+"exercises.quads7" = "Estocada Lateral";
+"bWExercises.quads1" = "Sentadillas Isolateral";
+"bWExercises.quads2" = "Estocada con Banda";
+"bWExercises.quads3" = "Sentadillas Búlgaras Explosivas";
+"bWExercises.quads4" = "Sentadillas";
+"bWExercises.quads5" = "Sentadas en Pared";
+"bWExercises.quads6" = "Estocadas";
+
+    // MARK: Middle Abs
+
+"bWExercises.middleAbs1" = "Barcos";
+"bWExercises.middleAbs2" = "Navajas";
+"bWExercises.middleAbs3" = "Pliege de Rodilla";
+"bWExercises.middleAbs4" = "Despliegue con Llanta";
+
+    // MARK: Upper Abs
+
+"exercises.upperAbs1" = "Crunch con Banda"; // TODO collapse crunch to any variation
+"exercises.upperAbs2" = "Crunch con Banda";
+"exercises.upperAbs3" = "Crunch con Maquina";
+"bWExercises.upperAbs1" = "Crunch Neutral/Declinado";
+
+    // MARK: Lower Obliques
+"exercises.lowerObliques1" = "Leñadores de Abajo hacia Arriba";
+"bWExercises.lowerObliques1" = "Elevacion de Pierna";
+"bWExercises.lowerObliques2" = "Crunch-X";
+"bWExercises.lowerObliques3" = "Pulsos Girando";
+"bWExercises.lowerObliques4" = "Elevacion de Pierna en Tijera";
+
+    // MARK: Middle Obliques
+
+"exercises.middleObliques1" = "Leñador Neutral";
+"bWExercises.middleObliques1" = "Pliege de Rodilla Cruzando";
+"bWExercises.middleObliques2" = "Paso Lateral con Banda/Polea";
+"bWExercises.middleObliques3" = "Plancha Girando";
+"bWExercises.middleObliques4" = "Pliege de Rodilla en Plancha";
+
+    // MARK: Upper Obliques
+
+"exercises.upperObliques1" = "Leñadores de Arriba hacia Abajo";
+"bWExercises.upperObliques1" = "Crunch Girando";
+"bWExercises.upperObliques2" = "Crunch de Oblicuo";
+
+    // MARK: Serratus
+
+"exercises.serratus1" = "Crunch con Protraccion en Polea";
+"bWExercises.serratus1" = "Puñetadas con Banda/Polea";
+"bWExercises.serratus2" = "Protraccion en Plancha";
+"bWExercises.serratus3" = "Despliegue con Llanta y Protraccion";
+
+
+    // MARK: Transverse Abs
+
+"bWExercises.transverseAb1" = "Aspiradoras";
+"bWExercises.transverseAb2" = "Resistencia Giratoria con Banda/Polea";
+
+    // MARK: Soleus
+
+"exercises.soleus1" = "Elevacion de Pantorrilla Sentado";
+"bWExercises.soleus1" = "Elevacion de Pantorrilla en Sentadilla";
+
+    // MARK: Gastroc
+
+"exercises.gastrocnemius1" = "Elevacion de Pantorrilla Parado";
+"exercises.gastrocnemius2" = "Elevacion de Pantorrilla en Prensa de Pierna";
+"exercises.gastrocnemius3" = "Elevacion de Pantorrilla de Burro";
+"exercises.gastrocnemius4" = "Elevacion de Pantorrilla con Peso en MAno";
+"bWExercises.gastrocnemius1" = "Elevacion de Pantorrilla sin Peso";
+
+    // MARK: Neck Flexion
+
+"exercises.neckFlexion1" = "Curl con Disco";
+"exercises.neckFlexion2" = "Curl con Arnes";
+"bWExercises.neckFlexion1" = "Isometrico de Flexion de Cuello ";
+
+    // MARK: Neck Extension
+
+"exercises.neckExtension1" = "Extension de Cuello con Disco";
+"exercises.neckExtension2" = "Pliegue de Menton";
+"bWExercises.neckExtension1" = "Isometric de Extension de Cuello";
+
+    // MARK: Transverse Neck
+
+"exercises.transverseNeck1" = "Rotacion de Cuello Suspendido";
+"exercises.transverseNeck2" = "Jalon al Rostro con Cuello";
+"bWExercises.transverseNeck1" = "W's con Cuello";
+
+    // MARK: Forearm Extensors
+
+"exercises.forearmExtensors1" = "Extension de Muñeca con Barra";
+"exercises.forearmExtensors2" = "Roles de Extension con Barra";
+"exercises.forearmExtensors3" = "Curls Invertidos";
+"bWExercises.forearmExtensors1" = "Extension de Muñeca con Banda";
+
+    // MARK: Ulnar Forearm
+
+"exercises.ulnarForearm1" = "Desviacion Cubital con Cuerda";
+"bWExercises.ulnarForearm1" = "Desviacion Cubital con Banda";
+
+    // MARK: Forearm flexor
+
+"exercises.forearmFlexors1" = "Curl de Muñeca Pronado";
+"exercises.forearmFlexors2" = "Curls con Muñeca Activa";
+"bWExercises.forearmFlexors1" = "Curls con Banda y Muñeca Activa ";
+
+    // MARK: Radial Forearm
+
+"exercises.radialForearm1" = "Desviacion Radial con Cuerda";
+"exercises.radialForearm2" = "Martillos con Cruce";
+"bWExercises.radialForearm1" = "Desviacion Radial con Banda";
+
+    // MARK: Spinal Erectors
+
+"exercises.spinalErectors1" = "Hiperextension";
+"exercises.spinalErectors2" = "Extension de los Erectores con Maquina";
+"exercises.spinalErectors3" = "Peso Muerto";
+"exercises.spinalErectors4" = "Sentadillas";
+
+"bWExercises.spinalErectors1" = "Bombeo Rana ";
+"bWExercises.spinalErectors2" = "Angel de la Muerte";
+"bWExercises.spinalErectors3" = "Puente Marchando";
+"bWExercises.spinalErectors4" = "Hiperextension Invertido";
+
+    // MARK: Upper Traps
+
+"exercises.upperTraps1" = "Encoge de Hombros con Mancuerna";
+"exercises.upperTraps2" = "Encoge de Hombros con Barrra de Trapezio";
+"exercises.upperTraps3" = "Paso Agropecuario";
+
+"bWExercises.upperTraps1" = "Empuje de Trapezio";
+"bWExercises.upperTraps2" = "Y Invertida";
+
+    // MARK: Lower Traps
+
+"exercises.lowerTraps1" = "Elevacion 'Y'";
+"exercises.lowerTraps2" = "Apertura Reversa";
+"exercises.lowerTraps3" = "W's";
+"exercises.lowerTraps4" = "Jalon al Rostro";
+
+"bWExercises.lowerTraps1" = "Jalon al Rostro con Aro";
+"bWExercises.lowerTraps2" = "Retraccion Scapular";
+"bWExercises.lowerTraps1" = "Angel de la Muerte";
+"bWExercises.lowerTraps2" = "Depresion de los Omoplatos";
+
+    // MARK: Adductors
+
+"exercises.adductors1" = "Adduccion con Maquina";
+"bWExercises.adductors2" = "Adduccion en Plancha Lateral";
+
+    // MARK: Tibialis
+
+"exercises.tibialis1" = "Alce de Tibialis";
+"bWExercises.tibialis2" = "Sentadillas Isometrica";

@@ -1,0 +1,504 @@
+
+/* Class = "UITabBarItem"; title = "Numbers"; ObjectID = "0aJ-W0-3Px"; */
+"0aJ-W0-3Px.title" = "Numbers";
+
+/* Class = "UILabel"; text = "                                                   The amount of quality sets an individual can perform weekly to maximize growth."; ObjectID = "1SG-ui-kxw"; */
+"1SG-ui-kxw.text" = "                                                   The amount of quality sets an individual can perform weekly to maximize growth.";
+
+/* Class = "UIButton"; normalTitle = "\n            IDEAL\n      BODYWEIGHT\n"; ObjectID = "1YI-00-POs"; */
+"1YI-00-POs.normalTitle" = "\n            IDEAL\n      BODYWEIGHT\n";
+
+/* Class = "UILabel"; text = "Weight Loss Speed"; ObjectID = "1aa-Xi-QWN"; */
+"1aa-Xi-QWN.text" = "Weight Loss Speed";
+
+/* Class = "UILabel"; text = "Set Volume:"; ObjectID = "2xT-Rv-3qS"; */
+"2xT-Rv-3qS.text" = "Set Volume:";
+
+/* Class = "UIButton"; configuration.title = "$15.99 Anually"; ObjectID = "39t-zL-IGi"; */
+"39t-zL-IGi.configuration.title" = "$15.99 Anually";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "39t-zL-IGi"; */
+"39t-zL-IGi.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "30s"; ObjectID = "3E2-oi-Yah"; */
+"3E2-oi-Yah.normalTitle" = "30s";
+
+/* Class = "UILabel"; text = "Muscle 1, Muscle 2 Secondary:\n Muscle 1, Muscle 2, Muscle 3\nline3"; ObjectID = "3q6-sL-wBt"; */
+"3q6-sL-wBt.text" = "Muscle 1, Muscle 2 Secondary:\n Muscle 1, Muscle 2, Muscle 3\nline3";
+
+/* Class = "UILabel"; text = "--:--:--"; ObjectID = "3qa-2A-bpZ"; */
+"3qa-2A-bpZ.text" = "--:--:--";
+
+/* Class = "UILabel"; text = "Maximum Recoverable Volume:"; ObjectID = "4Ql-W7-II9"; */
+"4Ql-W7-II9.text" = "Maximum Recoverable Volume:";
+
+/* Class = "UIButton"; configuration.title = "$9.99 Biannuallly"; ObjectID = "4od-nH-Ifx"; */
+"4od-nH-Ifx.configuration.title" = "$9.99 Biannuallly";
+
+/* Class = "UIButton"; normalTitle = "$9.99 Biannuallly"; ObjectID = "4od-nH-Ifx"; */
+"4od-nH-Ifx.normalTitle" = "$9.99 Biannuallly";
+
+/* Class = "UIButton"; normalTitle = "\n\nPOTENTIAL FATLOSS\n\n\n\n\n"; ObjectID = "4sR-dh-BaM"; */
+"4sR-dh-BaM.normalTitle" = "\n\nPOTENTIAL FATLOSS\n\n\n\n\n";
+
+/* Class = "UISegmentedControl"; 4us-ad-o7k.segmentTitles[0] = "Imperial"; ObjectID = "4us-ad-o7k"; */
+"4us-ad-o7k.segmentTitles[0]" = "Imperial";
+
+/* Class = "UISegmentedControl"; 4us-ad-o7k.segmentTitles[1] = "Metric"; ObjectID = "4us-ad-o7k"; */
+"4us-ad-o7k.segmentTitles[1]" = "Metric";
+
+/* Class = "UILabel"; text = "RPE:"; ObjectID = "51J-YC-CFP"; */
+"51J-YC-CFP.text" = "RPE:";
+
+/* Class = "UILabel"; text = "Exercise                                 ."; ObjectID = "5Ms-4b-ySV"; */
+"5Ms-4b-ySV.text" = "Exercise                                 .";
+
+/* Class = "UIViewController"; title = "formVideo"; ObjectID = "5yL-k4-wlv"; */
+"5yL-k4-wlv.title" = "formVideo";
+
+/* Class = "UILabel"; text = "Your personal trainer is overpriced. Health and fitness should be accessible to everyone. "; ObjectID = "66u-cd-RNb"; */
+"66u-cd-RNb.text" = "Your personal trainer is overpriced. Health and fitness should be accessible to everyone. ";
+
+/* Class = "UIButton"; normalTitle = "  ADD SET  "; ObjectID = "677-Ml-MKj"; */
+"677-Ml-MKj.normalTitle" = "  ADD SET  ";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "6ZJ-no-abN"; */
+"6ZJ-no-abN.text" = "Swipe down to dismiss";
+
+/* Class = "UILabel"; text = "Exercise Title"; ObjectID = "6h8-X6-Qnw"; */
+"6h8-X6-Qnw.text" = "Exercise Title";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "8w3-7h-Grd"; */
+"8w3-7h-Grd.text" = "Swipe down to dismiss";
+
+/* Class = "UIViewController"; title = "MealPlanViewController"; ObjectID = "97e-ci-ytq"; */
+"97e-ci-ytq.title" = "MealPlanViewController";
+
+/* Class = "UILabel"; text = "Estimate Daily Caloric Expenditure: 0000.00"; ObjectID = "9ef-kC-JBa"; */
+"9ef-kC-JBa.text" = "Estimate Daily Caloric Expenditure: 0000.00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9gr-vq-w84"; */
+"9gr-vq-w84.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "      Input\nInformation"; ObjectID = "9tj-RC-B0T"; */
+"9tj-RC-B0T.normalTitle" = "      Input\nInformation";
+
+/* Class = "UIButton"; normalTitle = " RESET ALL "; ObjectID = "A0Y-EW-K41"; */
+"A0Y-EW-K41.normalTitle" = " RESET ALL ";
+
+/* Class = "UILabel"; text = "Maximum Adaptive Volume:"; ObjectID = "AFt-Tp-8pW"; */
+"AFt-Tp-8pW.text" = "Maximum Adaptive Volume:";
+
+/* Class = "UILabel"; text = "Protein"; ObjectID = "AS8-6Z-vXV"; */
+"AS8-6Z-vXV.text" = "Protein";
+
+/* Class = "UILabel"; text = "Explain stuff here for our lovely customers"; ObjectID = "Aue-Ge-3G8"; */
+"Aue-Ge-3G8.text" = "Explain stuff here for our lovely customers";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "BHY-7j-X4a"; */
+"BHY-7j-X4a.text" = "00:00";
+
+/* Class = "UIViewController"; title = "infoCollection"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "infoCollection";
+
+/* Class = "UILabel"; text = "Rewatch intro showcase (requires app reset)"; ObjectID = "BbB-xy-F7x"; */
+"BbB-xy-F7x.text" = "Rewatch intro showcase (requires app reset)";
+
+/* Class = "UIViewController"; title = "dashBoard"; ObjectID = "Bhx-cy-IUh"; */
+"Bhx-cy-IUh.title" = "dashBoard";
+
+/* Class = "UILabel"; text = "X Sets"; ObjectID = "COr-jT-ult"; */
+"COr-jT-ult.text" = "X Sets";
+
+/* Class = "UIButton"; normalTitle = " SETTINGS "; ObjectID = "CUj-kH-g41"; */
+"CUj-kH-g41.normalTitle" = " SETTINGS ";
+
+/* Class = "UILabel"; text = "       "; ObjectID = "CW8-9u-RqN"; */
+"CW8-9u-RqN.text" = "       ";
+
+/* Class = "UIButton"; normalTitle = "    ADD TO     \n  WORKOUT  "; ObjectID = "DSv-Vk-pKg"; */
+"DSv-Vk-pKg.normalTitle" = "    ADD TO     \n  WORKOUT  ";
+
+/* Class = "UIButton"; normalTitle = " EXERCISES "; ObjectID = "Dl8-qW-XAT"; */
+"Dl8-qW-XAT.normalTitle" = " EXERCISES ";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "DrU-FQ-y07"; */
+"DrU-FQ-y07.text" = "Swipe down to dismiss";
+
+/* Class = "UIButton"; normalTitle = "30s"; ObjectID = "FQb-Jt-N0G"; */
+"FQb-Jt-N0G.normalTitle" = "30s";
+
+/* Class = "UITextField"; placeholder = "Years"; ObjectID = "FZh-ur-iGg"; */
+"FZh-ur-iGg.placeholder" = "Years";
+
+/* Class = "UIButton"; normalTitle = "Rewatch"; ObjectID = "GCQ-Vg-NUs"; */
+"GCQ-Vg-NUs.normalTitle" = "Rewatch";
+
+/* Class = "UILabel"; text = "Muscle 1, ooooooooo                                                                            o\nMuscle 2                                                                                                    x"; ObjectID = "GJd-Qi-PMi"; */
+"GJd-Qi-PMi.text" = "Muscle 1, ooooooooo                                                                            o\nMuscle 2                                                                                                    x";
+
+/* Class = "UIButton"; normalTitle = "Don't know? Click here."; ObjectID = "H83-DN-DNu"; */
+"H83-DN-DNu.normalTitle" = "Don't know? Click here.";
+
+/* Class = "UIButton"; normalTitle = "  ADD SET  "; ObjectID = "HQz-ui-hCY"; */
+"HQz-ui-hCY.normalTitle" = "  ADD SET  ";
+
+/* Class = "UILabel"; text = "Fat"; ObjectID = "HZQ-XG-05L"; */
+"HZQ-XG-05L.text" = "Fat";
+
+/* Class = "UIButton"; normalTitle = "NEXT"; ObjectID = "I5I-Fr-SIY"; */
+"I5I-Fr-SIY.normalTitle" = "NEXT";
+
+/* Class = "UITabBarItem"; title = "Meal Plan"; ObjectID = "IUK-2I-GRT"; */
+"IUK-2I-GRT.title" = "Meal Plan";
+
+/* Class = "UILabel"; text = "Total time: 00:00"; ObjectID = "KDW-0u-aLh"; */
+"KDW-0u-aLh.text" = "Total time: 00:00";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "Lzu-P3-aLH"; */
+"Lzu-P3-aLH.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "HISTORY"; ObjectID = "M6B-1G-LOA"; */
+"M6B-1G-LOA.normalTitle" = "HISTORY";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "McP-xQ-S4C"; */
+"McP-xQ-S4C.text" = "0.00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Mvs-At-HbT"; */
+"Mvs-At-HbT.text" = "Label";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "Ni9-2f-xLw"; */
+"Ni9-2f-xLw.text" = "0.00";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "Nit-Kw-tQ4"; */
+"Nit-Kw-tQ4.text" = "Swipe down to dismiss";
+
+/* Class = "UIButton"; normalTitle = "ALL EXERCISES"; ObjectID = "NpR-Fd-8IG"; */
+"NpR-Fd-8IG.normalTitle" = "ALL EXERCISES";
+
+/* Class = "UILabel"; text = "0000"; ObjectID = "OD2-ui-B17"; */
+"OD2-ui-B17.text" = "0000";
+
+/* Class = "UILabel"; text = "High"; ObjectID = "OEK-dt-7cn"; */
+"OEK-dt-7cn.text" = "High";
+
+/* Class = "UILabel"; text = "0000.00"; ObjectID = "ObC-KI-7p6"; */
+"ObC-KI-7p6.text" = "0000.00";
+
+/* Class = "UIButton"; normalTitle = "Senior"; ObjectID = "PMv-Nc-FcO"; */
+"PMv-Nc-FcO.normalTitle" = "Senior";
+
+/* Class = "UILabel"; text = "Low"; ObjectID = "Pgf-nE-5fl"; */
+"Pgf-nE-5fl.text" = "Low";
+
+/* Class = "UIButton"; normalTitle = "Male"; ObjectID = "Q2c-eU-cDI"; */
+"Q2c-eU-cDI.normalTitle" = "Male";
+
+/* Class = "UIButton"; normalTitle = "Load Workout"; ObjectID = "QAY-pQ-fwW"; */
+"QAY-pQ-fwW.normalTitle" = "Load Workout";
+
+/* Class = "UIButton"; normalTitle = "test1"; ObjectID = "R30-FZ-jhk"; */
+"R30-FZ-jhk.normalTitle" = "test1";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "RLn-yD-9iU"; */
+"RLn-yD-9iU.text" = "Swipe down to dismiss";
+
+/* Class = "UIButton"; normalTitle = " CLICK HERE TO OBTAIN \n      YOUR MEAL PLAN"; ObjectID = "Rdr-Mh-YQU"; */
+"Rdr-Mh-YQU.normalTitle" = " CLICK HERE TO OBTAIN \n      YOUR MEAL PLAN";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RoT-L3-dQz"; */
+"RoT-L3-dQz.text" = "Label";
+
+/* Class = "UILabel"; text = "00/00/00"; ObjectID = "Srl-jC-CUk"; */
+"Srl-jC-CUk.text" = "00/00/00";
+
+/* Class = "UIViewController"; title = "allExercises"; ObjectID = "TPL-FQ-uDK"; */
+"TPL-FQ-uDK.title" = "allExercises";
+
+/* Class = "UIButton"; normalTitle = " CLICK HERE TO \n   REMOVE ADS"; ObjectID = "TaM-Ga-bWQ"; */
+"TaM-Ga-bWQ.normalTitle" = " CLICK HERE TO \n   REMOVE ADS";
+
+/* Class = "UIButton"; normalTitle = "Start/\nStop"; ObjectID = "Tin-wk-hE6"; */
+"Tin-wk-hE6.normalTitle" = "Start/\nStop";
+
+/* Class = "UIButton"; normalTitle = "Female"; ObjectID = "UNI-bP-qGX"; */
+"UNI-bP-qGX.normalTitle" = "Female";
+
+/* Class = "UIButton"; normalTitle = "Add Exercise"; ObjectID = "Ukx-8r-jc1"; */
+"Ukx-8r-jc1.normalTitle" = "Add Exercise";
+
+/* Class = "UIButton"; normalTitle = "Click here to use a promo code"; ObjectID = "Uuk-0z-fwE"; */
+"Uuk-0z-fwE.normalTitle" = "Click here to use a promo code";
+
+/* Class = "UIButton"; normalTitle = "Swap"; ObjectID = "UyZ-Ze-k5C"; */
+"UyZ-Ze-k5C.normalTitle" = "Swap";
+
+/* Class = "UIViewController"; title = "Exercises"; ObjectID = "VMr-Q9-1Zh"; */
+"VMr-Q9-1Zh.title" = "Exercises";
+
+/* Class = "UIButton"; normalTitle = "test2"; ObjectID = "VQd-qe-pVg"; */
+"VQd-qe-pVg.normalTitle" = "test2";
+
+/* Class = "UIButton"; normalTitle = "            CURRENT\n            MUSCLE\n            GROWTH"; ObjectID = "Vvx-rg-sJi"; */
+"Vvx-rg-sJi.normalTitle" = "            CURRENT\n            MUSCLE\n            GROWTH";
+
+/* Class = "UITabBarItem"; title = "Manual Tracking"; ObjectID = "VzX-jV-TpC"; */
+"VzX-jV-TpC.title" = "Manual Tracking";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "WGZ-dF-2Ga"; */
+"WGZ-dF-2Ga.text" = "Swipe down to dismiss";
+
+/* Class = "UIButton"; normalTitle = "     SAVE     "; ObjectID = "WjN-8f-DTg"; */
+"WjN-8f-DTg.normalTitle" = "     SAVE     ";
+
+/* Class = "UIViewController"; title = "specificExerciseHistory"; ObjectID = "Xrg-0C-esz"; */
+"Xrg-0C-esz.title" = "specificExerciseHistory";
+
+/* Class = "UIButton"; normalTitle = " LEARN NUTRITION\n            HERE"; ObjectID = "XuU-Kv-4ow"; */
+"XuU-Kv-4ow.normalTitle" = " LEARN NUTRITION\n            HERE";
+
+/* Class = "UILabel"; text = "Achieve an Aesthetic Physique"; ObjectID = "Y3t-aT-pzi"; */
+"Y3t-aT-pzi.text" = "Achieve an Aesthetic Physique";
+
+/* Class = "UILabel"; text = "Share the following information with us to get started."; ObjectID = "YC3-wL-6RW"; */
+"YC3-wL-6RW.text" = "Share the following information with us to get started.";
+
+/* Class = "UILabel"; text = "Current Max:"; ObjectID = "YLf-vU-jeW"; */
+"YLf-vU-jeW.text" = "Current Max:";
+
+/* Class = "UIButton"; normalTitle = "\n\n\nMONTHLY POTENTIAL MUSCLE\n                    GROWTH   \n\n"; ObjectID = "a2W-gz-B4V"; */
+"a2W-gz-B4V.normalTitle" = "\n\n\nMONTHLY POTENTIAL MUSCLE\n                    GROWTH   \n\n";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "aD6-qj-TUk"; */
+"aD6-qj-TUk.text" = "0.00";
+
+/* Class = "UILabel"; text = "MAV: 00-00\nFREQ: 2-3"; ObjectID = "aWs-1J-2oJ"; */
+"aWs-1J-2oJ.text" = "MAV: 00-00\nFREQ: 2-3";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "akn-Dj-nVc"; */
+"akn-Dj-nVc.text" = "Label";
+
+/* Class = "UILabel"; text = "Exercise"; ObjectID = "awU-5d-jnh"; */
+"awU-5d-jnh.text" = "Exercise";
+
+/* Class = "UILabel"; text = "Carbs"; ObjectID = "bDv-nY-XmR"; */
+"bDv-nY-XmR.text" = "Carbs";
+
+/* Class = "UILabel"; text = "x/x sets"; ObjectID = "bJU-x0-pfG"; */
+"bJU-x0-pfG.text" = "x/x sets";
+
+/* Class = "UILabel"; text = "Daily Caloric \n    Intake:"; ObjectID = "boX-XX-2Rf"; */
+"boX-XX-2Rf.text" = "Daily Caloric \n    Intake:";
+
+/* Class = "UIButton"; normalTitle = "test3"; ObjectID = "cVe-ie-IyE"; */
+"cVe-ie-IyE.normalTitle" = "test3";
+
+/* Class = "UIButton"; configuration.title = "$2.49 Monthly"; ObjectID = "cXg-63-Tea"; */
+"cXg-63-Tea.configuration.title" = "$2.49 Monthly";
+
+/* Class = "UIButton"; normalTitle = "$2.49 Monthly"; ObjectID = "cXg-63-Tea"; */
+"cXg-63-Tea.normalTitle" = "$2.49 Monthly";
+
+/* Class = "UIButton"; normalTitle = "  Reset Volume  "; ObjectID = "dGv-1d-UrW"; */
+"dGv-1d-UrW.normalTitle" = "  Reset Volume  ";
+
+/* Class = "UILabel"; text = "Body Weight:"; ObjectID = "dHW-Jk-5Db"; */
+"dHW-Jk-5Db.text" = "Body Weight:";
+
+/* Class = "UILabel"; text = "Sets:"; ObjectID = "dSB-eg-xhu"; */
+"dSB-eg-xhu.text" = "Sets:";
+
+/* Class = "UIButton"; normalTitle = "      VIEW\n EXERCISES  "; ObjectID = "eBq-I3-j3L"; */
+"eBq-I3-j3L.normalTitle" = "      VIEW\n EXERCISES  ";
+
+/* Class = "UILabel"; text = "                                                         The amount of quality sets an individual can perform weekly and realistically recover from."; ObjectID = "eDA-2U-K3a"; */
+"eDA-2U-K3a.text" = "                                                         The amount of quality sets an individual can perform weekly and realistically recover from.";
+
+/* Class = "UILabel"; text = "000"; ObjectID = "ekK-yt-beO"; */
+"ekK-yt-beO.text" = "000";
+
+/* Class = "UITextField"; accessibilityLabel = "frequencyTextField"; ObjectID = "fQa-ZH-0b1"; */
+"fQa-ZH-0b1.accessibilityLabel" = "frequencyTextField";
+
+/* Class = "UITextField"; placeholder = "Activity Level"; ObjectID = "fQa-ZH-0b1"; */
+"fQa-ZH-0b1.placeholder" = "Activity Level";
+
+/* Class = "UITextField"; text = "Activity Level"; ObjectID = "fQa-ZH-0b1"; */
+"fQa-ZH-0b1.text" = "Activity Level";
+
+/* Class = "UIButton"; normalTitle = " 30s "; ObjectID = "flJ-RT-GiN"; */
+"flJ-RT-GiN.normalTitle" = " 30s ";
+
+/* Class = "UILabel"; text = "Reps:"; ObjectID = "fux-pX-hMu"; */
+"fux-pX-hMu.text" = "Reps:";
+
+/* Class = "UILabel"; text = "Track your nutrition with"; ObjectID = "g0n-ID-7nI"; */
+"g0n-ID-7nI.text" = "Track your nutrition with";
+
+/* Class = "UIViewController"; title = "calculatingPerfection"; ObjectID = "gDR-LE-9Sk"; */
+"gDR-LE-9Sk.title" = "calculatingPerfection";
+
+/* Class = "UIButton"; normalTitle = "Freshman"; ObjectID = "gbV-wM-MOQ"; */
+"gbV-wM-MOQ.normalTitle" = "Freshman";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gud-p1-awt"; */
+"gud-p1-awt.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "%"; ObjectID = "h1v-au-tlw"; */
+"h1v-au-tlw.placeholder" = "%";
+
+/* Class = "UILabel"; text = "Set Maximum \nRecoverable \nVolume:"; ObjectID = "hCM-gC-9fj"; */
+"hCM-gC-9fj.text" = "Set Maximum \nRecoverable \nVolume:";
+
+/* Class = "UIViewController"; title = "Exercises"; ObjectID = "hHD-4b-EQa"; */
+"hHD-4b-EQa.title" = "Exercises";
+
+/* Class = "UITextField"; text = "Type Promo Code"; ObjectID = "hSs-SC-lhH"; */
+"hSs-SC-lhH.text" = "Type Promo Code";
+
+/* Class = "UIButton"; normalTitle = "Reorder"; ObjectID = "hgt-X2-PdC"; */
+"hgt-X2-PdC.normalTitle" = "Reorder";
+
+/* Class = "UIButton"; normalTitle = "     F.A.Q     "; ObjectID = "i80-oK-LFV"; */
+"i80-oK-LFV.normalTitle" = "     F.A.Q     ";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "iJf-cU-bBq"; */
+"iJf-cU-bBq.text" = "00";
+
+/* Class = "UIButton"; configuration.title = "$2.49 Annually"; ObjectID = "ixT-SN-03b"; */
+"ixT-SN-03b.configuration.title" = "$2.49 Annually";
+
+/* Class = "UIButton"; normalTitle = "$9.99 Biannuallly"; ObjectID = "ixT-SN-03b"; */
+"ixT-SN-03b.normalTitle" = "$9.99 Biannuallly";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "j8w-nh-gQM"; */
+"j8w-nh-gQM.text" = "Swipe down to dismiss";
+
+/* Class = "UILabel"; text = "Swipe down to dismiss"; ObjectID = "jBn-Yh-YNO"; */
+"jBn-Yh-YNO.text" = "Swipe down to dismiss";
+
+/* Class = "UILabel"; text = "Weight:"; ObjectID = "jfA-oq-lNh"; */
+"jfA-oq-lNh.text" = "Weight:";
+
+/* Class = "UITextField"; placeholder = "MRV"; ObjectID = "k1b-bc-neB"; */
+"k1b-bc-neB.placeholder" = "MRV";
+
+/* Class = "UITextField"; text = "MRV"; ObjectID = "k1b-bc-neB"; */
+"k1b-bc-neB.text" = "MRV";
+
+/* Class = "UIButton"; normalTitle = "Start"; ObjectID = "lK4-Uy-o3s"; */
+"lK4-Uy-o3s.normalTitle" = "Start";
+
+/* Class = "UILabel"; text = "Slow"; ObjectID = "lOw-Ry-vph"; */
+"lOw-Ry-vph.text" = "Slow";
+
+/* Class = "UIButton"; normalTitle = "  Set MRV  "; ObjectID = "lig-hm-zYB"; */
+"lig-hm-zYB.normalTitle" = "  Set MRV  ";
+
+/* Class = "UILabel"; text = "Muscle 1, ooooooooo                                                                   j                                          \nMuscle 2                                                                                      k                    \nline3                                                                        "; ObjectID = "lku-uY-k5l"; */
+"lku-uY-k5l.text" = "Muscle 1, ooooooooo                                                                   j                                          \nMuscle 2                                                                                      k                    \nline3                                                                        ";
+
+/* Class = "UILabel"; text = "Click on \"Input \nInformation\" to obtain\nyour fitness goals."; ObjectID = "n5c-CG-Yct"; */
+"n5c-CG-Yct.text" = "Click on \"Input \nInformation\" to obtain\nyour fitness goals.";
+
+/* Class = "UITabBarController"; title = "tabView"; ObjectID = "n9b-iW-k0h"; */
+"n9b-iW-k0h.title" = "tabView";
+
+/* Class = "UILabel"; text = "Body Composition:"; ObjectID = "ndG-bq-elj"; */
+"ndG-bq-elj.text" = "Body Composition:";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "oeg-EH-7Ul"; */
+"oeg-EH-7Ul.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "Junior"; ObjectID = "pMU-50-pdq"; */
+"pMU-50-pdq.normalTitle" = "Junior";
+
+/* Class = "UIButton"; normalTitle = "test4"; ObjectID = "pRp-ot-GDL"; */
+"pRp-ot-GDL.normalTitle" = "test4";
+
+/* Class = "UILabel"; text = "Calculating Perfection"; ObjectID = "pXU-TV-BPS"; */
+"pXU-TV-BPS.text" = "Calculating Perfection";
+
+/* Class = "UIViewController"; title = "answersVC"; ObjectID = "prV-mQ-2Lr"; */
+"prV-mQ-2Lr.title" = "answersVC";
+
+/* Class = "UILabel"; text = "Energy Source"; ObjectID = "q6Y-e7-eZf"; */
+"q6Y-e7-eZf.text" = "Energy Source";
+
+/* Class = "UILabel"; text = "Exercise"; ObjectID = "q6x-1t-wD3"; */
+"q6x-1t-wD3.text" = "Exercise";
+
+/* Class = "UILabel"; text = "Height:"; ObjectID = "qbf-8z-Aih"; */
+"qbf-8z-Aih.text" = "Height:";
+
+/* Class = "UILabel"; text = "Current Volume:"; ObjectID = "qgw-YO-lby"; */
+"qgw-YO-lby.text" = "Current Volume:";
+
+/* Class = "UILabel"; text = "Lifting Experience:"; ObjectID = "qo1-FR-XuS"; */
+"qo1-FR-XuS.text" = "Lifting Experience:";
+
+/* Class = "UIButton"; normalTitle = "  Reset Max  "; ObjectID = "s7a-8L-8LB"; */
+"s7a-8L-8LB.normalTitle" = "  Reset Max  ";
+
+/* Class = "UILabel"; text = "Choose your discount"; ObjectID = "sNr-Bv-blw"; */
+"sNr-Bv-blw.text" = "Choose your discount";
+
+/* Class = "UIButton"; normalTitle = "Swap"; ObjectID = "sav-X2-OKc"; */
+"sav-X2-OKc.normalTitle" = "Swap";
+
+/* Class = "UIButton"; normalTitle = "Sophomore"; ObjectID = "sgL-r6-63V"; */
+"sgL-r6-63V.normalTitle" = "Sophomore";
+
+/* Class = "UITextField"; placeholder = "Months"; ObjectID = "soB-Id-7ve"; */
+"soB-Id-7ve.placeholder" = "Months";
+
+/* Class = "UILabel"; text = "Assess your bodyfat with this chart. Swipe for the opposite sex."; ObjectID = "svG-NE-75q"; */
+"svG-NE-75q.text" = "Assess your bodyfat with this chart. Swipe for the opposite sex.";
+
+/* Class = "UIButton"; normalTitle = "Create Workout"; ObjectID = "tij-zK-vXi"; */
+"tij-zK-vXi.normalTitle" = "Create Workout";
+
+/* Class = "UILabel"; text = "Fast"; ObjectID = "tkf-7m-YqT"; */
+"tkf-7m-YqT.text" = "Fast";
+
+/* Class = "UITabBarItem"; title = "Workout Generator"; ObjectID = "u4x-zN-OD5"; */
+"u4x-zN-OD5.title" = "Workout Generator";
+
+/* Class = "UILabel"; text = "00.00\n/00"; ObjectID = "uep-dL-v7C"; */
+"uep-dL-v7C.text" = "00.00\n/00";
+
+/* Class = "UILabel"; text = "Choose your year:"; ObjectID = "vDP-qF-pwH"; */
+"vDP-qF-pwH.text" = "Choose your year:";
+
+/* Class = "UIButton"; normalTitle = "30s"; ObjectID = "vS1-9k-iHF"; */
+"vS1-9k-iHF.normalTitle" = "30s";
+
+/* Class = "UILabel"; text = "Sets:\n 0/0"; ObjectID = "vcy-Wb-MHu"; */
+"vcy-Wb-MHu.text" = "Sets:\n 0/0";
+
+/* Class = "UIButton"; normalTitle = "BACK"; ObjectID = "vmB-Pd-Lrv"; */
+"vmB-Pd-Lrv.normalTitle" = "BACK";
+
+/* Class = "UILabel"; text = "Weekly Sets:\n   00.0/00"; ObjectID = "w8C-3Q-NHK"; */
+"w8C-3Q-NHK.text" = "Weekly Sets:\n   00.0/00";
+
+/* Class = "UIViewController"; title = "QuestionsVC"; ObjectID = "wEA-in-hbw"; */
+"wEA-in-hbw.title" = "QuestionsVC";
+
+/* Class = "UILabel"; text = "Age:"; ObjectID = "x6I-OQ-XyW"; */
+"x6I-OQ-XyW.text" = "Age:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xAg-Eg-SSC"; */
+"xAg-Eg-SSC.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "test5"; ObjectID = "xia-an-u5T"; */
+"xia-an-u5T.normalTitle" = "test5";
+
+/* Class = "UILabel"; text = "00:00"; ObjectID = "y1E-Wg-2Y5"; */
+"y1E-Wg-2Y5.text" = "00:00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "z3m-6x-Fnw"; */
+"z3m-6x-Fnw.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Click for Privacy Policy and Terms and Conditions"; ObjectID = "zWC-Co-pP2"; */
+"zWC-Co-pP2.normalTitle" = "Click for Privacy Policy and Terms and Conditions";

@@ -69,17 +69,17 @@ class MagicFormula: UIViewController {
         //Turn kilos to pounds first (formula uses pounds)
         
         if (units) {
-            print("heightBig", heightBig, "heightSmall", heightSmall)
+            //print("heightBig", heightBig, "heightSmall", heightSmall)
             bodyWeight = bodyWeight * 2.20462
             heightBigInCm = heightBig * 100.00
             totalHeightInCm = heightBigInCm + heightSmall
-            print("totalheoghtcm", totalHeightInCm)
+            //print("totalheoghtcm", totalHeightInCm)
             totalHeightInInches = totalHeightInCm * 0.393701
-            print("totalheoghtinches", totalHeightInInches)
+            //print("totalheoghtinches", totalHeightInInches)
             //heightBig is in feet on following line
             heightBig = floor(totalHeightInInches/12)
             heightSmall = totalHeightInInches.truncatingRemainder(dividingBy: 12)
-            print ("bodyweight", bodyWeight, "heightBig", heightBig, "heightSmall", heightSmall)
+            //print ("bodyweight", bodyWeight, "heightBig", heightBig, "heightSmall", heightSmall)
         }
         
 
@@ -193,7 +193,7 @@ class MagicFormula: UIViewController {
                 let dashBoard = storyboard.instantiateViewController(identifier: "MealPlanViewController")
                 //self.present(calculatingPerfection, animated: true, completion: nil)
                 self.show(dashBoard, sender: self)
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
             }
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -201,7 +201,7 @@ class MagicFormula: UIViewController {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let dashBoard = storyboard.instantiateViewController(identifier: "dashBoard")
                     //self.present(calculatingPerfection, animated: true, completion: nil)
-                    self.show(dashBoard, sender: self)
+                   // self.show(dashBoard, sender: self)
                     self.dismiss(animated: true, completion: nil)
                 
                 }

@@ -15,8 +15,6 @@ class UpdateInformation: UIViewController{
     //Outlet for picker textfields
     
     @IBOutlet weak var activityLevelTextField: UITextField!
-   
-    
      // KEVIN JIMENEZ 06/19/2020  Outlets for controller to move text cursor to next textfield and for textfields to show numberpad vs keyboard
     @IBOutlet var textField1: UITextField! // Bodyweight
     @IBOutlet var textField2: UITextField! // Height Feet
@@ -25,28 +23,20 @@ class UpdateInformation: UIViewController{
     @IBOutlet var textField5: UITextField! // Composition
     @IBOutlet var textField6: UITextField! // Age
     @IBOutlet weak var textField7: UITextField!
-    
     // KEVIN JIMENEZ 06/21/2020 METRIC OR IMPOERIAL OUTLET
-    
     @IBOutlet var impOrMetric: UISegmentedControl!
-    
     @IBOutlet weak var NextButton: UIButton!
-    
-    // JUSTINO 6/28/19 12:49:59 PM 
-    
+    // JUSTINO 6/28/19 12:49:59 PM
     @IBOutlet weak var AdFreeButton: UIButton!
-    
-    
     // test buttons
-    
     @IBOutlet weak var testFemaleButton: UIButton!
     @IBOutlet weak var testMaleButton: UIButton!
-    
     //userinfo
     let defaults = UserDefaults.standard
     
     var maleBool = Bool(true)
     var unitsBool = Bool(false)
+    var completionHandler : ((_ childVC:UpdateInformation) -> Void)?
     
     struct Keys {
             static let bodyWeight    = "bodyweight"
@@ -205,7 +195,7 @@ class UpdateInformation: UIViewController{
                    let biannual = defaults.bool(forKey: Save.biannualPurchased)
                    let monthly = defaults.bool(forKey: Save.monthlyPurchased)
         let hsPromo = defaults.bool(forKey: Save.HSPromo)
-                  // print("annual", annual, "\nbiannual", biannual, "\nmonthly", monthly)
+                  // //print("annual", annual, "\nbiannual", biannual, "\nmonthly", monthly)
         
            let premium = annual || biannual || monthly || hsPromo
         
@@ -222,13 +212,13 @@ class UpdateInformation: UIViewController{
                   //SAVE DAT AND NAVIGATE TO NEXT VIEW
             let bodyWeight = Double(textField1.text!)
             defaults.set(bodyWeight, forKey: Save.bodyWeight)
-            let heightBig = Double(textField2.text!)
+            let heightBig = Double(textField2.text ?? "5")
             defaults.set(heightBig, forKey: Save.heightBig)
-            let heightSmall = Double(textField3.text!)
+            let heightSmall = Double(textField3.text ?? "0")
             defaults.set(heightSmall, forKey: Save.heightSmall)
             let experience = Double(textField4.text!)
             defaults.set(experience, forKey: Save.experience)
-            let composition = Double(textField5.text!)
+            let composition = Double(textField5.text ?? "0")
             defaults.set(composition, forKey: Save.composition)
             let age = Double(textField6.text!)
             defaults.set(age, forKey: Save.age)
@@ -244,13 +234,13 @@ class UpdateInformation: UIViewController{
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let calculatingPerfection = storyboard.instantiateViewController(identifier: "calculatingPerfection")
-            self.show(calculatingPerfection, sender: self)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.dismiss(animated: true, completion: nil)
+            self.present(calculatingPerfection, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            self.dismiss(animated: true) { self.completionHandler?(self) }
             }
               } else {
                  //SHOW ERROR MESSAGE
-            let alert = UIAlertController(title: "Missing Information", message: "Please input all information. Notice \"activity level\" is a picker", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Missing Information", message: "Please input all information. Including activity level.", preferredStyle: UIAlertController.Style.alert)
                           alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
                           self.present(alert, animated: true, completion: nil)
               }
@@ -313,9 +303,7 @@ class UpdateInformation: UIViewController{
     //KEVIN JIMENEZ 06/22/2020 CHECK THAT TEXTFIELDS ARE FILLED
     func checkTextfield()->Bool{
         if (!(textField1.text?.isEmpty ?? false) && !(textField2.text?.isEmpty ?? false) &&
-            !(textField3.text?.isEmpty ?? false) &&
             !(textField4.text?.isEmpty ?? false) &&
-            !(textField5.text?.isEmpty ?? false) &&
             !(textField6.text?.isEmpty ?? false)){
         return true
         } else {

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GoogleMobileAds
+
 import MaterialShowcase
 
 class DashBoardViewController: UIViewController {
@@ -25,32 +25,22 @@ class DashBoardViewController: UIViewController {
     @IBOutlet weak var ToInfobutton: UIButton!
     @IBOutlet weak var RookieLabel: UILabel!
     @IBOutlet weak var CircleText: UILabel!
-    var installDate = Date()
-    var expired = Bool()
-    
-    let defaults = UserDefaults.standard
-    let shapeLayer = CAShapeLayer()
-    
-    private var interstitialAd: GADInterstitial?
-       
-       struct Constants{
-           static let volumeAD = "ca-app-pub-3950672419252348/8930486777"
-       }
-
+    private var installDate = Date()
+    private var expired = Bool()
+    private let defaults = UserDefaults.standard
+    private let shapeLayer = CAShapeLayer()
+    private var firstBoot = true
+     
     @IBOutlet weak var goToInfoCollection: UIButton!
 
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.navigationItem.setHidesBackButton(true, animated: true);
-        
-  
-        
-        //ADS
-        self.interstitialAd = createAd()
-        print("line below creating ad")
-
         
         //Set logo in navigation bar and make it clickable
         
@@ -67,19 +57,14 @@ class DashBoardViewController: UIViewController {
         //RETRIEVE DATA TO DISPLAY
         let totalMuscleGrowth           = defaults.double(forKey: Save.totalMuscleGrowth)
         let totalMuscleGrowthString     = String(format: "%.2f", totalMuscleGrowth)
+        let currentMuscleGrowth         = defaults.double(forKey: Save.currentMuscleGrowth)
+        let currentMuscleGrowthString   = String(format: "%.2f", currentMuscleGrowth)
         let idealBodyWeight             = defaults.double(forKey: Save.idealBodyWeight)
         let idealBodyWeightString       = String(format: "%.2f", idealBodyWeight)
         let fatLoss                     = round(defaults.double(forKey: Save.fatLoss))
         let fatLossString               = String(format: "%.2f", fatLoss)
-        let currentMuscleGrowth         = defaults.double(forKey: Save.currentMuscleGrowth)
-        let currentMuscleGrowthString   = String(format: "%.2f", currentMuscleGrowth)
-        _                               = defaults.double(forKey: Save.potentialMuscleGrowth)
         let muscleGrowthRate            = defaults.double(forKey: Save.muscleGrowthRate)
         let muscleGrowthRateString      = String(format: "%.2f", muscleGrowthRate)
-        _                               = defaults.data(forKey: Save.dailyCaloricDeviance)
-        _                               = defaults.bool(forKey: Save.unitsBool)
-        
-        
         if (!(idealBodyWeight == 0.00)){
             RookieLabel.isHidden = true
         }
@@ -119,7 +104,7 @@ class DashBoardViewController: UIViewController {
         //INPUT INFORMATION BUTTON
         updateInfoButton(button: ToInfobutton)
         //FAQBUTTON
-        FAQButtonPlacement(button: FAQButton)
+//        FAQButtonPlacement(button: FAQButton)
         RookiePlacement(label: RookieLabel)
         
         //LABELS
@@ -174,11 +159,6 @@ class DashBoardViewController: UIViewController {
                 view.layer.addSublayer(shapeLayer)
                 handleTap()
         
-                FAQButton.backgroundColor = .clear
-                FAQButton.layer.borderWidth = 1
-                FAQButton.layer.borderColor = UIColor.systemRed.cgColor
-                FAQButton.layer.cornerRadius = 15
-        
                 ToInfobutton.backgroundColor = .clear
                 ToInfobutton.layer.borderWidth = 1
                 ToInfobutton.layer.borderColor = UIColor.systemRed.cgColor
@@ -194,10 +174,11 @@ class DashBoardViewController: UIViewController {
         
         if showCase == false && showCaseMP == false {
             let showcase0 = MaterialShowcase()
+            showcase0.delegate = self
             showcase0.setTargetView(button: ToInfobutton, tapThrough: true)
             //  showcase0.setTargetView(view: )
-            showcase0.primaryText = "Input and Update Your Info!"
-            showcase0.secondaryText = "Get your custom meal plan and goals. \nYou can also update your info as you progress. Remember that your meal plan and muscle growth rate will change over time."
+            showcase0.primaryText = NSLocalizedString("showcase.dashboard1", comment: "")
+            showcase0.secondaryText = NSLocalizedString("showcase.dashboard2", comment: "")
             showcase0.primaryTextColor = UIColor.black
             showcase0.secondaryTextColor = UIColor.black
             showcase0.backgroundViewType = .full
@@ -207,32 +188,14 @@ class DashBoardViewController: UIViewController {
             showcase0.aniComeInDuration = 1 // unit: second
             showcase0.show(completion: {
                 self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
-              
+                self.goToInputInfo()
             })
-            
-            let showcase2 = MaterialShowcase()
-            showcase2.setTargetView(button: FAQButton, tapThrough: false)
-            //  showcase0.setTargetView(view: )
-            showcase2.primaryText = "Frequently Asked Questions"
-            showcase2.secondaryText = "Get up to speed on how to train properly.There's a lot to learn, especially if you're new to weight training."
-            showcase2.primaryTextColor = UIColor.black
-            showcase2.secondaryTextColor = UIColor.black
-            showcase2.backgroundViewType = .full
-            showcase2.backgroundPromptColor = Colors.aXGreen
-            showcase2.targetHolderColor = UIColor.black
-            showcase2.targetHolderRadius = 60
-            showcase2.aniComeInDuration = 1 // unit: second
-            showcase2.show(completion: {
-                self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
-                self.defaults.setValue(true, forKey: Save.showcaseDashboard)
-              
-            })
-            
+                    
             let showcase1 = MaterialShowcase()
             showcase1.setTargetView(button: IBWButton, tapThrough: false)
             //  showcase0.setTargetView(view: )
-            showcase1.primaryText = "Learn More"
-            showcase1.secondaryText = "Click on any title to learn more about it."
+            showcase1.primaryText = NSLocalizedString("learnMore", comment: "")
+            showcase1.secondaryText = NSLocalizedString("showcase.dashboard3", comment: "")
             showcase1.primaryTextColor = UIColor.black
             showcase1.secondaryTextColor = UIColor.black
             showcase1.backgroundViewType = .full
@@ -242,19 +205,15 @@ class DashBoardViewController: UIViewController {
             showcase1.aniComeInDuration = 1 // unit: second
             showcase1.show(completion: {
                 self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
-              
             })
-
         } else {
-            
-       
-            
             if showCaseInputAsUpdate == false {
                 let showcase0 = MaterialShowcase()
+                showcase0.delegate = self
                 showcase0.setTargetView(button: ToInfobutton, tapThrough: true)
                 //  showcase0.setTargetView(view: )
-                showcase0.primaryText = "Remember to Update Your Info!"
-                showcase0.secondaryText = "Your meal plan and muscle growth rate will change over time.\n\nClick on any title to learn more."
+                showcase0.primaryText = NSLocalizedString("showcase.dashboard4", comment: "")
+                showcase0.secondaryText = NSLocalizedString("showcase.dashboard5", comment: "")
                 showcase0.primaryTextColor = UIColor.black
                 showcase0.secondaryTextColor = UIColor.black
                 showcase0.backgroundViewType = .full
@@ -267,28 +226,14 @@ class DashBoardViewController: UIViewController {
                     
                 })
                 
-                let showcase2 = MaterialShowcase()
-                showcase2.setTargetView(button: FAQButton, tapThrough: false)
-                //  showcase0.setTargetView(view: )
-                showcase2.primaryText = "Frequently Asked Questions"
-                showcase2.secondaryText = "Get up to speed on how to train properly.There's a lot to learn, especially if you're new to fitness."
-                showcase2.primaryTextColor = UIColor.black
-                showcase2.secondaryTextColor = UIColor.black
-                showcase2.backgroundViewType = .full
-                showcase2.backgroundPromptColor = Colors.aXGreen
-                showcase2.targetHolderColor = UIColor.black
-                showcase2.targetHolderRadius = 60
-                showcase2.aniComeInDuration = 1 // unit: second
-                showcase2.show(completion: {
-                    self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
-                    
-                })
+                
+                
                 
                 let showcase1 = MaterialShowcase()
                 showcase1.setTargetView(button: IBWButton, tapThrough: false)
                 //  showcase0.setTargetView(view: )
-                showcase1.primaryText = "Learn More"
-                showcase1.secondaryText = "Click on any title to learn more about it."
+                showcase1.primaryText = NSLocalizedString("learnMore", comment: "")
+                showcase1.secondaryText = NSLocalizedString("showcase.dashboard6", comment: "")
                 showcase1.primaryTextColor = UIColor.black
                 showcase1.secondaryTextColor = UIColor.black
                 showcase1.backgroundViewType = .full
@@ -299,16 +244,14 @@ class DashBoardViewController: UIViewController {
                 showcase1.show(completion: {
                     self.defaults.setValue(true, forKey: Save.showCaseInputAsUpdate)
                     self.defaults.setValue(true, forKey: Save.showcaseDashboard)
+                    
                 })
-                
-               
+                showcase1.delegate = self
+            }
         }
     }
-    }
-    
     
     //Functions to place view programatically
-    
     func styleButton(button: UIButton){
         button.backgroundColor = .clear
         button.layer.borderWidth = 1
@@ -370,7 +313,7 @@ class DashBoardViewController: UIViewController {
                         
             let screenHeight = UIScreen.main.bounds.size.height
             let screenWidth = UIScreen.main.bounds.size.width
-            label.frame = CGRect(x: (screenWidth/2)-32, y: screenHeight/1.92, width: 80, height: 30)
+            label.frame = CGRect(x: (screenWidth/2)-32, y: screenHeight/1.92, width: 160, height: 30)
                         
                     }
     
@@ -381,44 +324,61 @@ class DashBoardViewController: UIViewController {
        }
     
     func CircleTextPlacement(label: UILabel) {
+        //circle.contentsCente
+//        label.centerXAnchor.constraint(equalTo: circle.frame.minX).isActive = true
+//        label.centerYAnchor.constraint(equalTo: circle.frame.center).isActive = true
+        
             let screenHeight = UIScreen.main.bounds.size.height
             let screenWidth = UIScreen.main.bounds.size.width
             label.frame = CGRect(x: screenWidth/1.71, y: screenHeight/1.489, width: 63, height: 50)
           }
     
+    fileprivate func goToInputInfo() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection") as UpdateInformation
+        
+        let completionHandler:(UpdateInformation)->Void = { childVC in
+            DispatchQueue.main.async {// [weak self] in
+                var totalMuscleGrowth           = self.defaults.double(forKey: Save.totalMuscleGrowth)
+                var totalMuscleGrowthString     = String(format: "%.2f", totalMuscleGrowth)
+                let idealBodyWeight             = self.defaults.double(forKey: Save.idealBodyWeight)
+                let idealBodyWeightString       = String(format: "%.2f", idealBodyWeight)
+                let fatLoss                     = round(self.defaults.double(forKey: Save.fatLoss))
+                let fatLossString               = String(format: "%.2f", fatLoss)
+                var currentMuscleGrowth         = self.defaults.double(forKey: Save.currentMuscleGrowth)
+                var currentMuscleGrowthString   = String(format: "%.2f", currentMuscleGrowth)
+                let muscleGrowthRate            = self.defaults.double(forKey: Save.muscleGrowthRate)
+                let muscleGrowthRateString      = String(format: "%.2f", muscleGrowthRate)
+                totalMuscleGrowth           = self.defaults.double(forKey: Save.totalMuscleGrowth)
+                totalMuscleGrowthString     = String(format: "%.2f", totalMuscleGrowth)
+                currentMuscleGrowth         = self.defaults.double(forKey: Save.currentMuscleGrowth)
+                currentMuscleGrowthString   = String(format: "%.2f", currentMuscleGrowth)
+                let circleString =  currentMuscleGrowthString + "/\n" + totalMuscleGrowthString
+                
+                    //set text
+                let unitsBool = self.defaults.bool(forKey: Save.unitsBool)
+                var units = " lbs"
+                if (unitsBool){ units = " kg"}
+                
+                self.IBWLabel.text = idealBodyWeightString + units
+                self.MonthlyPotentialMuscleGrowthLabel.text = muscleGrowthRateString + units
+                self.FatlossLabel.text = fatLossString + units
+                self.CircleText.text = circleString
+            }
+        }
+        infoCollection.completionHandler=completionHandler
+        
+        self.present(infoCollection, animated: true, completion: nil)
+    }
+    
     @IBAction func ToInfoTapped(_ sender: Any) {
         
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                   let infoCollection = storyboard.instantiateViewController(identifier: "infoCollection")
-                   self.show(infoCollection, sender: self)
+        goToInputInfo()
         
-                    //Retrieve info for premium And SHOWADS
-                    let annual = defaults.bool(forKey: Save.annualPurchased)
-                    let biannual = defaults.bool(forKey: Save.biannualPurchased)
-                    let monthly = defaults.bool(forKey: Save.monthlyPurchased)
-                    let hsPromo = defaults.bool(forKey: Save.HSPromo)
-                    let premium = annual || biannual || monthly || hsPromo
-                    
-                    if (hsPromo && !(premium)){
-                        var promoLength = defaults.double(forKey: Save.promoLength)
-                        // print("CALCULATING HS PROMO LENGTH" + String(promoLength))
-                        promoLength = promoLength * 31536000
-                        installDate = defaults.object(forKey: Save.installDate) as! Date
-                        let expDate = installDate.addingTimeInterval(promoLength)
-                        if( Date() > expDate){
-                            //print("hspromo is flase now due to expiration. Date is:" )
-                            defaults.set(false, forKey: Save.HSPromo)
-                        }
-                    }
-                    
-                    let x = Int.random(in: 0..<10)
-                    //print(" ADS CALCULATED VALUES: " + String(annual) + String(biannual) + String(monthly) + String(hsPromo))
-                    if interstitialAd?.isReady ==  true && !premium && (x % 3 == 0 ){
-                        interstitialAd?.present(fromRootViewController: self)
-                    }
-                   
+                
     }
+    
     @IBAction func didTapFAQ(sender: AnyObject) {
       //  UIApplication.shared.openURL(NSURL(string: "")! as URL)
         guard let url = URL(string: "http://aesthet-x.com/faqs/") else {
@@ -449,7 +409,7 @@ class DashBoardViewController: UIViewController {
     }
     
     @objc private func handleTap() {
-           print("Attempting to animate stroke")
+           //print("Attempting to animate stroke")
            let basicAnimation = CABasicAnimation(keyPath: "strokeEnd")
            basicAnimation.toValue = 1
            basicAnimation.duration = 2
@@ -469,18 +429,14 @@ class DashBoardViewController: UIViewController {
           UIApplication.shared.openURL(url)
       }
     }
-    private func createAd() -> GADInterstitial{
-             print("Creating interstitial")
-            let ad = GADInterstitial(adUnitID: Constants.volumeAD)
-            ad.delegate = self
-            ad.load(GADRequest())
-            return ad
-        }
+    
     }
 
-    extension DashBoardViewController: GADInterstitialDelegate{
-        func interstitialDidDismissScreen(_ ad: GADInterstitial) {
-            interstitialAd = createAd()
+    extension DashBoardViewController: MaterialShowcaseDelegate {
+        func showCaseWillDismiss(showcase: MaterialShowcase, didTapTarget: Bool) {
+            goToInputInfo()
+            //print("Showcase \(showcase.primaryText) will dismiss.")
         }
+        
     }
 

@@ -1,508 +1,788 @@
 //
-//  ExercisesByMuscle.swift
+//  ExerciseByMuscle.swift
 //  AofX
 //
-//  getd by tstone10 on 5/16/21.
 //  Copyright © 2021 Aesthet(X). All rights reserved.
 //
-
+//TODO add forearms to triceps and others
 import Foundation
 
-struct ExerciseByMuscles {
+enum peakContraction {
+    
+}
 
-func getChestExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Chest", musclesWorked: "A single set towards chest")
+struct ExerciseByMuscles {
+    
+    func getBigSixExercise(position:Int) -> Exercise { 
+        
+        switch position {
+        case 0:
+            return Exercise(title: NSLocalizedString("exercises.hamstringsHinge1", comment: ""), primaryMuscles: [Save.hamstringHingeTitle, Save.spinalErectorsTitle, Save.upperTrapsTitle ], secondaryMuscles: [ Save.latsPushdownTitle, Save.glutesTitle, Save.lowerTrapsTitle, Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        case 1:
+            return Exercise(title: NSLocalizedString("exercises.chest1", comment: ""), primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle],
+                            secondaryMuscles: [Save.tricepsLateralShortTitle , Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+        case 2:
+            return Exercise(title: NSLocalizedString("exercises.quads1", comment: ""),                           primaryMuscles: [Save.quadsTitle, Save.spinalErectorsTitle, Save.adductorsTitle ], secondaryMuscles: [ Save.glutesTitle, Save.transverseAbTitle, Save.anteriorTibialisTitle], peakTension: [Save.ecc, Save.mid], isBW: false)
+        case 3:
+            return Exercise(title: NSLocalizedString("exercises.anteriorDeltoid2", comment: ""), primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle], peakTension: [Save.con], isBW: false)
+            
+        case 4:
+            return Exercise(title: NSLocalizedString("exercises.latsRowing3", comment: ""), primaryMuscles: [Save.latsRowingTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle, Save.hamstringHingeTitle, Save.glutesTitle], peakTension: [Save.mid, Save.con], isBW: false)
+        case 5:
+            return Exercise(title: NSLocalizedString("exercises.gluteMax1", comment: ""), primaryMuscles: [Save.glutesTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.hamstringHingeTitle , Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid, Save.con], isBW: false)
+        default:
+            return Exercise(title: "Error", primaryMuscles: [], secondaryMuscles: [], peakTension: [], isBW: true)
+            
+        }
+    }
+
+func getMiddleChestExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.middleChestTitle, primaryMuscles: [Save.middleChestTitle], secondaryMuscles: [], peakTension: [], isBW: false)
     //Netral Position
-    let exercise1 = Exercises(title: "Bench Press",             musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid, Serratus")
-    let exercise2 = Exercises(title: "Dumbell Bench Press",     musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid, Serratus")
-    let exercise3 = Exercises(title: "Machine Chest Press",     musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid, Serratus")
-    let exercise4 = Exercises(title: "Neutral Cable Press, Serratus",     musclesWorked: "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid")
-    let exercise5 = Exercises(title: "Neutral Crossover Flyes", musclesWorked: "Middle Pectoral")
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.chest1", comment: ""),             primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle],
+                             secondaryMuscles: [Save.tricepsLateralShortTitle , Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("removingExercises.chest1", comment: ""),     primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle ],
+                             secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("removingExercises.chest2", comment: ""),     primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle, ],
+                             secondaryMuscles: [ Save.tricepsLateralShortTitle,Save.frontShoulderTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("removingExercises.chest3", comment: ""),     primaryMuscles: [Save.middleChestTitle],
+                             secondaryMuscles: [ Save.tricepsLateralShortTitle,Save.frontShoulderTitle], peakTension: [Save.ecc, Save.con], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("exercises.chest3", comment: ""), primaryMuscles: [Save.middleChestTitle]
+                             , secondaryMuscles: [], peakTension: [Save.ecc, Save.con], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("exercises.chest3", comment: ""), primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle],
+                             secondaryMuscles: [], peakTension: [Save.ecc], isBW: false)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.chest1", comment: ""), primaryMuscles: [Save.middleChestTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: "Push-Up", primaryMuscles: [Save.middleChestTitle, Save.frontShoulderTitle],
+                            secondaryMuscles: [Save.tricepsLateralShortTitle , Save.serratusTitle], peakTension: [Save.mid], isBW: true)
+    
+    
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8]
+}
     
     //Incline
-    let exercise6 = Exercises(title: "Incline Bench Press",         musclesWorked: "Upper Pectoral, Anterior Deltoid Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise7 = Exercises(title: "Incline Dumbell Bench Press", musclesWorked: "Upper Pectoral, Anterior Deltoid Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise8 = Exercises(title: "Incline Machine Chest Press", musclesWorked: "Upper Pectoral, Anterior Deltoid Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise9 = Exercises(title: "Incline Cable Press",         musclesWorked: "Upper Pectoral, Anterior Deltoid Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise10 = Exercises(title: "Incline Crossover Flyes",    musclesWorked: "Upper Pectoral")
+func getUpperChestExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.upperChestTitle, primaryMuscles: [Save.upperChestTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+let exercise0 = Exercise(title: NSLocalizedString("exercises.upperChest1", comment: ""),         primaryMuscles: [Save.upperChestTitle,Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+let exercise1 = Exercise(title: NSLocalizedString("removingExercises.upperChest1", comment: ""), primaryMuscles: [Save.upperChestTitle,Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+let exercise2 = Exercise(title: NSLocalizedString("removingExercises.upperChest2", comment: ""), primaryMuscles: [Save.upperChestTitle,Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+let exercise3 = Exercise(title: NSLocalizedString("removingExercises.upperChest3", comment: ""),         primaryMuscles: [Save.upperChestTitle,Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.ecc, Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.upperChest3", comment: ""),    primaryMuscles: [Save.upperChestTitle], secondaryMuscles: [], peakTension: [Save.con, Save.ecc], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("exercises.upperChest4", comment: ""),    primaryMuscles: [Save.upperChestTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("exercises.upperChest5", comment: ""), primaryMuscles: [Save.upperChestTitle, Save.tricepsLongTitle], secondaryMuscles: [Save.latsPushdownTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.upperChest1", comment: ""), primaryMuscles: [Save.upperChestTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: "Incline Push-Up", primaryMuscles: [Save.upperChestTitle, Save.frontShoulderTitle], secondaryMuscles: [Save.tricepsLateralShortTitle , Save.serratusTitle], peakTension: [Save.mid], isBW: true)
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8]
+}
     
     //Decline
-    
-    let exercise11 = Exercises(title: "Decline Bench Press",         musclesWorked: "Lower Pectoral Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise12 = Exercises(title: "Decline Dumbell Bench Press", musclesWorked: "Lower Pectoral Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise13 = Exercises(title: "Decline Cable Press, Serratus",         musclesWorked: "Lower Pectoral Secondary: Lateral and Medial Triceps")
-    let exercise14 = Exercises(title: "Decline Crossover Flyes, Serratus",     musclesWorked: "Lower Pectoral")
-    
-    //Miscellaneuos
-    let exercise15 = Exercises(title: "Chest Pullover", musclesWorked: "Upper Pectoral, Triceps Secondary: Lats")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7, exercise8, exercise9, exercise10,
-            exercise11, exercise12, exercise13, exercise14, exercise15]
+func getLowerChestExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.lowerChestTitle, primaryMuscles: [Save.lowerChestTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.lowerChest1", comment: ""),         primaryMuscles: [Save.lowerChestTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+let exercise1 = Exercise(title: NSLocalizedString("removingExercises.lowerChest1", comment: ""), primaryMuscles: [Save.lowerChestTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle],  peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("removingExercises.lowerChest2", comment: ""),  primaryMuscles: [Save.lowerChestTitle], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.lowerChest3", comment: ""),     primaryMuscles: [Save.lowerChestTitle],secondaryMuscles: [], peakTension: [Save.con, Save.ecc], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.lowerChest4", comment: ""),     primaryMuscles: [Save.lowerChestTitle],secondaryMuscles: [], peakTension: [ Save.ecc], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.lowerChest5", comment: ""), primaryMuscles: [Save.lowerChestTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.lowerChest6", comment: ""),    primaryMuscles: [Save.lowerChestTitle], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.serratusTitle], peakTension: [Save.mid], isBW: true)//TODO add to Alert Volume Manager
+
+
+return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6]
 }
 
-func getBWChestExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Push-Ups",     musclesWorked:   "Chest Secondary: Lateral and Medial Triceps, Anterior Deltoid, Serratus")
-    let exercise1 = Exercises(title: "Wide Dips",    musclesWorked:  "Chest Secondary: Lateral and Medial Triceps, Serratus")
-    let exercise2 = Exercises(title: "Banded Fly",   musclesWorked: "Upper/Middle/Lower Pectoral")
+func getBicepsLongHeadExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.bicepsLongHeadTitle, primaryMuscles: [Save.bicepsLongHeadTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("removingExercises.bicepsLong1", comment: ""),            primaryMuscles: [Save.bicepsLongHeadTitle], secondaryMuscles: [Save.bicepsShortHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("removingExercises.bicepsLong2", comment: ""),             primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [Save.bicepsShortHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("removingExercises.bicepsLong3", comment: ""),              primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [Save.bicepsShortHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("removingExercises.bicepsLong4", comment: ""),                 primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [Save.bicepsShortHeadTitle], peakTension: [Save.mid], isBW: true)//TODO Add to alert
+    let exercise4 = Exercise(title: NSLocalizedString("removingExercises.bicepsLong5", comment: ""),                 primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [Save.bicepsShortHeadTitle], peakTension: [Save.con], isBW: true)//TODO Add to alert
+    return [exercise, exercise0, exercise1, exercise2, exercise3,exercise4]
+}
     
-    return [exercise0, exercise1, exercise2]
+func getBicepsShortHeadExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.bicepsShortHeadTitle, primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("removingExercises.bicepsShort1", comment: ""),              primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle, Save.bicepsLongHeadTitle], peakTension: [Save.mid], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("removingExercises.bicepsShort2", comment: ""), primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle, Save.bicepsLongHeadTitle], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("removingExercises.bicepsShort3", comment: ""),                primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle, Save.bicepsLongHeadTitle], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("removingExercises.bicepsShort4", comment: ""),                    primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [ Save.bicepsLongHeadTitle], peakTension: [Save.mid], isBW: false)//TODO Add to alert
+    let exercise4 = Exercise(title: NSLocalizedString("removingExercises.bicepsShort5", comment: ""),                 primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [ Save.bicepsLongHeadTitle], peakTension: [Save.con], isBW: true)//TODO Add to alert
+                                return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4]
+}
+    
+func getBrachialisExercises() -> [Exercise] {
+    let exercise = Exercise(title: Save.brachialisTitle, primaryMuscles: [Save.brachialisTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.brachialis1", comment: ""),         primaryMuscles: [Save.brachialisTitle, Save.radialForearmTitle ], secondaryMuscles: [ Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], peakTension: [Save.mid], isBW: false)
+    
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.brachialis1", comment: ""),         primaryMuscles: [Save.latsPullInTitle, Save.brachialisTitle, Save.radialForearmTitle ], secondaryMuscles: [ Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.lowerTrapsTitle], peakTension: [Save.mid, Save.con], isBW: true)//TODO Add to alert
+    
+    return [exercise, exercise0, exercise1]
+}
+        //TODO integrate and localize strings
+func getBicepFinisherExercises() -> [Exercise] {
+    let exercise = Exercise(title: Save.bicepsShortHeadTitle, primaryMuscles: [Save.bicepsShortHeadTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: "Dumbbell Curls",                   primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.mid], isBW: false)
+    let exercise1 = Exercise(title: "Barbell Curls",                    primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle ], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: "Preacher Curls",                   primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: "Limp Wrist Curls",                primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise4 = Exercise(title: "Biceps Isometric", primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise5 = Exercise(title: "Cable/Dumbbell Behind the Back Curls",     primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.ecc], isBW: false)//TODO add to alert
+    let exercise6 = Exercise(title: "Ring Curls",     primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: true)
+    let exercise7 = Exercise(title: "Pelican Curls",     primaryMuscles: [Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle], secondaryMuscles: [ Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: true)
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7]
+}
+    
+func getLatsRowingExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.latsRowingTitle, primaryMuscles: [Save.latsRowingTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.latsRowing1", comment: ""),      primaryMuscles: [Save.latsRowingTitle], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.ecc, Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.latsRowing2", comment: ""), primaryMuscles: [Save.latsRowingTitle], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.latsRowing3", comment: ""),         primaryMuscles: [Save.latsRowingTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle, Save.hamstringHingeTitle, Save.glutesTitle], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.latsRowing4", comment: ""),           primaryMuscles: [Save.latsRowingTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("bWExercises.latsRowing1", comment: ""),    primaryMuscles: [Save.latsRowingTitle ], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: true)
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4]
+}
+    
+func getLatsPullinExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.latsPullInTitle, primaryMuscles: [Save.latsPullInTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.latsPull-In1", comment: ""),       primaryMuscles: [Save.latsPullInTitle], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.con, Save.mid], isBW: false)
+    //TODO add string without breaking the whole damn thing
+    let exercise1 = Exercise(title: NSLocalizedString("removingExercises.latPullIn1", comment: ""),     primaryMuscles: [ Save.latsPullInTitle], secondaryMuscles: [ Save.backShoulderTitle, Save.bicepsShortHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: true)
+    let exercise2 = Exercise(title: NSLocalizedString("removingExercises.latPullIn2", comment: ""),     primaryMuscles: [Save.latsPullInTitle, Save.bicepsShortHeadTitle ], secondaryMuscles: [ Save.backShoulderTitle, Save.forearmFlexorsTitle], peakTension: [Save.mid, Save.con], isBW: true)
+    let exercise3 = Exercise(title: NSLocalizedString("removingExercises.latPullIn3", comment: ""),     primaryMuscles: [Save.latsPullInTitle], secondaryMuscles: [], peakTension: [Save.mid, Save.con], isBW: false)
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3]
+}
+    
+func getLatsPushdownExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.latsPushdownTitle, primaryMuscles: [Save.latsPushdownTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.latsPushdown1", comment: ""),        primaryMuscles: [Save.latsPushdownTitle, Save.tricepsLongTitle], secondaryMuscles: [Save.upperChestTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.latsPushdown2", comment: ""),        primaryMuscles: [Save.latsPushdownTitle, Save.tricepsLateralShortTitle, Save.ulnarForearm], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.latsPushdown1", comment: ""), primaryMuscles: [  Save.latsPushdownTitle, Save.tricepsLateralShortTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
+
+return [exercise, exercise1, exercise2, exercise3]
 }
 
-func getBicepsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Biceps", musclesWorked: "A single set towards Biceps")
-    let exercise1 = Exercises(title: "Dumbbell Curls",                   musclesWorked: "Biceps Secondary: Forearm Flexors")
-    let exercise2 = Exercises(title: "Narrow Dumbbell Curls",            musclesWorked: "Biceps: short head Secondary: Forearm Flexors")
-    let exercise3 = Exercises(title: "Wide Dumbbell Curls",              musclesWorked: "Bicep: long head Secondary: Forearm Flexors")
-    let exercise4 = Exercises(title: "Barbell Curls",                    musclesWorked: "Biceps Secondary: Forearm Flexors")
-    let exercise5 = Exercises(title: "Narrow Barbell Curls",             musclesWorked: "Biceps: short head Secondary: Forearm Flexors")
-    let exercise6 = Exercises(title: "Wide Barbell Curls",               musclesWorked: "Biceps: long head Secondary: Forearm Flexors")
-    let exercise7 = Exercises(title: "Narrow EZ Bar Curls",              musclesWorked: "Biceps: short head Secondary: Forearm Flexors")
-    let exercise8 = Exercises(title: "Wide EZ Bar Curls",                musclesWorked: "Biceps: long head Secondary: Forearm Flexors")
-    let exercise9 = Exercises(title: "Preacher Curls",                   musclesWorked: "Biceps: Secondary: Forearm Flexors")
-    let exercise10 = Exercises(title: "Limp Wrist Curls",                musclesWorked: "Biceps")
-    let exercise11 = Exercises(title: "Biceps Isometric",                musclesWorked: "Biceps")
-    let exercise12 = Exercises(title: "Cross Body Hammer Curls",         musclesWorked: "Brachialis, Radial Forearm Secondary: Biceps")
-    let exercise13 = Exercises(title: "Cable/Dumbbell Spider Curls",     musclesWorked: "Biceps Secondary: Forearm Flexors")
-    
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7, exercise8, exercise9, exercise10,
-            exercise11, exercise12, exercise13]
+func getGluteTitleExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.glutesTitle, primaryMuscles: [Save.glutesTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.gluteMax1", comment: ""),                primaryMuscles: [Save.glutesTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.hamstringHingeTitle , Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid, Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.gluteMax2", comment: ""),        primaryMuscles: [Save.glutesTitle ], secondaryMuscles: [ Save.hamstringHingeTitle, Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid, Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.gluteMax3", comment: ""), primaryMuscles: [Save.glutesTitle ], secondaryMuscles: [ Save.hamstringHingeTitle, Save.gluteMediusTitle], peakTension: [ Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.gluteMax4", comment: ""),          primaryMuscles: [Save.glutesTitle ], secondaryMuscles: [ Save.hamstringHingeTitle, Save.gluteMediusTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("removingExercises.gluteMax1", comment: ""),                primaryMuscles: [Save.glutesTitle, Save.spinalErectorsTitle ], secondaryMuscles: [ Save.hamstringHingeTitle , Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid, Save.con], isBW: true)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.gluteMax2", comment: ""),                primaryMuscles: [Save.glutesTitle, Save.spinalErectorsTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.hamstringHingeTitle , Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid, Save.con], isBW: true)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.gluteMax3", comment: ""),            primaryMuscles: [Save.glutesTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.hamstringHingeTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.gluteMax4", comment: ""),                primaryMuscles: [Save.glutesTitle, Save.gluteMediusTitle, Save.hamstringHingeTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.gluteMax5", comment: ""),           primaryMuscles: [Save.spinalErectorsTitle, Save.glutesTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise9 = Exercise(title: NSLocalizedString("bWExercises.gluteMax6", comment: ""),      primaryMuscles: [Save.glutesTitle ], secondaryMuscles: [ Save.hamstringHingeTitle, Save.gluteMediusTitle], peakTension: [Save.ecc, Save.mid], isBW: false)
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9]
 }
 
-func getBWBicepsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Banded Curls",                    musclesWorked: "Biceps Secondary: Forearm Flexors")
-    let exercise1 = Exercises(title: "Ring Curls",                      musclesWorked:  "Biceps Secondary: Forearm Flexors")
-    
-    return [exercise0, exercise1]
+func getGluteMediusExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.gluteMediusTitle, primaryMuscles: [Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.gluteMedius1", comment: ""),             primaryMuscles: [Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.gluteMedius2", comment: ""), primaryMuscles: [Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.ecc], isBW: false)//TODO add to alerts
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.gluteMedius3", comment: ""),  primaryMuscles: [Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.ecc, Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.gluteMedius1", comment: ""),     primaryMuscles: [Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise4 = Exercise(title: NSLocalizedString("bWExercises.gluteMedius2", comment: ""),           primaryMuscles: [ Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.gluteMedius3" , comment: ""),           primaryMuscles: [Save.gluteMediusTitle ], secondaryMuscles: [ Save.middleObliquesTitle], peakTension: [Save.con], isBW: true)
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5]
 }
 
-func getLatsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Lats", musclesWorked: "One set towards Lats")
-    let exercise1 = Exercises(title: "Lat Pull Over",        musclesWorked: "Lats, Trieps")
-    let exercise2 = Exercises(title: "Lat Pushdowns",        musclesWorked: "Lats, Triceps")
-    let exercise3 = Exercises(title: "Cable Pulldown",       musclesWorked: "Lats, Lower Traps\nSecondary: Post Delt, Bicep, Forearms")
-    let exercise4 = Exercises(title: "High Pulley Row",      musclesWorked: "Lats, Lower Traps Secondary: Post Delt, Biceps, Forearm Flexors")
-    let exercise5 = Exercises(title: "Chest Supported Rows", musclesWorked: "Lats, Lower Traps Secondary: Post Delt, Biceps, Forearm Flexors")
-    let exercise6 = Exercises(title: "Barbell Rows",         musclesWorked: "Lats, Lower Traps, Erectors Secondary: Post Delt, Biceps, Forearm Flexors")
-    let exercise7 = Exercises(title: "Cable Rows",           musclesWorked: "Lats, Lower Traps, Erectors Secondary: Post Delt, Biceps, Forearm Flexors")
+func getHamstringsHingeExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.hamstringHingeTitle, primaryMuscles: [Save.hamstringHingeTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.hamstringsHinge1", comment: ""),                 primaryMuscles: [Save.hamstringHingeTitle, Save.spinalErectorsTitle, Save.upperTrapsTitle ], secondaryMuscles: [ Save.latsPushdownTitle, Save.glutesTitle, Save.lowerTrapsTitle, Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.hamstringsHinge2", comment: ""),        primaryMuscles: [Save.hamstringHingeTitle, ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.hamstringsHinge3", comment: ""),         primaryMuscles: [Save.hamstringHingeTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.hamstringsHinge4", comment: ""),   primaryMuscles: [Save.hamstringHingeTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("bWExercises.hamstringsHinge1", comment: ""), primaryMuscles: [Save.hamstringHingeTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.ecc], isBW: false)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7]
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4]
 }
 
-func getBWLatsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Front Levers", musclesWorked:   "Lats, Triceps")
-    let exercise1 = Exercises(title: "Pull Ups",     musclesWorked:  "Lats, Lower Traps\nSecondary: Post Delt, Bicep, Forearms")
-    let exercise2 = Exercises(title: "Chin Ups",     musclesWorked: "Lats, Lower Traps Secondary: Post Delt, Forearms")
-    let exercise3 = Exercises(title: "Pull Ins",     musclesWorked: "Lats")
-    let exercise4 = Exercises(title: "Ring Rows",    musclesWorked: "Lats, Lower Traps Secondary: Post Delt, Biceps, Forearm Flexors")
+func getHamstringsCurlExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.hamstringCurlTitle, primaryMuscles: [Save.hamstringCurlTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.hamstringsCurl1", comment: ""),  primaryMuscles: [Save.hamstringCurlTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.con], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("bWexercises.hamstringsCurl1", comment: ""),                primaryMuscles: [ Save.hamstringCurlTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.ecc], isBW: true)
+    let exercise1 = Exercise(title: NSLocalizedString("bWexercises.hamstringsCurl2", comment: ""),             primaryMuscles: [Save.hamstringCurlTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.con], isBW: true)
+    let exercise2 = Exercise(title: NSLocalizedString("bWexercises.hamstringsCurl3", comment: ""),  primaryMuscles: [Save.hamstringCurlTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.glutesTitle, Save.spinalErectorsTitle], peakTension: [Save.con], isBW: true)
+   
+  
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    return [exercise, exercise0, exercise1, exercise2, exercise3]
 }
 
-func getGlutesExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Glutes", musclesWorked: "A single set towards Glutes")
-    let exercise1 = Exercises(title: "Hip Thrust",                musclesWorked: "Glutes, Erectors Secondary: Hamstrings, Glute Medius")
-    let exercise2 = Exercises(title: "Cable Pull Through",        musclesWorked: "Glutes Secondary: Hamstrings, Glute Medius")
-    let exercise3 = Exercises(title: "Glute Hyperextension",      musclesWorked: "Glutes Secondary: Hamstrings, Glute Medius")
-    let exercise4 = Exercises(title: "Kettlebell/Dumbbell Swing", musclesWorked: "Glutes Secondary: Hamstrings, Glute Medius")
-    let exercise5 = Exercises(title: "Cable Kick Backs",          musclesWorked: "Glutes Secondary: Hamstrings, Glute Medius")
+func getFrontShoulderExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.frontShoulderTitle, primaryMuscles: [Save.frontShoulderTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid1", comment: ""),                 primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid2", comment: ""),  primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid3", comment: ""),            primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid3", comment: ""),    primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid4", comment: ""),          primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid5", comment: ""),  primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.mid], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid6", comment: ""),              primaryMuscles: [Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.mid], isBW: false)
+    let exercise7 = Exercise(title: NSLocalizedString("exercises.anteriorDeltoid7", comment: ""), primaryMuscles: [Save.frontShoulderTitle], secondaryMuscles: [], peakTension:[ Save.con], isBW: false)
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.anteriorDeltoid1", comment: ""),      primaryMuscles: [  Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.mid], isBW: true)
+    let exercise9 = Exercise(title: NSLocalizedString("bWExercises.anteriorDeltoid1", comment: ""), primaryMuscles: [ Save.frontShoulderTitle ], secondaryMuscles: [ Save.tricepsLateralShortTitle, Save.lateralShoulderTitle], peakTension: [Save.mid], isBW: true)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5]
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9]
+}
+    
+func getLateralShoulderExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.lateralShoulderTitle, primaryMuscles: [Save.lateralShoulderTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.lateralDeltoid1", comment: ""),    primaryMuscles: [Save.lateralShoulderTitle], secondaryMuscles: [], peakTension: [Save.ecc, Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.lateralDeltoid2", comment: ""),   primaryMuscles: [Save.lateralShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.lateralDeltoid3", comment: ""),     primaryMuscles: [Save.lateralShoulderTitle, Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.lateralDeltoid4", comment: ""),           primaryMuscles: [Save.lateralShoulderTitle], secondaryMuscles: [], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("bWExercises.lateralDeltoid1", comment: ""),     primaryMuscles: [Save.lateralShoulderTitle], secondaryMuscles: [], peakTension: [Save.ecc, Save.mid, Save.con], isBW: true)
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4]
 }
 
-func getBWGlutesExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Bodyweight Hip Thrusts",    musclesWorked: "Glutes Secondary: Hamstrings")
-    let exercise1 = Exercises(title: "Isolateral Hip Thrust",     musclesWorked: "Glutes, Glute Medius Secondary: Hamstrings")
-    let exercise2 = Exercises(title: "Sprinter Lunge",            musclesWorked: "Glutes, Glute Medius Secondary: Hamstrings")
-    let exercise3 = Exercises(title: "Banded RDL",                musclesWorked: "Glutes, Glute Medius, Hamstrings")
-    let exercise4 = Exercises(title: "Marching Bridge",           musclesWorked: "Spinal Erector, Glutes")
+func getBackShoulderExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.backShoulderTitle, primaryMuscles: [Save.backShoulderTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.posteriorDeltoid1", comment: ""),  primaryMuscles: [Save.backShoulderTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.posteriorDeltoid2", comment: ""),                   primaryMuscles: [Save.rotatorCuffTitle,  Save.backShoulderTitle, Save.radialForearmTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.posteriorDeltoid3", comment: ""),                         primaryMuscles: [Save.backShoulderTitle, Save.rotatorCuffTitle, Save.radialForearmTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.con, Save.mid], isBW: false)
+    let exercise4 = Exercise(title: "Reverse Pec Deck",             primaryMuscles: [Save.lowerTrapsTitle , Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.mid, Save.con], isBW: false)
+
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.posteriorDeltoid1", comment: ""),          primaryMuscles: [  Save.backShoulderTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.posteriorDeltoid2", comment: ""), primaryMuscles: [ Save.backShoulderTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.posteriorDeltoid3", comment: ""),     primaryMuscles: [Save.backShoulderTitle, Save.rotatorCuffTitle ], secondaryMuscles:[]  ,peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.posteriorDeltoid4", comment: ""),    primaryMuscles: [Save.spinalErectorsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8]
 }
 
-func getGluteMediusExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Glute Medius",                  musclesWorked: "A single set towards Glute Medius")
-    let exercise1 = Exercises(title: "Machine Abduction",             musclesWorked: "Glute Medius")
-    let exercise2 = Exercises(title: "Ankle Brace Cable Abduction",             musclesWorked: "Glute Medius")
-    return [exercise0, exercise1, exercise2]
+func getRotatorCuffExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.rotatorCuffTitle, primaryMuscles: [Save.rotatorCuffTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+  
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.rotatorCuff1", comment: ""),          primaryMuscles: [Save.rotatorCuffTitle, Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.rotatorCuff2", comment: ""), primaryMuscles: [Save.rotatorCuffTitle, Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.rotatorCuff3", comment: ""),                              primaryMuscles: [Save.backShoulderTitle, Save.rotatorCuffTitle, Save.radialForearmTitle, Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.rotatorCuff4", comment: ""),               primaryMuscles: [Save.rotatorCuffTitle, Save.lowerTrapsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("exercises.rotatorCuff5", comment: ""),                        primaryMuscles: [Save.rotatorCuffTitle, Save.lowerTrapsTitle, Save.backShoulderTitle, Save.radialForearmTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.rotatorCuff1", comment: ""),            primaryMuscles: [  Save.rotatorCuffTitle, Save.lowerTrapsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.rotatorCuff2", comment: ""), primaryMuscles: [ Save.rotatorCuffTitle, Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.con, Save.mid], isBW: true)
+    
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7]
 }
 
-func getBWGluteMediusExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Banded Lateral Walkout",     musclesWorked: "Glute Medius")
-    let exercise1 = Exercises(title: "Banded Abduction",           musclesWorked:  "Glute Medius")
-    let exercise2 = Exercises(title: "Glute Side Plank",           musclesWorked: "Glute Medius Secondary: Obliques")
+    func getTricepsLongExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.tricepsLongTitle, primaryMuscles: [Save.tricepsLongTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise0 = Exercise(title: NSLocalizedString("exercises.tricepsLongHead1", comment: ""),       primaryMuscles: [Save.tricepsLongTitle, Save.ulnarForearmTitle], secondaryMuscles: [Save.middleAbsTitle], peakTension: [Save.ecc], isBW: false)// TODO Update alert
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.tricepsLongHead2", comment: ""),            primaryMuscles: [Save.tricepsLongTitle, Save.upperChestTitle, Save.ulnarForearmTitle ], secondaryMuscles: [Save.frontShoulderTitle, Save.tricepsLateralShortTitle], peakTension: [Save.ecc], isBW: false) // TODO update in alert
+        let exercise2 = Exercise(title: NSLocalizedString("exercises.tricepsLongHead3", comment: ""),       primaryMuscles: [Save.tricepsLongTitle, Save.ulnarForearmTitle], secondaryMuscles: [Save.middleAbsTitle], peakTension: [Save.ecc], isBW: true)// TODO Update alert
+        let exercise3 = Exercise(title: NSLocalizedString("exercises.tricepsLongHead4", comment: ""), primaryMuscles: [Save.tricepsLongTitle, Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+        let exercise4 = Exercise(title: NSLocalizedString("bWExercises.tricepsLongHead1", comment: ""),       primaryMuscles: [Save.tricepsLongTitle, Save.ulnarForearmTitle], secondaryMuscles: [Save.middleAbsTitle], peakTension: [Save.ecc], isBW: true)
     
-    return [exercise0, exercise1, exercise2]
+        
+        return [exercise, exercise0, exercise1, exercise2, exercise3, exercise4]
+    }
+    
+func getTricepsLateralAndShortExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.tricepsLateralShortTitle, primaryMuscles: [Save.tricepsLateralShortTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise1 = Exercise(title: "Cable Rope Pushdowns",  primaryMuscles: [Save.tricepsLateralShortTitle, Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false) //TODO Update alert
+    let exercise2 = Exercise(title: "V Bar Pushdowns",             primaryMuscles: [Save.tricepsLateralShortTitle, Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: "Close Grip Dumbbell Press",   primaryMuscles:[Save.tricepsLateralShortTitle ], secondaryMuscles: [ Save.middleChestTitle ,Save.frontShoulderTitle], peakTension: [Save.con], isBW: false)
+    let exercise4 = Exercise(title: "Triceps Kickback",  primaryMuscles: [Save.tricepsLateralShortTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    
+    let exercise5 = Exercise(title: "Narrow Dip",                  primaryMuscles: [Save.tricepsLongTitle, Save.tricepsLateralShortTitle, Save.lowerChestTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
+    let exercise6 = Exercise(title: "Bench Dip",   primaryMuscles: [Save.tricepsLateralShortTitle, Save.tricepsLongTitle], secondaryMuscles: [], peakTension: [Save.ecc, Save.mid], isBW: true)
+    let exercise7 = Exercise(title: "Narrow Pushup",     primaryMuscles: [Save.tricepsLateralShortTitle, Save.lowerChestTitle ], secondaryMuscles: [ Save.frontShoulderTitle], peakTension: [Save.mid], isBW: true)
+    let exercise8 = Exercise(title: "Triceps Extension",          primaryMuscles: [Save.tricepsLateralShortTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    
+    
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5
+            , exercise6, exercise7, exercise8]
+}
+    
+func getQuadsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.quadsTitle, primaryMuscles: [Save.quadsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.quads1", comment: ""),                           primaryMuscles: [Save.quadsTitle, Save.spinalErectorsTitle, Save.adductorsTitle ], secondaryMuscles: [ Save.glutesTitle, Save.transverseAbTitle, Save.anteriorTibialisTitle], peakTension: [Save.ecc, Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.quads2", comment: ""),                  primaryMuscles: [Save.quadsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.quads3", comment: ""),                 primaryMuscles: [Save.quadsTitle, Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.quads4", comment: ""),                        primaryMuscles: [Save.quadsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("exercises.quads5", comment: ""),                primaryMuscles: [Save.quadsTitle ], secondaryMuscles: [ Save.gluteMediusTitle], peakTension: [Save.ecc], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("exercises.quads6", comment: ""),            primaryMuscles: [Save.quadsTitle ], secondaryMuscles: [ Save.gluteMediusTitle], peakTension: [Save.mid], isBW: false)
+    let exercise7 = Exercise(title: NSLocalizedString("exercises.quads7", comment: ""),                       primaryMuscles: [Save.quadsTitle, Save.gluteMediusTitle ], secondaryMuscles: [ ], peakTension: [Save.mid], isBW: true)
+    
+    
+    
+    
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.quads1", comment: ""),                    primaryMuscles: [Save.quadsTitle, Save.gluteMediusTitle ], secondaryMuscles: [ Save.glutesTitle], peakTension: [Save.ecc, Save.mid], isBW: true)
+    
+    let exercise9 = Exercise(title: NSLocalizedString("bWExercises.quads2", comment: ""),        primaryMuscles: [  Save.quadsTitle], secondaryMuscles: [],peakTension: [Save.con], isBW: true)
+    let exercise10 = Exercise(title: NSLocalizedString("bWExercises.quads3", comment: ""), primaryMuscles: [Save.quadsTitle ], secondaryMuscles: [ Save.gluteMediusTitle], peakTension: [Save.mid], isBW: true)
+    let exercise11 = Exercise(title: NSLocalizedString("bWExercises.quads4", comment: ""),    primaryMuscles: [ Save.quadsTitle ], secondaryMuscles: [ Save.glutesTitle], peakTension: [Save.ecc, Save.mid], isBW: true)
+    let exercise12 = Exercise(title: NSLocalizedString("bWExercises.quads5", comment: ""),             primaryMuscles: [Save.quadsTitle ], secondaryMuscles: [ Save.glutesTitle], peakTension: [Save.mid], isBW: true)
+    let exercise13 = Exercise(title: NSLocalizedString("bWExercises.quads6", comment: ""),               primaryMuscles: [Save.quadsTitle ], secondaryMuscles: [ Save.glutesTitle], peakTension: [Save.mid], isBW: true)
+    
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5
+            , exercise6, exercise7, exercise8, exercise9, exercise10, exercise11, exercise12, exercise13]
 }
 
-func getHamstringsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Hamstrings", musclesWorked: "A single set towards Hamstrings")
-    let exercise1 = Exercises(title: "Deadlift",                 musclesWorked: "Hamstrings, Erectors, Upper Traps Secondary: Lats, Glutes, Lower Traps, Transverse")
-    let exercise2 = Exercises(title: "Romanian Deadlift",        musclesWorked: "Hamstring, Secondary: Glutes, Erectors")
-    let exercise3 = Exercises(title: "Deficit Deadlift",         musclesWorked: "Hamstring Secondary: Glutes, Erectors")
-    let exercise4 = Exercises(title: "Hamstring Hyperextension", musclesWorked: "Hamstring Secondary: Glutes, Erectors")
+func getLowerAbsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.lowerAbsTitle, primaryMuscles: [Save.lowerAbsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise0 = Exercise(title: NSLocalizedString("bWExercises.lowerAbs1", comment: ""),       primaryMuscles: [Save.lowerAbsTitle, Save.middleAbsTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.upperAbsTitle], peakTension: [Save.mid], isBW: true)
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.lowerAbs2", comment: ""),       primaryMuscles: [ Save.lowerAbsTitle, Save.middleAbsTitle ], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+    let exercise2 = Exercise(title: NSLocalizedString("bWExercises.lowerAbs3", comment: ""), primaryMuscles: [Save.lowerAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.lowerAbs4", comment: ""),         primaryMuscles: [Save.lowerAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+   
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    return [exercise, exercise0, exercise1, exercise2, exercise3]
+}
+    
+    func getMiddleAbsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.middleAbsTitle, primaryMuscles: [Save.middleAbsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+      
+        let exercise0 = Exercise(title: NSLocalizedString("bWExercises.middleAbs1", comment: ""),             primaryMuscles: [Save.middleAbsTitle,Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+        
+        let exercise1 = Exercise(title: NSLocalizedString("bWExercises.middleAbs2", comment: ""),             primaryMuscles: [Save.middleAbsTitle, Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.lowerAbsTitle ], peakTension: [Save.mid], isBW: true)
+        
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.middleAbs3", comment: ""),             primaryMuscles: [Save.middleAbsTitle, Save.lowerAbsTitle], secondaryMuscles: [ Save.transverseAbTitle ], peakTension: [Save.mid], isBW: true)
+        
+        let exercise3 = Exercise(title: NSLocalizedString("bWExercises.middleAbs4", comment: ""),             primaryMuscles: [Save.middleAbsTitle, Save.lowerAbsTitle], secondaryMuscles: [ Save.transverseAbTitle ], peakTension: [Save.mid], isBW: true)
+        
+        
+        
+        return [exercise, exercise0, exercise1, exercise2, exercise3] // TODO add exercises
+    }
+    
+    func getUpperAbsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.upperAbsTitle, primaryMuscles: [Save.upperAbsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise0 = Exercise(title: NSLocalizedString("exercises.upperAbs1", comment: ""),      primaryMuscles: [Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.upperAbs2", comment: ""), primaryMuscles: [Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        
+        let exercise2 = Exercise(title: NSLocalizedString("exercises.upperAbs3", comment: ""), primaryMuscles: [Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        
+        let exercise3 = Exercise(title: NSLocalizedString("bWExercises.upperAbs1", comment: ""), primaryMuscles: [Save.upperAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        
+        return [exercise, exercise0, exercise1, exercise2, exercise3]
+    }
+    
+    func getLowerObliquesExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.lowerObliquesTitle, primaryMuscles: [Save.lowerObliquesTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.lowerObliques1", comment: ""),     primaryMuscles: [Save.lowerObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.lowerObliques1", comment: ""),    primaryMuscles: [  Save.lowerObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.lowerAbsTitle], peakTension: [Save.mid], isBW: true)
+        let exercise3 = Exercise(title: NSLocalizedString("bWExercises.lowerObliques2", comment: ""),              primaryMuscles: [Save.lowerObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.middleAbsTitle], peakTension: [Save.mid], isBW: true)
+        let exercise4 = Exercise(title: NSLocalizedString("bWExercises.lowerObliques3", comment: ""),     primaryMuscles: [Save.lowerObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.lowerAbsTitle], peakTension: [Save.mid], isBW: true)
+        
+        let exercise5 = Exercise(title: NSLocalizedString("bWExercises.lowerObliques4", comment: ""),    primaryMuscles: [ Save.lowerObliquesTitle, Save.lowerAbsTitle, Save.middleAbsTitle ], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+        
+        return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5]
+    }
+    
+    func getMiddleObliquesExercise() -> [Exercise] {
+        let exercise = Exercise(title: Save.middleObliquesTitle, primaryMuscles: [Save.middleObliquesTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.middleObliques1", comment: ""),         primaryMuscles: [Save.middleObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.ecc, Save.mid], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.middleObliques1", comment: ""),   primaryMuscles: [Save.middleObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.middleAbsTitle], peakTension: [Save.mid], isBW: true)
+        let exercise3 = Exercise(title: NSLocalizedString("bWExercises.middleObliques2", comment: ""), primaryMuscles: [Save.middleObliquesTitle ], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+        let exercise4 = Exercise(title: NSLocalizedString("bWExercises.middleObliques3", comment: ""),        primaryMuscles: [Save.middleObliquesTitle ], secondaryMuscles: [ Save.transverseAbTitle, Save.middleAbsTitle], peakTension: [Save.mid], isBW: true)
+        let exercise5 = Exercise(title: NSLocalizedString("bWExercises.middleObliques4", comment: ""),   primaryMuscles: [Save.middleObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.middleAbsTitle], peakTension: [Save.mid], isBW: true)
+        
+        
+        
+        return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5]
+    }
+    
+    func getUpperObliquesExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.upperObliquesTitle, primaryMuscles: [Save.upperObliquesTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.upperObliques1", comment: ""),     primaryMuscles: [Save.upperObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.upperObliques1", comment: ""),     primaryMuscles: [Save.upperObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle, Save.upperAbs], peakTension: [Save.mid], isBW: true)
+        let exercise3 = Exercise(title: NSLocalizedString("bWExercises.upperObliques2", comment: ""),     primaryMuscles: [Save.upperObliquesTitle, Save.middleObliquesTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.mid], isBW: true)
+        return [exercise, exercise1,exercise2, exercise3]
+    }
+
+
+
+func getSerratusTitle() -> [Exercise] {
+    let exercise = Exercise(title: Save.serratusTitle, primaryMuscles: [Save.serratusTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.serratus1", comment: ""), primaryMuscles: [Save.serratusTitle, Save.middleAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.serratus2", comment: ""),   primaryMuscles: [Save.serratusTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise2 = Exercise(title: NSLocalizedString("bWExercises.serratus3", comment: ""),     primaryMuscles: [  Save.serratusTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.serratus4", comment: ""),    primaryMuscles: [ Save.serratusTitle , Save.middleAbsTitle], secondaryMuscles: [ Save.transverseAbTitle], peakTension: [Save.ecc], isBW: true)
+    
+    return [exercise, exercise0, exercise1, exercise2, exercise3]
 }
 
-func getBWHamstringsExercises() -> [Exercises] {
+func getTransverseAbExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.transverseAbTitle, primaryMuscles: [Save.transverseAbTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("bWExercises.transverseAb1", comment: ""),     primaryMuscles: [  Save.transverseAbTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.transverseAb2", comment: ""),  primaryMuscles: [Save.transverseAbTitle, Save.middleAbsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
     
-    let exercise0 = Exercises(title: "Glute Ham Raise",                musclesWorked:  "Hamstrings Secondary: Glutes, Erectors")
-    let exercise1 = Exercises(title: "Medicine Ball Curl",             musclesWorked: "Hamstring Secondary: Glutes, Erectors")
-    let exercise2 = Exercises(title: "Single Leg Medicine Ball Curl",  musclesWorked: "Hamstring, Glute Medius Secondary: Glutes, Erectors")
-    let exercise3 = Exercises(title: "Single Leg Romanian Deadlift",   musclesWorked: "Hamstring, Glute Medius Secondary: Glutes, Erectors")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
+    return [exercise, exercise0, exercise1]
 }
 
-func getFrontShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Front Shoulder",          musclesWorked: "One set towards Anterior Deltoids ")
-    let exercise1 = Exercises(title: "Arnolds",                 musclesWorked: "Anterior Delt Secondary: Triceps, Medial Delt")
-    let exercise2 = Exercises(title: "Barbell Overhead Press",  musclesWorked: "Anterior Delt Secondary: Triceps")
-    let exercise3 = Exercises(title: "Dumbbell OHP",            musclesWorked: "Anterior Deltoid Secondary: Triceps, Medial Delt")
-    let exercise4 = Exercises(title: "Cable Stretch to OHP",    musclesWorked: "Anterior Deltoid Secondary: Triceps, Medial Delt")
-    let exercise5 = Exercises(title: "Landmine Press",          musclesWorked: "Anterior Delt Secondary: Triceps, Medial Delt")
-    let exercise6 = Exercises(title: "Machine Shoulder Press",  musclesWorked: "Anterior Delt Secondary: Triceps, Medial Delt")
-    let exercise7 = Exercises(title: "Push Press",              musclesWorked: "Anterior Delt Secondary: Triceps, Medial Delt")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7]
+func getSoleusExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.soleusTitle, primaryMuscles: [Save.soleusTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.soleus1", comment: ""),                primaryMuscles: [Save.soleusTitle], secondaryMuscles: [Save.gastrocnemiusTitle], peakTension: [Save.con], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.soleus1", comment: ""),                primaryMuscles: [Save.soleusTitle], secondaryMuscles: [Save.gastrocnemiusTitle], peakTension: [Save.con], isBW: true)
+
+    return [exercise, exercise0, exercise1]
 }
 
-func getBWFrontShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Pike Push-Up",      musclesWorked:   "Anterior Delt Secondary: Triceps, Medial Delt")
-    let exercise1 = Exercises(title: "Handstand Push-Up", musclesWorked:  "Anterior Delt Secondary: Triceps, Medial Delt")
-    let exercise2 = Exercises(title: "Cable Front Raise", musclesWorked: "Anterior Delt")
+func getGastrocExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.gastrocnemiusTitle, primaryMuscles: [Save.gastrocnemiusTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.gastrocnemius1", comment: ""),      primaryMuscles: [Save.gastrocnemiusTitle], secondaryMuscles: [Save.soleusTitle], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.gastrocnemius2", comment: ""),  primaryMuscles: [Save.gastrocnemiusTitle], secondaryMuscles: [Save.soleusTitle], peakTension: [Save.con], isBW: false)
     
-    return [exercise0, exercise1, exercise2]
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.gastrocnemius3", comment: ""),                primaryMuscles: [Save.gastrocnemiusTitle], secondaryMuscles: [Save.soleusTitle], peakTension: [Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.gastrocnemius4", comment: ""),       primaryMuscles: [Save.gastrocnemiusTitle], secondaryMuscles: [Save.soleusTitle], peakTension: [Save.con], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.gastrocnemius1", comment: ""),     primaryMuscles: [  Save.gastrocnemiusTitle], secondaryMuscles: [Save.soleusTitle], peakTension: [Save.con], isBW: true)
+    
+       return [exercise,  exercise1, exercise2, exercise3, exercise4, exercise5]
+}
+//TODO
+    
+func getNeckFlexionExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.neckFlexionTitle, primaryMuscles: [Save.neckFlexionTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.neckFlexion1", comment: ""),              primaryMuscles: [Save.neckFlexionTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.neckFlexion1", comment: ""),       primaryMuscles: [Save.neckFlexionTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.neckFlexion1", comment: ""),     primaryMuscles: [  Save.neckFlexionTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
+    return [exercise,  exercise1, exercise2, exercise3]
 }
 
-func getLateralShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Lateral Shoulder",         musclesWorked: "A single set towards Lateral Deltoids")
-    let exercise1 = Exercises(title: "Cable Lateral Raises",    musclesWorked: "Medial Deltoid")
-    let exercise2 = Exercises(title: "Machine Lateral Raise",   musclesWorked: "Medial Deltoid")
-    let exercise3 = Exercises(title: "Cheat Lateral Raise",     musclesWorked: "Medial Deltoid, Upper Trap")
-    let exercise4 = Exercises(title: "Lateral Raise",           musclesWorked: "Medial Deltoid")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    func getNeckExtensionExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.neckExtensionTitle, primaryMuscles: [Save.neckExtensionTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise0 = Exercise(title: NSLocalizedString("exercises.neckExtension1", comment: ""),   primaryMuscles: [Save.neckExtensionTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.neckExtension2", comment: ""),   primaryMuscles: [Save.neckExtensionTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.neckExtension1", comment: ""),   primaryMuscles: [Save.neckExtensionTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    return [exercise, exercise0, exercise1, exercise2]
 }
 
-func getBWLateralShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Delt Rotating Plank",     musclesWorked:   "Medial Detoid")
+    func getNeckTransverseExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.transverseNeckTitle, primaryMuscles: [Save.transverseNeckTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise0 = Exercise(title: NSLocalizedString("exercises.transverseNeck1", comment: ""), primaryMuscles: [Save.transverseNeckTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.transverseNeck2", comment: ""), primaryMuscles: [Save.transverseNeckTitle, Save.backShoulderTitle, Save.lowerTrapsTitle, Save.rotatorCuffTitle, Save.radialForearmTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.transverseNeck1", comment: ""), primaryMuscles: [Save.transverseNeckTitle, Save.backShoulderTitle, Save.lowerTrapsTitle, Save.rotatorCuffTitle, Save.radialForearmTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
     
-    return [exercise0]
-}
+        return [exercise, exercise0, exercise1, exercise2]
+    }
+        
 
-func getBackShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Back Shoulder",               musclesWorked: "A single set towards Posterior Deltoids")
-    let exercise1 = Exercises(title: "Barbell/Dumbbell High Rows",  musclesWorked: "Posterior Deltoid, Lower Trap")
-    let exercise2 = Exercises(title: "Facepulls",                   musclesWorked: "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    let exercise3 = Exercises(title: "W's",                         musclesWorked: "Posterior Deltoid, Rotator Cuff, Lower Traps")
-    let exercise4 = Exercises(title: "Reverse Pec Deck",             musclesWorked: "Lower Traps, Posterior Deltoid")
+func getForearmExtensorsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.forearmExtensorsTitle, primaryMuscles: [Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.forearmExtensors1", comment: ""), primaryMuscles: [Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.forearmExtensors2", comment: ""),          primaryMuscles: [Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.forearmExtensors3", comment: ""),                    primaryMuscles: [Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("bwExercises.forearmExtensors1", comment: ""),    primaryMuscles: [ Save.forearmExtensorsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
-}
-
-func getBWBackShoulderExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Floor T's",          musclesWorked:   "Posterior Deltoid")
-    let exercise1 = Exercises(title: "Banded Pull Aparts", musclesWorked:  "Posterior Deltoid, Lower Traps")
-    let exercise2 = Exercises(title: "Ring Facepulls",     musclesWorked: "Posterior Deltoid, Rotator Cuff, Lower Traps")
-    let exercise3 = Exercises(title: "Angels of Death",    musclesWorked: "Spinal Erectors, Lower Traps, Posterior Deltoid")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
-}
-
-func getRotatorCuffExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Rotator Cuff",                     musclesWorked: "A single set towards Rotator Cuffs")
-    let exercise1 = Exercises(title: "Cable External Rotation",          musclesWorked: "Rotator Cuff, Forearm Extensors")
-    let exercise2 = Exercises(title: "Bench Dumbbell External Rotation", musclesWorked: "Rotator Cuff, Forearm Extensors")
-    let exercise3 = Exercises(title: "W's",                              musclesWorked: "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    let exercise4 = Exercises(title: "Dumbbell High Pull",               musclesWorked: "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    let exercise5 = Exercises(title: "Facepulls",                        musclesWorked: "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5]
-}
-
-func getBWRotatorCuffExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Ring Facepull",            musclesWorked:   "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    let exercise1 = Exercises(title: "Banded External Rotation", musclesWorked:  "Rotator Cuff, Forearm Extensors")
-    
-    return [exercise0, exercise1]
-}
-
-func getTricepsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Triceps",                     musclesWorked: "One set towards Triceps")
-    let exercise1 = Exercises(title: "Narrow Dip",                  musclesWorked: "Triceps: All Heads, Chest")
-    let exercise2 = Exercises(title: "Incline Skullcrushers",       musclesWorked: "Triceps, Long Head")
-    let exercise3 = Exercises(title: "California Press",            musclesWorked: "Triceps: All heads Secondary: Chest, Anterior Deltoid")
-    let exercise4 = Exercises(title: "Cable Rope Pushdowns",        musclesWorked: "Triceps: Medial and Short Head")
-    let exercise5 = Exercises(title: "V Bar Pushdowns",             musclesWorked: "Triceps: Medial and Short Head")
-    let exercise6 = Exercises(title: "Close Grip Dumbbell Press",   musclesWorked: "Triceps Short and Medial Head Secondary: Chest, Anterior deltoid")
-    let exercise7 = Exercises(title: "Rope Overhead Extension",     musclesWorked: "Triceps: Long Head")
-    let exercise8 = Exercises(title: "Long Head Triceps Pushdowns", musclesWorked: "Triceps: Long Head")
-    let exercise9 = Exercises(title: "Triceps Kickback",            musclesWorked: "Triceps: Short Head")
-    let exercise10 = Exercises(title: "Triceps Extension",          musclesWorked: "Triceps: Short and Medial Head")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7, exercise8, exercise9, exercise10]
-}
-
-func getBWTricepsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Narrow Pushup",     musclesWorked:   "Triceps: Short and Medial Head, Chest Secondary: Anterior Delts")
-    let exercise1 = Exercises(title: "Ring Overhead Extension",    musclesWorked:  "Triceps: long head")
-    let exercise2 = Exercises(title: "Bench Dip",   musclesWorked: "Triceps: All heads")
-    
-    return [exercise0, exercise1, exercise2]
-}
-
-func getQuadsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Quads",                            musclesWorked: "A single set towards Quads")
-    let exercise1 = Exercises(title: "Squats",                           musclesWorked: "Quads, Erectors Secondary: Glutes, Transverse")
-    let exercise2 = Exercises(title: "Cable Walkaways",                  musclesWorked: "Quads")
-    let exercise3 = Exercises(title: "Banded Leg Press",                 musclesWorked: "Quads, Glutes Medius")
-    let exercise4 = Exercises(title: "Leg Press",                        musclesWorked: "Quads")
-    let exercise5 = Exercises(title: "Traditional Lunge",                musclesWorked: "Quads Secondary: Glute Medius")
-    let exercise6 = Exercises(title: "Bulgarian Split Squat",            musclesWorked: "Quads Secondary: Glute Medius")
-    let exercise7 = Exercises(title: "Explosive Bulgarian Split Squat", musclesWorked: "Quads Secondary: Glute Medius")
-    let exercise8 = Exercises(title: "Pistol Squats",                    musclesWorked: "Quads, Glute Medius Secondary: Glutes")
-    let exercise9 = Exercises(title: "Side Lunge",                       musclesWorked: "Quads Secondary: Glute Medius")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5
-            , exercise6, exercise7, exercise8, exercise9]
-}
-
-func getBWQuadsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Banded Lunges",        musclesWorked:   "Quads")
-    let exercise1 = Exercises(title: "Bodyweight Squats",    musclesWorked:  "Quads Secondary: Glutes")
-    let exercise2 = Exercises(title: "Wall Sit",             musclesWorked: "Quads Secondary: Glutes")
-    let exercise3 = Exercises(title: "Lunges",               musclesWorked: "Quads Secondary: Glutes")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
-}
-
-func getAbsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Abs",          musclesWorked: "A single set towards Abs")
-    let exercise1 = Exercises(title: "Cable Crunch", musclesWorked: "Middle Abs Secondary: Transverse")
-    
-    let exercise2 = Exercises(title: "Machine Crunch", musclesWorked: "Middle Abs Secondary: Transverse")
-    let exercise3 = Exercises(title: "Leg Raises",       musclesWorked:   "Abs Secondary: Transverse")
-    let exercise4 = Exercises(title: "Ab Circles",       musclesWorked:  "Lower Abs, Obliques Secondary: Transverse")
-    let exercise5 = Exercises(title: "Reverse Crunches", musclesWorked: "Lower Abs Secondary: Transverse")
-    let exercise6 = Exercises(title: "Pulse Up",         musclesWorked: "Lower Abs Secondary: Transverse")
-    let exercise7 = Exercises(title: "Band Crunch",      musclesWorked: "Middle Abs Secondary: Transverse")
-    let exercise8 = Exercises(title: "V-Up",             musclesWorked: "Middle Abs Secondary: Transverse")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8]
-}
-
-
-func getObliquesExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Obliques",                      musclesWorked: "A single set towards Obliques")
-    let exercise1 = Exercises(title: "Neutral Wood Choppers",         musclesWorked: "Mid Obliques Secondary: Transverse")
-    let exercise2 = Exercises(title: "Low to High Wood Choppers",     musclesWorked: "Upper and lower Obliques Secondary: Transverse")
-    let exercise3 = Exercises(title: "High to Low Wood Choppers",     musclesWorked: "Upper and lower Obliques Secondary: Transverse")
-    let exercise4 = Exercises(title: "Twisting Leg Raise",    musclesWorked:   "Obliques Secondary: Transverse, Lower Ab")
-    let exercise5 = Exercises(title: "Leg Raise Scissors",    musclesWorked:  "Obliques, Abs Secondary: Transverse")
-    let exercise6 = Exercises(title: "Elbow to Knee Tucks",   musclesWorked: "Obliques Secondary: Transverse, Middle ab")
-    let exercise7 = Exercises(title: "Banded/Cable Step Out", musclesWorked: "Obliques Secondary: Transverse")
-    let exercise8 = Exercises(title: "Rotating Plank",        musclesWorked: "Obliques Secondary: Transverse, Abs")
-    let exercise9 = Exercises(title: "Elbow to Knee Plank",   musclesWorked: "Obliques Secondary: Transverse, Abs")
-    let exercise10 = Exercises(title: "Twisting Pulse Up",     musclesWorked: "Obliques Secondary: Transverse, Abs")
-    let exercise11 = Exercises(title: "X-Crunch",              musclesWorked: "Obliques Secondary: Transverse, Abs")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9, exercise10, exercise11]
-}
-
-
-
-func getSerratusExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Serratus Anterior",                musclesWorked: "One set towards Serratus")
-    let exercise1 = Exercises(title: "Protracted Cable Crunch", musclesWorked: "Serratus Anterior, Abs Secondary: Transverse")
-    let exercise2 = Exercises(title: "Banded/Cable Punches",   musclesWorked: "Serratus Anterior")
-    
-    return [exercise0, exercise1, exercise2]
-}
-
-func getBWSerratusExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Plank Protraction",     musclesWorked:   "Serratus Anterior")
-    let exercise1 = Exercises(title: "Protracted Rollout",    musclesWorked:  "Serratus Anterior, Abs Secondary: Transverse")
-    
-    
-    return [exercise0, exercise1]
-}
-
-func getTransverseAbExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Transverse Ab",                   musclesWorked: "A single set towards Transverse Ab")
-    let exercise1 = Exercises(title: "Banded/Cable Resisted Rotation",  musclesWorked: "Transverse, Obliques")
-    
-    
-    return [exercise0, exercise1]
-}
-
-func getBWTransverseAbExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Vacuums",     musclesWorked:   "Transverse Abdominus")
-    
-    return [exercise0]
-}
-
-func getCalvesExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Calves",                           musclesWorked: "A single set towards Calves")
-    let exercise1 = Exercises(title: "Machine Standing Calf Raise",      musclesWorked: "Calves")
-    let exercise2 = Exercises(title: "Straight Leg Machine Calf Raise",  musclesWorked: "Calves")
-    let exercise3 = Exercises(title: "Seated Calf Raise",                musclesWorked: "Calves")
-    let exercise4 = Exercises(title: "Donkey Calf Raise",                musclesWorked: "Calves")
-    let exercise5 = Exercises(title: "Dumbbell/Plated Calf Raise",       musclesWorked: "Calves")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5]
-}
-
-func getBWCalvesExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Bodyweight Calf Raises",     musclesWorked:   "Calves")
-    
-    return [exercise0]
-}
-
-func getNeckExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Neck",                    musclesWorked: "A single set towards Neck")
-    let exercise1 = Exercises(title: "Plate Curl",              musclesWorked: "Neck Flexion")
-    let exercise2 = Exercises(title: "Neck Harness Curl",       musclesWorked: "Neck Flexion")
-    let exercise3 = Exercises(title: "Plated Neck Extension",   musclesWorked: "Neck Extension")
-    let exercise4 = Exercises(title: "Harness Lateral Flexion", musclesWorked: "Lateral Flexion")
-    let exercise5 = Exercises(title: "Suspended Neck Rotation", musclesWorked: "Neck Flexion and Rotation")
-    let exercise6 = Exercises(title: "Neck Flexion",            musclesWorked: "Lateral and forward Flexion")
-    
-    return [exercise0, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6]
-}
-
-func getBWNeckExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Head Floats",     musclesWorked:   "Neck Flexion, Lateral Flexion or Extension")
-    
-    return [exercise0]
-}
-
-func getForearmExtensorsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Forearm Extensors",                 musclesWorked: "One set towards Forearm Extensors")
-    let exercise1 = Exercises(title: "Standing Barbell Wrist Extension", musclesWorked: "Forearm Extensors")
-    let exercise2 = Exercises(title: "Barbell Extension Rolls",          musclesWorked: "Forearm Extensors")
-    let exercise3 = Exercises(title: "Reverse Curls",                    musclesWorked: "Forearm Extensors")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
-}
-
-func getBWForearmExtensorsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Banded Wrist Extension",    musclesWorked:  "Forearm Extensors")
-    
-    return [exercise0]
-}
-
-func getUlnarForearmExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Ulnar Forearm",          musclesWorked: "A single set towards Ulnar Forearm")
-    let exercise1 = Exercises(title: "Rope Ulnar Deviation",   musclesWorked: "Ulnar Forearm")
-    
-    
-    return [exercise0, exercise1]
-}
-
-func getBWUlnarForearmExercises() -> [Exercises] {
-    
-    let exercise0 = Exercises(title: "Banded Ulnar Deviation", musclesWorked: "Ulnar Forearm")
-    
-    return [exercise0]
+    return [exercise, exercise1, exercise2, exercise3, exercise4]
 }
 
 
 
-
-func getForearmFlexorsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Forearm Flexors",    musclesWorked: "A single set towards Forearm Flexors")
-    let exercise1 = Exercises(title: "Prone Wrist Curls",  musclesWorked: "Forearm Flexors")
-    let exercise2 = Exercises(title: "Wrist Flexed Curls", musclesWorked: "Biceps, Forearm Flexors")
+func getUlnarForearmExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.ulnarForearmTitle, primaryMuscles: [Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise0 = Exercise(title: NSLocalizedString("exercises.ulnarForearm1", comment: ""),   primaryMuscles: [Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
     
-    return [exercise0, exercise1, exercise2]
+    let exercise1 = Exercise(title: NSLocalizedString("bWExercises.ulnarForearm1", comment: ""), primaryMuscles: [Save.ulnarForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    
+    
+    return [exercise, exercise0, exercise1]
 }
 
-func getBWForearmFlexorsExercises() -> [Exercises] {
+func getForearmFlexorsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.forearmFlexorsTitle, primaryMuscles: [Save.forearmFlexorsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.forearmFlexors1", comment: ""),  primaryMuscles: [Save.forearmFlexorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.forearmFlexors2", comment: ""), primaryMuscles: [Save.bicepsLongHeadTitle, Save.bicepsLongHeadTitle, Save.forearmFlexorsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.forearmFlexors1", comment: ""), primaryMuscles: [Save.forearmFlexorsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    let exercise0 = Exercises(title: "Banded Wrist Curls", musclesWorked: "Forearm Flexors")
-    
-    return [exercise0]
+    return [exercise, exercise1, exercise2, exercise3]
 }
 
-func getRadialForearmExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Radial Forearm",             musclesWorked: "A single set towards Radial Forearm")
-    let exercise1 = Exercises(title: "Rope Radial Deviation",      musclesWorked: "Radial Forearm")
-    let exercise2 = Exercises(title: "Hammer/Crossbody Curls",     musclesWorked: "Biceps, Brachialis, Radial Forearm")
+func getRadialForearmExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.radialForearmTitle, primaryMuscles: [Save.radialForearmTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.radialForearm1", comment: ""),      primaryMuscles: [Save.radialForearmTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.radialForearm1", comment: ""),     primaryMuscles: [ Save.brachialisTitle, Save.radialForearmTitle], secondaryMuscles: [Save.bicepsLongHeadTitle], peakTension: [], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("bWExercises.radialForearm1", comment: ""),    primaryMuscles: [Save.radialForearmTitle],secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    let exercise3 = Exercises(title: "Re-racking your plates",     musclesWorked: "Radial Forearm, put ur plates back please")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
+    return [exercise, exercise1, exercise2, exercise3]
 }
 
-func getBWRadialForearmExercises() -> [Exercises] {
-    
-    let exercise0 = Exercises(title: "Banded Radial Deviation",    musclesWorked: "Radial Forearm")
-    
-    
-    return [exercise0]
-}
-func getSpinalErectorsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Spinal Erectors",            musclesWorked: "One set towards SpinalErectors")
-    let exercise1 = Exercises(title: "Hyperextension",             musclesWorked: "Spinal Erector")
-    let exercise2 = Exercises(title: "Machine Erector Extension",  musclesWorked: "Spinal Erector")
-    let exercise3 = Exercises(title: "Deadlift",                   musclesWorked: "Spinal Erector Secondary: Glutes, Hamstrings")
-    let exercise4 = Exercises(title: "Squats",                     musclesWorked: "Quads, Spinal Erector Secondary: Glutes, Hamstrings")
+func getspinalErectorsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.spinalErectorsTitle, primaryMuscles: [Save.spinalErectorsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+  
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.spinalErectors1", comment: ""),             primaryMuscles: [Save.spinalErectorsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.spinalErectors2", comment: ""),  primaryMuscles: [Save.spinalErectorsTitle], secondaryMuscles: [], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.hamstringsHinge1", comment: ""),                   primaryMuscles: [Save.spinalErectorsTitle ], secondaryMuscles: [ Save.glutesTitle, Save.hamstringHingeTitle], peakTension: [Save.mid, Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.quads1", comment: ""),                     primaryMuscles: [Save.quadsTitle, Save.spinalErectorsTitle], secondaryMuscles: [ Save.glutesTitle, Save.hamstringHingeTitle], peakTension: [Save.mid, Save.ecc], isBW: false)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.spinalErectors1", comment: ""),                 primaryMuscles: [Save.spinalErectorsTitle , Save.gluteMediusTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.spinalErectors2", comment: ""),            primaryMuscles: [Save.spinalErectorsTitle, Save.lowerAbsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.spinalErectors3", comment: ""),            primaryMuscles: [Save.spinalErectorsTitle, Save.glutesTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.spinalErectors4", comment: ""),     primaryMuscles: [Save.spinalErectorsTitle ], secondaryMuscles: [ Save.glutesTitle, Save.hamstringHingeTitle], peakTension: [Save.ecc], isBW: true)
     
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8]
 }
 
-func getBWSpinalErectorsExercises() -> [Exercises] {
+func getUpperTrapsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.upperTrapsTitle, primaryMuscles: [Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.upperTraps1", comment: ""),   primaryMuscles: [Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.upperTraps2", comment: ""),  primaryMuscles: [Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.upperTraps3", comment: ""),     primaryMuscles: [Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [Save.ecc], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("bWExercises.upperTraps1", comment: ""),      primaryMuscles: [  Save.upperTrapsTitle], secondaryMuscles: [], peakTension: [Save.mid], isBW: true)
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.upperTraps2", comment: ""),         primaryMuscles: [ Save.upperTrapsTitle, Save.lowerTrapsTitle ], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    let exercise0 = Exercises(title: "Frog Pumps",                 musclesWorked: "Spinal Erectors, Glute Medius")
-    let exercise1 = Exercises(title: "Angels of Death",            musclesWorked: "Spinal Erectors, Lower Traps, Post Delt")
-    let exercise2 = Exercises(title: "Marching Bridge",            musclesWorked: "Spinal Erector, Glutes")
-    let exercise3 = Exercises(title: "Reverse Hyperextension",     musclesWorked: "Spinal Erector Secondary: Glutes, Hamstring")
-    
-    return [exercise0, exercise1, exercise2, exercise3]
+    return [exercise, exercise1, exercise2, exercise3, exercise4, exercise5]
 }
 
-func getUpperTrapsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Upper Traps",      musclesWorked: "A single set towards Upper Traps")
-    let exercise1 = Exercises(title: "Dumbell Shrugs",   musclesWorked: "Upper Trap")
-    let exercise2 = Exercises(title: "Trap Bar Shrugs",  musclesWorked: "Upper Trap")
-    let exercise3 = Exercises(title: "Farmer Walk",     musclesWorked: "Upper Trap")
+func getLowerTrapsExercise() -> [Exercise] {
+    let exercise = Exercise(title: Save.lowerTrapsTitle, primaryMuscles: [Save.lowerTrapsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+   
+    let exercise1 = Exercise(title: NSLocalizedString("exercises.lowerTraps1", comment: ""),          primaryMuscles: [Save.lowerTrapsTitle ], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise2 = Exercise(title: NSLocalizedString("exercises.lowerTraps2", comment: ""), primaryMuscles: [Save.lowerTrapsTitle , Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise3 = Exercise(title: NSLocalizedString("exercises.lowerTraps3", comment: ""),              primaryMuscles: [Save.rotatorCuffTitle, Save.lowerAbsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise4 = Exercise(title: NSLocalizedString("exercises.lowerTraps4", comment: ""),        primaryMuscles: [Save.rotatorCuffTitle, Save.lowerAbsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
     
-    return [exercise0, exercise1, exercise2, exercise3]
-}
-
-func getBWUpperTrapsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Trap Pushaway",      musclesWorked:   "Upper Traps")
-    let exercise1 = Exercises(title: "Inverted Y",         musclesWorked:  "Upper and Lower Traps")
     
-    return [exercise0, exercise1]
-}
-
-func getLowerTrapsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Lower Traps",      musclesWorked: "A single set towards Lower Traps")
-    let exercise1 = Exercises(title: "Y Raise",          musclesWorked: "Lower Traps")
-    let exercise2 = Exercises(title: "Reverse Pec Deck", musclesWorked: "Lower Traps, Post Delt")
-    let exercise3 = Exercises(title: "W's",              musclesWorked: "Rotator Cuff, Lower Trap, Post Delt")
-    let exercise4 = Exercises(title: "Facepulls",        musclesWorked: "Rotator Cuff, Lower Trap, Post Delt")
+    let exercise5 = Exercise(title: NSLocalizedString("bWExercises.lowerTraps1", comment: ""),                     primaryMuscles: [  Save.rotatorCuffTitle, Save.lowerAbsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: false)
+    let exercise6 = Exercise(title: NSLocalizedString("bWExercises.lowerTraps1", comment: ""),        primaryMuscles: [ Save.lowerTrapsTitle ], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise7 = Exercise(title: NSLocalizedString("bWExercises.lowerTraps1", comment: ""),                    primaryMuscles: [Save.spinalErectorsTitle, Save.lowerAbsTitle, Save.backShoulderTitle], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
+    let exercise8 = Exercise(title: NSLocalizedString("bWExercises.lowerTraps1", comment: ""), primaryMuscles: [Save.lowerTrapsTitle ], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
-}
-
-func getBWLowerTrapsExercises() -> [Exercises] {
-    let exercise0 = Exercises(title: "Ring Facepull",                     musclesWorked:   "Rotator Cuff, Lower Trap, Posterior Deltoid")
-    let exercise1 = Exercises(title: "Hanging/Cable Scapular Retraction",        musclesWorked:  "Lower Traps")
-    let exercise2 = Exercises(title: "Inverted Y",                         musclesWorked: "Upper and Lower Traps")
-    let exercise3 = Exercises(title: "Angels of Death",                    musclesWorked: "Spinal Erectors, Lower Traps, Post Delt")
-    let exercise4 = Exercises(title: "Floor/Dip Bar Scapular Depression", musclesWorked: "Lower Traps")
+    let exercise9 = Exercise(title: NSLocalizedString("bWExercises.lowerTraps1", comment: ""),                         primaryMuscles: [Save.upperTrapsTitle, Save.lowerTrapsTitle ], secondaryMuscles: [], peakTension: [Save.con], isBW: true)
     
-    return [exercise0, exercise1, exercise2, exercise3, exercise4]
+    return [exercise,  exercise1, exercise2, exercise3, exercise4, exercise5, exercise6, exercise7, exercise8, exercise9]
 }
+    
+    func getAdductorsExercises() -> [Exercise] {
+        let exercise = Exercise(title: Save.adductorsTitle, primaryMuscles: [Save.adductorsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.adductors1", comment: ""), primaryMuscles: [Save.adductorsTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.adductors1", comment: ""), primaryMuscles: [Save.adductorsTitle], secondaryMuscles: [], peakTension: [], isBW: true)
+        
+        return [exercise,  exercise1, exercise2]
+    }
+    
+    func getTibialisExercises() -> [Exercise] {
+        let exercise = Exercise(title: Save.anteriorTibialisTitle, primaryMuscles: [Save.anteriorTibialisTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise1 = Exercise(title: NSLocalizedString("exercises.tibialis1", comment: ""), primaryMuscles: [Save.anteriorTibialisTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        let exercise2 = Exercise(title: NSLocalizedString("bWExercises.tibialis2", comment: ""), primaryMuscles: [Save.anteriorTibialisTitle], secondaryMuscles: [], peakTension: [], isBW: true)
+        
+        return [exercise,  exercise1, exercise2]
+    }
 
+    func getAllExercises() -> [Exercise] {
+    let exercise = Exercise(title: Save.middleChestTitle, primaryMuscles: [Save.middleChestTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        var array = getMiddleChestExercise()
+        array.append(contentsOf: getUpperChestExercise())
+        array.append(contentsOf: getLowerChestExercise())
+        array.append(contentsOf: getMiddleChestExercise())
+        array.append(contentsOf: getBicepsLongHeadExercise())
+        array.append(contentsOf: getBicepsShortHeadExercise())
+        array.append(contentsOf: getBicepFinisherExercises())
+        array.append(contentsOf: getBrachialisExercises())
+        array.append(contentsOf: getLatsRowingExercise())
+        array.append(contentsOf: getLatsPushdownExercise())
+        array.append(contentsOf: getLatsPullinExercise())
+        array.append(contentsOf: getGluteTitleExercise())
+        array.append(contentsOf: getGluteMediusExercise())
+        array.append(contentsOf: getAdductorsExercises())
+        array.append(contentsOf: getHamstringsHingeExercise())
+        array.append(contentsOf: getHamstringsCurlExercise())
+        array.append(contentsOf: getFrontShoulderExercise())
+        array.append(contentsOf: getLateralShoulderExercise())
+        array.append(contentsOf: getBackShoulderExercise())
+        array.append(contentsOf: getRotatorCuffExercise())
+        array.append(contentsOf: getTricepsLongExercise())
+        array.append(contentsOf: getTricepsLateralAndShortExercise())
+        array.append(contentsOf: getQuadsExercise())
+        array.append(contentsOf: getUpperAbsExercise())
+        array.append(contentsOf: getMiddleAbsExercise())
+        array.append(contentsOf: getLowerAbsExercise())
+        array.append(contentsOf: getUpperObliquesExercise())
+        array.append(contentsOf: getMiddleObliquesExercise())
+        array.append(contentsOf: getLowerObliquesExercise())
+        array.append(contentsOf: getSerratusTitle())
+        array.append(contentsOf: getTransverseAbExercise())
+        array.append(contentsOf: getGastrocExercise())
+        array.append(contentsOf: getSoleusExercise())
+        array.append(contentsOf: getTibialisExercises())
+        array.append(contentsOf: getNeckTransverseExercise())
+        array.append(contentsOf: getNeckExtensionExercise())
+        array.append(contentsOf: getNeckFlexionExercise())
+        array.append(contentsOf: getForearmFlexorsExercise())
+        array.append(contentsOf: getForearmExtensorsExercise())
+        array.append(contentsOf: getUlnarForearmExercise())
+        array.append(contentsOf: getRadialForearmExercise())
+        array.append(contentsOf: getspinalErectorsExercise())
+        array.append(contentsOf: getUpperTrapsExercise())
+        array.append(contentsOf: getLowerTrapsExercise())
+     
+        
+        return array
+    }
+    
+    func getExerciseList (muscle: String) -> [Exercise] {
+    let exercise = Exercise(title: Save.middleChestTitle, primaryMuscles: [Save.middleChestTitle], secondaryMuscles: [], peakTension: [], isBW: false)
+        //TODO find how to account for usin multiple head exercises
+        var exerciseArray = [Exercise]()
+        switch muscle {
+        case Save.upperChestTitle:
+            exerciseArray = getUpperChestExercise()
+        case Save.middleChestTitle:
+            exerciseArray = getMiddleChestExercise()
+            
+        case Save.lowerChestTitle:
+            exerciseArray = getLowerChestExercise()
+            
+        case Save.bicepsLongHeadTitle:
+            exerciseArray = getBicepsLongHeadExercise()
+            
+        case Save.bicepsShortHeadTitle:
+            exerciseArray = getBicepsShortHeadExercise()
+            
+        case Save.latsRowingTitle:
+            exerciseArray = getLatsRowingExercise()
+            
+        case Save.latsPushdownTitle:
+            exerciseArray = getLatsPushdownExercise()
+            
+        case Save.latsPullInTitle:
+            exerciseArray = getLatsPushdownExercise()
+            
+        case Save.glutesTitle:
+            exerciseArray = getGluteTitleExercise()
+            
+        case Save.gluteMediusTitle:
+            exerciseArray = getGluteMediusExercise()
+            
+        case Save.adductorsTitle:
+            exerciseArray = getAdductorsExercises()
+            
+        case Save.hamstringCurlTitle:
+            exerciseArray = getHamstringsCurlExercise()
+            
+        case Save.hamstringHingeTitle:
+            exerciseArray = getHamstringsHingeExercise()
+            
+        case Save.frontShoulderTitle:
+            exerciseArray = getFrontShoulderExercise()
+            
+        case Save.lateralShoulderTitle:
+            exerciseArray = getLateralShoulderExercise()
+            
+        case Save.backShoulderTitle:
+            exerciseArray = getBackShoulderExercise()
+            
+        case Save.rotatorCuffTitle:
+            exerciseArray = getRotatorCuffExercise()
+            
+        case Save.tricepsLateralShortTitle:
+            exerciseArray = getTricepsLateralAndShortExercise()
+            
+        case Save.tricepsLongTitle:
+            exerciseArray = getTricepsLongExercise()
+            
+        case Save.quadsTitle:
+            exerciseArray = getQuadsExercise()
+            
+        case Save.upperAbsTitle:
+            exerciseArray = getUpperAbsExercise()
+            
+        case Save.middleAbsTitle:
+            exerciseArray = getMiddleAbsExercise()
+            
+        case Save.lowerAbsTitle:
+            exerciseArray = getLowerAbsExercise()
+            
+        case Save.upperObliquesTitle:
+            exerciseArray = getUpperObliquesExercise()
+            
+        case Save.middleObliquesTitle:
+            exerciseArray = getMiddleObliquesExercise()
+            
+        case Save.lowerObliquesTitle:
+            exerciseArray = getLowerObliquesExercise()
+            
+        case Save.serratusTitle:
+            exerciseArray = getSerratusTitle()
+            
+        case Save.transverseAbTitle:
+            exerciseArray = getTransverseAbExercise()
+            
+        case Save.gastrocnemiusTitle:
+            exerciseArray = getGastrocExercise()
+            
+        case Save.soleusTitle:
+            exerciseArray = getSoleusExercise()
+            
+        case Save.anteriorTibialisTitle:
+            exerciseArray = getTibialisExercises()
+            
+        case Save.neckFlexionTitle:
+            exerciseArray = getNeckFlexionExercise()
+            
+        case Save.neckExtensionTitle:
+            exerciseArray = getNeckExtensionExercise()
+        
+        case Save.transverseNeckTitle:
+            exerciseArray = getNeckTransverseExercise()
+        
+        case Save.transverseNeckTitle:
+            exerciseArray = getNeckTransverseExercise()
+            
+        case Save.lateralNeckTitle:
+            exerciseArray = getUpperChestExercise()
+            
+        case Save.forearmExtensorsTitle:
+            exerciseArray = getForearmExtensorsExercise()
+            
+        case Save.ulnarForearmTitle:
+            exerciseArray = getUlnarForearmExercise()
+            
+        case Save.forearmFlexorsTitle:
+            exerciseArray = getForearmFlexorsExercise()
+            
+        case Save.radialForearmTitle:
+            exerciseArray = getRadialForearmExercise()
+            
+        case Save.spinalErectorsTitle:
+            exerciseArray = getspinalErectorsExercise()
+            
+        case Save.upperTrapsTitle:
+            exerciseArray = getUpperTrapsExercise()
+            
+        case Save.lowerTrapsTitle:
+            exerciseArray = getLowerTrapsExercise()
+            
+        case Save.brachialisTitle:
+            exerciseArray = getBrachialisExercises()
+            
+        default:
+            // getExercise(muscle: muscle)
+        print("EXERCISES NOT LOADED FOR \(muscle)")
+        }
+        return exerciseArray
+    }
+    
+    func getSperatedExercisesList(muscle: String) -> ([Exercise], [Exercise]) {
+        var wieghtExerciseList = getExerciseList(muscle: muscle)
+        let locoCopy = wieghtExerciseList
+        var count = 0
+        var BWExerciseList = [Exercise]()
+        
+        
+        for i in 0..<locoCopy.count {
+            
+            //  if wieghtExerciseList.count < i {
+            if locoCopy[i].isBW == true {
+                BWExerciseList.append(locoCopy[i])
+                wieghtExerciseList.remove(at: i - count)
+                count += 1
+            }
+        }
+        return (wieghtExerciseList, BWExerciseList)
+    }
 }

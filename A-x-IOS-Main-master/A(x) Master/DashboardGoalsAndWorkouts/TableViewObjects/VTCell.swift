@@ -5,7 +5,12 @@
 // OBJECT FOR VOLUME TRACKER CELLS
 import UIKit
 //MAKE CLASS, DECLARE VARIBALES. VARIABLE ARE THE VIEWS IN THE CELL
-class Video {
+class VTCell{//}:/Equatable {
+//    static func == (lhs: VTCell, rhs: VTCell) -> Bool {
+//        if lhs == rhs { return true
+//        } else { return false }
+//    }
+    
     var image: UIImage
     var title: String
     var progressText: String

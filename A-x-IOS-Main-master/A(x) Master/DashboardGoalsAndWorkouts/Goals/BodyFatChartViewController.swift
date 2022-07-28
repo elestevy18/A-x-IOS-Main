@@ -67,7 +67,7 @@ class BodyFatChartViewController: UIViewController {
     if let swipeGesture = gesture as? UISwipeGestureRecognizer {
         switch swipeGesture.direction {
         case UISwipeGestureRecognizer.Direction.right :
-            print("User swiped right")
+            //print("User swiped right")
             // decrease index first
             MuscleInfoViewController.imageIndex-=1
             // check if index is in range
@@ -77,7 +77,7 @@ class BodyFatChartViewController: UIViewController {
             swipeImageView.image = UIImage(named: imageList[MuscleInfoViewController.imageIndex])
 
         case UISwipeGestureRecognizer.Direction.left:
-            print("User swiped Left")
+            //print("User swiped Left")
             // increase index first
             MuscleInfoViewController.imageIndex += 1
             // check if index is in range

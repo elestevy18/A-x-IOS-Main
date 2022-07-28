@@ -1,0 +1,471 @@
+/*
+ English.strings
+ AofX
+ 
+ Created by Kevin Jimenez on 3/25/21.
+ Copyright © 2021 Aesthet(X). All rights reserved.
+ */
+
+//NSLocalizedString("bWExercises.transverseNeck1", comment: "")
+
+    //TODO disclose that any exercise can be done isometrically
+
+    // MARK: Workout Generator
+"generatorCell.startText" = "    Start\n Workout  ";
+
+    // MARK: Exercises to be removed
+"removingExercises.chest1" = "Dumbbell Bench Press";
+"removingExercises.chest2" = "Machine Chest Press";
+"removingExercises.chest3" = "Neutral Cable Press";
+
+"removingExercises.upperChest1" = "Incline Dumbbell Bench Press";
+"removingExercises.upperChest2" = "Incline Machine Chest Press";
+"removingExercises.upperChest3" = "Incline Cable Press";
+
+"removingExercises.lowerChest1" = "Decline Dumbbell Bench Press";
+"removingExercises.lowerChest2" = "Decline Cable Press";
+
+"removingExercises.bicepsLong1" = "Narrow Dumbbell Curls";
+"removingExercises.bicepsLong2" = "Narrow Barbell Curls";
+"removingExercises.bicepsLong3" = "Narrow EZ Bar Curls";
+"removingExercises.bicepsLong4" = "Narrow Banded Curls";
+"removingExercises.bicepsLong5" = "Narrow Ring Curls";
+
+"removingExercises.bicepsShort1" = "Wide Dumbbell Curls";
+"removingExercises.bicepsShort2" = "Wide Barbell Curls";
+"removingExercises.bicepsShort3" = "Wide EZ Bar Curls";
+"removingExercises.bicepsShort4" = "Wide Banded Curls";
+"removingExercises.bicepsShort5" = "Wide Ring Curls";
+
+"removingExercises.gluteMax1" = "Bodyweight Hip Thrusts";
+
+"removingExercises.latPullIn1" = "Pull Ups";
+"removingExercises.latPullIn2" = "Chin Ups";
+"removingExercises.latPullIn3" = "Pull Ins";
+
+
+
+    // MARK: Middle Chest
+    //Will combine all pressing exercises save for the bench press for marketing purposes
+    //Any variation for all chest implies dumbell, machineS, bar, cable,
+"exercises.chest1" = "Bench Press";
+"exercises.chest2" = "Neutral Press (Any Variation)";//TODO
+"exercises.chest3" = "Neutral Crossover Flyes";
+"exercises.chest4" = "Neutral Chest Isometric";
+"bWExercises.chest1" = "Neutral Banded Fly";
+"bWExercises.chest2" = "Neutral Push-Up (Any Variation)";//TODO
+
+    // MARK: Upper Chest
+
+"exercises.upperChest1" = "Incline Bench Press";
+"exercises.upperChest2" = "Incline Press (Any Variation)";
+"exercises.upperChest3" = "Incline Crossover Flyes";
+"exercises.upperChest4" = "Incline Chest Isometric";
+"exercises.upperChest5" = "Chest Pullover";
+"bWExercises.upperChest1" = "Incline Banded Fly";
+"bWExercises.upperChest2" = "Incline Push-Up (Any Variation)";//TODO
+
+    // MARK: Lower Chest
+
+"exercises.lowerChest1" = "Decline Bench Press";
+"exercises.lowerChest2" = "Decline Press (Any Variation)";
+"exercises.lowerChest3" = "Decline Crossover Flyes";
+"exercises.lowerChest4" = "Decline Chest Isometric";
+"bWExercises.lowerChest5" = "Decline Banded Fly";
+"bWExercises.lowerChest6" = "Wide Dips";
+
+    // MARK: Biceps Long Head
+    //Any variation for biceps implies Dumbbell, barbell , EZ Bar, banded, and rings.
+//TODO PHAT RIGHT HERE
+"exercises.bicepsLongHead1" = "Narrow Curls (Any Variation)";
+"exercises.bicepsLongHead2" = "Preacher Curls (Any Variation)";
+"bWExercises.bicepsLongHead1" = "Narrow Grip Chin-Up";
+
+    // MARK: Biceps Short Head
+
+"exercises.bicepsLongHead1" = "Wide Curls (Any Variation)";
+"bWExercises.bicepsLongHead1" = "Wide Grip Chin-Up";
+
+    //TODO: integrate these into programming/tracking
+"exercises.biceps1" = "Behind the Back Curls";
+"exercises.biceps2" = "Neutral Curls (Any Variation)";
+"exercises.biceps3" = "Limp Wrist Curls";
+"exercises.biceps4" = "Biceps Isometric";
+"bWExercises.bicepsLongHead1" = "Middle Grip Chin-Up";
+"bWExercises.bicepsLongHead2" = "Ring Curls";
+"bWExercises.bicepsLongHead3" = "Pelican Curls";
+
+
+    // MARK: Brachialis
+
+"exercises.brachialis1" = "Cross Body Hammer Curls";
+"bWExercises.brachialis1" = "Neutral Grip Pull-Up";
+
+    // MARK: Lats Rowing
+
+"exercises.latsRowing1" = "High Pulley Row";
+"exercises.latsRowing2" = "Chest Supported Rows";
+"exercises.latsRowing3" = "Barbell Rows";//TODO convert to unsupported row
+"exercises.latsRowing4" = "Cable Rows";
+"bWExercises.latsRowing1" = "Ring Rows";
+"bWExercises.latsRowing2" = "Australian Pull-Up";
+
+    // MARK: Lats Pull-In
+
+"exercises.latsPull-In1" = "Cable Pulldown";
+"exercises.latsPull-In2" = "Pull Ins (Any Variation)";
+"bWExercises.latsPull-In1" = "Pull-Up";//TODO universalize spelling
+"bWExercises.latsPull-Ing" = "Chin-Up";
+
+    // MARK: Lats Pushdown
+
+"exercises.latsPushdown1" = "Lat Pullover";
+"exercises.latsPushdown2" = "Lat Pushdowns";
+"bWExercises.latsPushdown1" = "Front Levers";
+
+    // MARK: Glutes Max
+
+"exercises.gluteMax1" = "Hip Thrust";
+"exercises.gluteMax2" = "Cable Pull Through";
+"exercises.gluteMax3" = "Kettlebell/Dumbbell Swing";
+"exercises.gluteMax4" = "Cable Kick Backs";
+"bWExercises.gluteMax1" = "Bodyweight Hip Thrusts (Any Variation)";//TODO
+"bWExercises.gluteMax2" = "Isolateral Hip Thrust";
+"bWExercises.gluteMax3" = "Sprinter Lunge";
+"bWExercises.gluteMax4" = "Banded RDL";
+"bWExercises.gluteMax5" = "Marching Bridge";
+"bWExercises.gluteMax6" = "Glute Hyperextension";
+
+    // MARK: Glute Medius
+
+"exercises.gluteMedius1" = "Machine Abduction";
+"exercises.gluteMedius2" = "Rotated Machine Abduction";
+"exercises.gluteMedius3" = "Ankle Brace Cable Abduction";
+"bWExercises.gluteMedius1" = "Banded Lateral Walkout";
+"bWExercises.gluteMedius2" = "Banded Abduction";
+"bWExercises.gluteMedius3" = "Glute Side Plank";
+
+    // MARK: Hamstrings Hinge
+
+"exercises.hamstringsHinge1" = "Deadlift";
+"exercises.hamstringsHinge2" = "Romanian Deadlift";
+"exercises.hamstringsHinge3" = "Deficit Deadlift";
+"exercises.hamstringsHinge4" = "Single Leg Romanian Deadlift";
+"bWExercises.hamstringsHinge1" = "Hamstring Hyperextension";
+
+    // MARK: Hamstrings Curl
+"exercises.hamstringsCurl1" = "Machine Hamstring Curls";
+"bWexercises.hamstringsCurl1" = "Glute Ham Raise";
+"bWexercises.hamstringsCurl2" = "Medicine Ball Curl";
+"bWexercises.hamstringsCurl3" = "Single Leg Medicine Ball Curl";
+
+
+    // MARK: Anterior Deltoid
+
+"exercises.anteriorDeltoid1" = "Arnolds";
+"exercises.anteriorDeltoid2" = "Barbell Overhead Press";
+"exercises.anteriorDeltoid3" = "Dumbbell OHP";
+"exercises.anteriorDeltoid3" = "Cable Stretch to OHP";
+"exercises.anteriorDeltoid4" = "Landmine Press";
+"exercises.anteriorDeltoid5" = "Machine Shoulder Press";
+"exercises.anteriorDeltoid6" = "Push Press";
+"exercises.anteriorDeltoid7" = "Cable Front Raise";
+"bWExercises.anteriorDeltoid1" = "Pike Push-Up";
+"bWExercises.anteriorDeltoid1" = "Handstand Push-Up";
+
+    // MARK: Lateral Deltoid
+
+"exercises.lateralDeltoid1" = "Cable Lateral Raises";
+"exercises.lateralDeltoid2" = "Machine Lateral Raise";
+"exercises.lateralDeltoid3" = "Cheat Lateral Raise";
+"exercises.lateralDeltoid4" = "Lateral Raise";
+"bWExercises.lateralDeltoid1" = "Delt Rotating Plank";
+
+    // MARK: Posterior Deltoid
+
+"exercises.posteriorDeltoid1" = "Barbell/Dumbbell High Rows";
+"exercises.posteriorDeltoid2" = "Facepulls";
+"exercises.posteriorDeltoid3" = "W's";
+"exercises.posteriorDeltoid4" = "Reverse Pec Deck";
+"bWExercises.posteriorDeltoid1" = "Floor T's";
+"bWExercises.posteriorDeltoid2" = "Banded Pull Aparts";
+"bWExercises.posteriorDeltoid3" = "Ring Facepulls";
+"bWExercises.posteriorDeltoid4" = "Angels of Death";
+
+    // MARK: Rotator uff
+
+"exercises.rotatorCuff1" = "Cable External Rotation";
+"exercises.rotatorCuff2" = "Bench Dumbbell External Rotation";
+"exercises.rotatorCuff3" = "W's";
+"exercises.rotatorCuff4" = "Dumbbell High Pull";
+"exercises.rotatorCuff5" = "Facepulls";
+"bWExercises.rotatorCuff1" = "Ring Facepull";
+"bWExercises.rotatorCuff2" = "Banded External Rotation";
+
+    // MARK: Tricep Long Head
+
+"exercises.tricepsLongHead1" = "Incline Skullcrushers";
+"exercises.tricepsLongHead2" = "California Press";
+"exercises.tricepsLongHead3" = "Rope Overhead Extension";
+"exercises.tricepsLongHead4" = "Long Head Triceps Pushdowns";
+"bWExercises.tricepsLongHead1" = "Ring Overhead Extension";
+
+    // MARK: Tricep Lateral and short Head
+
+"exercises.tricepsLateralAndShort1" = "Cable Rope Pushdowns";
+"exercises.tricepsLateralAndShort2" = "V Bar Pushdowns";
+"exercises.tricepsLateralAndShort3" = "Close Grip Dumbbell Press";
+"exercises.tricepsLateralAndShort4" = "Triceps Kickback";
+
+"bWExercises.tricepsLateralAndShort1" = "Narrow Dip";
+"bWExercises.tricepsLateralAndShort2" = "Bench Dip";
+"bWExercises.tricepsLateralAndShort3" = "Narrow Pushup";
+"bWExercises.tricepsLateralAndShort4" = "Triceps Extension";
+
+    // MARK: Quads
+
+"exercises.quads1" = "Squats";
+"exercises.quads2" = "Cable Walkaways";
+"exercises.quads3" = "Banded Leg Press";
+"exercises.quads4" = "Leg Press";
+"exercises.quads5" = "Traditional Lunge";
+"exercises.quads6" = "Bulgarian Split Squat";
+"exercises.quads7" = "Side Lunge";
+
+
+"bWExercises.quads1" = "Pistol Squats";
+"bWExercises.quads2" = "Banded Lunges";
+"bWExercises.quads3" = "Explosive Bulgarian Split Squat";
+"bWExercises.quads4" = "Bodyweight Squats";
+"bWExercises.quads5" = "Wall Sit";
+"bWExercises.quads6" = "Lunges";
+
+    // MARK: Lower Abs
+
+"bWExercises.lowerAbs1" = "Leg Raises";
+"bWExercises.lowerAbs2" = "Ab Circles";
+"bWExercises.lowerAbs3" = "Reverse Crunches";
+"bWExercises.lowerAbs4" = "Pulse Up";
+
+    // MARK: Middle Abs
+
+"bWExercises.middleAbs1" = "V-Up";
+"bWExercises.middleAbs2" = "Jackknives";
+"bWExercises.middleAbs3" = "Knee Tucks";
+"bWExercises.middleAbs4" = "Ab Wheel Rollout";
+
+    // MARK: Upper Abs
+
+"exercises.upperAbs1" = "Band Crunch";
+"exercises.upperAbs2" = "Cable Crunch";
+"exercises.upperAbs3" = "Machine Crunch";
+"bWExercises.upperAbs1" = "Decline/Neutral Crunch";
+
+    // MARK: Lower Obliques
+"exercises.lowerObliques1" = "Low to High Wood Choppers";
+"bWExercises.lowerObliques1" = "Twisting Leg Raise";
+"bWExercises.lowerObliques2" = "X-Crunch";
+"bWExercises.lowerObliques3" = "Twisting Pulse Up";
+"bWExercises.lowerObliques4" = "Leg Raise Scissors";
+    
+    // MARK: Middle Obliques
+
+"exercises.middleObliques1" = "Neutral Wood Choppers";
+"bWExercises.middleObliques1" = "Elbow to Knee Tucks";
+"bWExercises.middleObliques2" = "Banded/Cable Step Out";
+"bWExercises.middleObliques3" = "Rotating Plank";
+"bWExercises.middleObliques4" = "Elbow to Knee Plank";
+
+    // MARK: Upper Obliques
+
+"exercises.upperObliques1" = "High to Low Wood Choppers";
+"bWExercises.upperObliques1" = "Side Crunch";
+"bWExercises.upperObliques2" = "Oblique Floor Crunch";
+
+    // MARK: Serratus
+
+"exercises.serratus1" = "Protracted Cable Crunch";
+"bWExercises.serratus1" = "Banded/Cable Punches";
+"bWExercises.serratus2" = "Plank Protraction";
+"bWExercises.serratus3" = "Protracted Rollout";
+
+    // MARK: Transverse Abs
+
+"bWExercises.transverseAb1" = "Vacuums";
+"bWExercises.transverseAb2" = "Banded/Cable Resisted Rotation";
+
+    // MARK: Soleus
+
+"exercises.soleus1" = "Seated Calf Raise";
+"bWExercises.soleus1" = "Squating Calf Raise";
+
+    // MARK: Gastroc
+
+"exercises.gastrocnemius1" = "Machine Standing Calf Raise";
+"exercises.gastrocnemius2" = "Straight Leg Machine Calf Raise";
+"exercises.gastrocnemius3" = "Donkey Calf Raise";
+"exercises.gastrocnemius4" = "Dumbbell/Plated Calf Raise";
+"bWExercises.gastrocnemius1" = "Bodyweight Calf Raises";
+
+    // MARK: Neck Flexion
+
+"exercises.neckFlexion1" = "Plate Curl";
+"exercises.neckFlexion2" = "Neck Harness Curl";
+"bWExercises.neckFlexion1" = "Neck Flexion Isometric";
+
+    // MARK: Neck Extension
+
+"exercises.neckExtension1" = "Plated Neck Extension";
+"exercises.neckExtension2" = "Chin Tucks";
+"bWExercises.neckExtension1" = "Neck Extension Isometric";
+
+    // MARK: Transverse Neck
+
+"exercises.transverseNeck1" = "Suspended Neck Rotation";
+"exercises.transverseNeck2" = "Neck Facepull";
+"bWExercises.transverseNeck1" = "Neck W";
+
+    // MARK: Forearm Extensors
+
+"exercises.forearmExtensors1" = "Standing Barbell Wrist Extension";
+"exercises.forearmExtensors2" = "Barbell Extension Rolls";
+"exercises.forearmExtensors3" = "Reverse Curls";
+"bWExercises.forearmExtensors1" = "Banded Wrist Extension";
+
+    // MARK: Ulnar Forearm
+
+"exercises.ulnarForearm1" = "Rope Ulnar Deviation";
+"bWExercises.ulnarForearm1" = "Banded Ulnar Deviation";
+
+    // MARK: Forearm flexor
+
+"exercises.forearmFlexors1" = "Prone Wrist Curls";
+"exercises.forearmFlexors2" = "Wrist Flexed Curls";
+"bWExercises.forearmFlexors1" = "Banded Wrist Curls";
+
+    // MARK: Radial Forearm
+
+"exercises.radialForearm1" = "Rope Radial Deviation";
+"exercises.radialForearm2" = "Hammer/Crossbody Curls";
+"bWExercises.radialForearm1" = "Banded Radial Deviation";
+
+    // MARK: Spinal Erectors
+
+"exercises.spinalErectors1" = "Hyperextension";
+"exercises.spinalErectors2" = "Machine Erector Extension";
+"exercises.spinalErectors3" = "Deadlift";
+"exercises.spinalErectors4" = "Squats";
+
+"bWExercises.spinalErectors1" = "Frog Pumps";
+"bWExercises.spinalErectors2" = "Angels of Death";
+"bWExercises.spinalErectors3" = "Marching Bridge";
+"bWExercises.spinalErectors4" = "Reverse Hyperextension";
+
+    // MARK: Upper Traps
+
+"exercises.upperTraps1" = "Dumbbell Shrugs";
+"exercises.upperTraps2" = "Trap Bar Shrugs";
+"exercises.upperTraps3" = "Farmer Walk";
+
+"bWExercises.upperTraps1" = "Trap Pushaway";
+"bWExercises.upperTraps2" = "Inverted Y";
+
+    // MARK: Lower Traps
+
+"exercises.lowerTraps1" = "Y Raise";
+"exercises.lowerTraps2" = "Reverse Pec Deck";
+"exercises.lowerTraps3" = "W's";
+"exercises.lowerTraps4" = "Facepulls";
+
+"bWExercises.lowerTraps1" = "Ring Facepull";
+"bWExercises.lowerTraps2" = "Hanging/Cable Scapular Retraction";
+"bWExercises.lowerTraps3" = "Angels of Death";
+"bWExercises.lowerTraps4" = "Floor/Dip Bar Scapular Depression";
+
+    // MARK: Adductors
+
+"exercises.adductors1" = "Machine Adduction";
+"bWExercises.adductors2" = "Adductors Side Bridge";
+
+    // MARK: Tibialis
+
+"exercises.tibialis1" = "Tibialis Raise";
+"bWExercises.tibialis2" = "Squatters";
+
+//MARK: Exercise titles
+
+"muscles.upperChest" = "Upper Chest";
+"muscle.lowerChest" = "Lower Chest";
+"muscle.middleChest" = "Middle Chest";
+"muscle.some" = "Biceps Long Head";
+"muscle.some" = "Biceps Short Head";
+"muscle.some" = "Brachialis";
+"muscle.some" = "Lats Rowing";
+"muscle.some" = "Lats Pushdown";
+"muscle.some" = "Lats Pull-In";
+"muscle.some" = "Glutes";
+"muscle.some" = "Glute Medius";
+"muscle.some" = "Hamstring Curl";
+"muscle.some" = "Hamstring Hinge";
+"muscle.some" = "Front Shoulder";
+"muscle.some" = "Lateral Shoulder";
+"muscle.some" = "Back Shoulder";
+"muscle.some" = "Rotator Cuff";
+"muscle.some" = "Quads";
+"muscle.some" = "Upper Abs";
+"muscle.some" = "Lower Abs";
+"muscle.some" = "Middle Abs";
+"muscle.some" = "Obliques Title";
+"muscle.some" = "Middle Obliques";
+"muscle.some" = "Upper Obliques";
+"muscle.some" = "Lower Obliques";
+"muscle.some" = "Serratus";
+"muscle.some" = "Transverse Ab";
+"muscle.some" = "Gastrocnemius";
+"muscle.some" = "Soleus";
+"muscle.some" = "Neck Flexion";
+"muscle.some" = "Neck Extension";
+"muscle.some" = "Transverse Neck";
+"muscle.some" = "Lateral Neck";
+"muscle.some" = "Forearm Extensors";
+"muscle.some" = "Ulnar Forearm";
+"muscle.some" = "Forearm Flexors";
+"muscle.some" = "Radial Forearm";
+"muscle.some" = "Spinal Erectors";
+"muscle.some" = "Upper Traps";
+"muscle.some" = "Lower Traps";
+"muscle.some" = "Triceps Long Head";
+"muscle.some" = "Adductors";
+"muscle.some" = "Short Triceps";
+"muscle.some" = "Anterior Tibialis";
+
+//MARK: Intro showcase
+"showcase.dashboard1" = "Input and Update Your Info!";
+"showcase.dashboard2" = "Get your custom meal plan and goals. \nYou can also update your info as you progress. Remember that your meal plan and muscle growth rate will change over time.";
+"showcase.dashboard3" = "Click on any title to learn more about it.";
+"showcase.dashboard4" = "Remember to Update Your Info!";
+"showcase.dashboard5" = "Your meal plan and muscle growth rate will change over time.\n\nClick on any title to learn more.";
+"showcase.dashboard6" = "Click on any title to learn more about it.";
+
+"showcase.mealPlanner1" = "Start Here";
+"showcase.mealPlanner2" = "Get your custom meal plan and goals.";
+"showcase.mealPlanner3" = "Adjust to your meal plan";
+"showcase.mealPlanner4" = "Use these sliders to adjust your macro split to your liking.\n\n*Tap on the other sliders if the chart looks off. Sorry for the bug, we're working on it.";
+"showcase.mealPlanner5" = "";
+"showcase.mealPlanner6" = "";
+"showcase.mealPlanner7" = "";
+"showcase.mealPlanner8" = "";
+"showcase.mealPlanner9" = "";
+
+
+"showcase.volumeTracker1" = "";
+"showcase.workoutGenerator1" = "";
+
+//MARK: Misc Useful
+
+"learnMore" = "Learn More";
+
+//NSLocalizedString("leftside", comment: "")
+
+
+
